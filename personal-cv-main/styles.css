@@ -27,7 +27,7 @@ nav a:hover, .github-link:hover { color: var(--orange); }
 h1, h2, h3, p { margin-top: 0; }
 h1 { max-width: 780px; margin-bottom: 1.5rem; font-size: clamp(3.1rem, 7.1vw, 7.15rem); line-height: .94; letter-spacing: 0; }
 .lede { max-width: 590px; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.55; }
-.intro-actions { display: flex; align-items: center; gap: 1.4rem; margin-top: 2.4rem; }
+.intro-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; margin-top: 2.4rem; }
 .button { display: inline-flex; align-items: center; gap: .75rem; font-size: .9rem; font-weight: 600; text-decoration: none; }
 .primary { padding: 1rem 1.2rem; background: var(--ink); color: white; }
 .primary:hover { background: var(--orange); }
