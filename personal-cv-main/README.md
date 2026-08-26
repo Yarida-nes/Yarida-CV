@@ -22,9 +22,10 @@ To see the site locally, open `index.html` in a browser. To edit its content, up
 
 Open PowerShell in the `Test CV` folder and run these commands one at a time. Replace the email with the email address associated with your GitHub account.
 
+
 ```powershell
-git config user.name "Your Name"
-git config user.email "your-github-email@example.com"
+git config user.name "Yarida Kaewthong"
+git config user.email "nestyarida@gmail.com"
 git add .
 git commit -m "Create personal CV site"
 git branch -M main
