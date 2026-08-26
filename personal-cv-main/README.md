@@ -29,7 +29,7 @@ git config user.email "nestyarida@gmail.com"
 git add .
 git commit -m "Create personal CV site"
 git branch -M main
-git remote add origin https://github.com/your_github_user/personal-cv.git
+git remote add origin https://github.com/Yarida-nes/Yarida-CV.git
 git push -u origin main
 ```
 
