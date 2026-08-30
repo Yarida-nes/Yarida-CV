@@ -21,6 +21,7 @@ a { color: inherit; }
 nav { display: flex; gap: 2rem; }
 nav a, .github-link { font-family: "DM Mono", monospace; font-size: .75rem; text-decoration: none; text-transform: uppercase; letter-spacing: 0; }
 nav a:hover, .github-link:hover { color: var(--orange); }
+nav a.is-active { color: var(--orange); }
 .intro { min-height: 620px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); align-items: center; gap: clamp(3rem, 9vw, 10rem); padding: 7rem 0 5rem; }
 .eyebrow, .section-label span, .timeline-date, .card-top, footer, .tags, .capability-list span { font-family: "DM Mono", monospace; font-size: .72rem; letter-spacing: 0; }
 .eyebrow { margin: 0 0 1.15rem; color: var(--orange); text-transform: uppercase; }
@@ -29,6 +30,7 @@ h1 { max-width: 780px; margin-bottom: 1.5rem; font-size: clamp(3.1rem, 7.1vw, 7.
 .lede { max-width: 590px; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.55; }
 .intro-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; margin-top: 2.4rem; }
 .button { display: inline-flex; align-items: center; gap: .75rem; font-size: .9rem; font-weight: 600; text-decoration: none; }
+button.button, button.contact-link { background: none; border: 0; padding: 0; font-family: inherit; color: inherit; cursor: pointer; vertical-align: baseline; }
 .primary { padding: 1rem 1.2rem; background: var(--ink); color: white; }
 .primary:hover { background: var(--orange); }
 .text-button { border-bottom: 1px solid var(--ink); padding-bottom: .25rem; }
@@ -70,8 +72,8 @@ h1 { max-width: 780px; margin-bottom: 1.5rem; font-size: clamp(3.1rem, 7.1vw, 7.
 footer { display: flex; justify-content: space-between; padding: 1.8rem 0; border-top: 1px solid var(--line); color: var(--muted); text-transform: uppercase; }
 @media (max-width: 720px) {
   .site-shell { padding: 0 1.25rem; }
-  .topbar { min-height: 72px; }
-  nav { display: none; }
+  .topbar { min-height: 72px; flex-wrap: wrap; padding-bottom: .6rem; }
+  nav { order: 3; width: 100%; gap: 1.25rem; overflow-x: auto; padding-top: .2rem; }
   .intro { grid-template-columns: 1fr; min-height: auto; padding: 4.5rem 0; gap: 2.5rem; }
   .portrait-wrap { width: 58%; }
   .metrics { grid-template-columns: 1fr; }
@@ -85,9 +87,27 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   footer { gap: 1rem; flex-direction: column; }
 }
 @media print {
+  @page { margin: 14mm; }
   body { background: white; }
-  .topbar nav, .github-link, .intro-actions { display: none; }
-  .intro { min-height: auto; padding: 2rem 0; }
-  .section { padding: 2.5rem 0; }
+  .site-shell { max-width: none; padding: 0; }
+  .skip-link, .topbar nav, .github-link, .intro-actions { display: none; }
+  .topbar { min-height: auto; padding-bottom: .6rem; }
+  .intro { min-height: auto; grid-template-columns: 1fr 150px; padding: 1.25rem 0 1.5rem; gap: 2rem; }
+  h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+  .lede { font-size: 1rem; }
+  .portrait-wrap img { width: 130px; }
+  .portrait-wrap figcaption { display: none; }
+  .metrics div { padding: .9rem 0; }
+  .section { padding: 1.6rem 0; gap: 1.5rem; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card, .project-card-featured { min-height: auto; grid-row: auto; background: white; }
+  .project-mark { display: none; }
   .project-card:hover { transform: none; }
+  .capability-list li { font-size: 1.1rem; padding: .55rem 0; }
+  .contact { padding: 2rem 0; }
+  .contact h2 { font-size: 1.9rem; margin-bottom: 1rem; }
+  .contact-link { display: block; font-size: 1rem; border-bottom: 0; }
+  .contact-link[data-print-value]::after { content: " — " attr(data-print-value); font-weight: 400; font-size: .85rem; color: var(--muted); }
+  button.contact-link { display: none; }
+  .timeline-item, .project-card, .capability-list li { break-inside: avoid; }
 }
