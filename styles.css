@@ -50,7 +50,25 @@ body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Spa
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.is-visible { opacity: 1; transform: none; }
+  /* Hero graphic draws itself in on load */
+  .portrait-art .line-anim { stroke-dasharray: 420; stroke-dashoffset: 420; animation: draw-line 1.5s ease .35s forwards; }
+  .portrait-art .pts circle { opacity: 0; animation: fade-pt .4s ease forwards; }
+  .portrait-art .pts circle:nth-child(1) { animation-delay: .6s; }
+  .portrait-art .pts circle:nth-child(2) { animation-delay: .85s; }
+  .portrait-art .pts circle:nth-child(3) { animation-delay: 1.1s; }
+  .portrait-art .pts circle:nth-child(4) { animation-delay: 1.35s; }
+  .portrait-art .pts circle:nth-child(5) { animation-delay: 1.6s; }
 }
+@keyframes draw-line { to { stroke-dashoffset: 0; } }
+@keyframes fade-pt { to { opacity: 1; } }
+
+/* Keyboard focus ring — visible for keyboard users, invisible on mouse click */
+a:focus-visible, button:focus-visible, summary:focus-visible, .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+/* Animated underline on the primary nav */
+nav a { position: relative; }
+nav a::after { content: ""; position: absolute; left: 0; bottom: -5px; width: 100%; height: 1.5px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+nav a:hover::after, nav a.is-active::after { transform: scaleX(1); }
 a { color: inherit; }
 .skip-link { position: fixed; top: -100px; left: 1rem; z-index: 5; padding: .75rem 1rem; background: var(--ink); color: white; }
 .skip-link:focus { top: 1rem; }
