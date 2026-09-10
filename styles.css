@@ -48,9 +48,10 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 
 /* ── Metrics strip ───────────────────────────────────────────────────── */
 .metrics { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.metrics div { display: flex; gap: 1.1rem; padding: 1.6rem 1.5rem 1.6rem 0; align-items: center; font-size: .86rem; line-height: 1.4; color: var(--muted); }
-.metrics div + div { border-left: 1px solid var(--line); padding-left: 1.75rem; }
-.metric-number { color: var(--accent); font-family: "DM Mono", monospace; font-size: 2rem; font-weight: 500; line-height: 1; }
+.metrics div { display: flex; flex-direction: column; gap: .7rem; padding: 2.1rem 1.9rem; font-size: .82rem; line-height: 1.55; color: var(--muted); }
+.metrics div:first-child { padding-left: 0; }
+.metrics div + div { border-left: 1px solid var(--line); }
+.metric-number { color: var(--accent); font-family: "DM Mono", monospace; font-size: 1.9rem; font-weight: 500; line-height: 1.1; letter-spacing: -.01em; }
 
 /* ── Sections ────────────────────────────────────────────────────────── */
 .section { padding: 7rem 0; display: grid; grid-template-columns: minmax(180px, .28fr) 1fr; gap: 3rem; border-bottom: 1px solid var(--line); }
@@ -156,9 +157,10 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   .intro { grid-template-columns: 1fr; min-height: auto; padding: 4.5rem 0; gap: 2.5rem; }
   .portrait-wrap { width: 58%; }
   .metrics { grid-template-columns: 1fr 1fr; }
-  .metrics div { padding: 1.2rem 1rem 1.2rem 0; }
-  .metrics div + div { border-left: 0; padding-left: 0; }
-  .metrics div:nth-child(even) { border-left: 1px solid var(--line); padding-left: 1rem; }
+  .metrics div { padding: 1.5rem 1.25rem; }
+  .metrics div:nth-child(odd) { padding-left: 0; }
+  .metrics div + div { border-left: 0; }
+  .metrics div:nth-child(even) { border-left: 1px solid var(--line); padding-left: 1.25rem; }
   .metrics div:nth-child(n + 3) { border-top: 1px solid var(--line); }
   .section { grid-template-columns: 1fr; gap: 2.3rem; padding: 4.5rem 0; }
   .timeline-item { grid-template-columns: 72px 1fr; }
