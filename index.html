@@ -84,28 +84,35 @@
             </div>
           </div>
           <figure class="portrait-wrap">
-            <svg class="portrait-art" viewBox="0 0 400 400" role="img" aria-label="Data analytics motif: rising bars and a trend line with the initials YK">
-              <rect x="0.5" y="0.5" width="399" height="399" rx="12" fill="var(--surface)" stroke="var(--line)" />
-              <g stroke="var(--line)" stroke-width="1">
-                <line x1="40" y1="120" x2="360" y2="120" />
-                <line x1="40" y1="180" x2="360" y2="180" />
-                <line x1="40" y1="240" x2="360" y2="240" />
+            <svg class="portrait-art" viewBox="0 0 400 380" role="img" aria-label="Bar chart of average ESG score by Asia-Pacific market in 2024: Australia 40.7, China 44.4, Singapore 51.7, South Korea 58.6. From my Tableau ESG project.">
+              <rect x="0.5" y="0.5" width="399" height="379" rx="12" fill="var(--surface)" stroke="var(--line)" />
+              <text x="28" y="42" font-family="'DM Mono', monospace" font-size="12.5" fill="var(--muted)">AVG ESG SCORE BY MARKET &middot; 2024</text>
+              <g stroke="var(--line)" stroke-width="1" font-family="'DM Mono', monospace" font-size="10">
+                <line x1="60" y1="70" x2="360" y2="70" /><text x="52" y="74" text-anchor="end" fill="var(--muted)">60</text>
+                <line x1="60" y1="146.7" x2="360" y2="146.7" /><text x="52" y="150.7" text-anchor="end" fill="var(--muted)">40</text>
+                <line x1="60" y1="223.3" x2="360" y2="223.3" /><text x="52" y="227.3" text-anchor="end" fill="var(--muted)">20</text>
               </g>
-              <g fill="var(--accent)">
-                <rect x="66" y="240" width="34" height="60" rx="3" opacity="0.35" />
-                <rect x="126" y="205" width="34" height="95" rx="3" opacity="0.5" />
-                <rect x="186" y="172" width="34" height="128" rx="3" opacity="0.65" />
-                <rect x="246" y="132" width="34" height="168" rx="3" opacity="0.8" />
-                <rect x="306" y="96" width="34" height="204" rx="3" opacity="1" />
+              <g class="bars" fill="var(--accent)">
+                <rect class="bar" x="72" y="144" width="46" height="156" rx="3" opacity="0.5" />
+                <rect class="bar" x="142" y="130" width="46" height="170" rx="3" opacity="0.65" />
+                <rect class="bar" x="212" y="102" width="46" height="198" rx="3" opacity="0.8" />
+                <rect class="bar" x="282" y="75" width="46" height="225" rx="3" opacity="1" />
               </g>
-              <polyline class="line-anim" points="83,250 143,215 203,182 263,142 323,106" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              <g class="pts" fill="var(--surface)" stroke="var(--ink)" stroke-width="3">
-                <circle cx="83" cy="250" r="5" /><circle cx="143" cy="215" r="5" /><circle cx="203" cy="182" r="5" /><circle cx="263" cy="142" r="5" /><circle cx="323" cy="106" r="5" />
+              <g class="vals" font-family="'DM Mono', monospace" font-size="13" font-weight="500" text-anchor="middle" fill="var(--ink)">
+                <text class="val" x="95" y="132">40.7</text>
+                <text class="val" x="165" y="118">44.4</text>
+                <text class="val" x="235" y="90">51.7</text>
+                <text class="val" x="305" y="63">58.6</text>
               </g>
-              <line x1="40" y1="300" x2="360" y2="300" stroke="var(--ink)" stroke-width="1.5" />
-              <text x="38" y="72" font-family="'Space Grotesk', sans-serif" font-size="54" font-weight="700" fill="var(--ink)">YK<tspan fill="var(--accent)">.</tspan></text>
+              <line x1="60" y1="300" x2="360" y2="300" stroke="var(--ink)" stroke-width="1.5" />
+              <g font-family="'DM Mono', monospace" font-size="12" text-anchor="middle" fill="var(--muted)">
+                <text x="95" y="322">AU</text>
+                <text x="165" y="322">CN</text>
+                <text x="235" y="322">SG</text>
+                <text x="305" y="322">KR</text>
+              </g>
             </svg>
-            <figcaption>Master of Commerce, AI and Business Analytics.</figcaption>
+            <figcaption>Real numbers from my Tableau ESG project &mdash; 2024 average ESG score by market.</figcaption>
           </figure>
         </section>
 

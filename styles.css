@@ -50,16 +50,19 @@ body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Spa
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.is-visible { opacity: 1; transform: none; }
-  /* Hero graphic draws itself in on load */
-  .portrait-art .line-anim { stroke-dasharray: 420; stroke-dashoffset: 420; animation: draw-line 1.5s ease .35s forwards; }
-  .portrait-art .pts circle { opacity: 0; animation: fade-pt .4s ease forwards; }
-  .portrait-art .pts circle:nth-child(1) { animation-delay: .6s; }
-  .portrait-art .pts circle:nth-child(2) { animation-delay: .85s; }
-  .portrait-art .pts circle:nth-child(3) { animation-delay: 1.1s; }
-  .portrait-art .pts circle:nth-child(4) { animation-delay: 1.35s; }
-  .portrait-art .pts circle:nth-child(5) { animation-delay: 1.6s; }
+  /* Hero chart grows its bars up to their real values on load */
+  .portrait-art .bar { transform: scaleY(0); transform-box: fill-box; transform-origin: bottom; animation: grow-bar .9s cubic-bezier(.2, .7, .3, 1) forwards; }
+  .portrait-art .bars .bar:nth-child(1) { animation-delay: .15s; }
+  .portrait-art .bars .bar:nth-child(2) { animation-delay: .3s; }
+  .portrait-art .bars .bar:nth-child(3) { animation-delay: .45s; }
+  .portrait-art .bars .bar:nth-child(4) { animation-delay: .6s; }
+  .portrait-art .val { opacity: 0; animation: fade-pt .4s ease forwards; }
+  .portrait-art .vals .val:nth-child(1) { animation-delay: .75s; }
+  .portrait-art .vals .val:nth-child(2) { animation-delay: .9s; }
+  .portrait-art .vals .val:nth-child(3) { animation-delay: 1.05s; }
+  .portrait-art .vals .val:nth-child(4) { animation-delay: 1.2s; }
 }
-@keyframes draw-line { to { stroke-dashoffset: 0; } }
+@keyframes grow-bar { to { transform: scaleY(1); } }
 @keyframes fade-pt { to { opacity: 1; } }
 
 /* Keyboard focus ring — visible for keyboard users, invisible on mouse click */
