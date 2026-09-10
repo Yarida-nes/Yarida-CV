@@ -1,0 +1,90 @@
+/* ── ESG case-study page (esg.html) ─────────────────────────────────
+   Loaded after styles.css. Reuses the site palette variables and the
+   .eyebrow, .lede, .metrics, .button and .back-link classes. */
+
+.esg-case { max-width: 960px; padding: 5rem 0 4rem; }
+.esg-case h1 { font-size: clamp(2.5rem, 5.2vw, 4.4rem); line-height: 1.02; margin-bottom: 1.4rem; }
+.esg-case .lede { max-width: 720px; }
+.esg-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; margin: 2.2rem 0 3rem; }
+.esg-footer-actions { margin: 3.5rem 0 0; }
+.esg-footer-actions .back-link { margin: 0; }
+
+.esg-metrics { margin-bottom: 3rem; }
+
+/* Hero chart */
+.esg-hero { margin: 0 0 3rem; }
+.esg-hero figcaption, .esg-subchart figcaption, .esg-shot figcaption { margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .72rem; line-height: 1.6; }
+.esg-chart { display: block; width: 100%; height: auto; background: var(--surface); border: 1px solid var(--line); padding: 1rem .75rem .5rem; }
+.esg-chart .grid line { stroke: var(--line); stroke-width: 1; }
+.esg-chart .grid line.axis { stroke: var(--ink); }
+.esg-chart .grid text, .esg-chart .labels text { fill: var(--muted); }
+.esg-chart .labels line { stroke: var(--line); stroke-width: 1; }
+.esg-chart .l-muted { stroke: #b9c4d2; }
+.esg-chart .l-au { stroke: #5c6b81; stroke-width: 2.4; }
+.esg-chart .l-sg { stroke: #7fb8bf; stroke-width: 2.4; }
+.esg-chart .l-kr { stroke: var(--ink); stroke-width: 2.6; }
+.esg-chart .l-cn { stroke: var(--accent); stroke-width: 2.8; }
+.esg-chart .t-cn { fill: var(--accent); font-weight: 500; }
+.esg-chart .t-kr { fill: var(--ink); font-weight: 500; }
+.esg-chart .t-sg { fill: #4f9aa2; }
+.esg-chart .t-au { fill: #5c6b81; }
+.esg-chart .t-muted { fill: #8a97a8; }
+.esg-chart .b-hi { fill: var(--accent); }
+.esg-chart .b-lo { fill: #c3ccd7; }
+.esg-chart .row text { fill: var(--ink); }
+
+/* Role / tools / data strip */
+.esg-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 0 0 3.5rem; padding: 1.6rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.esg-meta div { min-width: 0; }
+.esg-meta dt { margin-bottom: .5rem; color: var(--accent); font-family: "DM Mono", monospace; font-size: .72rem; text-transform: uppercase; }
+.esg-meta dd { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+
+/* Text sections */
+.esg-block { max-width: 760px; margin: 0 0 3.5rem; }
+.esg-block h2 { margin-bottom: 1.1rem; font-size: 1.55rem; }
+.esg-block p, .esg-block li { color: var(--muted); line-height: 1.7; }
+.esg-block p strong, .esg-block li strong { color: var(--ink); }
+.esg-block ul, .esg-block ol { margin: 0 0 1.25rem; padding-left: 1.15rem; }
+.esg-block li { margin-bottom: .55rem; }
+.esg-block code { font-family: "DM Mono", monospace; font-size: .82em; background: var(--surface); border: 1px solid var(--line); padding: .05em .35em; color: var(--ink); }
+
+/* Numbered findings */
+.esg-findings { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--ink); }
+.esg-findings > li { display: grid; grid-template-columns: 60px 1fr; gap: 1rem; padding: 1.5rem 0; margin: 0; border-bottom: 1px solid var(--line); }
+.esg-findings .finding-number { color: var(--accent); font-family: "DM Mono", monospace; font-size: 1.1rem; padding-top: .15rem; }
+.esg-findings p { margin-bottom: 0; }
+.esg-subchart { margin: 1.4rem 0 0; }
+.esg-subchart .esg-chart { padding: .75rem .5rem .25rem; }
+
+/* Tableau embed and screenshot placeholder */
+.esg-embed { position: relative; width: 100%; aspect-ratio: 4 / 3; min-height: 480px; margin: 1.5rem 0; background: var(--surface); border: 1px solid var(--line); }
+.esg-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.esg-shot { margin: 1.5rem 0 0; }
+.esg-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: var(--surface); }
+.esg-placeholder { display: flex; flex-direction: column; justify-content: center; min-height: 240px; padding: 2rem; border: 1px dashed #9aa8b8; background: var(--surface); }
+.esg-placeholder .eyebrow { margin-bottom: .6rem; }
+.esg-placeholder p { max-width: 520px; margin: 0; color: var(--muted); line-height: 1.6; }
+.esg-placeholder code { font-family: "DM Mono", monospace; font-size: .85em; color: var(--ink); }
+.esg-foot { color: var(--muted); font-size: .9rem; }
+.esg-foot a { border-bottom: 1px solid var(--accent); text-decoration: none; }
+
+@media (max-width: 720px) {
+  .esg-case { padding: 3rem 0 2.5rem; }
+  .esg-case h1 { font-size: 2.3rem; }
+  .esg-meta { grid-template-columns: 1fr; gap: 1.25rem; }
+  .esg-findings > li { grid-template-columns: 40px 1fr; gap: .75rem; }
+  .esg-chart { padding: .5rem .25rem .25rem; }
+  .esg-embed { aspect-ratio: auto; height: 70vh; min-height: 420px; }
+}
+
+@media print {
+  .esg-case { padding: 1rem 0; max-width: none; }
+  .esg-case h1 { font-size: 2.1rem; }
+  .esg-actions, .esg-embed, .esg-foot { display: none; }
+  .esg-meta { grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: .9rem 0; margin-bottom: 1.5rem; }
+  .esg-block { margin-bottom: 1.6rem; }
+  .esg-chart { border: 1px solid #ccc; background: white; }
+  .esg-hero, .esg-subchart, .esg-findings > li, .esg-shot { break-inside: avoid; }
+  .esg-placeholder { display: none; }
+  .esg-shot img[hidden] + .esg-placeholder + figcaption { display: none; }
+}

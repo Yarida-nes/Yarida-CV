@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Analytics case studies by Yarida Kaewthong: ESG and financial dashboards in Tableau, credit risk modelling and Australian housing price regression in RStudio."
+      content="All analytics case studies by Yarida Kaewthong: an ESG and financial Tableau story across eight Asia-Pacific markets, credit risk exploration and Australian housing price regression in R, and the WeatherWise Python app."
     />
-    <title>Case studies | Yarida Kaewthong</title>
+    <title>All projects | Yarida Kaewthong</title>
     <meta name="author" content="Yarida Kaewthong" />
     <meta name="theme-color" content="#10233f" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://yarida-cv.vercel.app/projects.html" />
 
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Yarida Kaewthong" />
     <meta property="og:url" content="https://yarida-cv.vercel.app/projects.html" />
-    <meta property="og:title" content="Case studies | Yarida Kaewthong" />
+    <meta property="og:title" content="All projects | Yarida Kaewthong" />
     <meta
       property="og:description"
-      content="ESG and financial dashboards in Tableau, credit risk modelling and Australian housing price regression in RStudio."
+      content="Four data analytics case studies in Tableau, R and Python, each written up with the question, the method and what the numbers showed."
     />
     <meta property="og:image" content="https://github.com/Yarida-nes.png?size=460" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="All projects | Yarida Kaewthong" />
+    <meta name="twitter:description" content="Four data analytics case studies in Tableau, R and Python." />
+    <meta name="twitter:image" content="https://github.com/Yarida-nes.png?size=460" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,8 +43,10 @@
         <nav aria-label="Primary navigation">
           <a href="index.html#experience">Experience</a>
           <a href="index.html#projects">Projects</a>
+          <a href="index.html#approach">Approach</a>
           <a href="index.html#education">Education</a>
           <a href="index.html#contact">Contact</a>
+          <a href="projects.html" class="is-active" aria-current="page">All projects</a>
         </nav>
         <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
           GitHub <span aria-hidden="true">↗</span>
@@ -49,110 +55,66 @@
 
       <main id="main">
         <section class="case-intro">
-          <p class="eyebrow">Case studies</p>
-          <h1>How the analysis was actually done.</h1>
+          <p class="eyebrow">All projects</p>
+          <h1>Four case studies, written up the way the work was done.</h1>
           <p class="lede">
-            Three university analytics projects, written up with the question, the method, and what the numbers showed.
+            Each page covers the question, the data, the method and what the numbers showed. They are university projects from my Master of Commerce at Curtin, listed newest first.
           </p>
         </section>
 
-        <article class="case" id="esg">
-          <div class="case-side">
-            <p class="eyebrow">01</p>
-            <h2>ESG and financial analytics, Asia-Pacific</h2>
-            <ul class="case-meta">
-              <li>Tableau</li>
-              <li>ACCT5034, Curtin</li>
-              <li>2026</li>
-            </ul>
-          </div>
+        <section class="section project-index" aria-labelledby="index-title">
+          <div class="section-label"><span>01</span><h2 id="index-title">Case studies</h2></div>
+          <ol class="project-list">
+            <li>
+              <a class="project-row" href="esg.html">
+                <span class="project-row-meta">2026 · Finance · Tableau</span>
+                <span class="project-row-main">
+                  <span class="project-row-title">ESG and financial analytics, Asia-Pacific</span>
+                  <span class="project-row-desc">A Tableau Story of three linked dashboards comparing ESG, governance and financial performance across eight Asia-Pacific markets, with a written analyst report. ACCT5034.</span>
+                </span>
+                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="project-row" href="housing.html">
+                <span class="project-row-meta">2026 · Economics · R</span>
+                <span class="project-row-main">
+                  <span class="project-row-title">Australian housing price regression</span>
+                  <span class="project-row-desc">Competing regression models of housing price growth built from macroeconomic, seasonal and COVID-19 variables, compared on adjusted R², RMSE and MAE in RStudio. ECOM5001.</span>
+                </span>
+                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="project-row" href="credit-risk.html">
+                <span class="project-row-meta">2025 · Finance · R</span>
+                <span class="project-row-main">
+                  <span class="project-row-title">Credit risk: what the loan data shows</span>
+                  <span class="project-row-desc">Cleaning, exploration and an income regression on 28,578 loan records in RStudio and R Markdown, with a one-in-five default rate. ECOM5005.</span>
+                </span>
+                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="project-row" href="weatherwise.html">
+                <span class="project-row-meta">2025 · Weather · Python</span>
+                <span class="project-row-main">
+                  <span class="project-row-title">WeatherWise</span>
+                  <span class="project-row-desc">A Python app in a Jupyter notebook that pulls weather data and turns it into readable charts. Code on GitHub. ISYS5002.</span>
+                </span>
+                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+              </a>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" aria-labelledby="more-title">
+          <div class="section-label"><span>02</span><h2 id="more-title">Everything else</h2></div>
           <div class="case-body">
-            <p>
-              Do companies that score well on environmental, social and governance measures also perform better financially? I built a Tableau Story of three linked dashboards to test that across nine Asia-Pacific countries.
-            </p>
-
-            <h3>What I built</h3>
-            <ul>
-              <li>Three interactive dashboards in a single Tableau Story, moving from country-level comparison down to individual firms</li>
-              <li>Calculated fields, parameters and filters, so a reader can change country, sector or year without leaving the view</li>
-              <li>Dashboard actions linking the views, so selecting a country filters the charts below it</li>
-              <li>Forecasting applied to the financial performance measures</li>
-            </ul>
-
-            <h3>What I analysed</h3>
-            <ul>
-              <li>ESG score and ESG controversies against financial performance</li>
-              <li>Return on assets, Tobin&rsquo;s Q and market-to-book ratio</li>
-              <li>Market capitalisation, as a control for company size</li>
-              <li>Governance structure: CEO duality and board diversity</li>
-            </ul>
-
-            <h3>Outcome</h3>
-            <p>
-              I wrote the findings up as a business analyst report with recommendations for firms: what the relationships in the data suggest about governance structure and disclosure, and where the evidence was too thin to support a claim.
-            </p>
+            <p>Coursework, experiments and works in progress live on my GitHub profile. The WeatherWise repository is the most complete.</p>
+            <a class="back-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">View GitHub profile <span aria-hidden="true">&#8599;</span></a>
           </div>
-        </article>
-
-        <article class="case" id="credit-risk">
-          <div class="case-side">
-            <p class="eyebrow">02</p>
-            <h2>Credit risk analysis</h2>
-            <ul class="case-meta">
-              <li>RStudio, R Markdown</li>
-              <li>ECOM5005, Curtin</li>
-              <li>2025</li>
-            </ul>
-          </div>
-          <div class="case-body">
-            <p>
-              Given loan and borrower records, can we predict which loans will default? I built and evaluated a logistic regression classifier in RStudio.
-            </p>
-
-            <h3>Method</h3>
-            <ul>
-              <li>Cleaned the loan and borrower data and handled missing values</li>
-              <li>Explored relationships between the financial variables visually before modelling</li>
-              <li>Fitted a logistic regression model to predict loan default</li>
-              <li>Documented the analysis in R Markdown, so it reruns end to end</li>
-            </ul>
-
-            <h3>Evaluation</h3>
-            <p>
-              I judged the model on accuracy, the ROC curve and AUC rather than accuracy alone. Default data is imbalanced, so a model can look accurate while missing most of the defaults that actually matter.
-            </p>
-          </div>
-        </article>
-
-        <article class="case" id="housing">
-          <div class="case-side">
-            <p class="eyebrow">03</p>
-            <h2>Australian housing prices</h2>
-            <ul class="case-meta">
-              <li>RStudio, R Markdown</li>
-              <li>ECOM5001, Curtin</li>
-              <li>2026</li>
-            </ul>
-          </div>
-          <div class="case-body">
-            <p>
-              What drives housing price growth across Australian cities, and how much of it can a regression model actually explain? I built four competing models and compared them.
-            </p>
-
-            <h3>Method</h3>
-            <ul>
-              <li>Analysed housing price growth across Australian cities in RStudio and R Markdown</li>
-              <li>Built four regression models using macroeconomic, seasonal and COVID-19 variables</li>
-              <li>Compared them on R-squared, adjusted R-squared, RMSE and MAE. Adjusted R-squared matters here, because adding variables inflates plain R-squared</li>
-              <li>Plotted actual against predicted values to see where each model broke down</li>
-            </ul>
-
-            <h3>Outcome</h3>
-            <p>
-              The actual-versus-predicted graphs did the interpretive work. They showed which periods the models tracked well and which they could not explain, which tells a reader more than a single fit statistic.
-            </p>
-          </div>
-        </article>
+        </section>
 
         <a class="back-link" href="index.html#projects">
           <span aria-hidden="true">&larr;</span> Back to CV

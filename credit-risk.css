@@ -1,0 +1,131 @@
+/* ── Credit risk case-study page (credit-risk.html) ───────────────────
+   Loaded after styles.css. Everything here is namespaced cs- so it
+   cannot collide with the two-column .case layout on projects.html. */
+
+.case-study { max-width: 960px; padding: 5rem 0 4rem; }
+.case-study h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.02; max-width: 860px; }
+.case-study .lede { max-width: 680px; }
+.case-study code {
+  font-family: "DM Mono", monospace;
+  font-size: .86em;
+  padding: .05em .3em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.cs-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; margin: 2.2rem 0 3rem; }
+.cs-footer-actions { margin: 3.5rem 0 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+
+/* At-a-glance metrics: reuse .metrics, just a touch more room for the numbers */
+.cs-metrics { margin-bottom: 3rem; }
+.cs-metrics .metric-number { font-size: 1.35rem; white-space: nowrap; }
+.cs-metrics div { align-items: flex-start; flex-direction: column; gap: .5rem; }
+.cs-metrics div span:last-child { color: var(--muted); }
+
+/* Hero figure and inline figures */
+.cs-shot, .cs-figure { margin: 0 0 2.5rem; }
+.cs-shot img, .cs-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.cs-shot figcaption, .cs-figure figcaption {
+  margin-top: .75rem;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: .72rem;
+  line-height: 1.5;
+}
+.cs-figure { margin: 1.4rem 0 .5rem; max-width: 640px; }
+
+/* Role / tools / context */
+.cs-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0 0 3.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.cs-meta div { margin: 0; }
+.cs-meta dt {
+  margin-bottom: .45rem;
+  color: var(--accent);
+  font-family: "DM Mono", monospace;
+  font-size: .72rem;
+  text-transform: uppercase;
+}
+.cs-meta dd { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+
+/* Narrative blocks */
+.cs-block { max-width: 760px; margin-bottom: 3.5rem; }
+.cs-block h2 {
+  margin: 0 0 1.1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--ink);
+  font-size: 1.35rem;
+}
+.cs-block p { color: var(--muted); line-height: 1.65; }
+.cs-block p strong, .cs-block li strong { color: var(--ink); font-weight: 600; }
+.cs-block > p:first-of-type { color: var(--ink); font-size: 1.08rem; }
+.cs-block ul { margin: 0 0 1.25rem; padding-left: 1.15rem; color: var(--muted); line-height: 1.65; }
+.cs-block li { margin-bottom: .5rem; }
+
+/* Column-name chips */
+.cs-columns { display: flex; flex-wrap: wrap; gap: .45rem; padding: 0 !important; margin: 0 0 1.4rem !important; list-style: none; }
+.cs-columns li { margin: 0; }
+.cs-columns code { white-space: nowrap; }
+
+/* Numbered findings */
+.cs-findings { padding: 0 !important; list-style: none; }
+.cs-findings li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--line);
+}
+.cs-findings li:last-child { border-bottom: 1px solid var(--line); }
+.cs-findings li > div > p:last-child { margin-bottom: 0; }
+.cs-finding-number {
+  color: var(--accent);
+  font-family: "DM Mono", monospace;
+  font-size: .8rem;
+  padding-top: .35rem;
+}
+
+/* Limitations */
+.cs-limits li { margin-bottom: .75rem; }
+
+@media (max-width: 720px) {
+  .case-study { padding: 3rem 0 2.5rem; }
+  .cs-metrics { margin-bottom: 2.2rem; }
+  .cs-metrics .metric-number { font-size: 1.2rem; }
+  .cs-meta { grid-template-columns: 1fr; gap: 1.1rem; margin-bottom: 2.5rem; }
+  .cs-block { margin-bottom: 2.6rem; }
+  .cs-findings li { grid-template-columns: 36px 1fr; gap: .75rem; }
+  .cs-actions { gap: 1rem; }
+  .case-study code { white-space: normal; }
+}
+
+@media print {
+  .case-study { max-width: none; padding: 0; }
+  .case-study h1 { font-size: 2rem; margin-bottom: .8rem; }
+  .case-study .lede { font-size: .95rem; }
+  .cs-actions, .cs-footer-actions { display: none; }
+  .cs-metrics { margin-bottom: 1.2rem; }
+  .cs-metrics div { padding: .8rem 0; }
+  .cs-shot, .cs-figure { max-width: 480px; margin-bottom: 1rem; break-inside: avoid; }
+  .cs-shot img, .cs-figure img { border: 0; }
+  .cs-meta { margin-bottom: 1.4rem; padding: .8rem 0; }
+  .cs-block { max-width: none; margin-bottom: 1.4rem; }
+  .cs-block p, .cs-block ul { font-size: .9rem; }
+  .cs-findings li { padding: .8rem 0; break-inside: avoid; }
+  .case-study code { border: 0; background: none; padding: 0; }
+}

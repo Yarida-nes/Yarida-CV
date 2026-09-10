@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Average ESG score by Asia-Pacific market, 2010 to 2024</title>
+  <desc id="d">Mini line chart: South Korea rises to 58.6, China from 20.7 to 44.4, Singapore from 26.5 to 51.7.</desc>
+  <rect width="640" height="400" fill="#10233f"/>
+  <g font-family="DM Mono, Menlo, Consolas, monospace" font-size="12" fill="#8ba0ba">
+    <text x="40" y="34" fill="#0e7c86" letter-spacing="1">01 / TABLEAU</text>
+    <text x="600" y="34" text-anchor="end">2010–2024 · 8 MARKETS</text>
+    <text x="40" y="376">AVG ESG SCORE BY MARKET</text>
+    <text x="600" y="376" text-anchor="end">16,752 FIRM-YEARS</text>
+  </g>
+  <g stroke="#243a5c" stroke-width="1">
+    <line x1="40" y1="60" x2="600" y2="60"/>
+    <line x1="40" y1="130" x2="600" y2="130"/>
+    <line x1="40" y1="200" x2="600" y2="200"/>
+    <line x1="40" y1="270" x2="600" y2="270"/>
+    <line x1="40" y1="340" x2="600" y2="340" stroke="#3b527a"/>
+  </g>
+  <g fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="#3f5678">
+    <polyline points="40,179 80,171 120,166 160,181 200,184 240,176 280,173 320,159 360,154 400,141 440,138 480,123 520,117 560,117 600,109"/>
+    <polyline points="40,185 80,188 120,188 160,207 200,199 240,246 280,237 320,215 360,197 400,188 440,186 480,173 520,155 560,164 600,157"/>
+    <polyline points="40,256 80,239 120,213 160,216 200,204 240,176 280,150 320,132 360,115 400,102 440,118 480,185 520,205 560,199 600,190"/>
+    <polyline points="40,146 80,154 120,152 160,138 200,138 240,132 280,125 320,115 360,111 400,108 440,100 480,125 520,167 560,146 600,103"/>
+    <polyline points="40,216 80,222 120,223 160,234 200,226 240,216 280,214 320,210 360,207 400,194 440,194 480,186 520,174 560,177 600,180" stroke="#7d8ea6" stroke-width="2.4"/>
+    <polyline points="40,268 80,252 120,247 160,234 200,217 240,198 280,201 320,168 360,144 400,150 440,137 480,123 520,113 560,110 600,112" stroke="#7fb8bf" stroke-width="2.6"/>
+    <polyline points="40,155 80,171 120,150 160,153 200,161 240,170 280,166 320,171 360,162 400,156 440,130 480,104 520,92 560,78 600,69" stroke="#ffffff" stroke-width="2.8"/>
+    <polyline points="40,305 80,312 120,308 160,312 200,302 240,292 280,267 320,270 360,259 400,254 440,237 480,216 520,196 560,176 600,157" stroke="#0e7c86" stroke-width="3.4"/>
+  </g>
+  <g font-family="DM Mono, Menlo, Consolas, monospace" font-size="12">
+    <circle cx="600" cy="69" r="3.5" fill="#ffffff"/><text x="590" y="62" text-anchor="end" fill="#ffffff">South Korea 58.6</text>
+    <circle cx="600" cy="157" r="3.5" fill="#0e7c86"/><text x="590" y="150" text-anchor="end" fill="#2fb3bf">China 44.4</text>
+    <circle cx="600" cy="112" r="3" fill="#7fb8bf"/><text x="590" y="118" text-anchor="end" fill="#7fb8bf">Singapore 51.7</text>
+    <circle cx="600" cy="180" r="3" fill="#7d8ea6"/><text x="590" y="192" text-anchor="end" fill="#8ba0ba">Australia 40.7</text>
+    <text x="40" y="326" fill="#0e7c86" font-size="11">CHINA 20.7</text>
+  </g>
+</svg>

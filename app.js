@@ -1,4 +1,5 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+var yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* Save as PDF — uses the browser's own print-to-PDF dialogue, so the
    downloaded copy always matches what is on the page. */
@@ -6,6 +7,35 @@ document.querySelectorAll("[data-print]").forEach(function (button) {
   button.addEventListener("click", function () {
     window.print();
   });
+});
+
+/* Closed <details> (the Q&A) print as just their question. Open them all
+   while printing, then put them back the way the reader had them. */
+var detailsState = [];
+window.addEventListener("beforeprint", function () {
+  detailsState = Array.prototype.slice
+    .call(document.querySelectorAll("details"))
+    .map(function (d) {
+      var wasOpen = d.open;
+      d.open = true;
+      return { el: d, open: wasOpen };
+    });
+});
+window.addEventListener("afterprint", function () {
+  detailsState.forEach(function (s) {
+    s.el.open = s.open;
+  });
+  detailsState = [];
+});
+
+/* Project-card images are optional. If one is missing, drop the broken
+   <img> so the CSS fallback (navy panel with a text mark) shows instead. */
+document.querySelectorAll(".project-shot img").forEach(function (img) {
+  function markMissing() {
+    img.parentNode.classList.add("is-missing");
+  }
+  img.addEventListener("error", markMissing);
+  if (img.complete && img.naturalWidth === 0) markMissing();
 });
 
 /* Highlight whichever section is currently on screen in the top nav. */

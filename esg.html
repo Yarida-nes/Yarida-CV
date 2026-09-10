@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Do Asia-Pacific companies with higher ESG scores earn better returns? A three-dashboard Tableau Story across eight markets, 2010–2024, by Yarida Kaewthong."
+    />
+    <title>ESG and financial performance, Asia-Pacific | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#10233f" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/esg.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/esg.html" />
+    <meta property="og:title" content="ESG and financial performance, Asia-Pacific | Yarida Kaewthong" />
+    <meta
+      property="og:description"
+      content="Do Asia-Pacific companies with higher ESG scores earn better returns? A three-dashboard Tableau Story across eight markets, 2010–2024."
+    />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/esg-card.svg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ESG and financial performance, Asia-Pacific | Yarida Kaewthong" />
+    <meta
+      name="twitter:description"
+      content="Do Asia-Pacific companies with higher ESG scores earn better returns? A three-dashboard Tableau Story across eight markets, 2010–2024."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="esg.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">YK<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="projects.html">&larr; All projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">&#8599;</span>
+        </a>
+      </header>
+
+      <main id="main">
+        <article class="esg-case">
+          <p class="eyebrow">01 / Tableau &middot; ACCT5034, Curtin University &middot; 2026</p>
+          <h1>Do companies with better ESG scores actually earn more?</h1>
+          <p class="lede">
+            A three-dashboard Tableau Story and a business analyst report, built on 16,752 firm-year records from eight Asia-Pacific markets between 2010 and 2024, to test whether ESG performance goes together with profitability and valuation.
+          </p>
+          <div class="esg-actions">
+            <a class="button primary" href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">Open the Tableau Story <span aria-hidden="true">&#8599;</span></a>
+            <a class="button text-button" href="projects.html">Back to all projects <span aria-hidden="true">&rarr;</span></a>
+          </div>
+
+          <div class="metrics esg-metrics" aria-label="Project at a glance">
+            <div><span class="metric-number">16,752</span><span>firm-years, 2,922 firms<br />8 markets, 2010&ndash;2024</span></div>
+            <div><span class="metric-number">R&sup2; 0.02</span><span>ROA against ESG score<br />weak positive, n = 16,658</span></div>
+            <div><span class="metric-number">20.7 &rarr; 44.4</span><span>China&rsquo;s average ESG score<br />2010 to 2024</span></div>
+          </div>
+
+          <figure class="esg-hero">
+            <svg viewBox="0 0 860 380" role="img" aria-labelledby="hero-title hero-desc" class="esg-chart">
+              <title id="hero-title">Average ESG score by market, 2010 to 2024</title>
+              <desc id="hero-desc">Line chart of average ESG score for eight Asia-Pacific markets. South Korea rises from 44.8 to 58.6, China from 20.7 to 44.4, Singapore from 26.5 to 51.7. Malaysia and India rise then fall back after 2020. Australia moves from 34.9 to 40.7.</desc>
+              <g class="grid" font-family="DM Mono, monospace" font-size="11">
+                <line x1="60" y1="30" x2="690" y2="30" /><text x="50" y="34" text-anchor="end">60</text>
+                <line x1="60" y1="96.7" x2="690" y2="96.7" /><text x="50" y="100.7" text-anchor="end">50</text>
+                <line x1="60" y1="163.3" x2="690" y2="163.3" /><text x="50" y="167.3" text-anchor="end">40</text>
+                <line x1="60" y1="230" x2="690" y2="230" /><text x="50" y="234" text-anchor="end">30</text>
+                <line x1="60" y1="296.7" x2="690" y2="296.7" /><text x="50" y="300.7" text-anchor="end">20</text>
+                <line x1="60" y1="330" x2="690" y2="330" class="axis" />
+                <text x="60" y="352" text-anchor="middle">2010</text>
+                <text x="285" y="352" text-anchor="middle">2015</text>
+                <text x="510" y="352" text-anchor="middle">2020</text>
+                <text x="690" y="352" text-anchor="middle">2024</text>
+                <text x="18" y="180" text-anchor="middle" transform="rotate(-90 18 180)">Average ESG score (0&ndash;100)</text>
+              </g>
+              <g class="lines" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+                <polyline class="l-muted" points="60.0,157.3 105.0,149.3 150.0,144.0 195.0,160.0 240.0,162.7 285.0,154.7 330.0,150.7 375.0,136.0 420.0,130.7 465.0,116.7 510.0,113.3 555.0,98.0 600.0,91.3 645.0,91.3 690.0,82.0" />
+                <polyline class="l-muted" points="60.0,164.0 105.0,167.3 150.0,167.3 195.0,188.0 240.0,178.7 285.0,229.3 330.0,220.0 375.0,196.0 420.0,176.7 465.0,167.3 510.0,165.3 555.0,151.3 600.0,131.3 645.0,141.3 690.0,134.0" />
+                <polyline class="l-muted" points="60.0,240.0 105.0,221.3 150.0,194.0 195.0,196.7 240.0,184.7 285.0,154.7 330.0,126.7 375.0,106.7 420.0,88.7 465.0,74.7 510.0,92.7 555.0,164.0 600.0,185.3 645.0,178.7 690.0,169.3" />
+                <polyline class="l-muted" points="60.0,122.0 105.0,130.7 150.0,128.7 195.0,113.3 240.0,113.3 285.0,107.3 330.0,99.3 375.0,89.3 420.0,84.7 465.0,81.3 510.0,73.3 555.0,100.0 600.0,144.7 645.0,122.7 690.0,76.0" />
+                <polyline class="l-au" points="60.0,197.3 105.0,204.0 150.0,204.7 195.0,216.7 240.0,208.0 285.0,197.3 330.0,195.3 375.0,190.7 420.0,188.0 465.0,173.3 510.0,173.3 555.0,164.7 600.0,152.7 645.0,155.3 690.0,158.7" />
+                <polyline class="l-sg" points="60.0,253.3 105.0,236.0 150.0,230.7 195.0,216.7 240.0,198.0 285.0,177.3 330.0,181.3 375.0,145.3 420.0,120.0 465.0,126.0 510.0,112.7 555.0,97.3 600.0,86.7 645.0,84.0 690.0,85.3" />
+                <polyline class="l-kr" points="60.0,131.3 105.0,148.7 150.0,126.7 195.0,130.0 240.0,138.7 285.0,147.3 330.0,144.0 375.0,148.7 420.0,139.3 465.0,132.7 510.0,105.3 555.0,77.3 600.0,64.7 645.0,49.3 690.0,39.3" />
+                <polyline class="l-cn" points="60.0,292.0 105.0,300.0 150.0,295.3 195.0,300.0 240.0,289.3 285.0,278.7 330.0,251.3 375.0,254.7 420.0,243.3 465.0,237.3 510.0,219.3 555.0,197.3 600.0,176.0 645.0,154.7 690.0,134.0" />
+              </g>
+              <g class="labels" font-family="DM Mono, monospace" font-size="11.5">
+                <line x1="690" y1="39.3" x2="704" y2="40" /><text x="708" y="44" class="t-kr">South Korea 58.6</text>
+                <line x1="690" y1="76" x2="704" y2="62" /><text x="708" y="66" class="t-muted">India 53.1</text>
+                <line x1="690" y1="82" x2="704" y2="82" /><text x="708" y="86" class="t-muted">Indonesia 52.2</text>
+                <line x1="690" y1="85.3" x2="704" y2="102" /><text x="708" y="106" class="t-sg">Singapore 51.7</text>
+                <line x1="690" y1="134" x2="704" y2="128" /><text x="708" y="132" class="t-cn">China 44.4</text>
+                <line x1="690" y1="134" x2="704" y2="148" /><text x="708" y="152" class="t-muted">New Zealand 44.4</text>
+                <line x1="690" y1="158.7" x2="704" y2="168" /><text x="708" y="172" class="t-au">Australia 40.7</text>
+                <line x1="690" y1="169.3" x2="704" y2="188" /><text x="708" y="192" class="t-muted">Malaysia 39.1</text>
+              </g>
+            </svg>
+            <figcaption>
+              Average ESG score by market, 2010&ndash;2024, recomputed from the same ESG-filtered extract the dashboards use (Dashboard 1, line chart and heatmap). Bangladesh is missing because no firm-years survive the non-null ESG filter.
+            </figcaption>
+          </figure>
+
+          <dl class="esg-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Sole author &mdash; data filtering, calculated fields, three dashboards, Tableau Story, 1,000-word analyst report</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>Tableau Desktop &middot; Tableau Public &middot; calculated fields &middot; parameters &middot; dashboard actions &middot; exponential-smoothing forecast</dd>
+            </div>
+            <div>
+              <dt>Data</dt>
+              <dd>LSEG Workspace (ESG, governance) and Compustat Global (financials), supplied by the unit. 237,506 firm-years raw; 16,752 after the ESG filter.</dd>
+            </div>
+          </dl>
+
+          <section class="esg-block">
+            <h2>The question</h2>
+            <p>
+              ESG disclosure is becoming mandatory across the region &mdash; AASB S1/S2 in Australia, XRB standards in New Zealand, SGX rules in Singapore, SEBI&rsquo;s BRSR Core in India, HKEX and CSRC guidance in China, and the KSSB in Korea &mdash; all broadly converging on the ISSB standards. So the practical question for an investor or a board is simple: <strong>do the companies that score well on ESG also do better financially, and does that hold across very different markets?</strong>
+            </p>
+            <p>The brief asked for a Tableau Story of exactly three dashboards that build on each other. I framed them as three steps:</p>
+            <ul>
+              <li><strong>Market landscape</strong> &mdash; where is the market value, how do ESG scores differ by country, and what is each market&rsquo;s industry mix?</li>
+              <li><strong>Governance drivers</strong> &mdash; do board gender diversity, CEO duality, industry and controversies explain the variation in ESG scores?</li>
+              <li><strong>Financial outcomes</strong> &mdash; is ESG associated with return on assets, Tobin&rsquo;s Q and market-to-book, and what does a forecast to 2028 look like?</li>
+            </ul>
+          </section>
+
+          <section class="esg-block">
+            <h2>The data</h2>
+            <p>
+              A panel of Asia-Pacific listed companies covering nine economies from 2001 to 2024: 237,506 firm-year observations across 16,322 firms, with firm-level financials, ESG scores and pillar sub-scores, an ESG controversies score, and governance variables such as board size, female board share and CEO duality.
+            </p>
+            <p>
+              ESG scores only exist for a subset of larger listed firms, so the first thing I did &mdash; and the first thing the markers checked &mdash; was a global filter to firm-years with a non-null ESG score, restricted to 2010&ndash;2024. That leaves <strong>16,752 firm-years from 2,922 firms</strong>. Two consequences matter for everything that follows:
+            </p>
+            <ul>
+              <li><strong>Bangladesh drops out entirely.</strong> It has 3,134 firm-years in the raw panel but none with an ESG score, so every &ldquo;nine countries&rdquo; in the brief is eight in practice.</li>
+              <li><strong>Coverage grows sharply over time.</strong> There are 342 ESG-scored firm-years in 2010 and 2,842 in 2023. China alone goes from 25 scored firms in 2010 to 961 in 2024. Any &ldquo;trend&rdquo; is partly a change in who is being scored.</li>
+            </ul>
+            <p>
+              The calculated fields were defined by the brief and I built them as specified: ROA as <code>SUM(ebit) / SUM(at)</code>; Tobin&rsquo;s Q as <code>(SUM(MCAP)/1,000,000 + SUM(lt)) / SUM(at)</code>; MTB as <code>(SUM(MCAP)/1,000,000) / SUM(ceq)</code>; a Market Group field that labels Australia, New Zealand, Singapore and South Korea as &ldquo;Developed APAC&rdquo;; a Has Controversy flag for <code>CONT &lt; 100</code>; and an Above Threshold field driven by an <strong>ESG High Threshold</strong> parameter (50 to 80 in steps of 5, default 70). The MCAP division is the trap in this dataset: market cap is in dollars while the balance sheet is in millions, and skipping it puts Tobin&rsquo;s Q in the trillions.
+            </p>
+          </section>
+
+          <section class="esg-block">
+            <h2>What the data showed</h2>
+            <ol class="esg-findings">
+              <li>
+                <span class="finding-number">01</span>
+                <div>
+                  <p><strong>ESG scores rose almost everywhere, but from very different starting points.</strong> Across the filtered sample the average ESG score moved from 36.5 in 2010 to 43.7 in 2024. South Korea led throughout and finished at 58.6; China started lowest at 20.7 and more than doubled to 44.4; Singapore went from 26.5 to 51.7. Australia, my home market for this course, moved only from 34.9 to 40.7. The developed-versus-emerging split the brief expected is weaker than I assumed: Developed APAC averages 41.1 against 39.9 for Emerging APAC over the whole period.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">02</span>
+                <div>
+                  <p><strong>Market value and ESG performance are different things.</strong> Market capitalisation is concentrated in China (about 44% of the summed total) and India, and the three largest industries by market cap &mdash; Metals &amp; Mining (38.6), Beverages (33.0) and Oil, Gas &amp; Consumable Fuels (41.8) &mdash; sit close to or below the sample average ESG score of 40.4. The Governance pillar is the strongest pillar in 21 of the 22 industry groups (sample average 47.9, against 33.9 for Environmental and 39.2 for Social; REITs are the exception, where Social leads), and Environmental is weakest in Media &amp; Entertainment (17.1) and Software &amp; Services (23.9), not just in the heavy-emitting sectors.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">03</span>
+                <div>
+                  <p><strong>Governance structure explains less than I expected.</strong> Firms where the CEO also chairs the board have almost the same ESG scores as those that separate the roles: a median of 38.1 versus 38.4 (3,332 and 13,420 firm-years). Female board share is positively related to ESG at the firm level, as the report says, but the relationship is weak &mdash; R&sup2; of roughly 0.01 across 2,922 firms. Controversies are where the real differences are: 26.8% of Telecommunication Services firm-years and 17.0% of Automobiles &amp; Components had an active controversy, against 0.6% for REITs, and 1,410 controversy firm-years overall.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">04</span>
+                <div>
+                  <p><strong>Higher ESG goes with slightly higher ROA, but the effect is small and not uniform.</strong> With ROA filtered to &minus;1 to +1 to remove extreme outliers, the firm-year trend line is positive but explains almost nothing: R&sup2; of 0.02 (r = 0.14, n = 16,658). At the default threshold of 70, &ldquo;High ESG&rdquo; firms have a higher aggregate ROA than &ldquo;Low&rdquo; firms in seven of the eight markets &mdash; Australia 11.5% against 6.5%, Indonesia 16.3% against 10.4% &mdash; but Singapore runs the other way (5.7% against 14.4%), and only 1,451 of the 16,752 firm-years clear the threshold at all.</p>
+                  <figure class="esg-subchart">
+                    <svg viewBox="0 0 720 340" role="img" aria-labelledby="bar-title" class="esg-chart">
+                      <title id="bar-title">Aggregate ROA for firms above and below an ESG score of 70, by market</title>
+                      <g font-family="DM Mono, monospace" font-size="11">
+                        <text x="150" y="12" class="t-cn" font-weight="500">&#9632; ESG &ge; 70</text>
+                        <text x="245" y="12" class="t-muted">&#9632; ESG &lt; 70</text>
+                        <g class="grid">
+                          <line x1="150" y1="20" x2="150" y2="322" class="axis" />
+                          <line x1="288.9" y1="20" x2="288.9" y2="322" /><text x="288.9" y="336" text-anchor="middle">5%</text>
+                          <line x1="427.8" y1="20" x2="427.8" y2="322" /><text x="427.8" y="336" text-anchor="middle">10%</text>
+                          <line x1="566.7" y1="20" x2="566.7" y2="322" /><text x="566.7" y="336" text-anchor="middle">15%</text>
+                        </g>
+                        <g class="row"><text x="140" y="42" text-anchor="end">Indonesia</text><rect x="150" y="26" width="452.8" height="12" class="b-hi" /><rect x="150" y="39" width="288.9" height="12" class="b-lo" /><text x="608" y="36" class="t-cn">16.3%</text><text x="444" y="49" class="t-muted">10.4%</text></g>
+                        <g class="row"><text x="140" y="80" text-anchor="end">Australia</text><rect x="150" y="64" width="319.4" height="12" class="b-hi" /><rect x="150" y="77" width="180.6" height="12" class="b-lo" /><text x="475" y="74" class="t-cn">11.5%</text><text x="336" y="87" class="t-muted">6.5%</text></g>
+                        <g class="row"><text x="140" y="118" text-anchor="end">New Zealand</text><rect x="150" y="102" width="252.8" height="12" class="b-hi" /><rect x="150" y="115" width="166.7" height="12" class="b-lo" /><text x="408" y="112" class="t-cn">9.1%</text><text x="322" y="125" class="t-muted">6.0%</text></g>
+                        <g class="row"><text x="140" y="156" text-anchor="end">India</text><rect x="150" y="140" width="233.3" height="12" class="b-hi" /><rect x="150" y="153" width="222.2" height="12" class="b-lo" /><text x="389" y="150" class="t-cn">8.4%</text><text x="378" y="163" class="t-muted">8.0%</text></g>
+                        <g class="row"><text x="140" y="194" text-anchor="end">South Korea</text><rect x="150" y="178" width="169.4" height="12" class="b-hi" /><rect x="150" y="191" width="100" height="12" class="b-lo" /><text x="325" y="188" class="t-cn">6.1%</text><text x="256" y="201" class="t-muted">3.6%</text></g>
+                        <g class="row"><text x="140" y="232" text-anchor="end">Malaysia</text><rect x="150" y="216" width="169.4" height="12" class="b-hi" /><rect x="150" y="229" width="158.3" height="12" class="b-lo" /><text x="325" y="226" class="t-cn">6.1%</text><text x="314" y="239" class="t-muted">5.7%</text></g>
+                        <g class="row"><text x="140" y="270" text-anchor="end">China</text><rect x="150" y="254" width="152.8" height="12" class="b-hi" /><rect x="150" y="267" width="125" height="12" class="b-lo" /><text x="308" y="264" class="t-cn">5.5%</text><text x="281" y="277" class="t-muted">4.5%</text></g>
+                        <g class="row"><text x="140" y="308" text-anchor="end">Singapore</text><rect x="150" y="292" width="158.3" height="12" class="b-hi" /><rect x="150" y="305" width="400" height="12" class="b-lo" /><text x="314" y="302" class="t-cn">5.7%</text><text x="556" y="315" class="t-muted">14.4%</text></g>
+                      </g>
+                    </svg>
+                    <figcaption>Aggregate ROA (sum of EBIT over sum of total assets) for firm-years at or above an ESG score of 70 versus below, 2010&ndash;2024. This is the country-level High-versus-Low view from Dashboard 3 at its default threshold. New Zealand&rsquo;s &ldquo;High&rdquo; group is 28 firm-years and Singapore&rsquo;s is 61, so read those two rows loosely.</figcaption>
+                  </figure>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">05</span>
+                <div>
+                  <p><strong>The forecast says ESG keeps rising and valuation stays flat &mdash; with wide error bars.</strong> Tableau&rsquo;s forecast on the dual-axis chart extends average ESG score and average Tobin&rsquo;s Q to 2028 with 95% prediction bands. ESG continues its gradual upward trend; Tobin&rsquo;s Q stays around the 0.5 it has held for the whole period (0.55 in 2010, 0.51 in 2023). The bands are wide enough that the forecast is a direction, not a number, and I said so in the caption.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <section class="esg-block" id="explore">
+            <h2>Explore the dashboard</h2>
+            <p>
+              The Story is published on Tableau Public. It has a global country filter, highlight actions, and a map-to-dashboard action so that selecting a country on the Dashboard 1 map filters Dashboard 2. On Dashboard 3 the <strong>ESG High Threshold</strong> slider re-classifies every firm-year and redraws the last two charts, so you can check for yourself how much the &ldquo;High ESG firms do better&rdquo; result depends on where the line is drawn.
+            </p>
+
+            <div class="esg-embed">
+              <iframe
+                src="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:showVizHome=no&amp;:embed=true&amp;:language=en-US"
+                title="Asia-Pacific ESG and Financial Performance Story on Tableau Public"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <figure class="esg-shot">
+              <img
+                src="images/esg-dashboard.png"
+                alt="Screenshot of Dashboard 3: ROA against ESG score, the ESG and Tobin's Q forecast to 2028, and the High versus Low ESG comparison by country"
+                onerror="this.hidden = true; this.nextElementSibling.hidden = false;"
+              />
+              <div class="esg-placeholder" hidden>
+                <p class="eyebrow">Dashboard screenshot</p>
+                <p>Export from Tableau via <strong>Dashboard &rsaquo; Export Image</strong>, save it as <code>images/esg-dashboard.png</code>, and it will appear here automatically.</p>
+              </div>
+              <figcaption>Static view of the Story, for readers who cannot load the embed above.</figcaption>
+            </figure>
+
+            <p class="esg-foot">
+              If the embed does not load, <a href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">open it directly on Tableau Public</a>.
+            </p>
+          </section>
+
+          <section class="esg-block">
+            <h2>How it was built</h2>
+            <p>
+              <strong>One filter, applied everywhere.</strong> The non-null ESG filter and the 2010&ndash;2024 year range are attached to every worksheet through the data source, so no chart can accidentally include unscored firms. That was a hard requirement of the brief, and it is also what keeps a 237,506-row panel responsive on Tableau Public.
+            </p>
+            <p>
+              <strong>Fourteen worksheets, three dashboards, one Story.</strong> Dashboard 1 holds the KPI table, the ESG trend line by country, a filled map of total market cap in USD billions, the top ten industries by market cap coloured by ESG score, and a 100% stacked bar of each country&rsquo;s industry composition. Dashboard 2 holds the E/S/G pillar stack by industry group, the ESG-versus-female-board scatter with a trend line, the country-by-year heatmap, a box plot of ESG score by CEO duality, and the controversy count by industry group. Dashboard 3 holds the ROA-versus-ESG scatter, the dual-axis forecast, the High/Low bar comparison and the country-level High/Low view.
+            </p>
+            <p>
+              <strong>Parameters and actions instead of static views.</strong> The ESG High Threshold parameter drives one calculated field that two charts depend on, so the What-If scenario is a single slider. Highlight actions link the charts within each dashboard, and a filter action carries a country selection from the map on Dashboard 1 into Dashboard 2. Each Story point has a caption I wrote to state its insight in one or two sentences.
+            </p>
+            <p>
+              <strong>Forecast settings.</strong> Tableau&rsquo;s automatic exponential smoothing with seasonality detection, projected four years beyond the data to 2028, with 95% prediction bands shown and the last (partial) year excluded from the model fit.
+            </p>
+          </section>
+
+          <section class="esg-block">
+            <h2>Limitations I&rsquo;d state up front</h2>
+            <ul>
+              <li><strong>Correlation, not causation.</strong> Nothing here shows that improving an ESG score raises returns. Larger, more profitable firms are more likely to be scored at all, and more likely to have the resources to score well.</li>
+              <li><strong>The sample is who gets scored, not the market.</strong> ESG coverage is 7% of the raw panel and skews to large firms. Bangladesh is absent, New Zealand has 499 firm-years and only 28 above the threshold, and coverage jumps from 342 firm-years in 2010 to 2,842 in 2023 &mdash; so part of every time trend is a composition change, not a change within firms.</li>
+              <li><strong>2024 is incomplete.</strong> India has 16 firm-years in 2024 against 283 the year before, so the 2024 dip-and-recovery visible in some lines is a reporting-lag artefact. The forecast ignores the last year for this reason.</li>
+              <li><strong>Ratios depend on unit assumptions and are outlier-sensitive.</strong> The brief specifies the MCAP conversion; I followed it but did not independently verify the currency of every balance-sheet item. ROA is filtered to &minus;1 to +1 in the scatter and shown as a sum-over-sum aggregate elsewhere, and the two do not give identical numbers.</li>
+              <li><strong>&ldquo;High ESG&rdquo; is a choice.</strong> A firm scoring 72 is High at threshold 70 and Low at 75. Moving the slider between 50 and 80 changes both the group sizes and the direction of the result in some markets, which is why the parameter is on the dashboard rather than fixed.</li>
+              <li><strong>ESG ratings themselves are contested.</strong> LSEG scores are one provider&rsquo;s view; providers disagree, scores are backfilled, and the controversies score is on an inverse scale (100 = no controversy) that is easy to misread.</li>
+            </ul>
+          </section>
+
+          <div class="esg-actions esg-footer-actions">
+            <a class="button primary" href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">Open the Tableau Story <span aria-hidden="true">&#8599;</span></a>
+            <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> Back to all projects</a>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span>Designed for the web, ready to print.</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

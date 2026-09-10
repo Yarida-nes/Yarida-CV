@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Loan status after cleaning: 78.4% repaid, 21.6% defaulted</title>
+  <desc id="d">Two horizontal bars on a navy background. Non-default 22,395 loans (78.36%), default 6,183 loans (21.64%), out of 28,578 cleaned records.</desc>
+  <rect width="640" height="400" fill="#10233f"/>
+  <g font-family="'DM Mono', 'SFMono-Regular', Consolas, Menlo, monospace" fill="#8ba0ba" font-size="13" letter-spacing="0">
+    <text x="48" y="58">CREDIT RISK / RSTUDIO</text>
+    <text x="48" y="80">loan_status, n = 28,578 after cleaning</text>
+  </g>
+  <!-- axis baseline -->
+  <line x1="48" y1="118" x2="592" y2="118" stroke="#2b3f5e" stroke-width="1"/>
+  <!-- non-default bar: 78.36% of 544px track = 426px -->
+  <g>
+    <text x="48" y="150" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#f6f7f9">non-default</text>
+    <rect x="48" y="162" width="544" height="34" fill="#1b3050"/>
+    <rect x="48" y="162" width="426" height="34" fill="#aebdd0"/>
+    <text x="486" y="186" font-family="'DM Mono', Consolas, Menlo, monospace" font-size="15" fill="#f6f7f9">22,395</text>
+    <text x="592" y="150" text-anchor="end" font-family="'DM Mono', Consolas, Menlo, monospace" font-size="15" fill="#aebdd0">78.36%</text>
+  </g>
+  <!-- default bar: 21.64% of 544px = 118px -->
+  <g>
+    <text x="48" y="238" font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif" font-size="16" fill="#f6f7f9">default</text>
+    <rect x="48" y="250" width="544" height="34" fill="#1b3050"/>
+    <rect x="48" y="250" width="118" height="34" fill="#0e7c86"/>
+    <text x="178" y="274" font-family="'DM Mono', Consolas, Menlo, monospace" font-size="15" fill="#f6f7f9">6,183</text>
+    <text x="592" y="238" text-anchor="end" font-family="'DM Mono', Consolas, Menlo, monospace" font-size="15" fill="#0e7c86">21.64%</text>
+  </g>
+  <!-- footer -->
+  <line x1="48" y1="322" x2="592" y2="322" stroke="#2b3f5e" stroke-width="1"/>
+  <g font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif" fill="#aebdd0" font-size="14">
+    <text x="48" y="350">About one loan in five went bad.</text>
+    <text x="48" y="372">A model that says "no default" to everyone is already 78% accurate.</text>
+  </g>
+</svg>

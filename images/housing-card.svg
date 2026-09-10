@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Adjusted R-squared across five housing price growth regression models</title>
+  <desc id="d">Bars rise from 0.049 in Model 1 to 0.238 in Model 4, then dip to 0.235 in Model 5 after adding an election dummy.</desc>
+  <style>
+    .lbl { font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; fill: #5c6b81; }
+    .val { font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; fill: #10233f; font-weight: 500; }
+    .ttl { font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #10233f; }
+    .sub { font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; fill: #0e7c86; letter-spacing: .06em; }
+    .grid { stroke: #d9dfe7; stroke-width: 1; }
+    .bar { fill: #10233f; }
+    .bar.pick { fill: #0e7c86; }
+  </style>
+  <rect width="640" height="400" fill="#f6f7f9"/>
+  <text x="40" y="44" class="sub">ADJUSTED R-SQUARED, FIVE NESTED MODELS</text>
+  <text x="40" y="74" class="ttl">Four variable groups, and the fit tops out near 0.24.</text>
+
+  <!-- gridlines: chart area y 110..330, scale 0 .. 0.30 -->
+  <line x1="40" y1="330" x2="600" y2="330" class="grid"/>
+  <line x1="40" y1="256.7" x2="600" y2="256.7" class="grid"/>
+  <line x1="40" y1="183.3" x2="600" y2="183.3" class="grid"/>
+  <line x1="40" y1="110" x2="600" y2="110" class="grid"/>
+  <text x="600" y="326" class="lbl" text-anchor="end">0.00</text>
+  <text x="600" y="252.7" class="lbl" text-anchor="end">0.10</text>
+  <text x="600" y="179.3" class="lbl" text-anchor="end">0.20</text>
+  <text x="600" y="106" class="lbl" text-anchor="end">0.30</text>
+
+  <!-- bars: height = value / 0.30 * 220 -->
+  <rect x="70"  y="294.0" width="72" height="36.0"  class="bar"/>
+  <rect x="172" y="255.2" width="72" height="74.8"  class="bar"/>
+  <rect x="274" y="185.6" width="72" height="144.4" class="bar"/>
+  <rect x="376" y="155.5" width="72" height="174.5" class="bar pick"/>
+  <rect x="478" y="157.5" width="72" height="172.5" class="bar"/>
+
+  <text x="106" y="284" class="val" text-anchor="middle">0.049</text>
+  <text x="208" y="245" class="val" text-anchor="middle">0.102</text>
+  <text x="310" y="176" class="val" text-anchor="middle">0.197</text>
+  <text x="412" y="146" class="val" text-anchor="middle" fill="#0e7c86">0.238</text>
+  <text x="514" y="148" class="val" text-anchor="middle">0.235</text>
+
+  <text x="106" y="352" class="lbl" text-anchor="middle">Model 1</text>
+  <text x="208" y="352" class="lbl" text-anchor="middle">Model 2</text>
+  <text x="310" y="352" class="lbl" text-anchor="middle">Model 3</text>
+  <text x="412" y="352" class="lbl" text-anchor="middle">Model 4</text>
+  <text x="514" y="352" class="lbl" text-anchor="middle">Model 5</text>
+  <text x="106" y="370" class="lbl" text-anchor="middle" font-size="11">trend + season</text>
+  <text x="208" y="370" class="lbl" text-anchor="middle" font-size="11">+ rate, CPI</text>
+  <text x="310" y="370" class="lbl" text-anchor="middle" font-size="11">+ migration, income</text>
+  <text x="412" y="370" class="lbl" text-anchor="middle" font-size="11">+ COVID-19</text>
+  <text x="514" y="370" class="lbl" text-anchor="middle" font-size="11">+ election</text>
+</svg>

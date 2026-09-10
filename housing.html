@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="How much of Australian housing price growth can macroeconomic variables explain? Five nested regression models across five capital cities, 2014 to 2025, built in R by Yarida Kaewthong."
+    />
+    <title>Australian housing prices | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#10233f" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/housing.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/housing.html" />
+    <meta property="og:title" content="Australian housing prices | Yarida Kaewthong" />
+    <meta
+      property="og:description"
+      content="Five nested regression models of quarterly housing price growth across five Australian capital cities, 2014 to 2025. What macro variables can and cannot explain."
+    />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/housing-nsw.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Australian housing prices | Yarida Kaewthong" />
+    <meta
+      name="twitter:description"
+      content="Five nested regression models of quarterly housing price growth across five Australian capital cities, 2014 to 2025."
+    />
+    <meta name="twitter:image" content="https://yarida-cv.vercel.app/images/housing-nsw.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="housing.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">YK<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="projects.html">All projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+
+      <main id="main">
+        <article class="study">
+          <header class="study-head">
+            <p class="eyebrow">03 / Regression in R</p>
+            <h1>How much of housing price growth can the economy explain?</h1>
+            <p class="lede">
+              Quarterly housing price growth in Sydney, Melbourne, Brisbane, Adelaide and Perth from 2014 to 2025, modelled against interest rates, inflation, migration, household income and COVID-19. Five nested regression models, compared honestly.
+            </p>
+            <div class="study-actions">
+              <a class="button primary" href="#findings">Skip to the findings <span aria-hidden="true">↓</span></a>
+              <a class="button text-button" href="projects.html">All projects <span aria-hidden="true">→</span></a>
+            </div>
+          </header>
+
+          <div class="metrics study-metrics" aria-label="Project at a glance">
+            <div><span class="metric-number">230</span><span>quarter-by-city observations<br />5 cities, 2014 Q2 to 2025 Q3</span></div>
+            <div><span class="metric-number">0.05 &rarr; 0.24</span><span>adjusted R&sup2;<br />from the baseline to the preferred model</span></div>
+            <div><span class="metric-number">+2.63 pp</span><span>COVID-19 effect on quarterly growth<br />p &lt; 0.001, the largest single coefficient</span></div>
+          </div>
+
+          <figure class="study-hero">
+            <img
+              src="images/housing-nsw.png"
+              alt="Line chart of actual versus predicted quarterly housing price growth in New South Wales, 2014 to 2025. The predicted line follows the general direction but the actual line swings far more widely, especially during and after the shaded COVID-19 period in 2020 and 2021."
+              width="1500"
+              height="900"
+            />
+            <figcaption>
+              Model 4, actual (solid) against predicted (dashed) quarterly growth in NSW. The grey band is the COVID-19 period. The model gets the direction; it does not get the size of the swings. That gap is the story of this project.
+            </figcaption>
+          </figure>
+
+          <dl class="study-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Sole author. Data assembly, model design, R code, written report</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>R, RStudio, R Markdown, ggplot2, Excel</dd>
+            </div>
+            <div>
+              <dt>Context</dt>
+              <dd>ECOM5001 Econometric Theory and Application, Curtin University, 2026</dd>
+            </div>
+          </dl>
+
+          <section class="study-block">
+            <h2>The question</h2>
+            <p>
+              Australian house prices have risen sharply for a decade, and the usual explanation is a list: interest rates, inflation, migration, incomes. I wanted to test that list rather than repeat it. Two research questions came out of the case study that preceded this project:
+            </p>
+            <ul>
+              <li>What is the relationship between quarterly housing price growth and these economic factors across Australia's five largest cities between 2014 and 2025?</li>
+              <li>Which regression specification best explains and predicts that growth, without adding variables that only inflate the fit?</li>
+            </ul>
+            <p>
+              I set the hypotheses before running anything. Interest rates were expected to have a negative coefficient, inflation and migration positive, household income positive, and COVID-19 and federal elections were tested as period effects. Two of those expectations turned out to be wrong, which I cover below.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>The data</h2>
+            <p>
+              A panel of five capital cities observed every quarter from 2014 Q2 to 2025 Q3: 46 quarters per city, 230 observations in total. The dependent variable is the quarter-on-quarter percentage change in mean dwelling price, not the price level, so the model is not just chasing a trend.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table">
+                <thead>
+                  <tr><th scope="col">Variable</th><th scope="col">Level</th><th scope="col">Source</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Housing price growth (%)</td><td>State, quarterly</td><td>Calculated from ABS mean dwelling price</td></tr>
+                  <tr><td>Interest rate (%)</td><td>National</td><td>RBA cash rate target</td></tr>
+                  <tr><td>Inflation (%)</td><td>National</td><td>ABS Consumer Price Index</td></tr>
+                  <tr><td>Net overseas migration</td><td>National</td><td>ABS overseas migration statistics</td></tr>
+                  <tr><td>Household income per capita</td><td>State, annual</td><td>ABS household income and wealth</td></tr>
+                  <tr><td>COVID-19 dummy</td><td>2020 Q1 to 2021 Q4</td><td>Period flag</td></tr>
+                  <tr><td>Election dummy</td><td>2016, 2019, 2022, 2025</td><td>Federal election years</td></tr>
+                  <tr><td>Quarter dummies, time trend, state dummies</td><td>Controls</td><td>Q1 and South Australia are the reference categories</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Assembling this was most of the work. Each series came from a different ABS or RBA release at a different frequency, so I built the panel in Excel first, then loaded a single clean CSV into R so the whole analysis reruns from one file.
+            </p>
+          </section>
+
+          <section class="study-block" id="findings">
+            <h2>What the data showed</h2>
+            <ol class="findings">
+              <li>
+                <span class="finding-number">01</span>
+                <div>
+                  <p><strong>Macro variables explain about a quarter of the variation, and no more.</strong> The baseline model with only trend, season and state controls has an adjusted R&sup2; of 0.049. Adding interest rates and inflation lifts it to 0.102; adding migration and income to 0.197; adding the COVID-19 period to 0.238. Every step helps, but the ceiling is low. Roughly three quarters of quarter-to-quarter movement is driven by things not in this model.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">02</span>
+                <div>
+                  <p><strong>COVID-19 was the single largest effect.</strong> In the preferred model, the 2020 to 2021 period is associated with quarterly growth 2.63 percentage points higher than otherwise (p &lt; 0.001). As a single variable it lifted adjusted R&sup2; by 0.041, and the effect is visible in the charts: every city's actual line climbs above the predicted line through the shaded band.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">03</span>
+                <div>
+                  <p><strong>Two signs came out opposite to the hypothesis.</strong> Interest rates have a positive coefficient (0.523, p = 0.016), not the negative one I expected, and net overseas migration is negative (p &lt; 0.001). I report both as they are. The likely reason is that the RBA raises rates when prices are already rising, and the migration series is national while prices are measured by state, so the variables are picking up timing rather than a causal push.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">04</span>
+                <div>
+                  <p><strong>Inflation and the third quarter are consistently significant.</strong> A one-point rise in quarterly CPI is associated with 1.46 points more housing growth (p &lt; 0.001). July to September runs 1.65 points below the first quarter (p &lt; 0.001), and that seasonal dip holds in every one of the five models. Household income was never significant.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">05</span>
+                <div>
+                  <p><strong>Adding an election dummy made the model worse.</strong> Model 5 nudged plain R&sup2; up from 0.2811 to 0.2822, but adjusted R&sup2; fell from 0.2378 to 0.2354 and the election coefficient was not significant (p = 0.568). That is exactly why adjusted R&sup2; is the criterion. I chose Model 4.</p>
+                </div>
+              </li>
+            </ol>
+          </section>
+
+          <section class="study-block">
+            <h2>Model comparison</h2>
+            <p>
+              The five models are nested, so each row adds one variable group to the row above. I compared them on fit and on prediction error rather than either alone.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table study-table-numeric">
+                <thead>
+                  <tr>
+                    <th scope="col">Model</th>
+                    <th scope="col">Adds</th>
+                    <th scope="col">R&sup2;</th>
+                    <th scope="col">Adj. R&sup2;</th>
+                    <th scope="col">RMSE</th>
+                    <th scope="col">MAE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Trend, quarter, state</td><td>0.0823</td><td>0.0491</td><td>2.633</td><td>2.031</td></tr>
+                  <tr><td>2</td><td>+ Interest rate, inflation</td><td>0.1412</td><td>0.1019</td><td>2.547</td><td>1.986</td></tr>
+                  <tr><td>3</td><td>+ Migration, household income</td><td>0.2387</td><td>0.1967</td><td>2.398</td><td>1.862</td></tr>
+                  <tr class="is-pick"><td>4</td><td>+ COVID-19 dummy</td><td>0.2811</td><td><strong>0.2378</strong></td><td>2.331</td><td><strong>1.787</strong></td></tr>
+                  <tr><td>5</td><td>+ Election dummy</td><td>0.2822</td><td>0.2354</td><td>2.329</td><td>1.791</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-note">
+              All five models are significant overall (F-test p &lt; 0.05; Model 4 p = 2.2 &times; 10<sup>&minus;10</sup>). RMSE and MAE are in percentage points of quarterly growth. MAPE was not used because growth is often negative or near zero, which makes percentage errors meaningless.
+            </p>
+
+            <figure class="study-chart">
+              <svg viewBox="0 0 640 300" role="img" aria-label="Bar chart of adjusted R-squared for the five models: 0.049, 0.102, 0.197, 0.238 and 0.235. Model 4 is highlighted.">
+                <line x1="40" y1="240" x2="600" y2="240" class="ch-grid"/>
+                <line x1="40" y1="166.7" x2="600" y2="166.7" class="ch-grid"/>
+                <line x1="40" y1="93.3" x2="600" y2="93.3" class="ch-grid"/>
+                <line x1="40" y1="20" x2="600" y2="20" class="ch-grid"/>
+                <text x="600" y="236" class="ch-lbl" text-anchor="end">0.00</text>
+                <text x="600" y="162.7" class="ch-lbl" text-anchor="end">0.10</text>
+                <text x="600" y="89.3" class="ch-lbl" text-anchor="end">0.20</text>
+                <text x="600" y="16" class="ch-lbl" text-anchor="end">0.30</text>
+                <rect x="70"  y="204.0" width="72" height="36.0"  class="ch-bar"/>
+                <rect x="172" y="165.2" width="72" height="74.8"  class="ch-bar"/>
+                <rect x="274" y="95.6"  width="72" height="144.4" class="ch-bar"/>
+                <rect x="376" y="65.5"  width="72" height="174.5" class="ch-bar is-pick"/>
+                <rect x="478" y="67.5"  width="72" height="172.5" class="ch-bar"/>
+                <text x="106" y="194" class="ch-val" text-anchor="middle">0.049</text>
+                <text x="208" y="155" class="ch-val" text-anchor="middle">0.102</text>
+                <text x="310" y="86"  class="ch-val" text-anchor="middle">0.197</text>
+                <text x="412" y="56"  class="ch-val is-pick" text-anchor="middle">0.238</text>
+                <text x="514" y="58"  class="ch-val" text-anchor="middle">0.235</text>
+                <text x="106" y="262" class="ch-lbl" text-anchor="middle">Model 1</text>
+                <text x="208" y="262" class="ch-lbl" text-anchor="middle">Model 2</text>
+                <text x="310" y="262" class="ch-lbl" text-anchor="middle">Model 3</text>
+                <text x="412" y="262" class="ch-lbl" text-anchor="middle">Model 4</text>
+                <text x="514" y="262" class="ch-lbl" text-anchor="middle">Model 5</text>
+                <text x="106" y="280" class="ch-sub" text-anchor="middle">trend + season</text>
+                <text x="208" y="280" class="ch-sub" text-anchor="middle">+ rate, CPI</text>
+                <text x="310" y="280" class="ch-sub" text-anchor="middle">+ migration, income</text>
+                <text x="412" y="280" class="ch-sub" text-anchor="middle">+ COVID-19</text>
+                <text x="514" y="280" class="ch-sub" text-anchor="middle">+ election</text>
+              </svg>
+              <figcaption>Adjusted R&sup2; by model. The dip at Model 5 is small but it is the whole reason for the selection rule.</figcaption>
+            </figure>
+          </section>
+
+          <section class="study-block">
+            <h2>Actual against predicted, all five cities</h2>
+            <p>
+              A fit statistic says how much the model explains on average. These charts show <em>when</em> it fails. In every city the model tracks the quiet years reasonably and misses the extremes: the 2020 to 2021 surge, and the sharp 2022 correction when rates rose.
+            </p>
+            <div class="study-gallery">
+              <figure>
+                <img src="images/housing-vic.png" alt="Actual versus predicted quarterly housing price growth in Victoria. Actual growth swings between about minus 5 and plus 7 per cent; predicted stays within roughly minus 1 and plus 6." loading="lazy" width="1500" height="900" />
+                <figcaption><strong>VIC</strong> Melbourne's 2022 fall to about &minus;5% is entirely missed.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/housing-qld.png" alt="Actual versus predicted quarterly housing price growth in Queensland. Actual growth peaks at 10 per cent in late 2021 while predicted peaks near 5." loading="lazy" width="1500" height="900" />
+                <figcaption><strong>QLD</strong> Brisbane's late-2021 peak of 10% is the biggest under-prediction in the panel.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/housing-sa.png" alt="Actual versus predicted quarterly housing price growth in South Australia. The two lines track each other more closely than in other states, with actual running higher through 2021." loading="lazy" width="1500" height="900" />
+                <figcaption><strong>SA</strong> Adelaide is the closest fit; growth there has been steadier and stayed positive after 2022.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/housing-wa.png" alt="Actual versus predicted quarterly housing price growth in Western Australia. Actual growth is mostly negative before 2020 and mostly positive after; predicted stays near zero to 3 per cent." loading="lazy" width="1500" height="900" />
+                <figcaption><strong>WA</strong> Perth's post-2023 run of 3 to 8% growth sits well above anything the national variables predict.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="study-block">
+            <h2>How it was built</h2>
+            <p>
+              <strong>Nested models, one added group at a time.</strong> Five ordinary least squares regressions in R using <code>lm()</code>, each adding one group of variables to the last, so the change in adjusted R&sup2; at each step is attributable to that group. Every model keeps quarter dummies, a linear time trend and state dummies so that season, drift and city differences are controlled for before any economic variable is credited.
+            </p>
+            <p>
+              <strong>Two selection criteria, not one.</strong> Adjusted R&sup2; for explanatory power, then RMSE and MAE computed from the residuals for prediction accuracy. A model had to improve on both to be preferred. Model 4 has the highest adjusted R&sup2; and the lowest MAE.
+            </p>
+            <p>
+              <strong>Hypothesis tests written down first.</strong> An F-test for each model overall and a t-test for each coefficient at the 5% level, with the expected sign recorded before estimation, so the two wrong-signed results could be reported as findings rather than quietly dropped.
+            </p>
+            <p>
+              <strong>Reproducible end to end.</strong> The analysis is an R Markdown file that reads one CSV and produces every table and chart on this page. It was submitted with the R script, the dataset and a README so a marker could rerun it from a clean folder.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>Limitations I'd state up front</h2>
+            <ul>
+              <li><strong>Mismatched levels.</strong> Interest rates, inflation and migration are national series; prices are measured by state. That alone caps how much city-level variation they can explain, and probably drives the odd migration sign.</li>
+              <li><strong>Association, not causation.</strong> This is OLS on observational data with no lags or instruments. The positive interest-rate coefficient almost certainly reflects the RBA responding to prices, not the reverse.</li>
+              <li><strong>Autocorrelation was not modelled.</strong> Quarterly growth is likely to depend on the previous quarter. The standard errors are therefore optimistic, and a lagged dependent variable or an ARIMA-type error would be the next step.</li>
+              <li><strong>Missing variables.</strong> Construction costs, housing supply, unemployment, credit conditions and state housing policy are all absent. The 2022 correction and Perth's recent boom are where their absence shows most.</li>
+              <li><strong>Incomplete first quarter.</strong> Some states have no Q1 2014 observation, so the panel begins in 2014 Q2 and the 2014 and 2025 years are partial.</li>
+            </ul>
+          </section>
+
+          <div class="study-actions study-footer-actions">
+            <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> All projects</a>
+            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to CV</a>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span>Designed for the web, ready to print.</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

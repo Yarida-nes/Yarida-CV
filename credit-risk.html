@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Credit risk analysis in R: cleaning 32,581 loan records, exploring who defaults, and modelling borrower income. A case study by Yarida Kaewthong."
+    />
+    <title>Credit risk analysis | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#10233f" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/credit-risk.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/credit-risk.html" />
+    <meta property="og:title" content="Credit risk analysis | Yarida Kaewthong" />
+    <meta
+      property="og:description"
+      content="Cleaning 32,581 loan records, exploring who defaults, and modelling borrower income in R Markdown."
+    />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/credit-risk-income.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Credit risk analysis | Yarida Kaewthong" />
+    <meta
+      name="twitter:description"
+      content="Cleaning 32,581 loan records, exploring who defaults, and modelling borrower income in R Markdown."
+    />
+    <meta name="twitter:image" content="https://yarida-cv.vercel.app/images/credit-risk-income.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="credit-risk.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">YK<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="projects.html">&larr; All projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">&#8599;</span>
+        </a>
+      </header>
+
+      <main id="main">
+        <article class="case-study">
+          <p class="eyebrow">02 / RStudio &middot; Credit risk</p>
+          <h1>Who defaults on a loan, and what does the data say before you model it?</h1>
+          <p class="lede">
+            A business analytics assessment in R Markdown: 32,581 loan and borrower records, cleaned, explored and modelled, with every step knitted to a reproducible PDF report.
+          </p>
+          <div class="cs-actions">
+            <a class="button primary" href="projects.html">All case studies <span aria-hidden="true">&rarr;</span></a>
+            <a class="button text-button" href="index.html#projects">Back to CV <span aria-hidden="true">&rarr;</span></a>
+          </div>
+
+          <div class="metrics cs-metrics" aria-label="Project at a glance">
+            <div><span class="metric-number">32,581 &rarr; 28,578</span><span>loan records<br />raw, then after cleaning</span></div>
+            <div><span class="metric-number">21.6%</span><span>default rate<br />6,183 of 28,578 loans</span></div>
+            <div><span class="metric-number">R&sup2; 0.34</span><span>income regression<br />F = 913.1, p &lt; 0.001</span></div>
+          </div>
+
+          <figure class="cs-shot">
+            <img
+              src="images/credit-risk-income.png"
+              width="884"
+              height="540"
+              alt="Two histograms of borrower income, one for non-defaulted loans and one for defaulted loans. Both are right-skewed. The non-default distribution peaks around 50,000 to 60,000 with a long tail past 200,000; the default distribution is smaller, peaks nearer 30,000 to 40,000, and thins out sooner."
+            />
+            <figcaption>Income distribution by loan status, from the knitted report. Defaulted loans sit further left: lower incomes, thinner tail.</figcaption>
+          </figure>
+
+          <dl class="cs-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Group of three (Group 25). Shared R Markdown report: data cleaning, visualisation, regression, write-up</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>R &middot; R Markdown &middot; dplyr &middot; ggplot2 &middot; corrplot &middot; kableExtra &middot; knitr to PDF</dd>
+            </div>
+            <div>
+              <dt>Context</dt>
+              <dd>ECOM5005 Business Analytics, Curtin University, October 2025</dd>
+            </div>
+          </dl>
+
+          <section class="cs-block">
+            <h2>The question</h2>
+            <p>
+              A lender holds a table of past loans: who the borrower was, what they earned, what they borrowed and at what rate, and whether the loan went bad. The assessment asked us to work through that table the way an analyst would on day one. <strong>What is in the data, what is missing, what moves with what, and what can a first model explain?</strong>
+            </p>
+            <p>It broke into four practical steps:</p>
+            <ul>
+              <li>Clean the data and be explicit about what was removed and why.</li>
+              <li>Look at how income and default are distributed before fitting anything.</li>
+              <li>Check the correlations between the numeric variables, especially for pairs that overlap.</li>
+              <li>Fit a multiple regression of income on the other variables, then simplify it with stepwise selection.</li>
+            </ul>
+          </section>
+
+          <section class="cs-block">
+            <h2>The data</h2>
+            <p>
+              One CSV, <code>credit_risk_dataset.csv</code>: <strong>32,581 rows and 13 columns</strong>, four of them categorical.
+            </p>
+            <ul class="cs-columns" aria-label="Dataset columns">
+              <li><code>person_age</code></li>
+              <li><code>person_income</code></li>
+              <li><code>person_home_ownership</code></li>
+              <li><code>person_emp_length</code></li>
+              <li><code>loan_intent</code></li>
+              <li><code>loan_grade</code></li>
+              <li><code>loan_amnt</code></li>
+              <li><code>loan_int_rate</code></li>
+              <li><code>loan_status</code></li>
+              <li><code>loan_percent_income</code></li>
+              <li><code>cb_person_default_on_file</code></li>
+              <li><code>cb_person_cred_hist_length</code></li>
+              <li><code>ID</code></li>
+            </ul>
+            <p>
+              The target is <code>loan_status</code>, stored as 0 or 1. I recoded it as a factor, <em>non-default</em> and <em>default</em>, because a 0/1 integer invites arithmetic that means nothing here. The rest of the character columns became factors too.
+            </p>
+            <p>
+              <strong>Cleaning.</strong> There were <strong>4,077 missing cells</strong>, concentrated in two columns: interest rate (3,133) and employment length (895), with a handful in loan amount, loan status and credit history. Dropping every incomplete row left <strong>28,578 records</strong>. I also dropped <code>ID</code> and <code>loan_grade</code>, since grade is the lender's own risk rating and overlaps conceptually with the outcome, and filtered out zero incomes, which turned out to remove nothing. Finally I renamed the columns to short names (<code>income</code>, <code>loanamt</code>, <code>intrate</code>, <code>loanpctincome</code>, <code>credhist</code> and so on) so the model output stays readable.
+            </p>
+          </section>
+
+          <section class="cs-block">
+            <h2>What the data showed</h2>
+            <ul class="cs-findings">
+              <li>
+                <span class="cs-finding-number">01</span>
+                <div>
+                  <p><strong>About one loan in five went bad.</strong> After cleaning, 22,395 loans were repaid (78.36%) and 6,183 defaulted (21.64%). That imbalance is the single most important fact for any classifier built on this data: a model that predicts "no default" for everyone is already 78% accurate and completely useless.</p>
+                  <figure class="cs-figure">
+                    <img src="images/credit-risk-loan-status.png" width="875" height="540" loading="lazy" alt="Bar chart of loan status: about 22,400 non-default loans against about 6,200 defaults." />
+                    <figcaption>Count of loans by status, n = 28,578.</figcaption>
+                  </figure>
+                </div>
+              </li>
+              <li>
+                <span class="cs-finding-number">02</span>
+                <div>
+                  <p><strong>Defaulters earn less, and the difference is visible before any model.</strong> Both income distributions are right-skewed, but the default group peaks lower (roughly $30,000 to $40,000 against $50,000 to $60,000 for repaid loans) and its tail fades out much sooner. Income alone will not separate the groups, though; the two histograms overlap heavily.</p>
+                </div>
+              </li>
+              <li>
+                <span class="cs-finding-number">03</span>
+                <div>
+                  <p><strong>Two pairs of predictors are close to saying the same thing.</strong> Age and credit-history length correlate at <strong>0.86</strong>, well past the 0.7 multicollinearity threshold we used, so a model should not lean on both. Loan amount and loan-as-a-share-of-income correlate at 0.58. Against income itself, no numeric predictor reached the 0.5 mark: the strongest were loan amount (0.27) and loan-percent-income (&minus;0.25), and interest rate was essentially zero (0.00).</p>
+                  <figure class="cs-figure">
+                    <img src="images/credit-risk-correlation.png" width="875" height="540" loading="lazy" alt="Pearson correlation matrix of the seven numeric variables. Notable values: age and credit history 0.86, loan amount and loan percent income 0.58, income and loan amount 0.27, income and loan percent income minus 0.25." />
+                    <figcaption>Pearson correlations between the numeric variables, from the knitted report.</figcaption>
+                  </figure>
+                </div>
+              </li>
+              <li>
+                <span class="cs-finding-number">04</span>
+                <div>
+                  <p><strong>A full regression explains about a third of the variation in income.</strong> Regressing income on all ten remaining predictors gave <strong>R&sup2; = 0.338</strong> (adjusted 0.338), with the predictors jointly significant (F = 913.1 on 16 and 28,561 degrees of freedom, p &lt; 0.001). The residual standard error was about $50,750, so individual predictions are wide.</p>
+                  <p>Reading the coefficients: each extra dollar borrowed goes with about <strong>$5.88</strong> more income; each year of age with about <strong>$2,264</strong> more; renting rather than holding a mortgage with about <strong>$4,891 less</strong>; and each extra year of credit history with about <strong>$1,943 less</strong>, once age is held constant. Loan purpose and the prior-default flag were mostly not significant. Home ownership as OWN was indistinguishable from MORTGAGE.</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="cs-block">
+            <h2>How it was built</h2>
+            <p>
+              <strong>Everything lives in one R Markdown file</strong> that knits to PDF with <code>bookdown</code>, so the numbers in the text are computed inline (<code>`r ncol(loan_status)`</code>, <code>`r sum(is.na(loan_status))`</code>) rather than typed. If the CSV changes, the report changes with it.
+            </p>
+            <p>
+              <strong>Cleaning and reshaping</strong> used <code>dplyr</code>: <code>na.omit()</code> for complete cases, <code>mutate(across(where(is.character), as.factor))</code> to convert types in one line, <code>rename()</code> for the short names, <code>select()</code> and <code>filter()</code> for the drops. A small loop printed the levels of every factor so we could confirm the categories were what we expected before modelling.
+            </p>
+            <p>
+              <strong>Visualisation</strong> used <code>ggplot2</code>, with <code>facet_grid()</code> to put the two income histograms side by side and <code>coord_cartesian()</code> to cap the axis at $250,000 without discarding the long tail. The correlation matrix came from <code>cor()</code> on the numeric columns, drawn with <code>corrplot</code>. The status table was formatted with <code>kableExtra</code>.
+            </p>
+            <p>
+              <strong>Modelling</strong> used <code>lm()</code> for the full income model, then <code>step(direction = "backward")</code> to drop predictors that did not earn their place. The assessment's final section scaffolded a logistic regression for default itself: a stratified 70/30 train-test split on status crossed with loan intent, forward stepwise selection, evaluation at a 0.5 threshold on accuracy, sensitivity and specificity, and an ROC curve with AUC.
+            </p>
+            <p>
+              <strong>Generative AI, disclosed.</strong> I used ChatGPT to check code chunks that would not run and to draft the levels-check and correlation-plot code, and documented the prompts in the university's Gen-AI disclosure form. The interpretation is mine.
+            </p>
+          </section>
+
+          <section class="cs-block">
+            <h2>Limitations I'd state up front</h2>
+            <ul class="cs-limits">
+              <li><strong>Complete-case deletion cost 12% of the rows.</strong> Most of the gaps were in interest rate. If loans without a recorded rate differ from the rest, dropping them biases everything downstream. Imputation would be the next thing to try.</li>
+              <li><strong>The classes are imbalanced, 78 to 22.</strong> Accuracy alone would flatter any default model. Sensitivity, specificity and the ROC curve are the honest measures, and the 0.5 threshold is a starting point, not a business decision.</li>
+              <li><strong>The income model is descriptive, not predictive.</strong> It was fitted and assessed on the same data with no hold-out, and R&sup2; of 0.34 leaves two thirds of the variation unexplained. The positive coefficient on <em>default</em> (about $6,396) is an association in this sample, not a causal claim.</li>
+              <li><strong>One predictor is mechanically tied to the outcome.</strong> <code>loanpctincome</code> is loan amount divided by income, so its very large coefficient in an income regression should not be over-read.</li>
+              <li><strong>Age and credit history are near-collinear (0.86).</strong> Their individual coefficients and standard errors are less trustworthy than the joint fit.</li>
+              <li><strong>Not every result is on this page.</strong> The knitted copy I have on file records the cleaning, the plots and the full income regression. The backward-stepwise selection was run, but its chosen model was not captured in that copy, and the default classifier (logistic regression, ROC and AUC) was the final section of the assessment, so I do not quote figures for either here.</li>
+              <li><strong>No dates, so no out-of-time test.</strong> The dataset is a single cross-section. Nothing here says whether the patterns would hold for next year's applicants.</li>
+            </ul>
+          </section>
+
+          <div class="cs-actions cs-footer-actions">
+            <a class="button primary" href="projects.html">All case studies <span aria-hidden="true">&rarr;</span></a>
+            <a class="button text-button" href="index.html#projects">Back to CV <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span>Designed for the web, ready to print.</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
