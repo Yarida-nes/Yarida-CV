@@ -19,15 +19,32 @@
 .esg-chart .grid line.axis { stroke: var(--ink); }
 .esg-chart .grid text, .esg-chart .labels text { fill: var(--muted); }
 .esg-chart .labels line { stroke: var(--line); stroke-width: 1; }
-.esg-chart .l-muted { stroke: #b9c4d2; }
-.esg-chart .l-au { stroke: #5c6b81; stroke-width: 2.4; }
-.esg-chart .l-sg { stroke: #7fb8bf; stroke-width: 2.4; }
-.esg-chart .l-kr { stroke: var(--ink); stroke-width: 2.6; }
+/* One distinct colour per market, chosen to read on both light and dark */
+.esg-chart .l-muted { stroke: #b9c4d2; stroke-width: 2; }
+.esg-chart .l-kr { stroke: var(--ink); stroke-width: 2.8; }
 .esg-chart .l-cn { stroke: var(--accent); stroke-width: 2.8; }
+.esg-chart .l-sg { stroke: #e08a1e; stroke-width: 2.4; }
+.esg-chart .l-in { stroke: #c85b8e; stroke-width: 2.4; }
+.esg-chart .l-id { stroke: #2f9e6f; stroke-width: 2.4; }
+.esg-chart .l-nz { stroke: #3f8fd0; stroke-width: 2.4; }
+.esg-chart .l-au { stroke: #9b6fd4; stroke-width: 2.4; }
+.esg-chart .l-my { stroke: #d1495b; stroke-width: 2.4; }
+
+/* Legend labels, coloured to match their line (scoped to beat the generic
+   .labels text fill and to make each market easy to pick out) */
+.esg-chart .labels text { font-weight: 500; }
+.esg-chart .labels .t-kr { fill: var(--ink); }
+.esg-chart .labels .t-cn { fill: var(--accent); }
+.esg-chart .labels .t-sg { fill: #c9760f; }
+.esg-chart .labels .t-in { fill: #bd4e82; }
+.esg-chart .labels .t-id { fill: #23895f; }
+.esg-chart .labels .t-nz { fill: #2f80c4; }
+.esg-chart .labels .t-au { fill: #8a5cc6; }
+.esg-chart .labels .t-my { fill: #c53a4d; }
+
+/* Sub-chart legend / bar labels keep the original neutral treatment */
 .esg-chart .t-cn { fill: var(--accent); font-weight: 500; }
 .esg-chart .t-kr { fill: var(--ink); font-weight: 500; }
-.esg-chart .t-sg { fill: #4f9aa2; }
-.esg-chart .t-au { fill: #5c6b81; }
 .esg-chart .t-muted { fill: #8a97a8; }
 .esg-chart .b-hi { fill: var(--accent); }
 .esg-chart .b-lo { fill: #c3ccd7; }
