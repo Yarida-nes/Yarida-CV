@@ -9,9 +9,48 @@
   --accent-soft: #e6f2f3;
 }
 
+/* Dark theme — auto by system setting, and by the manual toggle.
+   Light stays on :root above; only the variables change here. */
+:root[data-theme="dark"] {
+  --ink: #e8edf4;
+  --muted: #9db0c6;
+  --paper: #0c1622;
+  --surface: #14243b;
+  --signal: #1b2e49;
+  --line: #293b53;
+  --accent: #3bb6c0;
+  --accent-soft: #12333a;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e8edf4;
+    --muted: #9db0c6;
+    --paper: #0c1622;
+    --surface: #14243b;
+    --signal: #1b2e49;
+    --line: #293b53;
+    --accent: #3bb6c0;
+    --accent-soft: #12333a;
+  }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Space Grotesk", sans-serif; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Space Grotesk", sans-serif; transition: background-color .35s ease, color .35s ease; }
+.topbar, .project-card, .metrics div, .project-shot, .card, .study-metric, .esg-chart, footer { transition: background-color .35s ease, border-color .35s ease, color .35s ease; }
+
+/* Theme toggle in the top bar */
+.topbar-actions { display: flex; align-items: center; gap: 1.25rem; }
+.theme-toggle { font-family: "DM Mono", monospace; font-size: .72rem; text-transform: uppercase; letter-spacing: .02em; color: inherit; background: none; border: 1px solid var(--line); border-radius: 999px; padding: .42rem .8rem; cursor: pointer; display: inline-flex; align-items: center; gap: .45rem; line-height: 1; white-space: nowrap; transition: color .2s ease, border-color .2s ease; }
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.theme-toggle .theme-icon { font-size: .85rem; }
+
+/* Reveal-on-scroll — progressive enhancement, added by JS only when the
+   browser supports it and the reader has not asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+}
 a { color: inherit; }
 .skip-link { position: fixed; top: -100px; left: 1rem; z-index: 5; padding: .75rem 1rem; background: var(--ink); color: white; }
 .skip-link:focus { top: 1rem; }
@@ -181,7 +220,8 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   @page { margin: 14mm; }
   body { background: white; }
   .site-shell { max-width: none; padding: 0; }
-  .skip-link, .topbar nav, .github-link, .intro-actions, .availability, .section-side-link, .project-shot, .project-cta, .no-print { display: none; }
+  .skip-link, .topbar nav, .github-link, .theme-toggle, .intro-actions, .availability, .section-side-link, .project-shot, .project-cta, .no-print { display: none; }
+  .reveal { opacity: 1 !important; transform: none !important; }
   .topbar { min-height: auto; padding-bottom: .6rem; }
   .intro { min-height: auto; grid-template-columns: 1fr 150px; padding: 1.25rem 0 1.5rem; gap: 2rem; }
   h1 { font-size: 2.3rem; margin-bottom: 1rem; }
