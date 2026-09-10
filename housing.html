@@ -82,7 +82,7 @@
               height="900"
             />
             <figcaption>
-              Model 4, actual (solid) against predicted (dashed) quarterly growth in NSW. The grey band is the COVID-19 period. The model gets the direction; it does not get the size of the swings. That gap is the story of this project.
+              Model 4, actual (solid) against predicted (dashed) quarterly growth in NSW. The grey band is the COVID-19 period. The model gets the direction, not the size of the swings. That gap is the story.
             </figcaption>
           </figure>
 
@@ -104,21 +104,21 @@
           <section class="study-block">
             <h2>The question</h2>
             <p>
-              Australian house prices have risen sharply for a decade, and the usual explanation is a list: interest rates, inflation, migration, incomes. I wanted to test that list rather than repeat it. Two research questions came out of the case study that preceded this project:
+              Australian house prices have risen sharply for a decade. The usual explanation is a list: interest rates, inflation, migration, incomes. I wanted to test that list, not repeat it. Two research questions came out of the earlier case study:
             </p>
             <ul>
               <li>What is the relationship between quarterly housing price growth and these economic factors across Australia's five largest cities between 2014 and 2025?</li>
               <li>Which regression specification best explains and predicts that growth, without adding variables that only inflate the fit?</li>
             </ul>
             <p>
-              I set the hypotheses before running anything. Interest rates were expected to have a negative coefficient, inflation and migration positive, household income positive, and COVID-19 and federal elections were tested as period effects. Two of those expectations turned out to be wrong, which I cover below.
+              I set the hypotheses before running anything. Interest rates were expected negative; inflation, migration and household income positive. COVID-19 and federal elections were tested as period effects. Two expectations turned out wrong, covered below.
             </p>
           </section>
 
           <section class="study-block">
             <h2>The data</h2>
             <p>
-              A panel of five capital cities observed every quarter from 2014 Q2 to 2025 Q3: 46 quarters per city, 230 observations in total. The dependent variable is the quarter-on-quarter percentage change in mean dwelling price, not the price level, so the model is not just chasing a trend.
+              A panel of five capital cities, observed every quarter from 2014 Q2 to 2025 Q3: 46 quarters per city, 230 observations in total. The dependent variable is the quarter-on-quarter percentage change in mean dwelling price, not the price level. The model is not just chasing a trend.
             </p>
             <div class="table-wrap">
               <table class="study-table">
@@ -138,7 +138,7 @@
               </table>
             </div>
             <p>
-              Assembling this was most of the work. Each series came from a different ABS or RBA release at a different frequency, so I built the panel in Excel first, then loaded a single clean CSV into R so the whole analysis reruns from one file.
+              Assembling this was most of the work. Each series came from a different ABS or RBA release at a different frequency. I built the panel in Excel, then loaded one clean CSV into R so the whole analysis reruns from a single file.
             </p>
           </section>
 
@@ -148,25 +148,25 @@
               <li>
                 <span class="finding-number">01</span>
                 <div>
-                  <p><strong>Macro variables explain about a quarter of the variation, and no more.</strong> The baseline model with only trend, season and state controls has an adjusted R&sup2; of 0.049. Adding interest rates and inflation lifts it to 0.102; adding migration and income to 0.197; adding the COVID-19 period to 0.238. Every step helps, but the ceiling is low. Roughly three quarters of quarter-to-quarter movement is driven by things not in this model.</p>
+                  <p><strong>Macro variables explain about a quarter of the variation, and no more.</strong> The baseline model (trend, season and state controls only) has an adjusted R&sup2; of 0.049. Interest rates and inflation lift it to 0.102; migration and income to 0.197; the COVID-19 period to 0.238. Every step helps, but the ceiling is low. Roughly three quarters of quarter-to-quarter movement comes from things not in this model.</p>
                 </div>
               </li>
               <li>
                 <span class="finding-number">02</span>
                 <div>
-                  <p><strong>COVID-19 was the single largest effect.</strong> In the preferred model, the 2020 to 2021 period is associated with quarterly growth 2.63 percentage points higher than otherwise (p &lt; 0.001). As a single variable it lifted adjusted R&sup2; by 0.041, and the effect is visible in the charts: every city's actual line climbs above the predicted line through the shaded band.</p>
+                  <p><strong>COVID-19 was the single largest effect.</strong> In the preferred model, the 2020 to 2021 period is associated with quarterly growth 2.63 percentage points higher than otherwise (p &lt; 0.001). As a single variable it lifted adjusted R&sup2; by 0.041. The charts show it too: every city's actual line climbs above the predicted line through the shaded band.</p>
                 </div>
               </li>
               <li>
                 <span class="finding-number">03</span>
                 <div>
-                  <p><strong>Two signs came out opposite to the hypothesis.</strong> Interest rates have a positive coefficient (0.523, p = 0.016), not the negative one I expected, and net overseas migration is negative (p &lt; 0.001). I report both as they are. The likely reason is that the RBA raises rates when prices are already rising, and the migration series is national while prices are measured by state, so the variables are picking up timing rather than a causal push.</p>
+                  <p><strong>Two signs came out opposite to the hypothesis.</strong> Interest rates have a positive coefficient (0.523, p = 0.016), not the negative one I expected. Net overseas migration is negative (p &lt; 0.001). I report both as they are. The likely reason: the RBA raises rates when prices are already rising, and migration is national while prices are measured by state. The variables pick up timing, not a causal push.</p>
                 </div>
               </li>
               <li>
                 <span class="finding-number">04</span>
                 <div>
-                  <p><strong>Inflation and the third quarter are consistently significant.</strong> A one-point rise in quarterly CPI is associated with 1.46 points more housing growth (p &lt; 0.001). July to September runs 1.65 points below the first quarter (p &lt; 0.001), and that seasonal dip holds in every one of the five models. Household income was never significant.</p>
+                  <p><strong>Inflation and the third quarter are consistently significant.</strong> A one-point rise in quarterly CPI is associated with 1.46 points more housing growth (p &lt; 0.001). July to September runs 1.65 points below the first quarter (p &lt; 0.001), a seasonal dip that holds in all five models. Household income was never significant.</p>
                 </div>
               </li>
               <li>
@@ -181,7 +181,7 @@
           <section class="study-block">
             <h2>Model comparison</h2>
             <p>
-              The five models are nested, so each row adds one variable group to the row above. I compared them on fit and on prediction error rather than either alone.
+              The five models are nested: each row adds one variable group to the row above. I compared them on fit and prediction error together, not either alone.
             </p>
             <div class="table-wrap">
               <table class="study-table study-table-numeric">
@@ -246,7 +246,7 @@
           <section class="study-block">
             <h2>Actual against predicted, all five cities</h2>
             <p>
-              A fit statistic says how much the model explains on average. These charts show <em>when</em> it fails. In every city the model tracks the quiet years reasonably and misses the extremes: the 2020 to 2021 surge, and the sharp 2022 correction when rates rose.
+              A fit statistic says how much the model explains on average. These charts show <em>when</em> it fails. In every city it tracks the quiet years and misses the extremes: the 2020 to 2021 surge, and the sharp 2022 correction when rates rose.
             </p>
             <div class="study-gallery">
               <figure>
@@ -271,16 +271,16 @@
           <section class="study-block">
             <h2>How it was built</h2>
             <p>
-              <strong>Nested models, one added group at a time.</strong> Five ordinary least squares regressions in R using <code>lm()</code>, each adding one group of variables to the last, so the change in adjusted R&sup2; at each step is attributable to that group. Every model keeps quarter dummies, a linear time trend and state dummies so that season, drift and city differences are controlled for before any economic variable is credited.
+              <strong>Nested models, one added group at a time.</strong> Five ordinary least squares regressions in R using <code>lm()</code>, each adding one group to the last, so the change in adjusted R&sup2; at each step is attributable to that group. Every model keeps quarter dummies, a linear time trend and state dummies. Season, drift and city differences are controlled for before any economic variable is credited.
             </p>
             <p>
-              <strong>Two selection criteria, not one.</strong> Adjusted R&sup2; for explanatory power, then RMSE and MAE computed from the residuals for prediction accuracy. A model had to improve on both to be preferred. Model 4 has the highest adjusted R&sup2; and the lowest MAE.
+              <strong>Two selection criteria, not one.</strong> Adjusted R&sup2; for explanatory power; RMSE and MAE from the residuals for prediction accuracy. A model had to improve on both to be preferred. Model 4 has the highest adjusted R&sup2; and the lowest MAE.
             </p>
             <p>
-              <strong>Hypothesis tests written down first.</strong> An F-test for each model overall and a t-test for each coefficient at the 5% level, with the expected sign recorded before estimation, so the two wrong-signed results could be reported as findings rather than quietly dropped.
+              <strong>Hypothesis tests written down first.</strong> An F-test for each model overall and a t-test for each coefficient at the 5% level, with the expected sign recorded before estimation. That way the two wrong-signed results could be reported as findings, not quietly dropped.
             </p>
             <p>
-              <strong>Reproducible end to end.</strong> The analysis is an R Markdown file that reads one CSV and produces every table and chart on this page. It was submitted with the R script, the dataset and a README so a marker could rerun it from a clean folder.
+              <strong>Reproducible end to end.</strong> The analysis is an R Markdown file that reads one CSV and produces every table and chart here. It was submitted with the R script, the dataset and a README, so a marker could rerun it from a clean folder.
             </p>
           </section>
 
@@ -288,9 +288,9 @@
             <h2>Limitations I'd state up front</h2>
             <ul>
               <li><strong>Mismatched levels.</strong> Interest rates, inflation and migration are national series; prices are measured by state. That alone caps how much city-level variation they can explain, and probably drives the odd migration sign.</li>
-              <li><strong>Association, not causation.</strong> This is OLS on observational data with no lags or instruments. The positive interest-rate coefficient almost certainly reflects the RBA responding to prices, not the reverse.</li>
-              <li><strong>Autocorrelation was not modelled.</strong> Quarterly growth is likely to depend on the previous quarter. The standard errors are therefore optimistic, and a lagged dependent variable or an ARIMA-type error would be the next step.</li>
-              <li><strong>Missing variables.</strong> Construction costs, housing supply, unemployment, credit conditions and state housing policy are all absent. The 2022 correction and Perth's recent boom are where their absence shows most.</li>
+              <li><strong>Association, not causation.</strong> This is OLS on observational data, with no lags or instruments. The positive interest-rate coefficient almost certainly reflects the RBA responding to prices, not the reverse.</li>
+              <li><strong>Autocorrelation was not modelled.</strong> Quarterly growth likely depends on the previous quarter, so the standard errors are optimistic. A lagged dependent variable or an ARIMA-type error would be the next step.</li>
+              <li><strong>Missing variables.</strong> Construction costs, housing supply, unemployment, credit conditions and state housing policy are all absent. Their absence shows most in the 2022 correction and Perth's recent boom.</li>
               <li><strong>Incomplete first quarter.</strong> Some states have no Q1 2014 observation, so the panel begins in 2014 Q2 and the 2014 and 2025 years are partial.</li>
             </ul>
           </section>

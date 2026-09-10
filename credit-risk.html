@@ -59,7 +59,7 @@
           <p class="eyebrow">02 / RStudio &middot; Credit risk</p>
           <h1>Who defaults on a loan, and what does the data say before you model it?</h1>
           <p class="lede">
-            A business analytics assessment in R Markdown: 32,581 loan and borrower records, cleaned, explored and modelled, with every step knitted to a reproducible PDF report.
+            A business analytics assessment in R Markdown. I cleaned, explored and modelled 32,581 loan and borrower records. Every step knits to a reproducible PDF report.
           </p>
           <div class="cs-actions">
             <a class="button primary" href="projects.html">All case studies <span aria-hidden="true">&rarr;</span></a>
@@ -100,7 +100,7 @@
           <section class="cs-block">
             <h2>The question</h2>
             <p>
-              A lender holds a table of past loans: who the borrower was, what they earned, what they borrowed and at what rate, and whether the loan went bad. The assessment asked us to work through that table the way an analyst would on day one. <strong>What is in the data, what is missing, what moves with what, and what can a first model explain?</strong>
+              A lender holds a table of past loans: the borrower, their income, the amount and rate, and whether the loan went bad. We had to work through it the way an analyst would on day one. <strong>What is in the data, what is missing, what moves with what, and what can a first model explain?</strong>
             </p>
             <p>It broke into four practical steps:</p>
             <ul>
@@ -132,10 +132,10 @@
               <li><code>ID</code></li>
             </ul>
             <p>
-              The target is <code>loan_status</code>, stored as 0 or 1. I recoded it as a factor, <em>non-default</em> and <em>default</em>, because a 0/1 integer invites arithmetic that means nothing here. The rest of the character columns became factors too.
+              The target is <code>loan_status</code>, stored as 0 or 1. I recoded it as a factor, <em>non-default</em> and <em>default</em>, so no one treats it as a number. The other character columns became factors too.
             </p>
             <p>
-              <strong>Cleaning.</strong> There were <strong>4,077 missing cells</strong>, concentrated in two columns: interest rate (3,133) and employment length (895), with a handful in loan amount, loan status and credit history. Dropping every incomplete row left <strong>28,578 records</strong>. I also dropped <code>ID</code> and <code>loan_grade</code>, since grade is the lender's own risk rating and overlaps conceptually with the outcome, and filtered out zero incomes, which turned out to remove nothing. Finally I renamed the columns to short names (<code>income</code>, <code>loanamt</code>, <code>intrate</code>, <code>loanpctincome</code>, <code>credhist</code> and so on) so the model output stays readable.
+              <strong>Cleaning.</strong> There were <strong>4,077 missing cells</strong>, mostly in two columns: interest rate (3,133) and employment length (895). A handful sat in loan amount, loan status and credit history. Dropping every incomplete row left <strong>28,578 records</strong>. I also dropped <code>ID</code> and <code>loan_grade</code>; grade is the lender's own risk rating and overlaps with the outcome. Filtering out zero incomes removed nothing. Finally I renamed the columns to short names (<code>income</code>, <code>loanamt</code>, <code>intrate</code>, <code>loanpctincome</code>, <code>credhist</code>) so the model output stays readable.
             </p>
           </section>
 
@@ -145,7 +145,7 @@
               <li>
                 <span class="cs-finding-number">01</span>
                 <div>
-                  <p><strong>About one loan in five went bad.</strong> After cleaning, 22,395 loans were repaid (78.36%) and 6,183 defaulted (21.64%). That imbalance is the single most important fact for any classifier built on this data: a model that predicts "no default" for everyone is already 78% accurate and completely useless.</p>
+                  <p><strong>About one loan in five went bad.</strong> After cleaning, 22,395 loans were repaid (78.36%) and 6,183 defaulted (21.64%). That imbalance matters for any future classifier: predicting "no default" for everyone would already score 78% accuracy, yet catch nothing.</p>
                   <figure class="cs-figure">
                     <img src="images/credit-risk-loan-status.png" width="875" height="540" loading="lazy" alt="Bar chart of loan status: about 22,400 non-default loans against about 6,200 defaults." />
                     <figcaption>Count of loans by status, n = 28,578.</figcaption>
@@ -155,13 +155,13 @@
               <li>
                 <span class="cs-finding-number">02</span>
                 <div>
-                  <p><strong>Defaulters earn less, and the difference is visible before any model.</strong> Both income distributions are right-skewed, but the default group peaks lower (roughly $30,000 to $40,000 against $50,000 to $60,000 for repaid loans) and its tail fades out much sooner. Income alone will not separate the groups, though; the two histograms overlap heavily.</p>
+                  <p><strong>Defaulters earn less, visible before any model.</strong> Both income distributions are right-skewed. The default group peaks lower, roughly $30,000 to $40,000 against $50,000 to $60,000 for repaid loans, and its tail fades sooner. Income alone will not separate the groups, though: the two histograms overlap heavily.</p>
                 </div>
               </li>
               <li>
                 <span class="cs-finding-number">03</span>
                 <div>
-                  <p><strong>Two pairs of predictors are close to saying the same thing.</strong> Age and credit-history length correlate at <strong>0.86</strong>, well past the 0.7 multicollinearity threshold we used, so a model should not lean on both. Loan amount and loan-as-a-share-of-income correlate at 0.58. Against income itself, no numeric predictor reached the 0.5 mark: the strongest were loan amount (0.27) and loan-percent-income (&minus;0.25), and interest rate was essentially zero (0.00).</p>
+                  <p><strong>Two pairs of predictors nearly duplicate each other.</strong> Age and credit-history length correlate at <strong>0.86</strong>, past the 0.7 multicollinearity threshold we used, so a model should not lean on both. Loan amount and loan-as-a-share-of-income correlate at 0.58. Against income, no numeric predictor reached 0.5. The strongest were loan amount (0.27) and loan-percent-income (&minus;0.25); interest rate was essentially zero (0.00).</p>
                   <figure class="cs-figure">
                     <img src="images/credit-risk-correlation.png" width="875" height="540" loading="lazy" alt="Pearson correlation matrix of the seven numeric variables. Notable values: age and credit history 0.86, loan amount and loan percent income 0.58, income and loan amount 0.27, income and loan percent income minus 0.25." />
                     <figcaption>Pearson correlations between the numeric variables, from the knitted report.</figcaption>
@@ -171,8 +171,15 @@
               <li>
                 <span class="cs-finding-number">04</span>
                 <div>
-                  <p><strong>A full regression explains about a third of the variation in income.</strong> Regressing income on all ten remaining predictors gave <strong>R&sup2; = 0.338</strong> (adjusted 0.338), with the predictors jointly significant (F = 913.1 on 16 and 28,561 degrees of freedom, p &lt; 0.001). The residual standard error was about $50,750, so individual predictions are wide.</p>
-                  <p>Reading the coefficients: each extra dollar borrowed goes with about <strong>$5.88</strong> more income; each year of age with about <strong>$2,264</strong> more; renting rather than holding a mortgage with about <strong>$4,891 less</strong>; and each extra year of credit history with about <strong>$1,943 less</strong>, once age is held constant. Loan purpose and the prior-default flag were mostly not significant. Home ownership as OWN was indistinguishable from MORTGAGE.</p>
+                  <p><strong>A full regression explains about a third of the variation in income.</strong> Regressing income on all ten remaining predictors gave <strong>R&sup2; = 0.338</strong> (adjusted 0.338). The predictors were jointly significant (F = 913.1 on 16 and 28,561 degrees of freedom, p &lt; 0.001). The residual standard error was about $50,750, so individual predictions are wide.</p>
+                  <p>The coefficients, holding other predictors constant:</p>
+                  <ul>
+                    <li>Each extra dollar borrowed: about <strong>$5.88</strong> more income.</li>
+                    <li>Each year of age: about <strong>$2,264</strong> more.</li>
+                    <li>Renting rather than holding a mortgage: about <strong>$4,891 less</strong>.</li>
+                    <li>Each extra year of credit history: about <strong>$1,943 less</strong>.</li>
+                  </ul>
+                  <p>Loan purpose and the prior-default flag were mostly not significant. Home ownership as OWN was indistinguishable from MORTGAGE.</p>
                 </div>
               </li>
             </ul>
@@ -181,32 +188,32 @@
           <section class="cs-block">
             <h2>How it was built</h2>
             <p>
-              <strong>Everything lives in one R Markdown file</strong> that knits to PDF with <code>bookdown</code>, so the numbers in the text are computed inline (<code>`r ncol(loan_status)`</code>, <code>`r sum(is.na(loan_status))`</code>) rather than typed. If the CSV changes, the report changes with it.
+              <strong>Everything lives in one R Markdown file</strong> that knits to PDF with <code>bookdown</code>. The numbers are computed inline (<code>`r ncol(loan_status)`</code>, <code>`r sum(is.na(loan_status))`</code>) rather than typed. If the CSV changes, the report changes with it.
             </p>
             <p>
-              <strong>Cleaning and reshaping</strong> used <code>dplyr</code>: <code>na.omit()</code> for complete cases, <code>mutate(across(where(is.character), as.factor))</code> to convert types in one line, <code>rename()</code> for the short names, <code>select()</code> and <code>filter()</code> for the drops. A small loop printed the levels of every factor so we could confirm the categories were what we expected before modelling.
+              <strong>Cleaning and reshaping</strong> used <code>dplyr</code>: <code>na.omit()</code> for complete cases, <code>mutate(across(where(is.character), as.factor))</code> to convert types, <code>rename()</code> for short names, <code>select()</code> and <code>filter()</code> for the drops. A small loop printed each factor's levels, so we could confirm the categories before modelling.
             </p>
             <p>
-              <strong>Visualisation</strong> used <code>ggplot2</code>, with <code>facet_grid()</code> to put the two income histograms side by side and <code>coord_cartesian()</code> to cap the axis at $250,000 without discarding the long tail. The correlation matrix came from <code>cor()</code> on the numeric columns, drawn with <code>corrplot</code>. The status table was formatted with <code>kableExtra</code>.
+              <strong>Visualisation</strong> used <code>ggplot2</code>. <code>facet_grid()</code> put the two income histograms side by side; <code>coord_cartesian()</code> capped the axis at $250,000 without discarding the long tail. The correlation matrix came from <code>cor()</code> on the numeric columns, drawn with <code>corrplot</code>. The status table used <code>kableExtra</code>.
             </p>
             <p>
-              <strong>Modelling</strong> used <code>lm()</code> for the full income model, then <code>step(direction = "backward")</code> to drop predictors that did not earn their place. The assessment's final section scaffolded a logistic regression for default itself: a stratified 70/30 train-test split on status crossed with loan intent, forward stepwise selection, evaluation at a 0.5 threshold on accuracy, sensitivity and specificity, and an ROC curve with AUC.
+              <strong>Modelling</strong> used <code>lm()</code> for the full income model, then <code>step(direction = "backward")</code> to drop predictors that did not earn their place. The assessment's final section scaffolded a logistic regression for default itself: a stratified 70/30 train-test split on status crossed with loan intent, forward stepwise selection, and evaluation at a 0.5 threshold on accuracy, sensitivity, specificity and an ROC curve with AUC. I do not report results from it here.
             </p>
             <p>
-              <strong>Generative AI, disclosed.</strong> I used ChatGPT to check code chunks that would not run and to draft the levels-check and correlation-plot code, and documented the prompts in the university's Gen-AI disclosure form. The interpretation is mine.
+              <strong>Generative AI, disclosed.</strong> I used ChatGPT to debug code chunks and to draft the levels-check and correlation-plot code. The prompts are documented in the university's Gen-AI disclosure form. The interpretation is mine.
             </p>
           </section>
 
           <section class="cs-block">
             <h2>Limitations I'd state up front</h2>
             <ul class="cs-limits">
-              <li><strong>Complete-case deletion cost 12% of the rows.</strong> Most of the gaps were in interest rate. If loans without a recorded rate differ from the rest, dropping them biases everything downstream. Imputation would be the next thing to try.</li>
-              <li><strong>The classes are imbalanced, 78 to 22.</strong> Accuracy alone would flatter any default model. Sensitivity, specificity and the ROC curve are the honest measures, and the 0.5 threshold is a starting point, not a business decision.</li>
-              <li><strong>The income model is descriptive, not predictive.</strong> It was fitted and assessed on the same data with no hold-out, and R&sup2; of 0.34 leaves two thirds of the variation unexplained. The positive coefficient on <em>default</em> (about $6,396) is an association in this sample, not a causal claim.</li>
-              <li><strong>One predictor is mechanically tied to the outcome.</strong> <code>loanpctincome</code> is loan amount divided by income, so its very large coefficient in an income regression should not be over-read.</li>
+              <li><strong>Complete-case deletion cost 12% of the rows.</strong> Most gaps were in interest rate. If those loans differ from the rest, dropping them biases everything downstream. Imputation is the next thing to try.</li>
+              <li><strong>The classes are imbalanced, 78 to 22.</strong> Accuracy alone would flatter any default model. Sensitivity, specificity and the ROC curve are the honest measures. The 0.5 threshold is a starting point, not a business decision.</li>
+              <li><strong>The income model is descriptive, not predictive.</strong> It was fitted and assessed on the same data, with no hold-out. R&sup2; of 0.34 leaves two thirds of the variation unexplained. The positive coefficient on <em>default</em> (about $6,396) is an association in this sample, not a causal claim.</li>
+              <li><strong>One predictor is mechanically tied to the outcome.</strong> <code>loanpctincome</code> is loan amount divided by income, so its large coefficient in an income regression should not be over-read.</li>
               <li><strong>Age and credit history are near-collinear (0.86).</strong> Their individual coefficients and standard errors are less trustworthy than the joint fit.</li>
-              <li><strong>Not every result is on this page.</strong> The knitted copy I have on file records the cleaning, the plots and the full income regression. The backward-stepwise selection was run, but its chosen model was not captured in that copy, and the default classifier (logistic regression, ROC and AUC) was the final section of the assessment, so I do not quote figures for either here.</li>
-              <li><strong>No dates, so no out-of-time test.</strong> The dataset is a single cross-section. Nothing here says whether the patterns would hold for next year's applicants.</li>
+              <li><strong>Not every result is on this page.</strong> My knitted copy records the cleaning, the plots and the full income regression. The backward-stepwise selection ran, but its chosen model was not captured. The default classifier (logistic regression, ROC and AUC) was the assessment's final section. I quote no figures for either.</li>
+              <li><strong>No dates, so no out-of-time test.</strong> The dataset is a single cross-section. Nothing here shows whether the patterns hold for next year's applicants.</li>
             </ul>
           </section>
 

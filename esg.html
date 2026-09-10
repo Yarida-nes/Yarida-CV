@@ -58,7 +58,7 @@
           <p class="eyebrow">01 / Tableau &middot; ACCT5034, Curtin University &middot; 2026</p>
           <h1>Do companies with better ESG scores actually earn more?</h1>
           <p class="lede">
-            A three-dashboard Tableau Story and a business analyst report, built on 16,752 firm-year records from eight Asia-Pacific markets between 2010 and 2024, to test whether ESG performance goes together with profitability and valuation.
+            A three-dashboard Tableau Story and a business analyst report. Built on 16,752 firm-year records from eight Asia-Pacific markets, 2010 to 2024. The test: does ESG performance track profitability and valuation?
           </p>
           <div class="esg-actions">
             <a class="button primary" href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">Open the Tableau Story <span aria-hidden="true">&#8599;</span></a>
@@ -132,7 +132,7 @@
           <section class="esg-block">
             <h2>The question</h2>
             <p>
-              ESG disclosure is becoming mandatory across the region &mdash; AASB S1/S2 in Australia, XRB standards in New Zealand, SGX rules in Singapore, SEBI&rsquo;s BRSR Core in India, HKEX and CSRC guidance in China, and the KSSB in Korea &mdash; all broadly converging on the ISSB standards. So the practical question for an investor or a board is simple: <strong>do the companies that score well on ESG also do better financially, and does that hold across very different markets?</strong>
+              ESG disclosure is going mandatory across the region &mdash; AASB S1/S2 in Australia, XRB standards in New Zealand, SGX rules in Singapore, SEBI&rsquo;s BRSR Core in India, HKEX and CSRC guidance in China, and the KSSB in Korea &mdash; all converging on the ISSB standards. So the question for an investor or a board is simple: <strong>do companies that score well on ESG also do better financially, and does that hold across very different markets?</strong>
             </p>
             <p>The brief asked for a Tableau Story of exactly three dashboards that build on each other. I framed them as three steps:</p>
             <ul>
@@ -145,17 +145,17 @@
           <section class="esg-block">
             <h2>The data</h2>
             <p>
-              A panel of Asia-Pacific listed companies covering nine economies from 2001 to 2024: 237,506 firm-year observations across 16,322 firms, with firm-level financials, ESG scores and pillar sub-scores, an ESG controversies score, and governance variables such as board size, female board share and CEO duality.
+              A panel of Asia-Pacific listed companies: nine economies, 2001 to 2024. That is 237,506 firm-year observations across 16,322 firms. Each carries firm-level financials, ESG scores and pillar sub-scores, an ESG controversies score, and governance variables such as board size, female board share and CEO duality.
             </p>
             <p>
-              ESG scores only exist for a subset of larger listed firms, so the first thing I did &mdash; and the first thing the markers checked &mdash; was a global filter to firm-years with a non-null ESG score, restricted to 2010&ndash;2024. That leaves <strong>16,752 firm-years from 2,922 firms</strong>. Two consequences matter for everything that follows:
+              ESG scores exist only for a subset of larger listed firms. So the first step &mdash; and the first thing the markers checked &mdash; was a global filter to firm-years with a non-null ESG score, restricted to 2010&ndash;2024. That leaves <strong>16,752 firm-years from 2,922 firms</strong>. Two consequences matter throughout:
             </p>
             <ul>
               <li><strong>Bangladesh drops out entirely.</strong> It has 3,134 firm-years in the raw panel but none with an ESG score, so every &ldquo;nine countries&rdquo; in the brief is eight in practice.</li>
               <li><strong>Coverage grows sharply over time.</strong> There are 342 ESG-scored firm-years in 2010 and 2,842 in 2023. China alone goes from 25 scored firms in 2010 to 961 in 2024. Any &ldquo;trend&rdquo; is partly a change in who is being scored.</li>
             </ul>
             <p>
-              The calculated fields were defined by the brief and I built them as specified: ROA as <code>SUM(ebit) / SUM(at)</code>; Tobin&rsquo;s Q as <code>(SUM(MCAP)/1,000,000 + SUM(lt)) / SUM(at)</code>; MTB as <code>(SUM(MCAP)/1,000,000) / SUM(ceq)</code>; a Market Group field that labels Australia, New Zealand, Singapore and South Korea as &ldquo;Developed APAC&rdquo;; a Has Controversy flag for <code>CONT &lt; 100</code>; and an Above Threshold field driven by an <strong>ESG High Threshold</strong> parameter (50 to 80 in steps of 5, default 70). The MCAP division is the trap in this dataset: market cap is in dollars while the balance sheet is in millions, and skipping it puts Tobin&rsquo;s Q in the trillions.
+              The brief defined the calculated fields; I built them as specified: ROA as <code>SUM(ebit) / SUM(at)</code>; Tobin&rsquo;s Q as <code>(SUM(MCAP)/1,000,000 + SUM(lt)) / SUM(at)</code>; MTB as <code>(SUM(MCAP)/1,000,000) / SUM(ceq)</code>; a Market Group field labelling Australia, New Zealand, Singapore and South Korea as &ldquo;Developed APAC&rdquo;; a Has Controversy flag for <code>CONT &lt; 100</code>; and an Above Threshold field driven by an <strong>ESG High Threshold</strong> parameter (50 to 80 in steps of 5, default 70). The MCAP division is the trap here: market cap is in dollars, the balance sheet in millions. Skip it and Tobin&rsquo;s Q lands in the trillions.
             </p>
           </section>
 
@@ -165,25 +165,25 @@
               <li>
                 <span class="finding-number">01</span>
                 <div>
-                  <p><strong>ESG scores rose almost everywhere, but from very different starting points.</strong> Across the filtered sample the average ESG score moved from 36.5 in 2010 to 43.7 in 2024. South Korea led throughout and finished at 58.6; China started lowest at 20.7 and more than doubled to 44.4; Singapore went from 26.5 to 51.7. Australia, my home market for this course, moved only from 34.9 to 40.7. The developed-versus-emerging split the brief expected is weaker than I assumed: Developed APAC averages 41.1 against 39.9 for Emerging APAC over the whole period.</p>
+                  <p><strong>ESG scores rose almost everywhere, but from very different starting points.</strong> Across the filtered sample the average moved from 36.5 in 2010 to 43.7 in 2024. South Korea led throughout, finishing at 58.6. China started lowest at 20.7 and more than doubled to 44.4. Singapore went from 26.5 to 51.7. Australia moved only from 34.9 to 40.7. The developed-versus-emerging split the brief expected is weaker than I assumed: Developed APAC averages 41.1 against 39.9 for Emerging APAC over the period.</p>
                 </div>
               </li>
               <li>
                 <span class="finding-number">02</span>
                 <div>
-                  <p><strong>Market value and ESG performance are different things.</strong> Market capitalisation is concentrated in China (about 44% of the summed total) and India, and the three largest industries by market cap &mdash; Metals &amp; Mining (38.6), Beverages (33.0) and Oil, Gas &amp; Consumable Fuels (41.8) &mdash; sit close to or below the sample average ESG score of 40.4. The Governance pillar is the strongest pillar in 21 of the 22 industry groups (sample average 47.9, against 33.9 for Environmental and 39.2 for Social; REITs are the exception, where Social leads), and Environmental is weakest in Media &amp; Entertainment (17.1) and Software &amp; Services (23.9), not just in the heavy-emitting sectors.</p>
+                  <p><strong>Market value and ESG performance are different things.</strong> Market capitalisation is concentrated in China (about 44% of the summed total) and India. The three largest industries by market cap &mdash; Metals &amp; Mining (38.6), Beverages (33.0) and Oil, Gas &amp; Consumable Fuels (41.8) &mdash; sit close to or below the sample average ESG score of 40.4. Governance is the strongest pillar in 21 of the 22 industry groups (sample average 47.9, against 33.9 for Environmental and 39.2 for Social; REITs are the exception, where Social leads). Environmental is weakest in Media &amp; Entertainment (17.1) and Software &amp; Services (23.9), not just the heavy-emitting sectors.</p>
                 </div>
               </li>
               <li>
                 <span class="finding-number">03</span>
                 <div>
-                  <p><strong>Governance structure explains less than I expected.</strong> Firms where the CEO also chairs the board have almost the same ESG scores as those that separate the roles: a median of 38.1 versus 38.4 (3,332 and 13,420 firm-years). Female board share is positively related to ESG at the firm level, as the report says, but the relationship is weak &mdash; R&sup2; of roughly 0.01 across 2,922 firms. Controversies are where the real differences are: 26.8% of Telecommunication Services firm-years and 17.0% of Automobiles &amp; Components had an active controversy, against 0.6% for REITs, and 1,410 controversy firm-years overall.</p>
+                  <p><strong>Governance structure explains less than I expected.</strong> Firms where the CEO also chairs the board score almost the same as those that separate the roles: a median of 38.1 versus 38.4 (3,332 and 13,420 firm-years). Female board share is positively related to ESG at the firm level, but weakly &mdash; R&sup2; of roughly 0.01 across 2,922 firms. The real differences sit in controversies: 26.8% of Telecommunication Services firm-years and 17.0% of Automobiles &amp; Components had an active controversy, against 0.6% for REITs, and 1,410 controversy firm-years overall.</p>
                 </div>
               </li>
               <li>
                 <span class="finding-number">04</span>
                 <div>
-                  <p><strong>Higher ESG goes with slightly higher ROA, but the effect is small and not uniform.</strong> With ROA filtered to &minus;1 to +1 to remove extreme outliers, the firm-year trend line is positive but explains almost nothing: R&sup2; of 0.02 (r = 0.14, n = 16,658). At the default threshold of 70, &ldquo;High ESG&rdquo; firms have a higher aggregate ROA than &ldquo;Low&rdquo; firms in seven of the eight markets &mdash; Australia 11.5% against 6.5%, Indonesia 16.3% against 10.4% &mdash; but Singapore runs the other way (5.7% against 14.4%), and only 1,451 of the 16,752 firm-years clear the threshold at all.</p>
+                  <p><strong>Higher ESG goes with slightly higher ROA, but the effect is small and not uniform.</strong> With ROA filtered to &minus;1 to +1 to remove extreme outliers, the firm-year trend line is positive but explains almost nothing: R&sup2; of 0.02 (r = 0.14, n = 16,658). At the default threshold of 70, &ldquo;High ESG&rdquo; firms beat &ldquo;Low&rdquo; firms on aggregate ROA in seven of the eight markets &mdash; Australia 11.5% against 6.5%, Indonesia 16.3% against 10.4%. But Singapore runs the other way (5.7% against 14.4%), and only 1,451 of the 16,752 firm-years clear the threshold at all.</p>
                   <figure class="esg-subchart">
                     <svg viewBox="0 0 720 340" role="img" aria-labelledby="bar-title" class="esg-chart">
                       <title id="bar-title">Aggregate ROA for firms above and below an ESG score of 70, by market</title>
@@ -213,7 +213,7 @@
               <li>
                 <span class="finding-number">05</span>
                 <div>
-                  <p><strong>The forecast says ESG keeps rising and valuation stays flat &mdash; with wide error bars.</strong> Tableau&rsquo;s forecast on the dual-axis chart extends average ESG score and average Tobin&rsquo;s Q to 2028 with 95% prediction bands. ESG continues its gradual upward trend; Tobin&rsquo;s Q stays around the 0.5 it has held for the whole period (0.55 in 2010, 0.51 in 2023). The bands are wide enough that the forecast is a direction, not a number, and I said so in the caption.</p>
+                  <p><strong>The forecast says ESG keeps rising and valuation stays flat &mdash; with wide error bars.</strong> Tableau&rsquo;s dual-axis forecast extends average ESG score and average Tobin&rsquo;s Q to 2028 with 95% prediction bands. ESG continues its gradual climb. Tobin&rsquo;s Q stays around the 0.5 it has held all period (0.55 in 2010, 0.51 in 2023). The bands are wide enough that the forecast is a direction, not a number &mdash; and the caption says so.</p>
                 </div>
               </li>
             </ol>
@@ -222,7 +222,7 @@
           <section class="esg-block" id="explore">
             <h2>Explore the dashboard</h2>
             <p>
-              The Story is published on Tableau Public. It has a global country filter, highlight actions, and a map-to-dashboard action so that selecting a country on the Dashboard 1 map filters Dashboard 2. On Dashboard 3 the <strong>ESG High Threshold</strong> slider re-classifies every firm-year and redraws the last two charts, so you can check for yourself how much the &ldquo;High ESG firms do better&rdquo; result depends on where the line is drawn.
+              The Story is published on Tableau Public. It has a global country filter, highlight actions, and a map-to-dashboard action: selecting a country on the Dashboard 1 map filters Dashboard 2. On Dashboard 3 the <strong>ESG High Threshold</strong> slider re-classifies every firm-year and redraws the last two charts. Move it to see how much the &ldquo;High ESG firms do better&rdquo; result depends on where the line is drawn.
             </p>
 
             <div class="esg-embed">
@@ -255,28 +255,28 @@
           <section class="esg-block">
             <h2>How it was built</h2>
             <p>
-              <strong>One filter, applied everywhere.</strong> The non-null ESG filter and the 2010&ndash;2024 year range are attached to every worksheet through the data source, so no chart can accidentally include unscored firms. That was a hard requirement of the brief, and it is also what keeps a 237,506-row panel responsive on Tableau Public.
+              <strong>One filter, applied everywhere.</strong> The non-null ESG filter and the 2010&ndash;2024 year range attach to every worksheet through the data source, so no chart can accidentally include unscored firms. The brief required it. It also keeps a 237,506-row panel responsive on Tableau Public.
             </p>
             <p>
-              <strong>Fourteen worksheets, three dashboards, one Story.</strong> Dashboard 1 holds the KPI table, the ESG trend line by country, a filled map of total market cap in USD billions, the top ten industries by market cap coloured by ESG score, and a 100% stacked bar of each country&rsquo;s industry composition. Dashboard 2 holds the E/S/G pillar stack by industry group, the ESG-versus-female-board scatter with a trend line, the country-by-year heatmap, a box plot of ESG score by CEO duality, and the controversy count by industry group. Dashboard 3 holds the ROA-versus-ESG scatter, the dual-axis forecast, the High/Low bar comparison and the country-level High/Low view.
+              <strong>Fourteen worksheets, three dashboards, one Story.</strong> Dashboard 1: the KPI table, the ESG trend line by country, a filled map of total market cap in USD billions, the top ten industries by market cap coloured by ESG score, and a 100% stacked bar of each country&rsquo;s industry composition. Dashboard 2: the E/S/G pillar stack by industry group, the ESG-versus-female-board scatter with a trend line, the country-by-year heatmap, a box plot of ESG score by CEO duality, and the controversy count by industry group. Dashboard 3: the ROA-versus-ESG scatter, the dual-axis forecast, the High/Low bar comparison and the country-level High/Low view.
             </p>
             <p>
-              <strong>Parameters and actions instead of static views.</strong> The ESG High Threshold parameter drives one calculated field that two charts depend on, so the What-If scenario is a single slider. Highlight actions link the charts within each dashboard, and a filter action carries a country selection from the map on Dashboard 1 into Dashboard 2. Each Story point has a caption I wrote to state its insight in one or two sentences.
+              <strong>Parameters and actions instead of static views.</strong> The ESG High Threshold parameter drives one calculated field that two charts depend on, so the What-If scenario is a single slider. Highlight actions link the charts within each dashboard. A filter action carries a country selection from the Dashboard 1 map into Dashboard 2. Each Story point has a caption I wrote to state its insight in one or two sentences.
             </p>
             <p>
-              <strong>Forecast settings.</strong> Tableau&rsquo;s automatic exponential smoothing with seasonality detection, projected four years beyond the data to 2028, with 95% prediction bands shown and the last (partial) year excluded from the model fit.
+              <strong>Forecast settings.</strong> Tableau&rsquo;s automatic exponential smoothing with seasonality detection, projected four years to 2028, with 95% prediction bands shown and the last (partial) year excluded from the model fit.
             </p>
           </section>
 
           <section class="esg-block">
             <h2>Limitations I&rsquo;d state up front</h2>
             <ul>
-              <li><strong>Correlation, not causation.</strong> Nothing here shows that improving an ESG score raises returns. Larger, more profitable firms are more likely to be scored at all, and more likely to have the resources to score well.</li>
-              <li><strong>The sample is who gets scored, not the market.</strong> ESG coverage is 7% of the raw panel and skews to large firms. Bangladesh is absent, New Zealand has 499 firm-years and only 28 above the threshold, and coverage jumps from 342 firm-years in 2010 to 2,842 in 2023 &mdash; so part of every time trend is a composition change, not a change within firms.</li>
-              <li><strong>2024 is incomplete.</strong> India has 16 firm-years in 2024 against 283 the year before, so the 2024 dip-and-recovery visible in some lines is a reporting-lag artefact. The forecast ignores the last year for this reason.</li>
-              <li><strong>Ratios depend on unit assumptions and are outlier-sensitive.</strong> The brief specifies the MCAP conversion; I followed it but did not independently verify the currency of every balance-sheet item. ROA is filtered to &minus;1 to +1 in the scatter and shown as a sum-over-sum aggregate elsewhere, and the two do not give identical numbers.</li>
-              <li><strong>&ldquo;High ESG&rdquo; is a choice.</strong> A firm scoring 72 is High at threshold 70 and Low at 75. Moving the slider between 50 and 80 changes both the group sizes and the direction of the result in some markets, which is why the parameter is on the dashboard rather than fixed.</li>
-              <li><strong>ESG ratings themselves are contested.</strong> LSEG scores are one provider&rsquo;s view; providers disagree, scores are backfilled, and the controversies score is on an inverse scale (100 = no controversy) that is easy to misread.</li>
+              <li><strong>Correlation, not causation.</strong> Nothing here shows that improving an ESG score raises returns. Larger, more profitable firms are more likely to be scored at all, and better resourced to score well.</li>
+              <li><strong>The sample is who gets scored, not the market.</strong> ESG coverage is 7% of the raw panel and skews to large firms. Bangladesh is absent. New Zealand has 499 firm-years, only 28 above the threshold. Coverage jumps from 342 firm-years in 2010 to 2,842 in 2023, so part of every time trend is composition change, not change within firms.</li>
+              <li><strong>2024 is incomplete.</strong> India has 16 firm-years in 2024 against 283 the year before, so the 2024 dip-and-recovery in some lines is a reporting-lag artefact. The forecast drops the last year for this reason.</li>
+              <li><strong>Ratios depend on unit assumptions and are outlier-sensitive.</strong> I followed the brief&rsquo;s MCAP conversion but did not independently verify the currency of every balance-sheet item. ROA is filtered to &minus;1 to +1 in the scatter and shown as a sum-over-sum aggregate elsewhere; the two do not give identical numbers.</li>
+              <li><strong>&ldquo;High ESG&rdquo; is a choice.</strong> A firm scoring 72 is High at threshold 70 and Low at 75. Moving the slider between 50 and 80 changes both group sizes and, in some markets, the direction of the result &mdash; which is why the parameter is on the dashboard rather than fixed.</li>
+              <li><strong>ESG ratings themselves are contested.</strong> LSEG scores are one provider&rsquo;s view. Providers disagree, scores are backfilled, and the controversies score runs on an inverse scale (100 = no controversy) that is easy to misread.</li>
             </ul>
           </section>
 
