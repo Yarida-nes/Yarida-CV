@@ -57,10 +57,11 @@
   margin-bottom: .45rem;
   color: var(--accent);
   font-family: "DM Mono", monospace;
-  font-size: .72rem;
+  font-size: .82rem;
+  letter-spacing: .04em;
   text-transform: uppercase;
 }
-.cs-meta dd { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+.cs-meta dd { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 
 /* Narrative blocks */
 .cs-block { max-width: 760px; margin-bottom: 3.5rem; }
@@ -68,7 +69,7 @@
   margin: 0 0 1.1rem;
   padding-top: 1.2rem;
   border-top: 1px solid var(--ink);
-  font-size: 1.35rem;
+  font-size: 1.55rem;
 }
 .cs-block p, .cs-block li { color: var(--muted); font-size: 1.06rem; line-height: 1.72; }
 .cs-block p strong, .cs-block li strong { color: var(--ink); font-weight: 600; }
