@@ -116,11 +116,12 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 .portrait-wrap figcaption { margin-top: .75rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .7rem; text-transform: uppercase; }
 
 /* ── Metrics strip ───────────────────────────────────────────────────── */
-.metrics { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.metrics div { display: flex; flex-direction: column; gap: .7rem; padding: 2.1rem 1.9rem; font-size: .82rem; line-height: 1.55; color: var(--muted); }
-.metrics div:first-child { padding-left: 0; }
-.metrics div + div { border-left: 1px solid var(--line); }
-.metric-number { color: var(--accent); font-family: "DM Mono", monospace; font-size: 1.9rem; font-weight: 500; line-height: 1.1; letter-spacing: -.01em; }
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.metrics div { display: flex; flex-direction: column; padding: 1.7rem 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; font-size: .9rem; line-height: 1.55; color: var(--muted); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background-color .35s ease, color .35s ease; }
+.metrics div:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 10px 28px rgba(16, 35, 63, .08); }
+.metric-number { color: var(--accent); font-family: "DM Mono", monospace; font-size: 2.1rem; font-weight: 500; line-height: 1.1; letter-spacing: -.01em; margin-bottom: .5rem; }
+.metric-label { color: var(--ink); font-weight: 600; font-size: 1rem; margin-bottom: .15rem; }
+.metric-sub { color: var(--muted); font-size: .9rem; line-height: 1.5; }
 
 /* ── Sections ────────────────────────────────────────────────────────── */
 .section { padding: 7rem 0; display: grid; grid-template-columns: minmax(180px, .28fr) 1fr; gap: 3rem; border-bottom: 1px solid var(--line); }
@@ -225,12 +226,8 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   nav { order: 3; width: 100%; gap: 1.25rem; overflow-x: auto; padding-top: .2rem; }
   .intro { grid-template-columns: 1fr; min-height: auto; padding: 4.5rem 0; gap: 2.5rem; }
   .portrait-wrap { width: 58%; }
-  .metrics { grid-template-columns: 1fr 1fr; }
-  .metrics div { padding: 1.5rem 1.25rem; }
-  .metrics div:nth-child(odd) { padding-left: 0; }
-  .metrics div + div { border-left: 0; }
-  .metrics div:nth-child(even) { border-left: 1px solid var(--line); padding-left: 1.25rem; }
-  .metrics div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .metrics { grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .metrics div { padding: 1.3rem 1.15rem; }
   .section { grid-template-columns: 1fr; gap: 2.3rem; padding: 4.5rem 0; }
   .timeline-item { grid-template-columns: 72px 1fr; }
   .project-grid { grid-template-columns: 1fr; }
@@ -258,8 +255,9 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   .lede { font-size: 1rem; }
   .portrait-wrap img, .portrait-art { width: 150px; }
   .portrait-wrap figcaption { display: none; }
-  .metrics div { padding: .8rem 1rem .8rem 0; }
-  .metric-number { font-size: 1.4rem; }
+  .metrics { gap: .5rem; }
+  .metrics div { padding: .7rem .9rem; border: 1px solid var(--line); border-radius: 6px; background: white; box-shadow: none; }
+  .metric-number { font-size: 1.4rem; margin-bottom: .25rem; }
   .section { padding: 1.6rem 0; gap: 1.5rem; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
   .project-card { padding: .9rem 1rem; background: white; }
