@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Coverage bar chart: 199, 325 and 417 villages covered.">
   <rect width="640" height="400" fill="#10233f"/>
   <text x="40" y="58" font-family="'DM Mono', monospace" font-size="20" fill="#8ba0ba">VILLAGES COVERED</text>
-  <text x="40" y="84" font-family="'DM Mono', monospace" font-size="15" fill="#6f86a4">Nonthaburi &#183; GIS network analysis</text>
+  <text x="40" y="84" font-family="'DM Mono', monospace" font-size="15" fill="#6f86a4">Thailand &#183; GIS network analysis</text>
   <line x1="40" y1="330" x2="600" y2="330" stroke="#2c405c" stroke-width="1.5"/>
   <g fill="#3bb6c0">
     <rect x="120" y="234.5" width="96" height="95.5" rx="3" opacity="0.55"/>
