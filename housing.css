@@ -35,7 +35,7 @@
 /* Content blocks */
 .study-block { padding: 2.5rem 0; border-top: 1px solid var(--line); }
 .study-block h2 { font-size: 1.55rem; margin-bottom: 1.1rem; letter-spacing: 0; }
-.study-block p, .study-block li { color: var(--muted); line-height: 1.68; font-size: 1.02rem; }
+.study-block p, .study-block li { color: var(--muted); line-height: 1.72; font-size: 1.06rem; }
 .study-block p strong, .study-block li strong { color: var(--ink); font-weight: 600; }
 .study-block > ul { margin: 0 0 1.25rem; padding-left: 1.15rem; }
 .study-block > ul li { margin-bottom: .6rem; }
