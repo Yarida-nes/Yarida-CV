@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A published GIS study of pharmacy service coverage in Nonthaburi, Thailand: nearest-neighbour, network and location-allocation analysis. Co-authored by Yarida Kaewthong, presented at the 2023 Asian Conference on Remote Sensing."
+    />
+    <title>Drugstore access in Nonthaburi | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#10233f" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/drugstores.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/drugstores.html" />
+    <meta property="og:title" content="Drugstore access in Nonthaburi | Yarida Kaewthong" />
+    <meta
+      property="og:description"
+      content="A published GIS study of pharmacy service coverage in Nonthaburi: nearest-neighbour, network and location-allocation analysis. Presented at the 2023 Asian Conference on Remote Sensing."
+    />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Drugstore access in Nonthaburi | Yarida Kaewthong" />
+    <meta
+      name="twitter:description"
+      content="A published GIS study of pharmacy service coverage in Nonthaburi, presented at the 2023 Asian Conference on Remote Sensing."
+    />
+    <meta name="twitter:image" content="https://yarida-cv.vercel.app/images/og-card.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="housing.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">YK<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="projects.html">All projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+
+      <main id="main">
+        <article class="study">
+          <header class="study-head">
+            <p class="eyebrow">05 / GIS &middot; Published paper</p>
+            <h1>Where should Nonthaburi add pharmacies so everyone is covered?</h1>
+            <p class="lede">
+              Thailand lets patients collect medicine at neighbourhood pharmacies to ease hospital crowding &mdash; but only if a pharmacy is within reach. This study mapped every drugstore in Nonthaburi and used GIS network analysis to find the gaps and the best places to fill them. Co-authored and presented at the 2023 Asian Conference on Remote Sensing.
+            </p>
+            <div class="study-actions">
+              <a class="button primary" href="https://acrs-aars.org/proceeding/ACRS2023/Spatial%20Information%20Sciences/ACRS2023034.pdf" target="_blank" rel="noreferrer">Read the paper (PDF) <span aria-hidden="true">↗</span></a>
+              <a class="button text-button" href="projects.html">All projects <span aria-hidden="true">→</span></a>
+            </div>
+          </header>
+
+          <div class="metrics study-metrics" aria-label="Project at a glance">
+            <div><span class="metric-number">433</span><span>drugstores mapped<br />and tested for clustering (nearest-neighbour)</span></div>
+            <div><span class="metric-number">199 &rarr; 417</span><span>villages within reach<br />now vs. with 22 added pharmacies (of 511)</span></div>
+            <div><span class="metric-number">ACRS 2023</span><span>peer-reviewed conference paper<br />co-authored, Kasetsart University</span></div>
+          </div>
+
+          <dl class="study-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>Co-author (fourth of eight), with the Department of Geography research team at Kasetsart University</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>GIS &middot; Network Analysis &middot; Location-Allocation &middot; Nearest Neighbor Index &middot; field survey (GPS)</dd>
+            </div>
+            <div>
+              <dt>Context</dt>
+              <dd>2023 Asian Conference on Remote Sensing (ACRS2023). During my BSocSci in Geography, Kasetsart University</dd>
+            </div>
+          </dl>
+
+          <section class="study-block">
+            <h2>The question</h2>
+            <p>
+              Nonthaburi has the second-highest population density in Thailand, and its main hospital sees 2,500&ndash;3,000 outside patients a day. The &ldquo;Medicine Pickup at Neighbourhood Drugstores&rdquo; policy lets patients collect medication at participating pharmacies instead of queuing at hospitals. It only works if a qualified pharmacy is actually close to where people live.
+            </p>
+            <p>The study set three objectives:</p>
+            <ul>
+              <li>Describe how drugstores are distributed across the province &mdash; clustered or spread out?</li>
+              <li>Measure how many communities the current participating pharmacies can actually serve.</li>
+              <li>Find where to add pharmacies to close the coverage gap most efficiently.</li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>The data</h2>
+            <p>
+              A cross-section built from field surveys (August&ndash;December 2022) and public agencies. GPS coordinates of Type&nbsp;1 pharmacies came from on-site visits; participating-pharmacy records from the National Health Security Office (NHSO); the road network from GISTDA; village coordinates from the Ministry of Interior; and pharmacy licensing from the FDA.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table">
+                <thead>
+                  <tr><th scope="col">Layer</th><th scope="col">Detail</th><th scope="col">Source</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Type 1 pharmacies</td><td>433 stores, GPS located</td><td>Field survey + FDA</td></tr>
+                  <tr><td>Participating pharmacies</td><td>27 (16 from NHSO + 11 field-found)</td><td>NHSO + field survey</td></tr>
+                  <tr><td>Villages</td><td>511, as demand points</td><td>Ministry of Interior</td></tr>
+                  <tr><td>Road network</td><td>Travel paths for reach</td><td>GISTDA</td></tr>
+                  <tr><td>Population weight</td><td>Ages 41&ndash;80, 5&nbsp;km service radius</td><td>NHSO criteria</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="study-block" id="findings">
+            <h2>What the data showed</h2>
+            <ol class="findings">
+              <li>
+                <span class="finding-number">01</span>
+                <div>
+                  <p><strong>Pharmacies cluster; they are not evenly spread.</strong> A Nearest Neighbor Index over all 433 drugstores returned a clustered pattern (Z-score &minus;19.71, p &asymp; 0). Stores line up along main roads and concentrate in the Mueang Nonthaburi and Pak Kret districts, near the two hub hospitals.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">02</span>
+                <div>
+                  <p><strong>The current network reaches fewer than 4 in 10 villages.</strong> With a 5&nbsp;km service radius, the 27 participating pharmacies cover only 199 of 511 villages. Mueang Nonthaburi is best served (72 villages); Sai Noi worst (8). Whole districts fall outside the network.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">03</span>
+                <div>
+                  <p><strong>The pharmacies that do serve are overloaded.</strong> On average each participating pharmacist serves 13,451 people &mdash; well above the NHSO's guideline of no more than 10,000 per pharmacist.</p>
+                </div>
+              </li>
+              <li>
+                <span class="finding-number">04</span>
+                <div>
+                  <p><strong>A few well-placed additions close most of the gap.</strong> Location-allocation modelling found that adding 5 pharmacies (in Bang Yai, Bang Bua Thong and Bang Kruai) lifts coverage to 325 villages; adding 22 across all six districts reaches 417 villages &mdash; the paper reports these as 82.74% and over 95% coverage. Placement, not just count, is what matters.</p>
+                </div>
+              </li>
+            </ol>
+
+            <figure class="study-chart">
+              <svg viewBox="0 0 640 300" role="img" aria-label="Bar chart of villages within reach out of 511: 199 now, 325 with five added pharmacies, 417 with twenty-two added.">
+                <line x1="40" y1="240" x2="600" y2="240" class="ch-grid"/>
+                <line x1="40" y1="130" x2="600" y2="130" class="ch-grid"/>
+                <line x1="40" y1="20" x2="600" y2="20" class="ch-grid"/>
+                <text x="600" y="236" class="ch-lbl" text-anchor="end">0</text>
+                <text x="600" y="126" class="ch-lbl" text-anchor="end">250</text>
+                <text x="600" y="16" class="ch-lbl" text-anchor="end">500</text>
+                <rect x="90"  y="152.4" width="120" height="87.6"  class="ch-bar"/>
+                <rect x="270" y="97.0"  width="120" height="143.0" class="ch-bar"/>
+                <rect x="450" y="56.5"  width="120" height="183.5" class="ch-bar is-pick"/>
+                <text x="150" y="142" class="ch-val" text-anchor="middle">199</text>
+                <text x="330" y="87"  class="ch-val" text-anchor="middle">325</text>
+                <text x="510" y="46"  class="ch-val is-pick" text-anchor="middle">417</text>
+                <text x="150" y="262" class="ch-lbl" text-anchor="middle">Now</text>
+                <text x="330" y="262" class="ch-lbl" text-anchor="middle">+5 stores</text>
+                <text x="510" y="262" class="ch-lbl" text-anchor="middle">+22 stores</text>
+                <text x="150" y="280" class="ch-sub" text-anchor="middle">27 pharmacies</text>
+                <text x="330" y="280" class="ch-sub" text-anchor="middle">82.74%</text>
+                <text x="510" y="280" class="ch-sub" text-anchor="middle">&gt;95%</text>
+              </svg>
+              <figcaption>Villages within a 5&nbsp;km service radius, out of 511. The percentages are the paper's coverage figures from the location-allocation model.</figcaption>
+            </figure>
+          </section>
+
+          <section class="study-block">
+            <h2>How it was done</h2>
+            <p>
+              <strong>Distribution first.</strong> The Nearest Neighbor Index measured whether stores cluster or spread, giving an objective pattern (clustered) rather than an eyeballed map.
+            </p>
+            <p>
+              <strong>Reach along real roads.</strong> Network analysis measured travel distance along the road network &mdash; not straight-line circles &mdash; from each pharmacy to the 511 villages, within the 5&nbsp;km radius NHSO sets.
+            </p>
+            <p>
+              <strong>Where to add, not just how many.</strong> Location-allocation with a Maximize Coverage model chose sites that add the most newly-covered demand, then scenario analysis tested the 5-store and 22-store expansions.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>Worth stating up front</h2>
+            <ul>
+              <li><strong>A snapshot in time.</strong> The network was surveyed in late 2022; coverage shifts as pharmacies join, leave, or change hours.</li>
+              <li><strong>Modelling assumptions.</strong> The 5&nbsp;km radius and the ages 41&ndash;80 population weight are NHSO criteria, not observed patient behaviour.</li>
+              <li><strong>Two ways of counting coverage.</strong> Village counts (199 / 325 / 417 of 511) and the paper's percentage figures come from different coverage measures, so they are best read side by side, not swapped.</li>
+              <li><strong>Reach is not choice.</strong> Distance says a pharmacy is within range; it does not capture traffic, stock, or which pharmacy a patient actually prefers.</li>
+            </ul>
+          </section>
+
+          <div class="study-actions study-footer-actions">
+            <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> All projects</a>
+            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to CV</a>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span>Designed for the web, ready to print.</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

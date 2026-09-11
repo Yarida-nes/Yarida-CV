@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Coverage bar chart: 199, 325 and 417 villages covered.">
+  <rect width="640" height="400" fill="#10233f"/>
+  <text x="40" y="58" font-family="'DM Mono', monospace" font-size="20" fill="#8ba0ba">VILLAGES COVERED</text>
+  <text x="40" y="84" font-family="'DM Mono', monospace" font-size="15" fill="#6f86a4">Nonthaburi &#183; GIS network analysis</text>
+  <line x1="40" y1="330" x2="600" y2="330" stroke="#2c405c" stroke-width="1.5"/>
+  <g fill="#3bb6c0">
+    <rect x="120" y="234.5" width="96" height="95.5" rx="3" opacity="0.55"/>
+    <rect x="272" y="174.0" width="96" height="156.0" rx="3" opacity="0.75"/>
+    <rect x="424" y="130.0" width="96" height="200.0" rx="3" opacity="1"/>
+  </g>
+  <g font-family="'DM Mono', monospace" font-size="26" font-weight="500" fill="#f6f7f9" text-anchor="middle">
+    <text x="168" y="222">199</text>
+    <text x="320" y="162">325</text>
+    <text x="472" y="118">417</text>
+  </g>
+  <g font-family="'DM Mono', monospace" font-size="16" fill="#8ba0ba" text-anchor="middle">
+    <text x="168" y="360">Now</text>
+    <text x="320" y="360">+5</text>
+    <text x="472" y="360">+22</text>
+  </g>
+</svg>
