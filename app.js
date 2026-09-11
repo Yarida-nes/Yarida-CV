@@ -163,3 +163,24 @@ if ("IntersectionObserver" in window && sections.length) {
     io.observe(el);
   });
 })();
+
+/* ── Back-to-top button ──────────────────────────────────────────────────
+   Injected on every page; appears after scrolling down, returns to the top. */
+(function () {
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "to-top";
+  btn.setAttribute("aria-label", "Back to top");
+  btn.innerHTML = '<span aria-hidden="true">\u2191</span>';
+  document.body.appendChild(btn);
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function onScroll() {
+    btn.classList.toggle("is-shown", (window.pageYOffset || document.documentElement.scrollTop) > 600);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  btn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+})();

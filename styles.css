@@ -68,6 +68,11 @@ body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Spa
 /* Keyboard focus ring — visible for keyboard users, invisible on mouse click */
 a:focus-visible, button:focus-visible, summary:focus-visible, .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
 
+/* Back-to-top button */
+.to-top { position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 20; width: 46px; height: 46px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 1.25rem; line-height: 1; cursor: pointer; display: grid; place-items: center; opacity: 0; visibility: hidden; transform: translateY(8px); box-shadow: 0 6px 20px rgba(16, 35, 63, .14); transition: opacity .25s ease, transform .25s ease, color .2s ease, border-color .2s ease, background-color .35s ease; }
+.to-top.is-shown { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { color: var(--accent); border-color: var(--accent); }
+
 /* Animated underline on the primary nav */
 nav a { position: relative; }
 nav a::after { content: ""; position: absolute; left: 0; bottom: -5px; width: 100%; height: 1.5px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
@@ -245,7 +250,7 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   @page { margin: 14mm; }
   body { background: white; }
   .site-shell { max-width: none; padding: 0; }
-  .skip-link, .topbar nav, .github-link, .theme-toggle, .intro-actions, .availability, .section-side-link, .project-shot, .project-cta, .no-print { display: none; }
+  .skip-link, .topbar nav, .github-link, .theme-toggle, .to-top, .intro-actions, .availability, .section-side-link, .project-shot, .project-cta, .no-print { display: none; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .topbar { min-height: auto; padding-bottom: .6rem; }
   .intro { min-height: auto; grid-template-columns: 1fr 150px; padding: 1.25rem 0 1.5rem; gap: 2rem; }
