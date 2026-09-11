@@ -106,3 +106,10 @@
   .table-wrap { overflow: visible; }
   .study-table tr.is-pick td { background: #eef3f3; }
 }
+
+/* Bars grow up when the chart scrolls into view (reveal classes come from app.js;
+   only present when motion is allowed, so the chart is always visible otherwise) */
+@media (prefers-reduced-motion: no-preference) {
+  .study-chart.reveal .ch-bar { transform: scaleY(0); transform-box: fill-box; transform-origin: bottom; }
+  .study-chart.reveal.is-visible .ch-bar { animation: grow-bar .8s cubic-bezier(.2, .7, .3, 1) both; }
+}

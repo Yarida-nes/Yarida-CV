@@ -105,3 +105,13 @@
   .esg-placeholder { display: none; }
   .esg-shot img[hidden] + .esg-placeholder + figcaption { display: none; }
 }
+
+/* Charts animate in on scroll (reveal classes from app.js; motion-safe) */
+@keyframes esg-draw { to { stroke-dashoffset: 0; } }
+@keyframes esg-grow-x { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: no-preference) {
+  .esg-hero.reveal .esg-chart polyline { stroke-dasharray: 1600; stroke-dashoffset: 1600; }
+  .esg-hero.reveal.is-visible .esg-chart polyline { animation: esg-draw 1.5s ease both; }
+  .esg-subchart.reveal .b-hi, .esg-subchart.reveal .b-lo { transform: scaleX(0); transform-box: fill-box; transform-origin: left; }
+  .esg-subchart.reveal.is-visible .b-hi, .esg-subchart.reveal.is-visible .b-lo { animation: esg-grow-x .8s cubic-bezier(.2, .7, .3, 1) both; }
+}
