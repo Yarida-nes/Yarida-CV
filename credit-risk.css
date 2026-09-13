@@ -84,7 +84,7 @@
 
 /* Numbered findings */
 .cs-findings { padding: 0 !important; list-style: none; }
-.cs-findings li {
+.cs-findings > li {
   display: grid;
   grid-template-columns: 52px 1fr;
   gap: 1rem;
@@ -92,8 +92,8 @@
   padding: 1.4rem 0;
   border-top: 1px solid var(--line);
 }
-.cs-findings li:last-child { border-bottom: 1px solid var(--line); }
-.cs-findings li > div > p:last-child { margin-bottom: 0; }
+.cs-findings > li:last-child { border-bottom: 1px solid var(--line); }
+.cs-findings > li > div > p:last-child { margin-bottom: 0; }
 .cs-finding-number {
   color: var(--accent);
   font-family: "DM Mono", monospace;
@@ -110,7 +110,7 @@
   .cs-metrics .metric-number { font-size: 1.2rem; }
   .cs-meta { grid-template-columns: 1fr; gap: 1.1rem; margin-bottom: 2.5rem; }
   .cs-block { margin-bottom: 2.6rem; }
-  .cs-findings li { grid-template-columns: 36px 1fr; gap: .75rem; }
+  .cs-findings > li { grid-template-columns: 36px 1fr; gap: .75rem; }
   .cs-actions { gap: 1rem; }
   .case-study code { white-space: normal; }
 }
@@ -127,6 +127,6 @@
   .cs-meta { margin-bottom: 1.4rem; padding: .8rem 0; }
   .cs-block { max-width: none; margin-bottom: 1.4rem; }
   .cs-block p, .cs-block ul { font-size: .9rem; }
-  .cs-findings li { padding: .8rem 0; break-inside: avoid; }
+  .cs-findings > li { padding: .8rem 0; break-inside: avoid; }
   .case-study code { border: 0; background: none; padding: 0; }
 }
