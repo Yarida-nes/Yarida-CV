@@ -184,3 +184,55 @@ if ("IntersectionObserver" in window && sections.length) {
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
   });
 })();
+
+/* ── Count-up on metric numbers ──────────────────────────────────────────
+   When a metric scrolls into view its number ticks up from zero. Only pure
+   numbers animate (ranges, "1st", "R² 0.02", "ACRS 2023" stay as written).
+   If reduced-motion is set, IntersectionObserver is missing, or the tab is
+   hidden (rAF paused), the real value simply stays on screen. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  var nums = Array.prototype.slice.call(document.querySelectorAll(".metric-number"));
+  if (!nums.length) return;
+
+  function format(value, decimals, grouped) {
+    var s = decimals > 0 ? value.toFixed(decimals) : String(Math.round(value));
+    if (grouped) {
+      var parts = s.split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      s = parts.join(".");
+    }
+    return s;
+  }
+
+  function run(el) {
+    var raw = el.textContent.trim();
+    var m = raw.match(/^([$£+]?)(\d[\d,]*(?:\.\d+)?)$/); // one plain number only
+    if (!m) return;
+    var prefix = m[1] || "";
+    var grouped = m[2].indexOf(",") !== -1;
+    var decimals = m[2].indexOf(".") !== -1 ? m[2].split(".")[1].length : 0;
+    var target = parseFloat(m[2].replace(/,/g, ""));
+    if (!isFinite(target) || target > 1000000) return;
+    var dur = 1100, start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + format(target * eased, decimals, grouped);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + format(target, decimals, grouped);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      run(e.target);
+    });
+  }, { threshold: 0.6 });
+  nums.forEach(function (n) { io.observe(n); });
+})();
