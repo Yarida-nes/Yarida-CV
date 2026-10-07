@@ -180,9 +180,64 @@
                 <img src="images/melbourne-light.png" alt="Bar chart: serious-injury share for pedestrians is 46% in daylight, 45% at dusk or dawn, 56% in the dark with street lights and 63% without." loading="lazy" width="2000" height="1000" />
                 <figcaption><strong>Fig 5</strong>Serious-injury share for pedestrians by light.</figcaption>
               </figure>
-              <figure>
-                <img src="images/melbourne-trend.png" alt="Line chart of crashes per year 2012 to 2025. Pedestrian crashes drop sharply in 2020 during COVID-19 lockdowns and recover by 2022; cyclist crashes stay around 1,000 to 1,400." loading="lazy" width="2000" height="1100" />
-                <figcaption><strong>Fig 6</strong>Pedestrian crashes fell 34% in 2020 while cyclist crashes barely changed.</figcaption>
+              <figure class="trend-chart" data-animate-chart>
+                <p class="trend-chart-title">Pedestrian and cyclist injury crashes in Melbourne, 2012 to 2025</p>
+                <svg class="trend-svg" viewBox="0 0 720 380" role="img" aria-labelledby="trend-title trend-desc">
+                  <title id="trend-title">Pedestrian and cyclist injury crashes in Melbourne, 2012 to 2025</title>
+                  <desc id="trend-desc">Pedestrian crashes stay near 1,000 to 1,200 a year, fall to 696 in 2020 during COVID-19 lockdowns and recover to 1,060 by 2025. Cyclist crashes peak at 1,393 in 2014 and end at 1,023 in 2025.</desc>
+                  <rect x="355.4" y="30" width="79.9" height="300" class="tr-covid"/>
+                  <text x="395.3" y="48" class="tr-note" text-anchor="middle">COVID-19</text>
+                  <text x="395.3" y="64" class="tr-note" text-anchor="middle">lockdowns</text>
+                  <line x1="56" x2="575" y1="330" y2="330" class="tr-grid"/>
+                  <text x="48" y="334" class="tr-axis" text-anchor="end">0</text>
+                  <line x1="56" x2="575" y1="239.4" y2="239.4" class="tr-grid"/>
+                  <text x="48" y="243.4" class="tr-axis" text-anchor="end">500</text>
+                  <line x1="56" x2="575" y1="148.8" y2="148.8" class="tr-grid"/>
+                  <text x="48" y="152.8" class="tr-axis" text-anchor="end">1,000</text>
+                  <line x1="56" x2="575" y1="58.1" y2="58.1" class="tr-grid"/>
+                  <text x="48" y="62.1" class="tr-axis" text-anchor="end">1,500</text>
+                  <text x="56" y="352" class="tr-axis" text-anchor="middle">2012</text>
+                  <text x="135.8" y="352" class="tr-axis" text-anchor="middle">2014</text>
+                  <text x="215.7" y="352" class="tr-axis" text-anchor="middle">2016</text>
+                  <text x="295.5" y="352" class="tr-axis" text-anchor="middle">2018</text>
+                  <text x="375.4" y="352" class="tr-axis" text-anchor="middle">2020</text>
+                  <text x="455.2" y="352" class="tr-axis" text-anchor="middle">2022</text>
+                  <text x="535.1" y="352" class="tr-axis" text-anchor="middle">2024</text>
+                  <path class="tr-line is-bike" pathLength="1" d="M56,116.8 L95.9,96.4 L135.8,77.5 L175.8,86.4 L215.7,111.1 L255.6,119.9 L295.5,133.2 L335.5,125.9 L375.4,135.7 L415.3,134.8 L455.2,144.6 L495.2,123.7 L535.1,104.7 L575,144.6"/>
+                  <circle class="tr-dot is-bike" style="--i:0" cx="56" cy="116.8" r="4.5"><title>Cyclists, 2012: 1,176 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:1" cx="95.9" cy="96.4" r="4.5"><title>Cyclists, 2013: 1,289 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:2" cx="135.8" cy="77.5" r="4.5"><title>Cyclists, 2014: 1,393 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:3" cx="175.8" cy="86.4" r="4.5"><title>Cyclists, 2015: 1,344 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:4" cx="215.7" cy="111.1" r="4.5"><title>Cyclists, 2016: 1,208 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:5" cx="255.6" cy="119.9" r="4.5"><title>Cyclists, 2017: 1,159 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:6" cx="295.5" cy="133.2" r="4.5"><title>Cyclists, 2018: 1,086 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:7" cx="335.5" cy="125.9" r="4.5"><title>Cyclists, 2019: 1,126 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:8" cx="375.4" cy="135.7" r="4.5"><title>Cyclists, 2020: 1,072 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:9" cx="415.3" cy="134.8" r="4.5"><title>Cyclists, 2021: 1,077 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:10" cx="455.2" cy="144.6" r="4.5"><title>Cyclists, 2022: 1,023 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:11" cx="495.2" cy="123.7" r="4.5"><title>Cyclists, 2023: 1,138 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:12" cx="535.1" cy="104.7" r="4.5"><title>Cyclists, 2024: 1,243 crashes</title></circle>
+                  <circle class="tr-dot is-bike" style="--i:13" cx="575" cy="144.6" r="4.5"><title>Cyclists, 2025: 1,023 crashes</title></circle>
+                  <text class="tr-label is-bike" x="585" y="164.6">Cyclists 1,023</text>
+                  <path class="tr-line is-ped" pathLength="1" d="M56,115.8 L95.9,128.8 L135.8,135.9 L175.8,130.8 L215.7,127.2 L255.6,146.8 L295.5,147.7 L335.5,137.7 L375.4,203.8 L415.3,178.3 L455.2,142 L495.2,146 L535.1,135.3 L575,137.9"/>
+                  <circle class="tr-dot is-ped" style="--i:0" cx="56" cy="115.8" r="4.5"><title>Pedestrians, 2012: 1,182 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:1" cx="95.9" cy="128.8" r="4.5"><title>Pedestrians, 2013: 1,110 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:2" cx="135.8" cy="135.9" r="4.5"><title>Pedestrians, 2014: 1,071 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:3" cx="175.8" cy="130.8" r="4.5"><title>Pedestrians, 2015: 1,099 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:4" cx="215.7" cy="127.2" r="4.5"><title>Pedestrians, 2016: 1,119 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:5" cx="255.6" cy="146.8" r="4.5"><title>Pedestrians, 2017: 1,011 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:6" cx="295.5" cy="147.7" r="4.5"><title>Pedestrians, 2018: 1,006 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:7" cx="335.5" cy="137.7" r="4.5"><title>Pedestrians, 2019: 1,061 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:8" cx="375.4" cy="203.8" r="4.5"><title>Pedestrians, 2020: 696 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:9" cx="415.3" cy="178.3" r="4.5"><title>Pedestrians, 2021: 837 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:10" cx="455.2" cy="142" r="4.5"><title>Pedestrians, 2022: 1,037 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:11" cx="495.2" cy="146" r="4.5"><title>Pedestrians, 2023: 1,015 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:12" cx="535.1" cy="135.3" r="4.5"><title>Pedestrians, 2024: 1,074 crashes</title></circle>
+                  <circle class="tr-dot is-ped" style="--i:13" cx="575" cy="137.9" r="4.5"><title>Pedestrians, 2025: 1,060 crashes</title></circle>
+                  <text class="tr-label is-ped" x="585" y="125.9">Pedestrians 1,060</text>
+                  <text class="tr-callout" x="375.4" y="229.8" text-anchor="middle">696, down 34%</text>
+                </svg>
+                <figcaption><strong>Fig 6</strong>Pedestrian crashes fell 34% in 2020 while cyclist crashes barely changed. Hover over a point to see its value.</figcaption>
               </figure>
             </div>
           </section>
@@ -232,5 +287,21 @@
       </footer>
     </div>
     <script src="app.js"></script>
+    <script>
+      // Draw the trend lines when the chart scrolls into view
+      (function () {
+        var fig = document.querySelector("[data-animate-chart]");
+        if (!fig) return;
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce || !("IntersectionObserver" in window)) return;
+        fig.classList.add("will-animate");
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { fig.classList.add("is-drawn"); io.disconnect(); }
+          });
+        }, { threshold: 0.35 });
+        io.observe(fig);
+      })();
+    </script>
   </body>
 </html>
