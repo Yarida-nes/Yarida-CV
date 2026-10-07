@@ -152,6 +152,8 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 .card-top { display: flex; justify-content: space-between; color: var(--accent); }
 .project-shot { position: relative; margin: 1.1rem 0 1.25rem; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); background: var(--signal); }
 .project-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.project-shot.is-contain { background: #ffffff; }
+.project-shot.is-contain img { object-fit: contain; object-position: center; }
 /* Fallback when a card image is missing: navy panel with the data-mark label */
 .project-shot::before { content: attr(data-mark); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--accent); font-family: "DM Mono", monospace; font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; letter-spacing: 0; }
 .project-shot img { position: relative; z-index: 1; }
