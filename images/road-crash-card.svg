@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Crash rate bar chart by road profile: 0.55, 0.41, 0.36 and 0.23 crashes per million vehicle-kilometres.">
+  <rect width="640" height="400" fill="#10233f"/>
+  <text x="40" y="58" font-family="'DM Mono', monospace" font-size="20" fill="#8ba0ba">CRASH RATE BY ROAD PROFILE</text>
+  <text x="40" y="84" font-family="'DM Mono', monospace" font-size="15" fill="#6f86a4">Perth M-Links &#183; R + GIS</text>
+  <line x1="40" y1="330" x2="600" y2="330" stroke="#2c405c" stroke-width="1.5"/>
+  <g fill="#3bb6c0">
+    <rect x="70"  y="146.7" width="96" height="183.3" rx="3" opacity="0.55"/>
+    <rect x="202" y="193.3" width="96" height="136.7" rx="3" opacity="1"/>
+    <rect x="334" y="210.0" width="96" height="120.0" rx="3" opacity="0.55"/>
+    <rect x="466" y="253.3" width="96" height="76.7"  rx="3" opacity="0.55"/>
+  </g>
+  <g font-family="'DM Mono', monospace" font-size="26" font-weight="500" fill="#f6f7f9" text-anchor="middle">
+    <text x="118" y="134">0.55</text>
+    <text x="250" y="181">0.41</text>
+    <text x="382" y="198">0.36</text>
+    <text x="514" y="241">0.23</text>
+  </g>
+  <g font-family="'DM Mono', monospace" font-size="15" fill="#8ba0ba" text-anchor="middle">
+    <text x="118" y="358">Quiet slow</text>
+    <text x="250" y="358">Quiet fast</text>
+    <text x="382" y="358">Busy slow</text>
+    <text x="514" y="358">Busy fast</text>
+  </g>
+</svg>
