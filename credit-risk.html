@@ -217,6 +217,25 @@
             </ul>
           </section>
 
+                    <section class="cs-block" id="takeaways">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li><strong>Accuracy can lie.</strong> With 78% of loans repaid, a model that always says “no default” already scores 78% while catching nothing. Imbalanced data needs sensitivity, specificity and ROC as well.</li>
+              <li><strong>Check predictors before modelling.</strong> Age and credit-history length correlate at 0.86, so a model should not lean on both. A correlation matrix up front saves misleading coefficients later.</li>
+              <li><strong>Cleaning choices have a cost.</strong> Dropping incomplete rows removed 12% of the data. It was the simple option; imputation is the better next step.</li>
+              <li><strong>Reproducible reports save time.</strong> Writing numbers inline in R Markdown meant the report updated itself whenever the data or code changed.</li>
+            </ul>
+          </section>
+
+          <section class="cs-block ref-block" id="references">
+            <h2>References and data sources</h2>
+            <ol class="ref-list">
+              <li><em>credit_risk_dataset.csv</em>: 32,581 loans and 13 variables, supplied by the ECOM5005 unit team at Curtin University for the group assessment.</li>
+              <li>Analysis in R and RStudio with dplyr, ggplot2, corrplot and kableExtra, knitted to PDF with R Markdown.</li>
+            </ol>
+            <p class="ref-provided"><strong>Who provided the data:</strong> The dataset was provided by the ECOM5005 teaching team at Curtin University as part of the unit's assessment. It is a teaching dataset, not data from a real lender I worked with.</p>
+          </section>
+
           <div class="cs-actions cs-footer-actions">
             <a class="button primary" href="projects.html">All case studies <span aria-hidden="true">&rarr;</span></a>
             <a class="button text-button" href="index.html#projects">Back to CV <span aria-hidden="true">&rarr;</span></a>
