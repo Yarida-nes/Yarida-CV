@@ -381,3 +381,9 @@ main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings 
   .topbar nav a:last-child { display: inline-block; }
   .github-link { padding: .4rem 0; }
 }
+
+/* Home "Projects": a full-width heading above the intro and cards */
+.section.projects { grid-template-columns: 1fr; gap: 1.5rem; }
+.section.projects .section-label { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; }
+.section.projects .section-label h2 { margin: 0; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; }
+.section.projects .section-side-link { margin-top: 0; }
