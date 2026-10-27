@@ -166,6 +166,8 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 .cap-where a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
 .cap-where a:hover { border-color: var(--accent); }
 .cap-tool { grid-column: 3; grid-row: 1 / span 2; color: var(--muted); text-transform: uppercase; text-align: right; }
+.cap-tool { display: flex; justify-content: flex-end; align-items: center; align-self: center; gap: .6rem; }
+.cap-tool img { width: 28px; height: 28px; display: block; }
 
 /* ── How I work ──────────────────────────────────────────────────────── */
 .principle-list { counter-reset: p; margin: 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
@@ -228,7 +230,7 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   .project-grid { grid-template-columns: 1fr; }
   .capability-list li { grid-template-columns: 44px 1fr; grid-template-rows: auto auto auto; }
   .cap-num { grid-row: 1 / span 3; }
-  .cap-tool { grid-column: 2; grid-row: 3; text-align: left; }
+  .cap-tool { grid-column: 2; grid-row: 3; text-align: left; justify-content: flex-start; }
   .principle-list li { padding: 1.3rem 1.2rem 1.3rem 3.6rem; }
   .principle-list li::before { left: 1.2rem; }
   .project-row { grid-template-columns: 1fr; gap: .6rem; }
