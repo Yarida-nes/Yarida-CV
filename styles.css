@@ -66,7 +66,7 @@ a { color: inherit; }
   .topbar nav { order: 3; width: 100%; flex-wrap: wrap; gap: .2rem 1.6rem; }
   .topbar nav a { display: inline-block; padding: .55rem 0; }
 }
-.wordmark { font-size: 1.65rem; font-weight: 700; text-decoration: none; letter-spacing: 0; }
+.wordmark { font-size: 1.2rem; white-space: nowrap; font-weight: 700; text-decoration: none; letter-spacing: 0; }
 .wordmark span { color: var(--accent); }
 nav { display: flex; gap: 2rem; }
 nav a, .github-link { font-family: "DM Mono", monospace; font-size: .85rem; text-decoration: none; text-transform: uppercase; letter-spacing: 0; white-space: nowrap; }
