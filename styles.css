@@ -393,3 +393,4 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   :root:not([data-theme="light"]) .primary, :root:not([data-theme="light"]) .card-btn.is-primary { color: var(--paper); }
   :root:not([data-theme="light"]) .card-btn.is-primary:hover { background: var(--accent); border-color: var(--accent); }
 }
+.project-card[data-tone] .project-shot { background: var(--tone-soft); border-color: color-mix(in srgb, var(--tone) 25%, transparent); }
