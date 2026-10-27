@@ -41,47 +41,6 @@ if ("IntersectionObserver" in window && sections.length) {
   });
 }
 
-
-/* ── Reveal on scroll ────────────────────────────────────────────────────
-   Progressive enhancement: only runs when IntersectionObserver exists and the
-   reader has not requested reduced motion, so content is always visible if not. */
-(function () {
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce || !("IntersectionObserver" in window)) return;
-
-  var selectors = [
-    ".section", ".metrics div", ".project-card", ".project-row",
-    ".timeline-item", ".capability-list li",
-    ".case", ".study-block", "figure"
-  ];
-  var nodes = [];
-  selectors.forEach(function (sel) {
-    Array.prototype.forEach.call(document.querySelectorAll(sel), function (el) {
-      if (nodes.indexOf(el) === -1) nodes.push(el);
-    });
-  });
-  if (!nodes.length) return;
-
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
-      io.unobserve(entry.target);
-    });
-  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-
-  nodes.forEach(function (el, i) {
-    el.classList.add("reveal");
-    /* gentle stagger for items that sit in a row together */
-    var sib = el.previousElementSibling;
-    if (sib && sib.parentNode === el.parentNode) {
-      var delay = (i % 4) * 60;
-      if (delay) el.style.transitionDelay = delay + "ms";
-    }
-    io.observe(el);
-  });
-})();
-
 /* ── Back-to-top button ──────────────────────────────────────────────────
    Injected on every page; appears after scrolling down, returns to the top. */
 (function () {

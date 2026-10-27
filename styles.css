@@ -422,3 +422,6 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
 .contact { padding: 4.5rem 0 5rem; }
 .contact h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; color: var(--accent); }
 @media print { .contact { padding: 2rem 0; } .contact h2 { font-size: 1.9rem; } }
+
+/* No double rule where a list ends just before the section divider */
+.timeline-item:last-child, .capability-list li:last-child { border-bottom: 0; }
