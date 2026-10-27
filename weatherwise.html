@@ -129,19 +129,15 @@
             </p>
             <ul class="ww-findings">
               <li>
-                <span class="ww-finding-number">01</span>
                 <p><strong>API keys.</strong> The first draft hard-coded the key in the notebook. I asked why that was a problem, and what happens if a user forgets to set one. The result: environment variables plus an explicit error message when the key is missing.</p>
               </li>
               <li>
-                <span class="ww-finding-number">02</span>
                 <p><strong>Daily summaries.</strong> The AI&rsquo;s first <code>get_weather_data()</code> just returned the raw API JSON. I pushed for input validation, grouping by date, a consistent <code>error</code> field, and a &ldquo;current&rdquo; snapshot. I also questioned the trade-off of taking that snapshot from the forecast instead of making a second call.</p>
               </li>
               <li>
-                <span class="ww-finding-number">03</span>
                 <p><strong>Precipitation chart.</strong> The first version was a line chart that crashed on missing data. The final one is a bar chart that falls back to summing hourly values and treats anything non-numeric as zero.</p>
               </li>
               <li>
-                <span class="ww-finding-number">04</span>
                 <p><strong>Question parser.</strong> The first attempt took the last word of the sentence as the city. The final one recognises attribute, time and location separately, and returns a fixed dictionary shape the rest of the program can rely on.</p>
               </li>
             </ul>

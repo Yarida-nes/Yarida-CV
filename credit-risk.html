@@ -95,7 +95,6 @@
             <h2>What I found</h2>
             <ul class="cs-findings">
               <li>
-                <span class="cs-finding-number">01</span>
                 <div>
                   <p><strong>About one loan in five went bad.</strong> After cleaning, 22,395 loans were repaid (78.36%) and 6,183 defaulted (21.64%). That imbalance matters for any future classifier: predicting "no default" for everyone would already score 78% accuracy, yet catch nothing.</p>
                   <figure class="cs-figure">
@@ -105,13 +104,11 @@
                 </div>
               </li>
               <li>
-                <span class="cs-finding-number">02</span>
                 <div>
                   <p><strong>Defaulters earn less, visible before any model.</strong> Both income distributions are right-skewed. The default group peaks lower, roughly $30,000 to $40,000 against $50,000 to $60,000 for repaid loans, and its tail fades sooner. Income alone will not separate the groups, though: the two histograms overlap heavily.</p>
                 </div>
               </li>
               <li>
-                <span class="cs-finding-number">03</span>
                 <div>
                   <p><strong>Two pairs of predictors nearly duplicate each other.</strong> Age and credit-history length correlate at <strong>0.86</strong>, past the 0.7 multicollinearity threshold we used, so a model should not lean on both. Loan amount and loan-as-a-share-of-income correlate at 0.58. Against income, no numeric predictor reached 0.5. The strongest were loan amount (0.27) and loan-percent-income (&minus;0.25); interest rate was essentially zero (0.00).</p>
                   <figure class="cs-figure">
@@ -121,7 +118,6 @@
                 </div>
               </li>
               <li>
-                <span class="cs-finding-number">04</span>
                 <div>
                   <p><strong>A full regression explains about a third of the variation in income.</strong> Regressing income on all ten remaining predictors gave <strong>R&sup2; = 0.338</strong> (adjusted 0.338). The predictors were jointly significant (F = 913.1 on 16 and 28,561 degrees of freedom, p &lt; 0.001). The residual standard error was about $50,750, so individual predictions are wide.</p>
                   <p>The coefficients, holding other predictors constant:</p>

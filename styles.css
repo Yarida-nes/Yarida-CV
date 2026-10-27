@@ -367,3 +367,8 @@ nav a, .github-link { font-size: .95rem; }
   .capability-list li { grid-template-columns: 1fr; }
   .cap-tool { grid-column: 1; grid-row: 3; }
 }
+
+/* "What I found": a plain bullet list with blue markers on every case study */
+main .findings, main .cs-findings, main .esg-findings, main .ww-findings { list-style: disc; margin: 1.5rem 0 0; padding: 0 0 0 1.25rem !important; border: 0; }
+main .findings > li, main .cs-findings > li, main .esg-findings > li, main .ww-findings > li { display: list-item; margin: 0 0 1rem; padding: 0 !important; border: 0 !important; }
+main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings > li::marker, main .ww-findings > li::marker { color: var(--accent); }
