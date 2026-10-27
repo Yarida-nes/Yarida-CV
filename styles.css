@@ -274,12 +274,10 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 .proof-list li { position: relative; padding-left: 1.4rem; color: var(--muted); font-size: clamp(1.05rem, 1.4vw, 1.2rem); line-height: 1.5; }
 .proof-list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 .proof-list strong { color: var(--ink); font-weight: 700; }
-.project-card p strong { color: var(--ink); font-weight: 600; }
 
 /* Experience bullets */
 .exp-bullets { max-width: 650px; margin: 0; padding-left: 1.15rem; color: var(--muted); line-height: 1.6; }
 .exp-bullets li { margin-bottom: .35rem; }
-.exp-bullets strong { color: var(--ink); font-weight: 600; }
 
 /* Skills section: chips above the list */
 .capabilities .skill-chips { margin: 0 0 1.6rem; }
@@ -308,7 +306,6 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 .project-card[data-tone] .card-top span:first-child { color: var(--tone-ink); font-weight: 500; }
 .project-card[data-tone] .project-shot { border-radius: 6px; }
 .project-card[data-tone] .project-tags li { background: var(--tone-soft); border-color: transparent; color: var(--tone-ink); border-radius: 999px; padding: .3rem .7rem; }
-.project-card[data-tone] p strong { color: var(--tone-ink); }
 .card-link { color: inherit; text-decoration: none; }
 .card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 .card-link:focus-visible { outline: none; }
@@ -335,3 +332,5 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 
 /* Editorial type: Newsreader for headings, Public Sans for text, DM Mono only for code, data tables and chart axes */
 h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 400; letter-spacing: -.01em; }
+/* Blue is kept for links, section headings and the one main action */
+.section-label h2, .study-block h2, .cs-block h2, .esg-block h2, .ww-block h2 { color: var(--accent); }
