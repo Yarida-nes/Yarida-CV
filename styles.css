@@ -372,3 +372,4 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 .card-btn.is-primary { background: var(--tone-ink, var(--accent)); color: #fff; border-color: var(--tone-ink, var(--accent)); }
 .card-btn.is-primary:hover { background: var(--ink); border-color: var(--ink); }
 @media print { .card-actions { display: none; } }
+.hero-lede { margin-top: 1.6rem; }
