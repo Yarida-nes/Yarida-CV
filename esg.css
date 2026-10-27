@@ -13,7 +13,7 @@
 
 /* Hero chart */
 .esg-hero { margin: 0 0 3rem; }
-.esg-hero figcaption, .esg-subchart figcaption, .esg-shot figcaption { margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .82rem; line-height: 1.6; }
+.esg-hero figcaption, .esg-subchart figcaption, .esg-shot figcaption { margin-top: .8rem; color: var(--muted); font-family: "Public Sans", sans-serif; font-size: .82rem; line-height: 1.6; }
 /* One distinct colour per market, chosen to read on both light and dark */
 
 /* Legend labels, coloured to match their line (scoped to beat the generic
@@ -24,7 +24,7 @@
 /* Role / tools / data strip */
 .esg-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 0 0 3.5rem; padding: 1.6rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .esg-meta div { min-width: 0; }
-.esg-meta dt { margin-bottom: .55rem; color: var(--accent); font-family: "DM Mono", monospace; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; }
+.esg-meta dt { margin-bottom: .55rem; color: var(--accent); font-family: "Public Sans", sans-serif; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; }
 .esg-meta dd { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 
 /* Text sections */
@@ -39,7 +39,7 @@
 /* Numbered findings */
 .esg-findings { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--ink); }
 .esg-findings > li { display: grid; grid-template-columns: 60px 1fr; gap: 1rem; padding: 1.5rem 0; margin: 0; border-bottom: 1px solid var(--line); }
-.esg-findings .finding-number { color: var(--accent); font-family: "DM Mono", monospace; font-size: 1.1rem; padding-top: .15rem; }
+.esg-findings .finding-number { color: var(--accent); font-family: "Public Sans", sans-serif; font-size: 1.1rem; padding-top: .15rem; }
 .esg-findings p { margin-bottom: 0; }
 .esg-subchart { margin: 1.4rem 0 0; }
 

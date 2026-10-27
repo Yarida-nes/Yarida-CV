@@ -20,21 +20,21 @@
 .ww-shot-fallback {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .4rem;
   aspect-ratio: 2 / 1; border: 1px dashed var(--accent); background: var(--surface);
-  font-family: "DM Mono", monospace; font-size: .8rem; color: var(--muted);
+  font-family: "Public Sans", sans-serif; font-size: .8rem; color: var(--muted);
 }
 .ww-shot-fallback[hidden] { display: none; }
-.ww-shot figcaption { max-width: 760px; margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .82rem; line-height: 1.6; text-transform: uppercase; }
+.ww-shot figcaption { max-width: 760px; margin-top: .8rem; color: var(--muted); font-family: "Public Sans", sans-serif; font-size: .82rem; line-height: 1.6; text-transform: uppercase; }
 
 /* Role / tools / context strip */
 .ww-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0 0; padding: 1.6rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .ww-meta div { min-width: 0; }
-.ww-meta dt { margin-bottom: .5rem; color: var(--accent); font-family: "DM Mono", monospace; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; }
+.ww-meta dt { margin-bottom: .5rem; color: var(--accent); font-family: "Public Sans", sans-serif; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; }
 .ww-meta dd { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 
 /* Body sections */
 .ww-block { margin-top: 3.4rem; }
 .ww-block h2 { margin-bottom: 1rem; font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
-.ww-block h2::before { content: counter(wwb, decimal-leading-zero) " / "; counter-increment: wwb; color: var(--accent); font-family: "DM Mono", monospace; font-size: .75rem; vertical-align: .35em; margin-right: .35rem; }
+.ww-block h2::before { content: counter(wwb, decimal-leading-zero) " / "; counter-increment: wwb; color: var(--accent); font-family: "Public Sans", sans-serif; font-size: .75rem; vertical-align: .35em; margin-right: .35rem; }
 .ww-case { counter-reset: wwb; }
 .ww-block p, .ww-block > ul, .ww-block > ol { max-width: 760px; color: var(--muted); font-size: 1.06rem; line-height: 1.72; }
 .ww-block > ul { margin: .5rem 0 0; padding-left: 1.15rem; }
@@ -46,13 +46,13 @@
 /* Console-menu list */
 .ww-menu { list-style: none; margin: 1rem 0 1.4rem; padding: 0; border-top: 1px solid var(--ink); }
 .ww-menu li { display: grid; grid-template-columns: 2.4rem 1fr; align-items: baseline; gap: .6rem; padding: .7rem 0; border-bottom: 1px solid var(--line); }
-.ww-menu li span { color: var(--accent); font-family: "DM Mono", monospace; font-size: .85rem; }
+.ww-menu li span { color: var(--accent); font-family: "Public Sans", sans-serif; font-size: .85rem; }
 
 /* Numbered findings */
 .ww-findings { list-style: none; margin: 1.4rem 0 1.4rem; padding: 0; }
 .ww-findings li { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
 .ww-findings li:first-child { border-top: 1px solid var(--accent); }
-.ww-finding-number { display: block; margin-bottom: .45rem; color: var(--accent); font-family: "DM Mono", monospace; font-size: 1.4rem; line-height: 1; }
+.ww-finding-number { display: block; margin-bottom: .45rem; color: var(--accent); font-family: "Public Sans", sans-serif; font-size: 1.4rem; line-height: 1; }
 .ww-findings p { margin: 0; }
 
 .ww-footer-actions { margin-top: 4rem; padding-top: 2.2rem; border-top: 1px solid var(--line); }

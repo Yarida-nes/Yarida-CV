@@ -24,15 +24,15 @@
 }
 .study-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem 2rem; margin-top: 1.5rem; }
 .study-gallery figure { margin: 0; }
-.study-gallery figcaption strong { font-family: "DM Mono", monospace; font-size: .82rem; color: var(--accent); margin-right: .5rem; }
+.study-gallery figcaption strong { font-family: "Public Sans", sans-serif; font-size: .82rem; color: var(--accent); margin-right: .5rem; }
 .study-gallery.is-stacked { grid-template-columns: 1fr; gap: 2.5rem; }
 .study-hero-map { max-width: 720px; margin: 2.5rem auto 0; }
-.study-hero figcaption strong { font-family: "DM Mono", monospace; font-size: .82rem; color: var(--accent); margin-right: .5rem; }
+.study-hero figcaption strong { font-family: "Public Sans", sans-serif; font-size: .82rem; color: var(--accent); margin-right: .5rem; }
 
 /* Role / tools / context */
 .study-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 0 0 3.5rem; padding: 1.5rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .study-meta div { min-width: 0; }
-.study-meta dt { font-family: "DM Mono", monospace; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+.study-meta dt { font-family: "Public Sans", sans-serif; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
 .study-meta dd { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 
 /* Content blocks */
@@ -49,7 +49,7 @@
 .findings li { display: grid; grid-template-columns: 56px 1fr; gap: 1rem; padding: 1.35rem 0; border-top: 1px solid var(--line); }
 .findings li:last-child { border-bottom: 1px solid var(--line); }
 .findings p { margin: 0; }
-.finding-number { font-family: "DM Mono", monospace; font-size: 1.2rem; color: var(--accent); line-height: 1.5; }
+.finding-number { font-family: "Public Sans", sans-serif; font-size: 1.2rem; color: var(--accent); line-height: 1.5; }
 
 /* Tables */
 .table-wrap { overflow-x: auto; margin: 1.25rem 0; -webkit-overflow-scrolling: touch; }

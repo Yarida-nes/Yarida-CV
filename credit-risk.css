@@ -36,7 +36,7 @@
 .cs-shot figcaption, .cs-figure figcaption {
   margin-top: .75rem;
   color: var(--muted);
-  font-family: "DM Mono", monospace;
+  font-family: "Public Sans", sans-serif;
   font-size: .72rem;
   line-height: 1.5;
 }
@@ -56,7 +56,7 @@
 .cs-meta dt {
   margin-bottom: .45rem;
   color: var(--accent);
-  font-family: "DM Mono", monospace;
+  font-family: "Public Sans", sans-serif;
   font-size: .82rem;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -96,7 +96,7 @@
 .cs-findings > li > div > p:last-child { margin-bottom: 0; }
 .cs-finding-number {
   color: var(--accent);
-  font-family: "DM Mono", monospace;
+  font-family: "Public Sans", sans-serif;
   font-size: .8rem;
   padding-top: .35rem;
 }
