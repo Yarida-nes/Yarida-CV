@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interactive demos of Yarida Kaewthong's projects: how speed zones change pedestrian injury in Melbourne, how new pharmacies change village coverage in Thailand, and how five housing regression models compare."
+    />
+    <title>Try it | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#10233f" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/try-it.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/try-it.html" />
+    <meta property="og:title" content="Try it | Yarida Kaewthong" />
+    <meta property="og:description" content="Click through three of my projects: speed and injury, pharmacy coverage, and regression model comparison." />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/og-card.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .demo { --tone: #2f80ed; --tone-ink: #1a5fc2; --tone-soft: #e7f0fd; margin: 3rem 0; padding: clamp(1.25rem, 3vw, 2.25rem); background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--tone); border-radius: 12px; scroll-margin-top: 1.5rem; }
+      .demo.coral { --tone: #ef4f4f; --tone-ink: #b3262b; --tone-soft: #fdecec; }
+      .demo.green { --tone: #1fa971; --tone-ink: #13774f; --tone-soft: #e5f6ee; }
+      .demo-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; align-items: baseline; }
+      .demo-kicker { margin: 0 0 .4rem; font-family: "DM Mono", monospace; font-size: .82rem; color: var(--tone-ink); text-transform: uppercase; }
+      .demo h2 { margin: 0 0 .5rem; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.15; }
+      .demo-intro { max-width: 680px; color: var(--muted); margin-bottom: 1.4rem; }
+      .demo-back { font-weight: 600; color: var(--tone-ink); white-space: nowrap; }
+      .pick { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.5rem; padding: 0; border: 0; }
+      .pick legend { width: 100%; margin-bottom: .55rem; font-family: "DM Mono", monospace; font-size: .8rem; color: var(--muted); text-transform: uppercase; }
+      .pick button { font: inherit; font-weight: 600; padding: .55rem 1.05rem; border-radius: 999px; border: 1.5px solid var(--tone); background: #fff; color: var(--tone-ink); cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+      .pick button:hover { background: var(--tone-soft); }
+      .pick button[aria-pressed="true"] { background: var(--tone-ink); border-color: var(--tone-ink); color: #fff; }
+      .demo-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: center; }
+      .big { font-size: clamp(3rem, 7vw, 5rem); font-weight: 700; line-height: 1; color: var(--tone-ink); }
+      .big small { font-size: .35em; font-weight: 500; color: var(--muted); }
+      .readout p { color: var(--muted); max-width: 420px; }
+      .readout p strong { color: var(--ink); }
+      .delta { display: inline-block; margin-top: .4rem; padding: .3rem .7rem; border-radius: 999px; background: var(--tone-soft); color: var(--tone-ink); font-family: "DM Mono", monospace; font-size: .85rem; }
+      .note { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+      /* 100-person grid */
+      .people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; max-width: 340px; }
+      .people span { aspect-ratio: 1; border-radius: 50%; background: #e3e8ef; transition: background-color .35s ease, transform .35s ease; }
+      .people span.on { background: var(--tone); transform: scale(1.06); }
+      .legend { display: flex; gap: 1.2rem; margin-top: .8rem; font-size: .85rem; color: var(--muted); }
+      .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: .4rem; vertical-align: -1px; }
+      /* village bar */
+      .villages { width: 100%; }
+      .vbar { position: relative; height: 46px; border-radius: 8px; background: #e3e8ef; overflow: hidden; }
+      .vbar .fill { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--tone-ink), var(--tone)); border-radius: 8px; transition: width .6s cubic-bezier(.2, .7, .3, 1); }
+      .vscale { display: flex; justify-content: space-between; margin-top: .4rem; font-family: "DM Mono", monospace; font-size: .78rem; color: var(--muted); }
+      /* model bars */
+      .models { display: grid; grid-template-columns: repeat(5, 1fr); gap: .7rem; align-items: end; height: 220px; padding-bottom: 1.6rem; position: relative; }
+      .models div { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
+      .models b { display: block; border-radius: 6px 6px 0 0; background: #c9d6ea; transition: background-color .3s ease, height .5s ease; }
+      .models div.sel b { background: var(--tone); }
+      .models em { font-style: normal; font-family: "DM Mono", monospace; font-size: .78rem; text-align: center; margin-bottom: .3rem; color: var(--muted); }
+      .models div.sel em { color: var(--tone-ink); font-weight: 600; }
+      .models span { position: absolute; bottom: -1.5rem; left: 0; right: 0; text-align: center; font-family: "DM Mono", monospace; font-size: .75rem; color: var(--muted); }
+      .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; margin: 1rem 0 0; }
+      .stats div { padding: .7rem .9rem; border-radius: 8px; background: var(--tone-soft); }
+      .stats dt { font-family: "DM Mono", monospace; font-size: .75rem; color: var(--tone-ink); text-transform: uppercase; }
+      .stats dd { margin: 0; font-size: 1.35rem; font-weight: 600; }
+      .jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+      .jump a { padding: .45rem .9rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: .92rem; }
+      .jump a:hover { border-color: var(--accent); color: var(--accent); }
+      @media (max-width: 760px) { .demo-body { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">Yarida Kaewthong<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="try-it.html" class="is-active" aria-current="page">Try it</a>
+          <a href="projects.html">All projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+
+      <main id="main">
+        <section class="case-intro">
+          <p class="eyebrow">Try it</p>
+          <h1>Click through the results yourself.</h1>
+          <p class="lede">
+            Three of my projects as small interactive demos. Every number comes from the finished analysis; the full method is in each case study.
+          </p>
+          <div class="jump">
+            <a href="#speed">Speed and injury</a>
+            <a href="#pharmacies">Pharmacy coverage</a>
+            <a href="#housing">Housing models</a>
+          </div>
+        </section>
+
+        <!-- 1. Melbourne speed zones -->
+        <section class="demo coral" id="speed" aria-labelledby="speed-title">
+          <div class="demo-head">
+            <div>
+              <p class="demo-kicker">Melbourne · R · 30,469 crashes</p>
+              <h2 id="speed-title">How much does the speed zone matter?</h2>
+            </div>
+            <a class="demo-back" href="melbourne-crash.html">Read the case study &rarr;</a>
+          </div>
+          <p class="demo-intro">Pick a speed zone to see how many of every 100 pedestrian crashes killed or seriously injured someone.</p>
+          <fieldset class="pick" data-group="speed">
+            <legend>Speed zone</legend>
+            <button type="button" data-v="40">40 km/h</button>
+            <button type="button" data-v="60">60 km/h</button>
+            <button type="button" data-v="80">80+ km/h</button>
+          </fieldset>
+          <div class="demo-body">
+            <div>
+              <div class="people" id="people" aria-hidden="true"></div>
+              <div class="legend"><span><i style="background: var(--tone)"></i>Killed or seriously injured</span><span><i style="background: #e3e8ef"></i>Other injury</span></div>
+            </div>
+            <div class="readout" aria-live="polite">
+              <div class="big"><span id="speed-n">41</span><small> in 100</small></div>
+              <p id="speed-text"></p>
+              <span class="delta" id="speed-delta"></span>
+            </div>
+          </div>
+          <p class="note">Victorian police and hospital crash records, metro Melbourne 2012–2025. The rise across speed zones passes a chi-square test for trend (χ² = 274.9, p &lt; 0.001). This is an association, not a controlled experiment: faster roads also differ in design and traffic.</p>
+        </section>
+
+        <!-- 2. Pharmacy coverage -->
+        <section class="demo green" id="pharmacies" aria-labelledby="ph-title">
+          <div class="demo-head">
+            <div>
+              <p class="demo-kicker">Nonthaburi, Thailand · GIS · co-authored paper</p>
+              <h2 id="ph-title">Where would new pharmacies help most?</h2>
+            </div>
+            <a class="demo-back" href="drugstores.html">Read the case study &rarr;</a>
+          </div>
+          <p class="demo-intro">Add pharmacies chosen by location-allocation modelling and watch how many of the province's 511 villages fall within a 5 km service radius.</p>
+          <fieldset class="pick" data-group="ph">
+            <legend>Pharmacies added</legend>
+            <button type="button" data-v="0">Today (27)</button>
+            <button type="button" data-v="5">+5</button>
+            <button type="button" data-v="22">+22</button>
+          </fieldset>
+          <div class="villages">
+            <div class="big"><span id="ph-n">199</span><small> of 511 villages</small></div>
+            <div class="vbar" role="img" id="ph-bar" aria-label="Villages within reach"><div class="fill" id="ph-fill"></div></div>
+            <div class="vscale"><span>0</span><span>511 villages</span></div>
+            <p class="readout" aria-live="polite"><span id="ph-text" style="color: var(--muted)"></span></p>
+          </div>
+          <p class="note">From the 2023 Asian Conference on Remote Sensing paper I co-authored (4th of 8). The paper also reports coverage as 82.74% (+5) and over 95% (+22); those percentages use a different coverage measure from the village counts shown here.</p>
+        </section>
+
+        <!-- 3. Housing models -->
+        <section class="demo" id="housing" aria-labelledby="h-title">
+          <div class="demo-head">
+            <div>
+              <p class="demo-kicker">Australian housing · R · 5 regression models</p>
+              <h2 id="h-title">Does adding variables always make a better model?</h2>
+            </div>
+            <a class="demo-back" href="housing.html">Read the case study &rarr;</a>
+          </div>
+          <p class="demo-intro">Step through the five nested models of quarterly house price growth. Watch adjusted R² (explanatory power) and the error measures as each group of variables is added.</p>
+          <fieldset class="pick" data-group="model">
+            <legend>Model</legend>
+            <button type="button" data-v="0">Model 1</button>
+            <button type="button" data-v="1">Model 2</button>
+            <button type="button" data-v="2">Model 3</button>
+            <button type="button" data-v="3">Model 4</button>
+            <button type="button" data-v="4">Model 5</button>
+          </fieldset>
+          <div class="demo-body">
+            <div>
+              <div class="models" id="models" role="img" aria-label="Adjusted R-squared for models 1 to 5: 0.049, 0.102, 0.197, 0.238, 0.235"></div>
+            </div>
+            <div class="readout" aria-live="polite">
+              <p style="margin-bottom: .3rem"><strong id="h-adds"></strong></p>
+              <dl class="stats">
+                <div><dt>Adjusted R²</dt><dd id="h-adj"></dd></div>
+                <div><dt>R²</dt><dd id="h-r2"></dd></div>
+                <div><dt>RMSE</dt><dd id="h-rmse"></dd></div>
+                <div><dt>MAE</dt><dd id="h-mae"></dd></div>
+              </dl>
+              <p id="h-text" style="margin-top: 1rem"></p>
+            </div>
+          </div>
+          <p class="note">RMSE and MAE are in percentage points of quarterly growth. All five models are significant overall (F-test p &lt; 0.05). I chose Model 4: highest adjusted R² and lowest MAE.</p>
+        </section>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span>Designed for the web, ready to print.</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+    <script>
+      (function () {
+        function group(name, onPick, start) {
+          var buttons = document.querySelectorAll('[data-group="' + name + '"] button');
+          function pick(btn) {
+            buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+            onPick(btn.getAttribute("data-v"));
+          }
+          buttons.forEach(function (b) { b.addEventListener("click", function () { pick(b); }); });
+          pick(buttons[start || 0]);
+        }
+
+        // 1. Speed zones (share of pedestrian crashes that were fatal or serious)
+        var people = document.getElementById("people");
+        for (var i = 0; i < 100; i++) people.appendChild(document.createElement("span"));
+        var dots = people.children;
+        var speed = { 40: 41, 60: 54, 80: 65 };
+        group("speed", function (v) {
+          var n = speed[v];
+          for (var i = 0; i < 100; i++) dots[i].classList.toggle("on", i < n);
+          document.getElementById("speed-n").textContent = n;
+          document.getElementById("speed-text").innerHTML =
+            "In <strong>" + (v === "80" ? "80+" : v) + " km/h</strong> zones, about <strong>" + n + " of every 100</strong> pedestrian crashes killed or seriously injured someone.";
+          document.getElementById("speed-delta").textContent =
+            v === "40" ? "Lowest of the three zones" : "+" + (n - 41) + " more than in 40 km/h zones";
+        });
+
+        // 2. Pharmacy coverage (villages within 5 km, of 511)
+        var ph = {
+          0: [199, "The 27 participating pharmacies reach fewer than 4 in 10 villages. Mueang Nonthaburi is best served (72 villages); Sai Noi worst (8)."],
+          5: [325, "Five new pharmacies in Bang Yai, Bang Bua Thong and Bang Kruai add 126 villages. Placement matters more than count."],
+          22: [417, "Twenty-two additions spread across all six districts reach 417 villages, more than double today's coverage."]
+        };
+        group("ph", function (v) {
+          var d = ph[v];
+          document.getElementById("ph-n").textContent = d[0];
+          document.getElementById("ph-fill").style.width = (d[0] / 511 * 100) + "%";
+          document.getElementById("ph-bar").setAttribute("aria-label", d[0] + " of 511 villages within reach");
+          document.getElementById("ph-text").textContent = d[1];
+        });
+
+        // 3. Housing models
+        var models = [
+          { adds: "Trend, quarter and state", r2: 0.0823, adj: 0.0491, rmse: 2.633, mae: 2.031, text: "The baseline: time and place alone explain about 5% of the variation." },
+          { adds: "+ Interest rate, inflation", r2: 0.1412, adj: 0.1019, rmse: 2.547, mae: 1.986, text: "Interest rates and inflation roughly double the explained share, and both error measures fall." },
+          { adds: "+ Migration, household income", r2: 0.2387, adj: 0.1967, rmse: 2.398, mae: 1.862, text: "The biggest single jump in adjusted R²." },
+          { adds: "+ COVID-19 period", r2: 0.2811, adj: 0.2378, rmse: 2.331, mae: 1.787, text: "The preferred model. The 2020–21 period adds 2.63 points of quarterly growth (p < 0.001), the largest single effect." },
+          { adds: "+ Election period", r2: 0.2822, adj: 0.2354, rmse: 2.329, mae: 1.791, text: "Plain R² still rises, but adjusted R² falls and MAE gets worse. The election term is not significant (p = 0.568), so this model is rejected." }
+        ];
+        var wrap = document.getElementById("models");
+        models.forEach(function (m, i) {
+          var col = document.createElement("div");
+          col.innerHTML = "<em>" + m.adj.toFixed(3) + "</em><b style=\"height:" + (m.adj / 0.26 * 100) + "%\"></b><span>M" + (i + 1) + "</span>";
+          wrap.appendChild(col);
+        });
+        group("model", function (v) {
+          var m = models[+v];
+          Array.prototype.forEach.call(wrap.children, function (c, i) { c.classList.toggle("sel", i === +v); });
+          document.getElementById("h-adds").textContent = m.adds;
+          document.getElementById("h-adj").textContent = m.adj.toFixed(3);
+          document.getElementById("h-r2").textContent = m.r2.toFixed(3);
+          document.getElementById("h-rmse").textContent = m.rmse.toFixed(3);
+          document.getElementById("h-mae").textContent = m.mae.toFixed(3);
+          document.getElementById("h-text").textContent = m.text;
+        }, 3);
+      })();
+    </script>
+  </body>
+</html>

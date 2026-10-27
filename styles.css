@@ -348,3 +348,27 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   .glance div:last-child { border-bottom: 0 !important; }
 }
 @media print { .glance { break-inside: avoid; } .enlarge-hint { display: none; } }
+
+/* ── Project colours and card actions ───────────────────────────────── */
+.project-card[data-tone="coral"]  { --tone: #ef4f4f; --tone-ink: #b3262b; --tone-soft: #fdecec; }
+.project-card[data-tone="green"]  { --tone: #1fa971; --tone-ink: #13774f; --tone-soft: #e5f6ee; }
+.project-card[data-tone="violet"] { --tone: #7c5cff; --tone-ink: #5638d6; --tone-soft: #efebff; }
+.project-card[data-tone="amber"]  { --tone: #f5a524; --tone-ink: #9a5b00; --tone-soft: #fef3dc; }
+.project-card[data-tone="blue"]   { --tone: #2f80ed; --tone-ink: #1a5fc2; --tone-soft: #e7f0fd; }
+.project-card[data-tone="sky"]    { --tone: #12aec2; --tone-ink: #0a7482; --tone-soft: #e2f6f8; }
+.project-card[data-tone] { position: relative; border-top: 5px solid var(--tone); border-radius: 10px; }
+.project-card[data-tone]:hover, .project-card[data-tone]:focus-within { transform: translateY(-4px); border-color: var(--tone); box-shadow: 0 14px 36px color-mix(in srgb, var(--tone) 22%, transparent); }
+.project-card[data-tone] .card-top { color: var(--tone-ink); font-weight: 500; }
+.project-card[data-tone] .project-shot { border-radius: 6px; }
+.project-card[data-tone] .project-tags li { background: var(--tone-soft); border-color: transparent; color: var(--tone-ink); border-radius: 999px; padding: .3rem .7rem; }
+.project-card[data-tone] p strong { color: var(--tone-ink); }
+.card-link { color: inherit; text-decoration: none; }
+.card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.card-link:focus-visible { outline: none; }
+.project-card:has(.card-link:focus-visible) { outline: 2px solid var(--tone, var(--accent)); outline-offset: 3px; }
+.card-actions { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; padding-top: 1.35rem; }
+.card-btn { display: inline-flex; align-items: center; gap: .4rem; padding: .5rem .9rem; border-radius: 999px; border: 1.5px solid var(--tone, var(--accent)); color: var(--tone-ink, var(--accent)); font-weight: 600; font-size: .92rem; text-decoration: none; transition: background-color .2s ease, color .2s ease; }
+.card-btn:hover { background: var(--tone-soft, var(--accent-soft)); }
+.card-btn.is-primary { background: var(--tone-ink, var(--accent)); color: #fff; border-color: var(--tone-ink, var(--accent)); }
+.card-btn.is-primary:hover { background: var(--ink); border-color: var(--ink); }
+@media print { .card-actions { display: none; } }
