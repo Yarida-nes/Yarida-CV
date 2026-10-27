@@ -55,13 +55,13 @@
 .table-wrap { overflow-x: auto; margin: 1.25rem 0; -webkit-overflow-scrolling: touch; }
 .study-table { width: 100%; border-collapse: collapse; font-size: .92rem; line-height: 1.45; }
 .study-table th, .study-table td { padding: .7rem .8rem .7rem 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-.study-table th { font-family: "DM Mono", monospace; font-size: .8rem; text-transform: uppercase; color: var(--accent); font-weight: 500; border-bottom: 1px solid var(--ink); }
+.study-table th { font-family: "DM Mono", monospace; font-size: .8rem; color: var(--accent); font-weight: 500; border-bottom: 1px solid var(--ink); }
 .study-table td { color: var(--muted); }
 .study-table td:first-child { color: var(--ink); font-weight: 500; }
 .study-table-numeric td:nth-child(n+3), .study-table-numeric th:nth-child(n+3) { text-align: right; font-family: "DM Mono", monospace; font-variant-numeric: tabular-nums; }
 .study-table-numeric th:nth-child(n+3) { padding-right: 0; }
 .study-table tr.is-pick td { background: var(--surface); color: var(--ink); }
-.study-table tr.is-pick td:first-child::after { content: " preferred"; font-family: "DM Mono", monospace; font-size: .62rem; text-transform: uppercase; color: var(--accent); margin-left: .35rem; }
+.study-table tr.is-pick td:first-child::after { content: " preferred"; font-family: "DM Mono", monospace; font-size: .62rem; color: var(--accent); margin-left: .35rem; }
 .table-note { font-size: .88rem !important; margin-top: .4rem; }
 
 /* Inline SVG bar chart */
