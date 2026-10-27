@@ -391,3 +391,6 @@ main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings 
 /* Footer: both GitHub accounts */
 .footer-links { display: inline-flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
 .footer-links a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: .2rem 0; }
+
+/* Small text never below 12px */
+sup, sub { font-size: max(.75em, 12px); line-height: 0; }
