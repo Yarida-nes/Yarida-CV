@@ -40,7 +40,7 @@
 .ww-block > ul li { margin-bottom: .6rem; }
 .ww-block > ul li::marker { color: var(--accent); }
 .ww-block strong { color: var(--ink); font-weight: 600; }
-.ww-block code { font-family: "DM Mono", monospace; font-size: .86em; color: var(--ink); background: #e9eef3; padding: .08em .35em; border-radius: 3px; }
+.ww-block code { font-family: "DM Mono", monospace; font-size: .86em; color: var(--ink); background: var(--accent-soft); padding: .08em .35em; border-radius: 3px; }
 
 /* Console-menu list */
 .ww-menu { list-style: none; margin: 1rem 0 1.4rem; padding: 0; border-top: 1px solid var(--ink); }

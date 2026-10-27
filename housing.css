@@ -92,14 +92,14 @@
   .study-head h1 { font-size: 2.1rem; }
   .study-actions, .study-footer-actions { display: none; }
   .study-hero { margin: 1.25rem 0; }
-  .study-hero img, .study-gallery img { border: 1px solid #ccc; }
+  .study-hero img, .study-gallery img { border: 1px solid var(--line); }
   .study-gallery { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .study-meta { margin-bottom: 1.5rem; padding: 1rem 0; }
   .study-block { padding: 1.25rem 0; }
   .study-block p, .study-block li { font-size: .92rem; line-height: 1.5; }
   .study-hero, .study-gallery figure, .study-chart, .findings li, .table-wrap, .study-meta { break-inside: avoid; }
   .table-wrap { overflow: visible; }
-  .study-table tr.is-pick td { background: #eef3f3; }
+  .study-table tr.is-pick td { background: var(--accent-soft); }
 }
 
 
