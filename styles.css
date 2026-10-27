@@ -372,3 +372,12 @@ nav a, .github-link { font-size: .95rem; }
 main .findings, main .cs-findings, main .esg-findings, main .ww-findings { list-style: disc; margin: 1.5rem 0 0; padding: 0 0 0 1.25rem !important; border: 0; }
 main .findings > li, main .cs-findings > li, main .esg-findings > li, main .ww-findings > li { display: list-item; margin: 0 0 1rem; padding: 0 !important; border: 0 !important; }
 main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings > li::marker, main .ww-findings > li::marker { color: var(--accent); }
+
+/* Phones and small tablets: one header row (name, CV, GitHub); the full menu stays on wider screens */
+@media (max-width: 860px) {
+  .topbar { flex-wrap: nowrap; min-height: 0; padding: .9rem 0; gap: 1rem; }
+  .topbar nav { order: 0; width: auto; margin-left: auto; padding: 0; gap: 1rem; flex-wrap: nowrap; }
+  .topbar nav a { display: none; padding: .4rem 0; }
+  .topbar nav a:last-child { display: inline-block; }
+  .github-link { padding: .4rem 0; }
+}
