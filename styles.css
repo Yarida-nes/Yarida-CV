@@ -5,9 +5,9 @@
   --surface: #ffffff;
   --signal: #10233f;
   --line: #d9dfe7;
-  --accent: #0e7c86;
-  --accent-soft: #e6f2f3;
-  --accent-strong: #0a646c;
+  --accent: #1f5fd6;
+  --accent-soft: #e8effc;
+  --accent-strong: #174ab0;
 }
 
 
@@ -350,15 +350,11 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 @media print { .glance { break-inside: avoid; } .enlarge-hint { display: none; } }
 
 /* ── Project colours and card actions ───────────────────────────────── */
-.project-card[data-tone="coral"]  { --tone: #ef4f4f; --tone-ink: #b3262b; --tone-soft: #fdecec; }
-.project-card[data-tone="green"]  { --tone: #1fa971; --tone-ink: #13774f; --tone-soft: #e5f6ee; }
-.project-card[data-tone="violet"] { --tone: #7c5cff; --tone-ink: #5638d6; --tone-soft: #efebff; }
-.project-card[data-tone="amber"]  { --tone: #f5a524; --tone-ink: #9a5b00; --tone-soft: #fef3dc; }
-.project-card[data-tone="blue"]   { --tone: #2f80ed; --tone-ink: #1a5fc2; --tone-soft: #e7f0fd; }
-.project-card[data-tone="sky"]    { --tone: #12aec2; --tone-ink: #0a7482; --tone-soft: #e2f6f8; }
-.project-card[data-tone] { position: relative; border-top: 5px solid var(--tone); border-radius: 10px; }
+.project-card[data-tone] { --tone: var(--accent); --tone-ink: var(--accent-strong); --tone-soft: var(--accent-soft); }
+.project-card[data-tone] { position: relative; border-top: 4px solid var(--tone); border-radius: 10px; }
 .project-card[data-tone]:hover, .project-card[data-tone]:focus-within { transform: translateY(-4px); border-color: var(--tone); box-shadow: 0 14px 36px color-mix(in srgb, var(--tone) 22%, transparent); }
-.project-card[data-tone] .card-top { color: var(--tone-ink); font-weight: 500; }
+.project-card[data-tone] .card-top { color: var(--muted); }
+.project-card[data-tone] .card-top span:first-child { color: var(--tone-ink); font-weight: 500; }
 .project-card[data-tone] .project-shot { border-radius: 6px; }
 .project-card[data-tone] .project-tags li { background: var(--tone-soft); border-color: transparent; color: var(--tone-ink); border-radius: 999px; padding: .3rem .7rem; }
 .project-card[data-tone] p strong { color: var(--tone-ink); }
@@ -377,20 +373,25 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 /* ── Dark theme: by system setting, or the Dark/Light button in the top bar ── */
 :root[data-theme="dark"] {
   --ink: #e8edf4; --muted: #a5b6ca; --paper: #0c1622; --surface: #14243b; --signal: #1b2e49;
-  --line: #293b53; --accent: #3bc4ce; --accent-soft: #12333a; --accent-strong: #6fd8df;
+  --line: #293b53; --accent: #6ea0ff; --accent-soft: #15284a; --accent-strong: #9dbdff;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --ink: #e8edf4; --muted: #a5b6ca; --paper: #0c1622; --surface: #14243b; --signal: #1b2e49;
-    --line: #293b53; --accent: #3bc4ce; --accent-soft: #12333a; --accent-strong: #6fd8df;
+    --line: #293b53; --accent: #6ea0ff; --accent-soft: #15284a; --accent-strong: #9dbdff;
   }
 }
-:root[data-theme="dark"] .project-card[data-tone] { --tone-ink: color-mix(in srgb, var(--tone) 65%, white); --tone-soft: color-mix(in srgb, var(--tone) 20%, transparent); }
 :root[data-theme="dark"] .primary, :root[data-theme="dark"] .card-btn.is-primary { color: var(--paper); }
 :root[data-theme="dark"] .card-btn.is-primary:hover { background: var(--accent); border-color: var(--accent); }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .project-card[data-tone] { --tone-ink: color-mix(in srgb, var(--tone) 65%, white); --tone-soft: color-mix(in srgb, var(--tone) 20%, transparent); }
   :root:not([data-theme="light"]) .primary, :root:not([data-theme="light"]) .card-btn.is-primary { color: var(--paper); }
   :root:not([data-theme="light"]) .card-btn.is-primary:hover { background: var(--accent); border-color: var(--accent); }
 }
 .project-card[data-tone] .project-shot { background: var(--tone-soft); border-color: color-mix(in srgb, var(--tone) 25%, transparent); }
+
+/* ── Section intros and the "everything else" note ───────────────────── */
+.section-intro { max-width: 640px; margin: 0 0 1.6rem; color: var(--muted); line-height: 1.6; }
+.section-intro a, .projects-more a { color: var(--accent-strong); text-decoration: none; border-bottom: 1px solid var(--accent); }
+.section-intro a:hover, .projects-more a:hover { color: var(--accent); }
+.projects-more { max-width: 640px; margin: 1.8rem 0 0; color: var(--muted); line-height: 1.6; }
+.project-card h3 { margin-top: .9rem; }
