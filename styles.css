@@ -382,11 +382,11 @@ main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings 
   .github-link { padding: .4rem 0; }
 }
 
-/* Home "Projects": a full-width heading above the intro and cards */
-.section.projects { grid-template-columns: 1fr; gap: 1.5rem; }
-.section.projects .section-label { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; }
-.section.projects .section-label h2 { margin: 0; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; }
-.section.projects .section-side-link { margin-top: 0; }
+/* Home sections: one full-width heading style above the content */
+.section { grid-template-columns: 1fr; gap: 1.5rem; }
+.section .section-label { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1.5rem; }
+.section .section-label h2 { margin: 0; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; }
+.section .section-side-link { margin-top: 0; }
 
 /* Footer: both GitHub accounts */
 .footer-links { display: inline-flex; flex-wrap: wrap; gap: .4rem 1.25rem; }
