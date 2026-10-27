@@ -407,3 +407,12 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
 .skill-chips li:hover { transform: none; }
 .cap-name { font-size: 1.15rem; font-weight: 600; }
 .cap-where { font-size: .95rem; }
+
+/* Calmer rhythm: less empty space between sections, soft rules instead of dark ones */
+.section { padding: 4.5rem 0; }
+.intro { min-height: 0; padding: 5rem 0 4rem; }
+.timeline, .capability-list, .project-list, .not-found-links { border-top-color: var(--line); }
+@media (max-width: 720px) {
+  .section { padding: 3.25rem 0; }
+  .intro { padding: 3rem 0 2.5rem; }
+}
