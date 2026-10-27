@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Interactive demos of Yarida Kaewthong's projects: how speed zones change pedestrian injury in Melbourne, how new pharmacies change village coverage in Thailand, and how five housing regression models compare."
+      content="Interactive demos of Yarida Kaewthong's projects: how speed zones change pedestrian injury in Melbourne, how new pharmacies change village coverage in Thailand, how five housing regression models compare, and why accuracy alone can mislead on loan defaults."
     />
     <title>Try it | Yarida Kaewthong</title>
     <meta name="author" content="Yarida Kaewthong" />
-    <meta name="theme-color" content="#10233f" />
+    <meta name="theme-color" content="#f8fafc" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://yarida-cv.vercel.app/try-it.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Yarida Kaewthong" />
     <meta property="og:url" content="https://yarida-cv.vercel.app/try-it.html" />
     <meta property="og:title" content="Try it | Yarida Kaewthong" />
-    <meta property="og:description" content="Click through three of my projects: speed and injury, pharmacy coverage, and regression model comparison." />
+    <meta property="og:description" content="Click through four of my projects: speed and injury, pharmacy coverage, regression models and credit risk." />
     <meta property="og:image" content="https://yarida-cv.vercel.app/images/og-card.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,6 +72,11 @@
       .jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
       .jump a { padding: .45rem .9rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: .92rem; }
       .jump a:hover { border-color: var(--accent); color: var(--accent); }
+      /* credit sliders */
+      .sliders { display: grid; gap: .5rem; }
+      .sliders label { display: flex; justify-content: space-between; gap: 1rem; font-weight: 600; }
+      .sliders output { font-family: "DM Mono", monospace; color: var(--tone-ink); }
+      .sliders input { width: 100%; margin-bottom: 1rem; accent-color: var(--tone); }
       @media (max-width: 760px) { .demo-body { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -97,12 +102,13 @@
           <p class="eyebrow">Try it</p>
           <h1>Click through the results yourself.</h1>
           <p class="lede">
-            Three of my projects as small interactive demos. Every number comes from the finished analysis; the full method is in each case study.
+            Four of my projects as small interactive demos. The starting numbers come from the finished analyses; the credit-risk demo adds made-up models on top and says so. The full method is in each case study.
           </p>
           <div class="jump">
             <a href="#speed">Speed and injury</a>
             <a href="#pharmacies">Pharmacy coverage</a>
             <a href="#housing">Housing models</a>
+            <a href="#credit">Credit risk</a>
           </div>
         </section>
 
@@ -196,11 +202,46 @@
           </div>
           <p class="note">RMSE and MAE are in percentage points of quarterly growth. All five models are significant overall (F-test p &lt; 0.05). I chose Model 4: highest adjusted R² and lowest MAE.</p>
         </section>
+
+        <!-- 4. Credit risk: the accuracy trap -->
+        <section class="demo" id="credit" aria-labelledby="c-title">
+          <div class="demo-head">
+            <div>
+              <p class="demo-kicker">Credit risk · R · 28,578 loans</p>
+              <h2 id="c-title">Can a model score 78% and still be useless?</h2>
+            </div>
+            <a class="demo-back" href="credit-risk.html">Read the case study &rarr;</a>
+          </div>
+          <p class="demo-intro">After cleaning, 22,395 loans were repaid and 6,183 defaulted. Pick a made-up model, or move the sliders, and see what its accuracy hides.</p>
+          <fieldset class="pick" data-group="credit">
+            <legend>A made-up model</legend>
+            <button type="button" data-v="none">Says &ldquo;repaid&rdquo; to everyone</button>
+            <button type="button" data-v="all">Says &ldquo;default&rdquo; to everyone</button>
+            <button type="button" data-v="half">Catches half, flags 1 in 10 good loans</button>
+          </fieldset>
+          <div class="demo-body">
+            <div class="sliders">
+              <label for="c-caught">Defaults it catches <output id="c-caught-v"></output></label>
+              <input type="range" id="c-caught" min="0" max="6183" step="1" />
+              <label for="c-false">Good loans it wrongly flags <output id="c-false-v"></output></label>
+              <input type="range" id="c-false" min="0" max="22395" step="1" />
+            </div>
+            <div class="readout" aria-live="polite">
+              <dl class="stats">
+                <div><dt>Accuracy</dt><dd id="c-acc"></dd></div>
+                <div><dt>Defaults caught</dt><dd id="c-sens"></dd></div>
+                <div><dt>Good loans cleared</dt><dd id="c-spec"></dd></div>
+                <div><dt>Missed defaults</dt><dd id="c-miss"></dd></div>
+              </dl>
+              <p id="c-text" style="margin-top: 1rem"></p>
+            </div>
+          </div>
+          <p class="note">What-if arithmetic on the cleaned loan counts, not results from our group&rsquo;s model. It shows why the case study judges a default model on how many defaults it catches, not on accuracy alone.</p>
+        </section>
       </main>
 
       <footer>
         <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
-        <span>Designed for the web, ready to print.</span>
       </footer>
     </div>
     <script src="app.js"></script>
@@ -269,6 +310,39 @@
           document.getElementById("h-mae").textContent = m.mae.toFixed(3);
           document.getElementById("h-text").textContent = m.text;
         }, 3);
+
+        // 4. Credit risk: accuracy against defaults caught (22,395 repaid, 6,183 defaulted)
+        var GOOD = 22395, BAD = 6183;
+        var caught = document.getElementById("c-caught");
+        var flagged = document.getElementById("c-false");
+        function pct(x) { return (x * 100).toFixed(1) + "%"; }
+        function fmt(n) { return n.toLocaleString("en-AU"); }
+        function credit() {
+          var c = +caught.value, f = +flagged.value;
+          var acc = (c + GOOD - f) / (GOOD + BAD);
+          document.getElementById("c-caught-v").textContent = fmt(c);
+          document.getElementById("c-false-v").textContent = fmt(f);
+          document.getElementById("c-acc").textContent = pct(acc);
+          document.getElementById("c-sens").textContent = pct(c / BAD);
+          document.getElementById("c-spec").textContent = pct((GOOD - f) / GOOD);
+          document.getElementById("c-miss").textContent = fmt(BAD - c);
+          document.getElementById("c-text").textContent =
+            c === 0 ? "High accuracy, yet every single default slips through. This is the trap."
+            : f === GOOD ? "Every default is caught, but every good customer is turned away too."
+            : acc < (GOOD / (GOOD + BAD)) ? "Lower accuracy than saying “repaid” to everyone, yet this model actually finds defaults."
+            : "Better than the do-nothing model on both counts.";
+        }
+        caught.addEventListener("input", function () { clearPick(); credit(); });
+        flagged.addEventListener("input", function () { clearPick(); credit(); });
+        var presets = { none: [0, 0], all: [BAD, GOOD], half: [Math.round(BAD / 2), Math.round(GOOD / 10)] };
+        function clearPick() {
+          document.querySelectorAll('[data-group="credit"] button').forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+        }
+        group("credit", function (v) {
+          caught.value = presets[v][0];
+          flagged.value = presets[v][1];
+          credit();
+        });
       })();
     </script>
   </body>

@@ -10,7 +10,7 @@
     />
     <title>Walking and cycling safety in Melbourne | Yarida Kaewthong</title>
     <meta name="author" content="Yarida Kaewthong" />
-    <meta name="theme-color" content="#10233f" />
+    <meta name="theme-color" content="#f8fafc" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://yarida-cv.vercel.app/melbourne-crash.html" />
 
@@ -75,13 +75,13 @@
             <div><dt>Problem</dt><dd>Where and when are people walking and cycling most at risk in Melbourne, and what makes a crash more serious?</dd></div>
             <div><dt>What I did</dt><dd>Sole author. Cleaned 14 years of Victorian crash records, ran hot-spot and injury-severity analysis, made the maps (one of them in QGIS) and wrote it up. Independent project, October 2026.</dd></div>
             <div><dt>Tools</dt><dd>R (sf, dplyr, ggplot2) · QGIS · Getis-Ord Gi* hot spots · hexagon grids · confidence intervals · chi-square trend test</dd></div>
-            <div class="glance-result"><dt>Result</dt><dd>49% of pedestrian and cyclist crashes fall in hot spots covering 6% of the area. A pedestrian’s serious-injury share rises from 41% in 40 km/h zones to 65% in 80+ km/h zones.</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>49% of pedestrian and cyclist crashes fall in hot spots covering 6% of the area. A pedestrian’s chance of serious injury or death rises from 41% in 40 km/h zones to 65% in 80+ km/h zones.</dd></div>
           </dl>
 
           <div class="metrics study-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">30,469</span><span>pedestrian and cyclist crashes<br />metro Melbourne, 2012&ndash;2025</span></div>
             <div><span class="metric-number">49% in 6%</span><span>of crashes fall in hot spots<br />covering 6% of the map</span></div>
-            <div><span class="metric-number">41% &rarr; 65%</span><span>serious-injury share for pedestrians<br />from 40 to 80+ km/h zones</span></div>
+            <div><span class="metric-number">41% &rarr; 65%</span><span>pedestrians killed or seriously injured<br />from 40 to 80+ km/h zones</span></div>
           </div>
 
           <section class="study-block" id="findings">
@@ -102,7 +102,7 @@
               <li>
                 <span class="finding-number">03</span>
                 <div>
-                  <p><strong>Cyclists are hurt in the commute, pedestrians in the afternoon.</strong> Cyclist crashes peak at 8&nbsp;am on weekdays. Pedestrian crashes peak at 3&nbsp;pm, around school pick-up time. Being hit in the dark without street lights raised the serious-injury share to 63%, against 46% in daylight.</p>
+                  <p><strong>Cyclists are hurt in the commute, pedestrians in the afternoon.</strong> Cyclist crashes peak at 8&nbsp;am on weekdays. Pedestrian crashes peak at 3&nbsp;pm, around school pick-up time. Being hit in the dark without street lights raised the chance of serious injury or death to 63%, against 46% in daylight.</p>
                 </div>
               </li>
               <li>
@@ -118,15 +118,15 @@
             <h2>On the map</h2>
             <p>Each map is laid out like a GIS export: framed map with latitude and longitude, north arrow, scale bar, legend, a Victoria locator map and a key-finding box, with credits underneath. Click any map to enlarge it.</p>
             <figure class="study-hero">
-              <a href="images/melbourne-qgis.png" target="_blank" rel="noreferrer"><img src="images/melbourne-qgis.png" alt="Map made in QGIS: metro Melbourne with dark-red hexagon hot spots over the CBD, inner north and bayside suburbs and a smaller cluster at Dandenong, with legend, north arrow, scale bar, Victoria locator map and a key-finding box." loading="lazy" width="1240" height="1753" /></a>
+              <a href="images/melbourne-qgis.jpg" target="_blank" rel="noreferrer"><img src="images/melbourne-qgis.jpg" alt="Map made in QGIS: metro Melbourne with dark-red hexagon hot spots over the CBD, inner north and bayside suburbs and a smaller cluster at Dandenong, with legend, north arrow, scale bar, Victoria locator map and a key-finding box." loading="lazy" width="1100" height="1555" /></a>
               <figcaption><strong>Map</strong>Made in QGIS by Yarida Kaewthong: hot spots for people walking and cycling, 2021–2025. Basemap © OpenStreetMap contributors. <span class="enlarge-hint">Tap or click to enlarge</span></figcaption>
             </figure>
             <figure class="study-hero">
-              <a href="images/melbourne-hotspots.png" target="_blank" rel="noreferrer"><img src="images/melbourne-hotspots.png" alt="Map layout of metro Melbourne with blue sea and grey land. Red hexagon hot spots cover the CBD, inner north and bayside suburbs to St Kilda and beyond, with a smaller cluster at Dandenong. Includes north arrow, scale bar, legend and a locator map of Victoria." loading="lazy" width="2420" height="2420" /></a>
+              <a href="images/melbourne-hotspots.jpg" target="_blank" rel="noreferrer"><img src="images/melbourne-hotspots.jpg" alt="Map layout of metro Melbourne with blue sea and grey land. Red hexagon hot spots cover the CBD, inner north and bayside suburbs to St Kilda and beyond, with a smaller cluster at Dandenong. Includes north arrow, scale bar, legend and a locator map of Victoria." loading="lazy" width="1400" height="1400" /></a>
               <figcaption><strong>Fig 1</strong>Statistically significant hot spots for pedestrian and cyclist crashes, 2021&ndash;2025. Coastline: ABS ASGS 2021.</figcaption>
             </figure>
             <figure class="study-hero">
-              <a href="images/melbourne-inner.png" target="_blank" rel="noreferrer"><img src="images/melbourne-inner.png" alt="Map layout of inner Melbourne on a 500 m hexagon grid, darker red where more pedestrian and cyclist crashes happened. The darkest cells are in the CBD along Elizabeth St and along Chapel St. Includes north arrow, scale bar, legend and a locator map." loading="lazy" width="2420" height="2420" /></a>
+              <a href="images/melbourne-inner.jpg" target="_blank" rel="noreferrer"><img src="images/melbourne-inner.jpg" alt="Map layout of inner Melbourne on a 500 m hexagon grid, darker red where more pedestrian and cyclist crashes happened. The darkest cells are in the CBD along Elizabeth St and along Chapel St. Includes north arrow, scale bar, legend and a locator map." loading="lazy" width="1400" height="1400" /></a>
               <figcaption><strong>Fig 2</strong>Inner Melbourne street by street: the five worst 500&nbsp;m cells are on Elizabeth St and Chapel St.</figcaption>
             </figure>
           </section>
@@ -143,66 +143,12 @@
                 <figcaption><strong>Fig 4</strong>Serious-injury share for pedestrians by speed zone, with 95% confidence intervals.</figcaption>
               </figure>
               <figure>
-                <img src="images/melbourne-light.png" alt="Bar chart: serious-injury share for pedestrians is 46% in daylight, 45% at dusk or dawn, 56% in the dark with street lights and 63% without." loading="lazy" width="2000" height="1000" />
+                <img src="images/melbourne-light.png" alt="Bar chart: share of pedestrians killed or seriously injured is 46% in daylight, 45% at dusk or dawn, 56% in the dark with street lights and 63% without." loading="lazy" width="2000" height="1000" />
                 <figcaption><strong>Fig 5</strong>Serious-injury share for pedestrians by light.</figcaption>
               </figure>
-              <figure class="trend-chart" data-animate-chart>
-                <p class="trend-chart-title">Pedestrian and cyclist injury crashes in Melbourne, 2012 to 2025</p>
-                <svg class="trend-svg" viewBox="0 0 720 380" role="img" aria-labelledby="trend-title trend-desc">
-                  <title id="trend-title">Pedestrian and cyclist injury crashes in Melbourne, 2012 to 2025</title>
-                  <desc id="trend-desc">Pedestrian crashes stay near 1,000 to 1,200 a year, fall to 696 in 2020 during COVID-19 lockdowns and recover to 1,060 by 2025. Cyclist crashes peak at 1,393 in 2014 and end at 1,023 in 2025.</desc>
-                  <rect x="355.4" y="30" width="79.9" height="300" class="tr-covid"/>
-                  <text x="395.3" y="48" class="tr-note" text-anchor="middle">COVID-19</text>
-                  <text x="395.3" y="64" class="tr-note" text-anchor="middle">lockdowns</text>
-                  <line x1="56" x2="575" y1="330" y2="330" class="tr-grid"/>
-                  <text x="48" y="334" class="tr-axis" text-anchor="end">0</text>
-                  <line x1="56" x2="575" y1="239.4" y2="239.4" class="tr-grid"/>
-                  <text x="48" y="243.4" class="tr-axis" text-anchor="end">500</text>
-                  <line x1="56" x2="575" y1="148.8" y2="148.8" class="tr-grid"/>
-                  <text x="48" y="152.8" class="tr-axis" text-anchor="end">1,000</text>
-                  <line x1="56" x2="575" y1="58.1" y2="58.1" class="tr-grid"/>
-                  <text x="48" y="62.1" class="tr-axis" text-anchor="end">1,500</text>
-                  <text x="56" y="352" class="tr-axis" text-anchor="middle">2012</text>
-                  <text x="135.8" y="352" class="tr-axis" text-anchor="middle">2014</text>
-                  <text x="215.7" y="352" class="tr-axis" text-anchor="middle">2016</text>
-                  <text x="295.5" y="352" class="tr-axis" text-anchor="middle">2018</text>
-                  <text x="375.4" y="352" class="tr-axis" text-anchor="middle">2020</text>
-                  <text x="455.2" y="352" class="tr-axis" text-anchor="middle">2022</text>
-                  <text x="535.1" y="352" class="tr-axis" text-anchor="middle">2024</text>
-                  <path class="tr-line is-bike" pathLength="1" d="M56,116.8 L95.9,96.4 L135.8,77.5 L175.8,86.4 L215.7,111.1 L255.6,119.9 L295.5,133.2 L335.5,125.9 L375.4,135.7 L415.3,134.8 L455.2,144.6 L495.2,123.7 L535.1,104.7 L575,144.6"/>
-                  <circle class="tr-dot is-bike" style="--i:0" cx="56" cy="116.8" r="4.5"><title>Cyclists, 2012: 1,176 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:1" cx="95.9" cy="96.4" r="4.5"><title>Cyclists, 2013: 1,289 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:2" cx="135.8" cy="77.5" r="4.5"><title>Cyclists, 2014: 1,393 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:3" cx="175.8" cy="86.4" r="4.5"><title>Cyclists, 2015: 1,344 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:4" cx="215.7" cy="111.1" r="4.5"><title>Cyclists, 2016: 1,208 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:5" cx="255.6" cy="119.9" r="4.5"><title>Cyclists, 2017: 1,159 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:6" cx="295.5" cy="133.2" r="4.5"><title>Cyclists, 2018: 1,086 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:7" cx="335.5" cy="125.9" r="4.5"><title>Cyclists, 2019: 1,126 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:8" cx="375.4" cy="135.7" r="4.5"><title>Cyclists, 2020: 1,072 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:9" cx="415.3" cy="134.8" r="4.5"><title>Cyclists, 2021: 1,077 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:10" cx="455.2" cy="144.6" r="4.5"><title>Cyclists, 2022: 1,023 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:11" cx="495.2" cy="123.7" r="4.5"><title>Cyclists, 2023: 1,138 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:12" cx="535.1" cy="104.7" r="4.5"><title>Cyclists, 2024: 1,243 crashes</title></circle>
-                  <circle class="tr-dot is-bike" style="--i:13" cx="575" cy="144.6" r="4.5"><title>Cyclists, 2025: 1,023 crashes</title></circle>
-                  <text class="tr-label is-bike" x="585" y="164.6">Cyclists 1,023</text>
-                  <path class="tr-line is-ped" pathLength="1" d="M56,115.8 L95.9,128.8 L135.8,135.9 L175.8,130.8 L215.7,127.2 L255.6,146.8 L295.5,147.7 L335.5,137.7 L375.4,203.8 L415.3,178.3 L455.2,142 L495.2,146 L535.1,135.3 L575,137.9"/>
-                  <circle class="tr-dot is-ped" style="--i:0" cx="56" cy="115.8" r="4.5"><title>Pedestrians, 2012: 1,182 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:1" cx="95.9" cy="128.8" r="4.5"><title>Pedestrians, 2013: 1,110 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:2" cx="135.8" cy="135.9" r="4.5"><title>Pedestrians, 2014: 1,071 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:3" cx="175.8" cy="130.8" r="4.5"><title>Pedestrians, 2015: 1,099 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:4" cx="215.7" cy="127.2" r="4.5"><title>Pedestrians, 2016: 1,119 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:5" cx="255.6" cy="146.8" r="4.5"><title>Pedestrians, 2017: 1,011 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:6" cx="295.5" cy="147.7" r="4.5"><title>Pedestrians, 2018: 1,006 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:7" cx="335.5" cy="137.7" r="4.5"><title>Pedestrians, 2019: 1,061 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:8" cx="375.4" cy="203.8" r="4.5"><title>Pedestrians, 2020: 696 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:9" cx="415.3" cy="178.3" r="4.5"><title>Pedestrians, 2021: 837 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:10" cx="455.2" cy="142" r="4.5"><title>Pedestrians, 2022: 1,037 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:11" cx="495.2" cy="146" r="4.5"><title>Pedestrians, 2023: 1,015 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:12" cx="535.1" cy="135.3" r="4.5"><title>Pedestrians, 2024: 1,074 crashes</title></circle>
-                  <circle class="tr-dot is-ped" style="--i:13" cx="575" cy="137.9" r="4.5"><title>Pedestrians, 2025: 1,060 crashes</title></circle>
-                  <text class="tr-label is-ped" x="585" y="125.9">Pedestrians 1,060</text>
-                  <text class="tr-callout" x="375.4" y="229.8" text-anchor="middle">696, down 34%</text>
-                </svg>
+              <figure class="trend-chart">
+                
+                <img class="chart-img" src="images/chart-melbourne-trend.png" width="1200" height="640" loading="lazy" alt="Line chart of pedestrian and cyclist injury crashes in Melbourne, 2012 to 2025. Pedestrian crashes stay near 1,000 to 1,200 a year, fall to 696 in 2020 during COVID-19 lockdowns and recover to 1,060 by 2025. Cyclist crashes peak at 1,393 in 2014 and end at 1,023 in 2025." />
                 <figcaption><strong>Fig 6</strong>Pedestrian crashes fell 34% in 2020 while cyclist crashes barely changed. Hover over a point to see its value.</figcaption>
               </figure>
             </div>
@@ -277,7 +223,7 @@
             <h2>Key takeaways</h2>
             <ul>
               <li><strong>A hot-spot test beats a dot map.</strong> Dots show where crashes happened; Getis-Ord Gi* shows which clusters are bigger than chance would give. That turned 30,000 points into one clear message: half the crashes fall in 6% of the area.</li>
-              <li><strong>Speed is the clearest lever.</strong> The serious-injury share for pedestrians climbs step by step from 41% to 65% across speed zones. A pattern that consistent is worth testing formally, so I backed it with a chi-square test for trend.</li>
+              <li><strong>Speed is the clearest lever.</strong> A pedestrian’s chance of serious injury or death climbs step by step from 41% to 65% across speed zones. A pattern that consistent is worth testing formally, so I backed it with a chi-square test for trend.</li>
               <li><strong>One timetable does not fit everyone.</strong> Cyclists are hurt in the 8 am commute; pedestrians around 3 pm. The same city needs different measures at different times of day.</li>
               <li><strong>Say what the data cannot show.</strong> There is no count of how many people walk or cycle in each area, so hot spots partly reflect where people travel most. Stating that up front makes the findings more trustworthy, not less.</li>
               <li><strong>A map is only useful if it is easy to read.</strong> I redesigned the maps several times: fewer colours, plain-language legends, a locator map and a scale bar, so a reader gets the point in seconds.</li>
@@ -303,25 +249,8 @@
 
       <footer>
         <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
-        <span>Designed for the web, ready to print.</span>
       </footer>
     </div>
     <script src="app.js"></script>
-    <script>
-      // Draw the trend lines when the chart scrolls into view
-      (function () {
-        var fig = document.querySelector("[data-animate-chart]");
-        if (!fig) return;
-        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (reduce || !("IntersectionObserver" in window)) return;
-        fig.classList.add("will-animate");
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { fig.classList.add("is-drawn"); io.disconnect(); }
-          });
-        }, { threshold: 0.35 });
-        io.observe(fig);
-      })();
-    </script>
   </body>
 </html>

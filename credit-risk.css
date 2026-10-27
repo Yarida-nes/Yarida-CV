@@ -106,7 +106,7 @@
 
 @media (max-width: 720px) {
   .case-study { padding: 3rem 0 2.5rem; }
-  .cs-metrics { margin-bottom: 2.2rem; }
+  .cs-metrics { margin-bottom: 2.2rem; grid-template-columns: 1fr; }
   .cs-metrics .metric-number { font-size: 1.5rem; }
   .cs-meta { grid-template-columns: 1fr; gap: 1.1rem; margin-bottom: 2.5rem; }
   .cs-block { margin-bottom: 2.6rem; }

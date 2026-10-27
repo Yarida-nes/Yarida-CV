@@ -14,41 +14,12 @@
 /* Hero chart */
 .esg-hero { margin: 0 0 3rem; }
 .esg-hero figcaption, .esg-subchart figcaption, .esg-shot figcaption { margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .82rem; line-height: 1.6; }
-.esg-chart { display: block; width: 100%; height: auto; background: var(--surface); border: 1px solid var(--line); padding: 1rem .75rem .5rem; }
-.esg-chart .grid line { stroke: var(--line); stroke-width: 1; }
-.esg-chart .grid line.axis { stroke: var(--ink); }
-.esg-chart .grid text, .esg-chart .labels text { fill: var(--muted); }
-.esg-chart .labels line { stroke: var(--line); stroke-width: 1; }
 /* One distinct colour per market, chosen to read on both light and dark */
-.esg-chart .l-muted { stroke: #b9c4d2; stroke-width: 2; }
-.esg-chart .l-kr { stroke: var(--ink); stroke-width: 2.8; }
-.esg-chart .l-cn { stroke: var(--accent); stroke-width: 2.8; }
-.esg-chart .l-sg { stroke: #e08a1e; stroke-width: 2.4; }
-.esg-chart .l-in { stroke: #c85b8e; stroke-width: 2.4; }
-.esg-chart .l-id { stroke: #2f9e6f; stroke-width: 2.4; }
-.esg-chart .l-nz { stroke: #3f8fd0; stroke-width: 2.4; }
-.esg-chart .l-au { stroke: #9b6fd4; stroke-width: 2.4; }
-.esg-chart .l-my { stroke: #d1495b; stroke-width: 2.4; }
 
 /* Legend labels, coloured to match their line (scoped to beat the generic
    .labels text fill and to make each market easy to pick out) */
-.esg-chart .labels text { font-weight: 500; }
-.esg-chart .labels .t-kr { fill: var(--ink); }
-.esg-chart .labels .t-cn { fill: var(--accent); }
-.esg-chart .labels .t-sg { fill: #c9760f; }
-.esg-chart .labels .t-in { fill: #bd4e82; }
-.esg-chart .labels .t-id { fill: #23895f; }
-.esg-chart .labels .t-nz { fill: #2f80c4; }
-.esg-chart .labels .t-au { fill: #8a5cc6; }
-.esg-chart .labels .t-my { fill: #c53a4d; }
 
 /* Sub-chart legend / bar labels keep the original neutral treatment */
-.esg-chart .t-cn { fill: var(--accent); font-weight: 500; }
-.esg-chart .t-kr { fill: var(--ink); font-weight: 500; }
-.esg-chart .t-muted { fill: #8a97a8; }
-.esg-chart .b-hi { fill: var(--accent); }
-.esg-chart .b-lo { fill: #c3ccd7; }
-.esg-chart .row text { fill: var(--ink); }
 
 /* Role / tools / data strip */
 .esg-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 0 0 3.5rem; padding: 1.6rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -71,7 +42,6 @@
 .esg-findings .finding-number { color: var(--accent); font-family: "DM Mono", monospace; font-size: 1.1rem; padding-top: .15rem; }
 .esg-findings p { margin-bottom: 0; }
 .esg-subchart { margin: 1.4rem 0 0; }
-.esg-subchart .esg-chart { padding: .75rem .5rem .25rem; }
 
 /* Tableau embed and screenshot placeholder */
 .esg-embed { position: relative; width: 100%; aspect-ratio: 4 / 3; min-height: 480px; margin: 1.5rem 0; background: var(--surface); border: 1px solid var(--line); }
@@ -90,7 +60,6 @@
   .esg-case h1 { font-size: 2.3rem; }
   .esg-meta { grid-template-columns: 1fr; gap: 1.25rem; }
   .esg-findings > li { grid-template-columns: 40px 1fr; gap: .75rem; }
-  .esg-chart { padding: .5rem .25rem .25rem; }
   .esg-embed { aspect-ratio: auto; height: 70vh; min-height: 420px; }
 }
 
@@ -100,18 +69,8 @@
   .esg-actions, .esg-embed, .esg-foot { display: none; }
   .esg-meta { grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: .9rem 0; margin-bottom: 1.5rem; }
   .esg-block { margin-bottom: 1.6rem; }
-  .esg-chart { border: 1px solid #ccc; background: white; }
   .esg-hero, .esg-subchart, .esg-findings > li, .esg-shot { break-inside: avoid; }
   .esg-placeholder { display: none; }
   .esg-shot img[hidden] + .esg-placeholder + figcaption { display: none; }
 }
 
-/* Charts animate in on scroll (reveal classes from app.js; motion-safe) */
-@keyframes esg-draw { to { stroke-dashoffset: 0; } }
-@keyframes esg-grow-x { to { transform: scaleX(1); } }
-@media (prefers-reduced-motion: no-preference) {
-  .esg-hero.reveal .esg-chart polyline { stroke-dasharray: 1600; stroke-dashoffset: 1600; }
-  .esg-hero.reveal.is-visible .esg-chart polyline { animation: esg-draw 1.5s ease both; }
-  .esg-subchart.reveal .b-hi, .esg-subchart.reveal .b-lo { transform: scaleX(0); transform-box: fill-box; transform-origin: left; }
-  .esg-subchart.reveal.is-visible .b-hi, .esg-subchart.reveal.is-visible .b-lo { animation: esg-grow-x .8s cubic-bezier(.2, .7, .3, 1) both; }
-}
