@@ -12,9 +12,9 @@
 /* Metrics reuse the CV strip but always show exactly three columns here,
    whatever the CV page's own metric count is. */
 .study-metrics { grid-template-columns: repeat(3, 1fr); }
-.study-metrics div { font-size: .82rem; padding: 1.6rem 1.25rem 1.6rem 0; }
-.study-metrics div + div { border-left: 1px solid var(--line); border-top: 0; padding-left: 1.5rem; }
-.study-metrics .metric-number { font-size: 1.25rem; white-space: nowrap; }
+.study-metrics div { font-size: .9rem; padding: 1.4rem 1.35rem; }
+.study-metrics div + div { padding-left: 1.35rem; }
+.study-metrics .metric-number { font-size: 1.85rem; white-space: nowrap; }
 
 /* Hero figure and gallery */
 .study-hero { margin: 3rem 0 2.5rem; }
@@ -24,10 +24,10 @@
 }
 .study-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem 2rem; margin-top: 1.5rem; }
 .study-gallery figure { margin: 0; }
-.study-gallery figcaption strong { font-family: "DM Mono", monospace; font-size: .72rem; color: var(--accent); margin-right: .5rem; }
+.study-gallery figcaption strong { font-family: "DM Mono", monospace; font-size: .82rem; color: var(--accent); margin-right: .5rem; }
 .study-gallery.is-stacked { grid-template-columns: 1fr; gap: 2.5rem; }
 .study-hero-map { max-width: 720px; margin: 2.5rem auto 0; }
-.study-hero figcaption strong { font-family: "DM Mono", monospace; font-size: .72rem; color: var(--accent); margin-right: .5rem; }
+.study-hero figcaption strong { font-family: "DM Mono", monospace; font-size: .82rem; color: var(--accent); margin-right: .5rem; }
 
 /* Role / tools / context */
 .study-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 0 0 3.5rem; padding: 1.5rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -55,7 +55,7 @@
 .table-wrap { overflow-x: auto; margin: 1.25rem 0; -webkit-overflow-scrolling: touch; }
 .study-table { width: 100%; border-collapse: collapse; font-size: .92rem; line-height: 1.45; }
 .study-table th, .study-table td { padding: .7rem .8rem .7rem 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-.study-table th { font-family: "DM Mono", monospace; font-size: .7rem; text-transform: uppercase; color: var(--accent); font-weight: 500; border-bottom: 1px solid var(--ink); }
+.study-table th { font-family: "DM Mono", monospace; font-size: .8rem; text-transform: uppercase; color: var(--accent); font-weight: 500; border-bottom: 1px solid var(--ink); }
 .study-table td { color: var(--muted); }
 .study-table td:first-child { color: var(--ink); font-weight: 500; }
 .study-table-numeric td:nth-child(n+3), .study-table-numeric th:nth-child(n+3) { text-align: right; font-family: "DM Mono", monospace; font-variant-numeric: tabular-nums; }

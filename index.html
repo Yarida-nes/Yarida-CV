@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -49,8 +48,8 @@
         <nav aria-label="Primary navigation">
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#approach">Approach</a>
           <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
           <a href="projects.html">All projects</a>
         </nav>
@@ -62,26 +61,18 @@
       <main id="main">
         <section class="intro" id="top" aria-labelledby="intro-title">
           <div class="intro-copy">
-            <p class="eyebrow">Data Analyst / Curtin University, Perth, Australia</p>
+            <p class="eyebrow">Data analyst · Master of Commerce (AI and Business Analytics), Curtin University</p>
             <h1 id="intro-title">Yarida Kaewthong</h1>
-            <p class="lede">
-              I am a Master of Commerce student in Artificial Intelligence and Business Analytics at Curtin University, Perth, Australia. I turn raw data into clear, honest answers.
-            </p>
-            <ul class="skill-chips" aria-label="Tools I work with">
-              <li>SQL</li>
-              <li>Python</li>
-              <li>R</li>
-              <li>Tableau</li>
-              <li>Power BI</li>
-              <li>GIS</li>
-              <li>Excel</li>
+            <p class="availability">Seeking a data analytics internship in Perth</p>
+            <ul class="proof-list" aria-label="Highlights">
+              <li><strong>30,469</strong> real crash records analysed in R and QGIS</li>
+              <li><strong>Co-author (4th of 8)</strong> of a peer-reviewed GIS paper, ACRS 2023</li>
+              <li><strong>First Class Honours</strong> in Geography, Kasetsart University</li>
             </ul>
-            <p class="availability">Seeking a data analytics internship in Perth, Australia</p>
             <div class="intro-actions">
-              <a class="button primary" href="#contact">Get in touch <span aria-hidden="true">↓</span></a>
+              <a class="button primary" href="#projects">View projects <span aria-hidden="true">→</span></a>
               <a class="button text-button" href="Yarida-Kaewthong-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
-              <a class="button text-button" href="#projects">Selected work <span aria-hidden="true">→</span></a>
-              <button class="button text-button" type="button" data-print>Save as PDF <span aria-hidden="true">↓</span></button>
+              <a class="button text-button" href="mailto:nestyarida@gmail.com">Email me <span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <div class="hero-projects" aria-label="Selected projects">
@@ -98,7 +89,7 @@
         <section class="section projects" id="projects" aria-labelledby="projects-title">
           <div class="section-label">
             <span>01</span>
-            <h2 id="projects-title">Selected work</h2>
+            <h2 id="projects-title">Projects</h2>
             <a class="section-side-link" href="projects.html">All projects <span aria-hidden="true">→</span></a>
           </div>
           <div class="project-grid">
@@ -109,69 +100,69 @@
               </div>
               <div class="project-body">
                 <h3>Walking and cycling safety in Melbourne</h3>
-                <p>Mapped 30,469 pedestrian and cyclist crashes: half fall in just 6% of the city.</p>
-                <ul class="project-tags" aria-label="Tools"><li>R</li><li>sf</li><li>Hot-spot analysis</li><li>GIS</li></ul>
-                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+                <p>Analysed 30,469 real pedestrian and cyclist crashes (2012–2025) in R and QGIS. <strong>Half the crashes fall in 6% of the city</strong>, and a pedestrian’s serious-injury share rises from 41% to 65% with the speed zone.</p>
+                <ul class="project-tags" aria-label="Tools"><li>R</li><li>sf</li><li>QGIS</li><li>Hot-spot analysis</li></ul>
+                <span class="project-cta">See the project <span aria-hidden="true">&rarr;</span></span>
               </div>
             </a>
             <a class="project-card" href="drugstores.html">
-              <div class="card-top"><span>02 / GIS · PUBLISHED</span><span>2023 <span aria-hidden="true">&rarr;</span></span></div>
+              <div class="card-top"><span>02 / GIS · Published</span><span>2023 <span aria-hidden="true">&rarr;</span></span></div>
               <div class="project-shot" data-mark="GIS">
                 <img src="images/drugstores-card.svg" alt="Coverage bar chart: 199, 325 and 417 villages served in Thailand" loading="lazy" />
               </div>
               <div class="project-body">
                 <h3>Drugstore access in Thailand</h3>
-                <p>Co-authored GIS study of where new pharmacies would reach the most villages.</p>
+                <p>Co-authored (4th of 8) a peer-reviewed GIS study of 433 drugstores near Bangkok. <strong>22 well-placed pharmacies would raise coverage from 199 to 417 of 511 villages.</strong></p>
                 <ul class="project-tags" aria-label="Tools"><li>GIS</li><li>Network analysis</li><li>Location-allocation</li><li>Published paper</li></ul>
-                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+                <span class="project-cta">See the project <span aria-hidden="true">&rarr;</span></span>
               </div>
             </a>
             <a class="project-card" href="esg.html">
-              <div class="card-top"><span>03 / FINANCE · TABLEAU</span><span>2026 <span aria-hidden="true">&rarr;</span></span></div>
+              <div class="card-top"><span>03 / Finance · Tableau</span><span>2026 <span aria-hidden="true">&rarr;</span></span></div>
               <div class="project-shot" data-mark="ESG">
                 <img src="images/esg-card.svg" alt="Tableau dashboard comparing ESG scores and financial performance across eight Asia-Pacific markets" loading="lazy" />
               </div>
               <div class="project-body">
                 <h3>ESG and financial analytics, Asia-Pacific</h3>
-                <p>Three linked Tableau dashboards testing whether higher ESG scores go with better financial results.</p>
+                <p>Built a three-dashboard Tableau Story on 16,752 firm-years in 8 Asia-Pacific markets. <strong>ESG and profitability (ROA) turned out only weakly linked (R² 0.02).</strong></p>
                 <ul class="project-tags" aria-label="Tools"><li>Tableau</li><li>Dashboard actions</li><li>Parameters</li><li>Analyst report</li></ul>
-                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+                <span class="project-cta">See the project <span aria-hidden="true">&rarr;</span></span>
               </div>
             </a>
             <a class="project-card" href="credit-risk.html">
-              <div class="card-top"><span>04 / FINANCE · R</span><span>2025 <span aria-hidden="true">&rarr;</span></span></div>
+              <div class="card-top"><span>04 / Finance · R</span><span>2025 <span aria-hidden="true">&rarr;</span></span></div>
               <div class="project-shot" data-mark="21.6%">
                 <img src="images/credit-risk-card.svg" alt="Bar chart of 22,395 non-default loans against 6,183 defaults" loading="lazy" />
               </div>
               <div class="project-body">
                 <h3>Credit risk: what the loan data shows</h3>
-                <p>Cleaned 32,581 loan records and explored what separates the one in five who defaulted.</p>
+                <p>In a group of three, cleaned 32,581 loan records to 28,578 and found a <strong>21.6% default rate</strong>. The income regression explained about a third of the variation (R² 0.34).</p>
                 <ul class="project-tags" aria-label="Tools"><li>R</li><li>Data cleaning</li><li>Regression</li><li>R Markdown</li></ul>
-                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+                <span class="project-cta">See the project <span aria-hidden="true">&rarr;</span></span>
               </div>
             </a>
             <a class="project-card" href="housing.html">
-              <div class="card-top"><span>05 / ECONOMICS · R</span><span>2026 <span aria-hidden="true">&rarr;</span></span></div>
+              <div class="card-top"><span>05 / Economics · R</span><span>2026 <span aria-hidden="true">&rarr;</span></span></div>
               <div class="project-shot" data-mark="R²">
                 <img src="images/housing-card.svg" alt="Bar chart of adjusted R-squared across five regression models of Australian housing price growth" loading="lazy" />
               </div>
               <div class="project-body">
                 <h3>Australian housing price regression</h3>
-                <p>Five regression models of housing price growth, compared on adjusted R², RMSE and MAE.</p>
+                <p>Built five regression models of quarterly house price growth in five cities. <strong>Adjusted R² rose from 0.05 to 0.24</strong>, and COVID-19 had the largest effect (+2.63 points).</p>
                 <ul class="project-tags" aria-label="Tools"><li>R</li><li>Multiple regression</li><li>Model comparison</li><li>RMSE</li></ul>
-                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+                <span class="project-cta">See the project <span aria-hidden="true">&rarr;</span></span>
               </div>
             </a>
             <a class="project-card" href="weatherwise.html">
-              <div class="card-top"><span>06 / WEATHER · PYTHON</span><span>2025 <span aria-hidden="true">&rarr;</span></span></div>
+              <div class="card-top"><span>06 / Weather · Python</span><span>2025 <span aria-hidden="true">&rarr;</span></span></div>
               <div class="project-shot" data-mark="°C">
                 <img src="images/weatherwise-card.svg" alt="WeatherWise notebook showing weather data charts" loading="lazy" />
               </div>
               <div class="project-body">
                 <h3>WeatherWise</h3>
-                <p>Python app that turns a live weather API into daily charts and plain-English answers.</p>
+                <p>Built a Python weather advisor that turns 40 three-hourly API readings into <strong>5 daily summaries and charts</strong>, and answers plain-English questions with an AI model.</p>
                 <ul class="project-tags" aria-label="Tools"><li>Python</li><li>API</li><li>Matplotlib</li><li>Jupyter</li></ul>
-                <span class="project-cta">Read the case study <span aria-hidden="true">&rarr;</span></span>
+                <span class="project-cta">See the project <span aria-hidden="true">&rarr;</span></span>
               </div>
             </a>
           </div>
@@ -185,7 +176,11 @@
               <div>
                 <p class="role">Restaurant Manager</p>
                 <p class="company">Six Senses Gourmet Thai, Leederville, Perth WA &middot; Part-time</p>
-                <p class="description">Part-time work alongside my Master&rsquo;s. I analyse daily sales to guide menu decisions, which helped lift the customer rating from 3.6 to 4.0 stars.</p>
+                <ul class="exp-bullets">
+                  <li>Analyse daily sales to guide menu decisions</li>
+                  <li>Helped lift the customer rating from <strong>3.6 to 4.0 stars</strong></li>
+                  <li>Train and lead staff</li>
+                </ul>
                 <ul class="tags" aria-label="Skills used"><li>Sales analysis</li><li>Data-driven decisions</li><li>Staff training</li><li>Leadership</li></ul>
               </div>
             </article>
@@ -194,7 +189,11 @@
               <div>
                 <p class="role">Digital Marketing Executive</p>
                 <p class="company">Divana, Bangkok, Thailand &middot; Full-time</p>
-                <p class="description">Created SEO-focused content for the website (divanawellness.com), Instagram and digital marketing campaigns, and researched keywords and customer interests to improve content relevance and online visibility. I tracked social media and campaign performance in Excel and Power BI reports, and used the results to plan which content to produce next.</p>
+                <ul class="exp-bullets">
+                  <li>Created SEO-focused content for the website (divanawellness.com), Instagram and digital marketing campaigns</li>
+                  <li>Researched keywords and customer interests to improve content relevance and online visibility</li>
+                  <li>Tracked social media and campaign performance in <strong>Excel and Power BI</strong> reports to plan new content</li>
+                </ul>
                 <ul class="tags" aria-label="Skills used"><li>SEO</li><li>Keyword research</li><li>Power BI</li><li>Social media analytics</li></ul>
               </div>
             </article>
@@ -203,7 +202,11 @@
               <div>
                 <p class="role">Data-Driven Marketing Intern</p>
                 <p class="company">Like Me X Co., Ltd. / Futureskill, Thailand</p>
-                <p class="description">Built Excel and Power BI dashboards on online content and audience data to guide campaign planning. After each campaign I reviewed the results and wrote reports for the team, and helped prepare short content for digital platforms.</p>
+                <ul class="exp-bullets">
+                  <li>Built <strong>Excel and Power BI dashboards</strong> on online content and audience data to guide campaign planning</li>
+                  <li>Reviewed campaign results and wrote reports for the team</li>
+                  <li>Helped prepare short content for digital platforms</li>
+                </ul>
                 <ul class="tags" aria-label="Skills used"><li>Excel</li><li>Power BI</li><li>Campaign analysis</li><li>Reporting</li></ul>
               </div>
             </article>
@@ -212,15 +215,59 @@
               <div>
                 <p class="role">Mapping and GIS Solution Intern</p>
                 <p class="company">THIKNET Co., Ltd., Thailand</p>
-                <p class="description">Worked in SQL on location data for a commercial mapping product. Updated road, route and turn-restriction records for every province in Thailand, and added point data for EV charging stations. A wrong point sends a driver the wrong way, so most of the job was checking each record against its source before committing it.</p>
+                <ul class="exp-bullets">
+                  <li>Updated road, route and turn-restriction records in <strong>SQL</strong> for every province in Thailand, for a commercial mapping product</li>
+                  <li>Added point data for EV charging stations</li>
+                  <li>Checked each record against its source before committing it, because a wrong point sends a driver the wrong way</li>
+                </ul>
                 <ul class="tags" aria-label="Skills used"><li>SQL</li><li>GIS</li><li>Data validation</li><li>Attention to detail</li></ul>
               </div>
             </article>
           </div>
         </section>
 
-        <section class="section capabilities" aria-labelledby="capabilities-title">
-          <div class="section-label"><span>03</span><h2 id="capabilities-title">Capabilities</h2></div>
+        <section class="section education" id="education" aria-labelledby="education-title">
+          <div class="section-label"><span>03</span><h2 id="education-title">Education and recognition</h2></div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-date">2025–2027</div>
+              <div>
+                <p class="role">Master of Commerce</p>
+                <p class="company">Curtin University, Perth, Australia</p>
+                <p class="description">Majoring in Artificial Intelligence and Business Analytics, expected to finish in June 2027. Faculty of Business and Law Academic Performance Recognition, 2025.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">2019–22</div>
+              <div>
+                <p class="role">Bachelor of Social Science, Geography</p>
+                <p class="company">Kasetsart University, Thailand</p>
+                <p class="description">Graduated with First Class Honours. Co-author (4th of 8) of a GIS research paper on pharmacy service coverage, <a href="drugstores.html">presented at the 2023 Asian Conference on Remote Sensing</a>.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <div class="timeline-date">AWARDS</div>
+              <div>
+                <p class="role">Recognition and certification</p>
+                <p class="company">Curtin University, ACRS, Google, NSO</p>
+                <ul class="award-list">
+                  <li><span>2026</span>Google Data Analytics Professional Certificate</li>
+                  <li><span>2026</span>Presented at the 8th International Academic Conference on Education and Technology</li>
+                  <li><span>2025</span>Faculty of Business and Law Academic Performance Recognition, Curtin University</li>
+                  <li><span>2023</span><a href="drugstores.html">Co-author (4th of 8), 2023 Asian Conference on Remote Sensing paper</a></li>
+                  <li><span>2023</span>NSO Data Camp, case study pitching</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section capabilities" id="skills" aria-labelledby="capabilities-title">
+          <div class="section-label"><span>04</span><h2 id="capabilities-title">Skills, with proof</h2></div>
+          <div>
+          <ul class="skill-chips" aria-label="Tools I work with">
+            <li>SQL</li><li>Python</li><li>R</li><li>Tableau</li><li>Power BI</li><li>QGIS</li><li>Excel</li>
+          </ul>
           <ul class="capability-list">
             <li>
               <span class="cap-num">01</span>
@@ -230,7 +277,7 @@
             </li>
             <li>
               <span class="cap-num">02</span>
-              <span class="cap-name">Regression and classification models</span>
+              <span class="cap-name">Regression models</span>
               <span class="cap-where">Proven in <a href="credit-risk.html">Credit risk</a> and <a href="housing.html">Housing prices</a></span>
               <span class="cap-tool">R / RStudio</span>
             </li>
@@ -243,8 +290,8 @@
             <li>
               <span class="cap-num">04</span>
               <span class="cap-name">SQL and spatial data</span>
-              <span class="cap-where">Proven in a <a href="drugstores.html">published GIS paper</a> and at the <a href="#experience">THIKNET mapping internship</a></span>
-              <span class="cap-tool">SQL / GIS</span>
+              <span class="cap-where">Proven in <a href="melbourne-crash.html">Melbourne crash hot spots</a>, a <a href="drugstores.html">co-authored GIS paper (4th of 8)</a> and the <a href="#experience">THIKNET mapping internship</a></span>
+              <span class="cap-tool">SQL / QGIS / R</span>
             </li>
             <li>
               <span class="cap-num">05</span>
@@ -253,10 +300,11 @@
               <span class="cap-tool">Power BI / Excel / Word</span>
             </li>
           </ul>
+          </div>
         </section>
 
         <section class="section principles" id="approach" aria-labelledby="approach-title">
-          <div class="section-label"><span>04</span><h2 id="approach-title">How I work</h2></div>
+          <div class="section-label"><span>05</span><h2 id="approach-title">How I work</h2></div>
           <ol class="principle-list">
             <li>
               <h3>Compare models, don&rsquo;t just fit one</h3>
@@ -278,7 +326,7 @@
         </section>
 
         <section class="section faq" id="faq" aria-labelledby="faq-title">
-          <div class="section-label"><span>05</span><h2 id="faq-title">Questions</h2></div>
+          <div class="section-label"><span>06</span><h2 id="faq-title">Questions</h2></div>
           <div class="faq-list">
             <details>
               <summary>What are you looking for?</summary>
@@ -286,7 +334,7 @@
             </details>
             <details>
               <summary>What do you actually use, day to day?</summary>
-              <p>Tableau for dashboards, R and RStudio for regression and classification, Python in Jupyter for data work and small apps, SQL for querying and updating data, and Power BI and Excel for reporting. Each case study says which tool it used.</p>
+              <p>Tableau for dashboards, QGIS and R for maps, R and RStudio for regression, Python in Jupyter for data work and small apps, SQL for querying and updating data, and Power BI and Excel for reporting. Each case study says which tool it used.</p>
             </details>
             <details>
               <summary>Why business analytics after a geography degree?</summary>
@@ -299,52 +347,15 @@
           </div>
         </section>
 
-        <section class="section education" id="education" aria-labelledby="education-title">
-          <div class="section-label"><span>06</span><h2 id="education-title">Education</h2></div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-date">2025–2027</div>
-              <div>
-                <p class="role">Master of Commerce</p>
-                <p class="company">Curtin University, Perth, Australia</p>
-                <p class="description">Majoring in Artificial Intelligence and Business Analytics, expected to finish in June 2027. Faculty of Business and Law Academic Performance Recognition, 2025.</p>
-              </div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">2019–22</div>
-              <div>
-                <p class="role">Bachelor of Social Science, Geography</p>
-                <p class="company">Kasetsart University, Thailand</p>
-                <p class="description">Graduated with First Class Honours. Co-authored a GIS research paper on pharmacy service coverage, <a href="drugstores.html">presented at the 2023 Asian Conference on Remote Sensing</a>.</p>
-              </div>
-            </article>
-            <article class="timeline-item">
-              <div class="timeline-date">AWARDS</div>
-              <div>
-                <p class="role">Recognition and certification</p>
-                <p class="company">Curtin University, ACRS, Google, NSO</p>
-                <ul class="award-list">
-                  <li><span>2026</span>Google Data Analytics Professional Certificate</li>
-                  <li><span>2026</span>Presented at the 8th International Academic Conference on Education and Technology</li>
-                  <li><span>2025</span>Faculty of Business and Law Academic Performance Recognition, Curtin University</li>
-                  <li><span>2023</span><a href="drugstores.html">Co-authored paper, 2023 Asian Conference on Remote Sensing</a></li>
-                  <li><span>2023</span>NSO Data Camp, case study pitching</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </section>
-
         <section class="contact" id="contact" aria-labelledby="contact-title">
           <p class="eyebrow">07 / Contact</p>
           <h2 id="contact-title">Open to data analytics internships in Perth.</h2>
-          <p class="contact-note">Email is fastest. If you would rather read first, the CV is a one-page PDF.</p>
+          <p class="contact-note">Email is fastest. You can also download my CV (PDF).</p>
           <div class="contact-links">
             <a class="contact-link" href="mailto:nestyarida@gmail.com" data-print-value="nestyarida@gmail.com">Email me <span aria-hidden="true">↗</span></a>
             <a class="contact-link" href="https://www.linkedin.com/in/yarida-kaewthong" data-print-value="linkedin.com/in/yarida-kaewthong" target="_blank" rel="noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
             <a class="contact-link" href="https://github.com/Yarida-nes" data-print-value="github.com/Yarida-nes" target="_blank" rel="noreferrer">Connect on GitHub <span aria-hidden="true">↗</span></a>
             <a class="contact-link no-print" href="Yarida-Kaewthong-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
-            <button class="contact-link" type="button" data-print>Save this page as PDF <span aria-hidden="true">↓</span></button>
           </div>
         </section>
       </main>

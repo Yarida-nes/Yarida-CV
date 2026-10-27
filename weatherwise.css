@@ -23,7 +23,7 @@
   font-family: "DM Mono", monospace; font-size: .8rem; color: var(--muted);
 }
 .ww-shot-fallback[hidden] { display: none; }
-.ww-shot figcaption { max-width: 760px; margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .7rem; line-height: 1.6; text-transform: uppercase; }
+.ww-shot figcaption { max-width: 760px; margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .82rem; line-height: 1.6; text-transform: uppercase; }
 
 /* Role / tools / context strip */
 .ww-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0 0; padding: 1.6rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }

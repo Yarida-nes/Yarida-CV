@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -62,9 +61,16 @@
             A three-dashboard Tableau Story and a business analyst report. Built on 16,752 firm-year records from eight Asia-Pacific markets, 2010 to 2024. The test: does ESG performance track profitability and valuation?
           </p>
           <div class="esg-actions">
-            <a class="button primary" href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">Open the Tableau Story <span aria-hidden="true">&#8599;</span></a>
+            <a class="button primary" href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">Open the dashboard (Tableau) <span aria-hidden="true">&#8599;</span></a>
             <a class="button text-button" href="projects.html">Back to all projects <span aria-hidden="true">&rarr;</span></a>
           </div>
+
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>Do companies with better ESG scores also do better financially, across eight Asia-Pacific markets?</dd></div>
+            <div><dt>What I did</dt><dd>Sole author: data filtering, calculated fields, three linked dashboards, a Tableau Story and a 1,000-word analyst report. Curtin University, 2026.</dd></div>
+            <div><dt>Tools</dt><dd>Tableau Desktop · Tableau Public · calculated fields · parameters · dashboard actions · forecasting</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>ESG and profitability are only weakly linked (ROA against ESG score, R² 0.02, n = 16,658). China’s average ESG score rose from 20.7 to 44.4 between 2010 and 2024.</dd></div>
+          </dl>
 
           <div class="metrics esg-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">16,752</span><span>firm-years, 2,922 firms<br />8 markets, 2010&ndash;2024</span></div>
@@ -115,53 +121,8 @@
             </figcaption>
           </figure>
 
-          <dl class="esg-meta">
-            <div>
-              <dt>Role</dt>
-              <dd>Sole author &mdash; data filtering, calculated fields, three dashboards, Tableau Story, 1,000-word analyst report</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>Tableau Desktop &middot; Tableau Public &middot; calculated fields &middot; parameters &middot; dashboard actions &middot; exponential-smoothing forecast</dd>
-            </div>
-            <div>
-              <dt>Data</dt>
-              <dd>LSEG Workspace (ESG, governance) and Compustat Global (financials), supplied by the unit. 237,506 firm-years raw; 16,752 after the ESG filter.</dd>
-            </div>
-          </dl>
-
           <section class="esg-block">
-            <h2>The question</h2>
-            <p>
-              ESG disclosure is going mandatory across the region &mdash; AASB S1/S2 in Australia, XRB standards in New Zealand, SGX rules in Singapore, SEBI&rsquo;s BRSR Core in India, HKEX and CSRC guidance in China, and the KSSB in Korea &mdash; all converging on the ISSB standards. So the question for an investor or a board is simple: <strong>do companies that score well on ESG also do better financially, and does that hold across very different markets?</strong>
-            </p>
-            <p>The brief asked for a Tableau Story of exactly three dashboards that build on each other. I framed them as three steps:</p>
-            <ul>
-              <li><strong>Market landscape</strong> &mdash; where is the market value, how do ESG scores differ by country, and what is each market&rsquo;s industry mix?</li>
-              <li><strong>Governance drivers</strong> &mdash; do board gender diversity, CEO duality, industry and controversies explain the variation in ESG scores?</li>
-              <li><strong>Financial outcomes</strong> &mdash; is ESG associated with return on assets, Tobin&rsquo;s Q and market-to-book, and what does a forecast to 2028 look like?</li>
-            </ul>
-          </section>
-
-          <section class="esg-block">
-            <h2>The data</h2>
-            <p>
-              A panel of Asia-Pacific listed companies: nine economies, 2001 to 2024. That is 237,506 firm-year observations across 16,322 firms. Each carries firm-level financials, ESG scores and pillar sub-scores, an ESG controversies score, and governance variables such as board size, female board share and CEO duality.
-            </p>
-            <p>
-              ESG scores exist only for a subset of larger listed firms. So the first step &mdash; and the first thing the markers checked &mdash; was a global filter to firm-years with a non-null ESG score, restricted to 2010&ndash;2024. That leaves <strong>16,752 firm-years from 2,922 firms</strong>. Two consequences matter throughout:
-            </p>
-            <ul>
-              <li><strong>Bangladesh drops out entirely.</strong> It has 3,134 firm-years in the raw panel but none with an ESG score, so every &ldquo;nine countries&rdquo; in the brief is eight in practice.</li>
-              <li><strong>Coverage grows sharply over time.</strong> There are 342 ESG-scored firm-years in 2010 and 2,842 in 2023. China alone goes from 25 scored firms in 2010 to 961 in 2024. Any &ldquo;trend&rdquo; is partly a change in who is being scored.</li>
-            </ul>
-            <p>
-              The brief defined the calculated fields; I built them as specified: ROA as <code>SUM(ebit) / SUM(at)</code>; Tobin&rsquo;s Q as <code>(SUM(MCAP)/1,000,000 + SUM(lt)) / SUM(at)</code>; MTB as <code>(SUM(MCAP)/1,000,000) / SUM(ceq)</code>; a Market Group field labelling Australia, New Zealand, Singapore and South Korea as &ldquo;Developed APAC&rdquo;; a Has Controversy flag for <code>CONT &lt; 100</code>; and an Above Threshold field driven by an <strong>ESG High Threshold</strong> parameter (50 to 80 in steps of 5, default 70). The MCAP division is the trap here: market cap is in dollars, the balance sheet in millions. Skip it and Tobin&rsquo;s Q lands in the trillions.
-            </p>
-          </section>
-
-          <section class="esg-block">
-            <h2>What the data showed</h2>
+            <h2>What I found</h2>
             <ol class="esg-findings">
               <li>
                 <span class="finding-number">01</span>
@@ -239,12 +200,8 @@
               <img
                 src="images/esg-dashboard.png"
                 alt="Screenshot of Dashboard 3: ROA against ESG score, the ESG and Tobin's Q forecast to 2028, and the High versus Low ESG comparison by country"
-                onerror="this.style.display='none'; this.nextElementSibling.hidden = false;"
+                onerror="this.closest(&#39;figure&#39;).hidden = true;"
               />
-              <div class="esg-placeholder" hidden>
-                <p class="eyebrow">Dashboard screenshot</p>
-                <p>Export from Tableau via <strong>Dashboard &rsaquo; Export Image</strong>, save it as <code>images/esg-dashboard.png</code>, and it will appear here automatically.</p>
-              </div>
               <figcaption>Static view of the Story, for readers who cannot load the embed above.</figcaption>
             </figure>
 
@@ -254,7 +211,20 @@
           </section>
 
           <section class="esg-block">
-            <h2>How it was built</h2>
+            <h2>The problem</h2>
+            <p>
+              ESG disclosure is going mandatory across the region &mdash; AASB S1/S2 in Australia, XRB standards in New Zealand, SGX rules in Singapore, SEBI&rsquo;s BRSR Core in India, HKEX and CSRC guidance in China, and the KSSB in Korea &mdash; all converging on the ISSB standards. So the question for an investor or a board is simple: <strong>do companies that score well on ESG also do better financially, and does that hold across very different markets?</strong>
+            </p>
+            <p>The brief asked for a Tableau Story of exactly three dashboards that build on each other. I framed them as three steps:</p>
+            <ul>
+              <li><strong>Market landscape</strong> &mdash; where is the market value, how do ESG scores differ by country, and what is each market&rsquo;s industry mix?</li>
+              <li><strong>Governance drivers</strong> &mdash; do board gender diversity, CEO duality, industry and controversies explain the variation in ESG scores?</li>
+              <li><strong>Financial outcomes</strong> &mdash; is ESG associated with return on assets, Tobin&rsquo;s Q and market-to-book, and what does a forecast to 2028 look like?</li>
+            </ul>
+          </section>
+
+          <section class="esg-block">
+            <h2>How I did it</h2>
             <p>
               <strong>One filter, applied everywhere.</strong> The non-null ESG filter and the 2010&ndash;2024 year range attach to every worksheet through the data source, so no chart can accidentally include unscored firms. The brief required it. It also keeps a 237,506-row panel responsive on Tableau Public.
             </p>
@@ -270,7 +240,24 @@
           </section>
 
           <section class="esg-block">
-            <h2>Limitations I&rsquo;d state up front</h2>
+            <h2>The data</h2>
+            <p>
+              A panel of Asia-Pacific listed companies: nine economies, 2001 to 2024. That is 237,506 firm-year observations across 16,322 firms. Each carries firm-level financials, ESG scores and pillar sub-scores, an ESG controversies score, and governance variables such as board size, female board share and CEO duality.
+            </p>
+            <p>
+              ESG scores exist only for a subset of larger listed firms. So the first step &mdash; and the first thing the markers checked &mdash; was a global filter to firm-years with a non-null ESG score, restricted to 2010&ndash;2024. That leaves <strong>16,752 firm-years from 2,922 firms</strong>. Two consequences matter throughout:
+            </p>
+            <ul>
+              <li><strong>Bangladesh drops out entirely.</strong> It has 3,134 firm-years in the raw panel but none with an ESG score, so every &ldquo;nine countries&rdquo; in the brief is eight in practice.</li>
+              <li><strong>Coverage grows sharply over time.</strong> There are 342 ESG-scored firm-years in 2010 and 2,842 in 2023. China alone goes from 25 scored firms in 2010 to 961 in 2024. Any &ldquo;trend&rdquo; is partly a change in who is being scored.</li>
+            </ul>
+            <p>
+              The brief defined the calculated fields; I built them as specified: ROA as <code>SUM(ebit) / SUM(at)</code>; Tobin&rsquo;s Q as <code>(SUM(MCAP)/1,000,000 + SUM(lt)) / SUM(at)</code>; MTB as <code>(SUM(MCAP)/1,000,000) / SUM(ceq)</code>; a Market Group field labelling Australia, New Zealand, Singapore and South Korea as &ldquo;Developed APAC&rdquo;; a Has Controversy flag for <code>CONT &lt; 100</code>; and an Above Threshold field driven by an <strong>ESG High Threshold</strong> parameter (50 to 80 in steps of 5, default 70). The MCAP division is the trap here: market cap is in dollars, the balance sheet in millions. Skip it and Tobin&rsquo;s Q lands in the trillions.
+            </p>
+          </section>
+
+          <section class="esg-block">
+            <h2>Limitations</h2>
             <ul>
               <li><strong>Correlation, not causation.</strong> Nothing here shows that improving an ESG score raises returns. Larger, more profitable firms are more likely to be scored at all, and better resourced to score well.</li>
               <li><strong>The sample is who gets scored, not the market.</strong> ESG coverage is 7% of the raw panel and skews to large firms. Bangladesh is absent. New Zealand has 499 firm-years, only 28 above the threshold. Coverage jumps from 342 firm-years in 2010 to 2,842 in 2023, so part of every time trend is composition change, not change within firms.</li>
@@ -281,7 +268,7 @@
             </ul>
           </section>
 
-                    <section class="esg-block" id="takeaways">
+          <section class="esg-block" id="takeaways">
             <h2>Key takeaways</h2>
             <ul>
               <li><strong>The filter decides the story.</strong> Only 16,752 of 237,506 firm-years have an ESG score, and Bangladesh has none, so the brief's nine countries became eight. Checking the sample first stopped me from reporting the wrong scope.</li>
@@ -302,7 +289,7 @@
           </section>
 
           <div class="esg-actions esg-footer-actions">
-            <a class="button primary" href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">Open the Tableau Story <span aria-hidden="true">&#8599;</span></a>
+            <a class="button primary" href="https://public.tableau.com/views/23020243_Kaewthong_viz/Story1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noreferrer">Open the dashboard (Tableau) <span aria-hidden="true">&#8599;</span></a>
             <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> Back to all projects</a>
           </div>
         </article>

@@ -20,7 +20,7 @@
 
 /* At-a-glance metrics: reuse .metrics, just a touch more room for the numbers */
 .cs-metrics { margin-bottom: 3rem; }
-.cs-metrics .metric-number { font-size: 1.35rem; white-space: nowrap; }
+.cs-metrics .metric-number { font-size: 1.85rem; white-space: nowrap; }
 .cs-metrics div { align-items: flex-start; flex-direction: column; gap: .5rem; }
 .cs-metrics div span:last-child { color: var(--muted); }
 
@@ -107,7 +107,7 @@
 @media (max-width: 720px) {
   .case-study { padding: 3rem 0 2.5rem; }
   .cs-metrics { margin-bottom: 2.2rem; }
-  .cs-metrics .metric-number { font-size: 1.2rem; }
+  .cs-metrics .metric-number { font-size: 1.5rem; }
   .cs-meta { grid-template-columns: 1fr; gap: 1.1rem; margin-bottom: 2.5rem; }
   .cs-block { margin-bottom: 2.6rem; }
   .cs-findings > li { grid-template-columns: 36px 1fr; gap: .75rem; }

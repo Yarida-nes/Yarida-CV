@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -57,14 +56,21 @@
       <main id="main">
         <article class="case-study">
           <p class="eyebrow">04 / RStudio &middot; Credit risk</p>
-          <h1>Who defaults on a loan, and what does the data say before you model it?</h1>
+          <h1>What does loan data say about who defaults?</h1>
           <p class="lede">
-            A business analytics assessment in R Markdown. I cleaned, explored and modelled 32,581 loan and borrower records. Every step knits to a reproducible PDF report.
+            A business analytics assessment in R Markdown. In a group of three, we cleaned, explored and modelled 32,581 loan and borrower records. Every step knits to a reproducible PDF report.
           </p>
           <div class="cs-actions">
-            <a class="button primary" href="projects.html">All case studies <span aria-hidden="true">&rarr;</span></a>
-            <a class="button text-button" href="index.html#projects">Back to CV <span aria-hidden="true">&rarr;</span></a>
+            <a class="button primary" href="projects.html">All projects <span aria-hidden="true">&rarr;</span></a>
+            <a class="button text-button" href="index.html#projects">Back to home <span aria-hidden="true">&rarr;</span></a>
           </div>
+
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>What does a lender’s loan data show about who defaults, before any model is built?</dd></div>
+            <div><dt>What I did</dt><dd>Group of three (Group 25), one shared R Markdown report: data cleaning, visualisation, regression and write-up. Business Analytics unit, Curtin University, October 2025.</dd></div>
+            <div><dt>Tools</dt><dd>R · R Markdown · dplyr · ggplot2 · corrplot · kableExtra</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>Cleaned 32,581 loan records to 28,578; 21.6% had defaulted. The income regression explained about a third of the variation (R² 0.34).</dd></div>
+          </dl>
 
           <div class="metrics cs-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">32,581 &rarr; 28,578</span><span>loan records<br />raw, then after cleaning</span></div>
@@ -82,65 +88,8 @@
             <figcaption>Income distribution by loan status, from the knitted report. Defaulted loans sit further left: lower incomes, thinner tail.</figcaption>
           </figure>
 
-          <dl class="cs-meta">
-            <div>
-              <dt>Role</dt>
-              <dd>Group of three (Group 25). Shared R Markdown report: data cleaning, visualisation, regression, write-up</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>R &middot; R Markdown &middot; dplyr &middot; ggplot2 &middot; corrplot &middot; kableExtra &middot; knitr to PDF</dd>
-            </div>
-            <div>
-              <dt>Context</dt>
-              <dd>Business Analytics unit, Curtin University, October 2025</dd>
-            </div>
-          </dl>
-
           <section class="cs-block">
-            <h2>The question</h2>
-            <p>
-              A lender holds a table of past loans: the borrower, their income, the amount and rate, and whether the loan went bad. We had to work through it the way an analyst would on day one. <strong>What is in the data, what is missing, what moves with what, and what can a first model explain?</strong>
-            </p>
-            <p>It broke into four practical steps:</p>
-            <ul>
-              <li>Clean the data and be explicit about what was removed and why.</li>
-              <li>Look at how income and default are distributed before fitting anything.</li>
-              <li>Check the correlations between the numeric variables, especially for pairs that overlap.</li>
-              <li>Fit a multiple regression of income on the other variables, then simplify it with stepwise selection.</li>
-            </ul>
-          </section>
-
-          <section class="cs-block">
-            <h2>The data</h2>
-            <p>
-              One CSV, <code>credit_risk_dataset.csv</code>: <strong>32,581 rows and 13 columns</strong>, four of them categorical.
-            </p>
-            <ul class="cs-columns" aria-label="Dataset columns">
-              <li><code>person_age</code></li>
-              <li><code>person_income</code></li>
-              <li><code>person_home_ownership</code></li>
-              <li><code>person_emp_length</code></li>
-              <li><code>loan_intent</code></li>
-              <li><code>loan_grade</code></li>
-              <li><code>loan_amnt</code></li>
-              <li><code>loan_int_rate</code></li>
-              <li><code>loan_status</code></li>
-              <li><code>loan_percent_income</code></li>
-              <li><code>cb_person_default_on_file</code></li>
-              <li><code>cb_person_cred_hist_length</code></li>
-              <li><code>ID</code></li>
-            </ul>
-            <p>
-              The target is <code>loan_status</code>, stored as 0 or 1. I recoded it as a factor, <em>non-default</em> and <em>default</em>, so no one treats it as a number. The other character columns became factors too.
-            </p>
-            <p>
-              <strong>Cleaning.</strong> There were <strong>4,077 missing cells</strong>, mostly in two columns: interest rate (3,133) and employment length (895). A handful sat in loan amount, loan status and credit history. Dropping every incomplete row left <strong>28,578 records</strong>. I also dropped <code>ID</code> and <code>loan_grade</code>; grade is the lender's own risk rating and overlaps with the outcome. Filtering out zero incomes removed nothing. Finally I renamed the columns to short names (<code>income</code>, <code>loanamt</code>, <code>intrate</code>, <code>loanpctincome</code>, <code>credhist</code>) so the model output stays readable.
-            </p>
-          </section>
-
-          <section class="cs-block">
-            <h2>What the data showed</h2>
+            <h2>What I found</h2>
             <ul class="cs-findings">
               <li>
                 <span class="cs-finding-number">01</span>
@@ -186,7 +135,21 @@
           </section>
 
           <section class="cs-block">
-            <h2>How it was built</h2>
+            <h2>The problem</h2>
+            <p>
+              A lender holds a table of past loans: the borrower, their income, the amount and rate, and whether the loan went bad. We had to work through it the way an analyst would on day one. <strong>What is in the data, what is missing, what moves with what, and what can a first model explain?</strong>
+            </p>
+            <p>It broke into four practical steps:</p>
+            <ul>
+              <li>Clean the data and be explicit about what was removed and why.</li>
+              <li>Look at how income and default are distributed before fitting anything.</li>
+              <li>Check the correlations between the numeric variables, especially for pairs that overlap.</li>
+              <li>Fit a multiple regression of income on the other variables, then simplify it with stepwise selection.</li>
+            </ul>
+          </section>
+
+          <section class="cs-block">
+            <h2>How I did it</h2>
             <p>
               <strong>Everything lives in one R Markdown file</strong> that knits to PDF with <code>bookdown</code>. The numbers are computed inline (<code>`r ncol(loan_status)`</code>, <code>`r sum(is.na(loan_status))`</code>) rather than typed. If the CSV changes, the report changes with it.
             </p>
@@ -205,7 +168,35 @@
           </section>
 
           <section class="cs-block">
-            <h2>Limitations I'd state up front</h2>
+            <h2>The data</h2>
+            <p>
+              One CSV, <code>credit_risk_dataset.csv</code>: <strong>32,581 rows and 13 columns</strong>, four of them categorical.
+            </p>
+            <ul class="cs-columns" aria-label="Dataset columns">
+              <li><code>person_age</code></li>
+              <li><code>person_income</code></li>
+              <li><code>person_home_ownership</code></li>
+              <li><code>person_emp_length</code></li>
+              <li><code>loan_intent</code></li>
+              <li><code>loan_grade</code></li>
+              <li><code>loan_amnt</code></li>
+              <li><code>loan_int_rate</code></li>
+              <li><code>loan_status</code></li>
+              <li><code>loan_percent_income</code></li>
+              <li><code>cb_person_default_on_file</code></li>
+              <li><code>cb_person_cred_hist_length</code></li>
+              <li><code>ID</code></li>
+            </ul>
+            <p>
+              The target is <code>loan_status</code>, stored as 0 or 1. I recoded it as a factor, <em>non-default</em> and <em>default</em>, so no one treats it as a number. The other character columns became factors too.
+            </p>
+            <p>
+              <strong>Cleaning.</strong> There were <strong>4,077 missing cells</strong>, mostly in two columns: interest rate (3,133) and employment length (895). A handful sat in loan amount, loan status and credit history. Dropping every incomplete row left <strong>28,578 records</strong>. I also dropped <code>ID</code> and <code>loan_grade</code>; grade is the lender's own risk rating and overlaps with the outcome. Filtering out zero incomes removed nothing. Finally I renamed the columns to short names (<code>income</code>, <code>loanamt</code>, <code>intrate</code>, <code>loanpctincome</code>, <code>credhist</code>) so the model output stays readable.
+            </p>
+          </section>
+
+          <section class="cs-block">
+            <h2>Limitations</h2>
             <ul class="cs-limits">
               <li><strong>Complete-case deletion cost 12% of the rows.</strong> Most gaps were in interest rate. If those loans differ from the rest, dropping them biases everything downstream. Imputation is the next thing to try.</li>
               <li><strong>The classes are imbalanced, 78 to 22.</strong> Accuracy alone would flatter any default model. Sensitivity, specificity and the ROC curve are the honest measures. The 0.5 threshold is a starting point, not a business decision.</li>
@@ -217,7 +208,7 @@
             </ul>
           </section>
 
-                    <section class="cs-block" id="takeaways">
+          <section class="cs-block" id="takeaways">
             <h2>Key takeaways</h2>
             <ul>
               <li><strong>Accuracy can lie.</strong> With 78% of loans repaid, a model that always says “no default” already scores 78% while catching nothing. Imbalanced data needs sensitivity, specificity and ROC as well.</li>
@@ -237,8 +228,8 @@
           </section>
 
           <div class="cs-actions cs-footer-actions">
-            <a class="button primary" href="projects.html">All case studies <span aria-hidden="true">&rarr;</span></a>
-            <a class="button text-button" href="index.html#projects">Back to CV <span aria-hidden="true">&rarr;</span></a>
+            <a class="button primary" href="projects.html">All projects <span aria-hidden="true">&rarr;</span></a>
+            <a class="button text-button" href="index.html#projects">Back to home <span aria-hidden="true">&rarr;</span></a>
           </div>
         </article>
       </main>

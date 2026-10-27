@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -60,13 +59,20 @@
             <p class="eyebrow">05 / Regression in R</p>
             <h1>How much of housing price growth can the economy explain?</h1>
             <p class="lede">
-              Quarterly housing price growth in Sydney, Melbourne, Brisbane, Adelaide and Perth from 2014 to 2025, modelled against interest rates, inflation, migration, household income and COVID-19. Five nested regression models, compared honestly.
+              Quarterly housing price growth in Sydney, Melbourne, Brisbane, Adelaide and Perth from 2014 to 2025, modelled against interest rates, inflation, migration, household income and COVID-19. Five nested regression models, compared on adjusted R², RMSE and MAE.
             </p>
             <div class="study-actions">
-              <a class="button primary" href="#findings">Skip to the findings <span aria-hidden="true">↓</span></a>
+              <a class="button primary" href="#findings">Jump to results <span aria-hidden="true">↓</span></a>
               <a class="button text-button" href="projects.html">All projects <span aria-hidden="true">→</span></a>
             </div>
           </header>
+
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>How much of quarterly housing price growth in Australia’s five largest cities (2014–2025) can interest rates, inflation, migration, income and COVID-19 explain?</dd></div>
+            <div><dt>What I did</dt><dd>Sole author: data assembly, model design, R code and written report. Econometrics unit, Curtin University, 2026.</dd></div>
+            <div><dt>Tools</dt><dd>R · RStudio · R Markdown · ggplot2 · Excel</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>Adjusted R² rose from 0.05 (baseline) to 0.24 (preferred model). COVID-19 had the largest effect: +2.63 points of quarterly growth (p &lt; 0.001).</dd></div>
+          </dl>
 
           <div class="metrics study-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">230</span><span>quarter-by-city observations<br />5 cities, 2014 Q2 to 2025 Q3</span></div>
@@ -86,64 +92,8 @@
             </figcaption>
           </figure>
 
-          <dl class="study-meta">
-            <div>
-              <dt>Role</dt>
-              <dd>Sole author. Data assembly, model design, R code, written report</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>R, RStudio, R Markdown, ggplot2, Excel</dd>
-            </div>
-            <div>
-              <dt>Context</dt>
-              <dd>Econometrics unit, Curtin University, 2026</dd>
-            </div>
-          </dl>
-
-          <section class="study-block">
-            <h2>The question</h2>
-            <p>
-              Australian house prices have risen sharply for a decade. The usual explanation is a list: interest rates, inflation, migration, incomes. I wanted to test that list, not repeat it. Two research questions came out of the earlier case study:
-            </p>
-            <ul>
-              <li>What is the relationship between quarterly housing price growth and these economic factors across Australia's five largest cities between 2014 and 2025?</li>
-              <li>Which regression specification best explains and predicts that growth, without adding variables that only inflate the fit?</li>
-            </ul>
-            <p>
-              I set the hypotheses before running anything. Interest rates were expected negative; inflation, migration and household income positive. COVID-19 and federal elections were tested as period effects. Two expectations turned out wrong, covered below.
-            </p>
-          </section>
-
-          <section class="study-block">
-            <h2>The data</h2>
-            <p>
-              A panel of five capital cities, observed every quarter from 2014 Q2 to 2025 Q3: 46 quarters per city, 230 observations in total. The dependent variable is the quarter-on-quarter percentage change in mean dwelling price, not the price level. The model is not just chasing a trend.
-            </p>
-            <div class="table-wrap">
-              <table class="study-table">
-                <thead>
-                  <tr><th scope="col">Variable</th><th scope="col">Level</th><th scope="col">Source</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Housing price growth (%)</td><td>State, quarterly</td><td>Calculated from ABS mean dwelling price</td></tr>
-                  <tr><td>Interest rate (%)</td><td>National</td><td>RBA cash rate target</td></tr>
-                  <tr><td>Inflation (%)</td><td>National</td><td>ABS Consumer Price Index</td></tr>
-                  <tr><td>Net overseas migration</td><td>National</td><td>ABS overseas migration statistics</td></tr>
-                  <tr><td>Household income per capita</td><td>State, annual</td><td>ABS household income and wealth</td></tr>
-                  <tr><td>COVID-19 dummy</td><td>2020 Q1 to 2021 Q4</td><td>Period flag</td></tr>
-                  <tr><td>Election dummy</td><td>2016, 2019, 2022, 2025</td><td>Federal election years</td></tr>
-                  <tr><td>Quarter dummies, time trend, state dummies</td><td>Controls</td><td>Q1 and South Australia are the reference categories</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p>
-              Assembling this was most of the work. Each series came from a different ABS or RBA release at a different frequency. I built the panel in Excel, then loaded one clean CSV into R so the whole analysis reruns from a single file.
-            </p>
-          </section>
-
           <section class="study-block" id="findings">
-            <h2>What the data showed</h2>
+            <h2>What I found</h2>
             <ol class="findings">
               <li>
                 <span class="finding-number">01</span>
@@ -269,7 +219,21 @@
           </section>
 
           <section class="study-block">
-            <h2>How it was built</h2>
+            <h2>The problem</h2>
+            <p>
+              Australian house prices have risen sharply for a decade. The usual explanation is a list: interest rates, inflation, migration, incomes. I wanted to test that list, not repeat it. Two research questions guided the analysis:
+            </p>
+            <ul>
+              <li>What is the relationship between quarterly housing price growth and these economic factors across Australia's five largest cities between 2014 and 2025?</li>
+              <li>Which regression specification best explains and predicts that growth, without adding variables that only inflate the fit?</li>
+            </ul>
+            <p>
+              I set the hypotheses before running anything. Interest rates were expected negative; inflation, migration and household income positive. COVID-19 and federal elections were tested as period effects. Two expectations turned out wrong, covered below.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>How I did it</h2>
             <p>
               <strong>Nested models, one added group at a time.</strong> Five ordinary least squares regressions in R using <code>lm()</code>, each adding one group to the last, so the change in adjusted R&sup2; at each step is attributable to that group. Every model keeps quarter dummies, a linear time trend and state dummies. Season, drift and city differences are controlled for before any economic variable is credited.
             </p>
@@ -285,7 +249,34 @@
           </section>
 
           <section class="study-block">
-            <h2>Limitations I'd state up front</h2>
+            <h2>The data</h2>
+            <p>
+              A panel of five capital cities, observed every quarter from 2014 Q2 to 2025 Q3: 46 quarters per city, 230 observations in total. The dependent variable is the quarter-on-quarter percentage change in mean dwelling price, not the price level. The model is not just chasing a trend.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table">
+                <thead>
+                  <tr><th scope="col">Variable</th><th scope="col">Level</th><th scope="col">Source</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Housing price growth (%)</td><td>State, quarterly</td><td>Calculated from ABS mean dwelling price</td></tr>
+                  <tr><td>Interest rate (%)</td><td>National</td><td>RBA cash rate target</td></tr>
+                  <tr><td>Inflation (%)</td><td>National</td><td>ABS Consumer Price Index</td></tr>
+                  <tr><td>Net overseas migration</td><td>National</td><td>ABS overseas migration statistics</td></tr>
+                  <tr><td>Household income per capita</td><td>State, annual</td><td>ABS household income and wealth</td></tr>
+                  <tr><td>COVID-19 dummy</td><td>2020 Q1 to 2021 Q4</td><td>Period flag</td></tr>
+                  <tr><td>Election dummy</td><td>2016, 2019, 2022, 2025</td><td>Federal election years</td></tr>
+                  <tr><td>Quarter dummies, time trend, state dummies</td><td>Controls</td><td>Q1 and South Australia are the reference categories</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Assembling this was most of the work. Each series came from a different ABS or RBA release at a different frequency. I built the panel in Excel, then loaded one clean CSV into R so the whole analysis reruns from a single file.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>Limitations</h2>
             <ul>
               <li><strong>Mismatched levels.</strong> Interest rates, inflation and migration are national series; prices are measured by state. That alone caps how much city-level variation they can explain, and probably drives the odd migration sign.</li>
               <li><strong>Association, not causation.</strong> This is OLS on observational data, with no lags or instruments. The positive interest-rate coefficient almost certainly reflects the RBA responding to prices, not the reverse.</li>
@@ -295,7 +286,7 @@
             </ul>
           </section>
 
-                    <section class="study-block" id="takeaways">
+          <section class="study-block" id="takeaways">
             <h2>Key takeaways</h2>
             <ul>
               <li><strong>Use adjusted R² to choose a model.</strong> Adding an election dummy raised R² but lowered adjusted R², so the simpler Model 4 was the honest choice.</li>
@@ -319,7 +310,7 @@
 
           <div class="study-actions study-footer-actions">
             <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> All projects</a>
-            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to CV</a>
+            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to home</a>
           </div>
         </article>
       </main>

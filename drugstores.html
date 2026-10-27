@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A published GIS study of pharmacy service coverage in Thailand: nearest-neighbour, network and location-allocation analysis. Co-authored by Yarida Kaewthong, presented at the 2023 Asian Conference on Remote Sensing."
+      content="A published GIS study of pharmacy service coverage in Thailand: nearest-neighbour, network and location-allocation analysis. Co-authored by Yarida Kaewthong (4th of 8 authors), presented at the 2023 Asian Conference on Remote Sensing."
     />
     <title>Drugstore access in Thailand | Yarida Kaewthong</title>
     <meta name="author" content="Yarida Kaewthong" />
@@ -60,7 +59,7 @@
             <p class="eyebrow">02 / GIS &middot; Published paper</p>
             <h1>Where should Thailand add pharmacies so everyone is covered?</h1>
             <p class="lede">
-              Thailand lets patients collect medicine at neighbourhood pharmacies to ease hospital crowding &mdash; but only if a pharmacy is within reach. This study mapped every drugstore across one densely populated province near Bangkok and used GIS network analysis to find the gaps and the best places to fill them. Co-authored and presented at the 2023 Asian Conference on Remote Sensing.
+              Thailand lets patients collect medicine at neighbourhood pharmacies to ease hospital crowding &mdash; but only if a pharmacy is within reach. This study mapped every drugstore across one densely populated province near Bangkok and used GIS network analysis to find the gaps and the best places to fill them. Co-authored (4th of 8 authors) and presented at the 2023 Asian Conference on Remote Sensing.
             </p>
             <div class="study-actions">
               <a class="button primary" href="https://acrs-aars.org/proceeding/ACRS2023/Spatial%20Information%20Sciences/ACRS2023034.pdf" target="_blank" rel="noreferrer">Read the paper (PDF) <span aria-hidden="true">↗</span></a>
@@ -68,63 +67,21 @@
             </div>
           </header>
 
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>Thailand’s medicine-pickup policy only works if a participating pharmacy is within reach. Where are the gaps, and where should new pharmacies go?</dd></div>
+            <div><dt>What I did</dt><dd>Co-author (4th of 8), with the Department of Geography research team at Kasetsart University. Presented at the 2023 Asian Conference on Remote Sensing.</dd></div>
+            <div><dt>Tools</dt><dd>GIS · network analysis · location-allocation · Nearest Neighbour Index · field survey (GPS)</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>433 drugstores mapped and shown to cluster (Z = −19.71). The current pharmacies reach 199 of 511 villages; 22 well-placed additions would reach 417.</dd></div>
+          </dl>
+
           <div class="metrics study-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">433</span><span>drugstores mapped<br />and tested for clustering (nearest-neighbour)</span></div>
             <div><span class="metric-number">199 &rarr; 417</span><span>villages within reach<br />now vs. with 22 added pharmacies (of 511)</span></div>
-            <div><span class="metric-number">ACRS 2023</span><span>peer-reviewed conference paper<br />co-authored, Kasetsart University</span></div>
+            <div><span class="metric-number">ACRS 2023</span><span>peer-reviewed conference paper<br />co-author (4th of 8), Kasetsart University</span></div>
           </div>
 
-          <dl class="study-meta">
-            <div>
-              <dt>Role</dt>
-              <dd>Co-author (fourth of eight), with the Department of Geography research team at Kasetsart University</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>GIS &middot; Network Analysis &middot; Location-Allocation &middot; Nearest Neighbor Index &middot; field survey (GPS)</dd>
-            </div>
-            <div>
-              <dt>Context</dt>
-              <dd>2023 Asian Conference on Remote Sensing (ACRS2023). During my BSocSci in Geography, Kasetsart University</dd>
-            </div>
-          </dl>
-
-          <section class="study-block">
-            <h2>The question</h2>
-            <p>
-              The study province, next to Bangkok, has the second-highest population density in Thailand, and its main hospital sees 2,500&ndash;3,000 outside patients a day. The &ldquo;Medicine Pickup at Neighbourhood Drugstores&rdquo; policy lets patients collect medication at participating pharmacies instead of queuing at hospitals. It only works if a qualified pharmacy is actually close to where people live.
-            </p>
-            <p>The study set three objectives:</p>
-            <ul>
-              <li>Describe how drugstores are distributed across the province &mdash; clustered or spread out?</li>
-              <li>Measure how many communities the current participating pharmacies can actually serve.</li>
-              <li>Find where to add pharmacies to close the coverage gap most efficiently.</li>
-            </ul>
-          </section>
-
-          <section class="study-block">
-            <h2>The data</h2>
-            <p>
-              A cross-section built from field surveys (August&ndash;December 2022) and public agencies. GPS coordinates of Type&nbsp;1 pharmacies came from on-site visits; participating-pharmacy records from the National Health Security Office (NHSO); the road network from GISTDA; village coordinates from the Ministry of Interior; and pharmacy licensing from the FDA.
-            </p>
-            <div class="table-wrap">
-              <table class="study-table">
-                <thead>
-                  <tr><th scope="col">Layer</th><th scope="col">Detail</th><th scope="col">Source</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Type 1 pharmacies</td><td>433 stores, GPS located</td><td>Field survey + FDA</td></tr>
-                  <tr><td>Participating pharmacies</td><td>27 (16 from NHSO + 11 field-found)</td><td>NHSO + field survey</td></tr>
-                  <tr><td>Villages</td><td>511, as demand points</td><td>Ministry of Interior</td></tr>
-                  <tr><td>Road network</td><td>Travel paths for reach</td><td>GISTDA</td></tr>
-                  <tr><td>Population weight</td><td>Ages 41&ndash;80, 5&nbsp;km service radius</td><td>NHSO criteria</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
           <section class="study-block" id="findings">
-            <h2>What the data showed</h2>
+            <h2>What I found</h2>
             <ol class="findings">
               <li>
                 <span class="finding-number">01</span>
@@ -178,7 +135,20 @@
           </section>
 
           <section class="study-block">
-            <h2>How it was done</h2>
+            <h2>The problem</h2>
+            <p>
+              The study province, next to Bangkok, has the second-highest population density in Thailand, and its main hospital sees 2,500&ndash;3,000 outside patients a day. The &ldquo;Medicine Pickup at Neighbourhood Drugstores&rdquo; policy lets patients collect medication at participating pharmacies instead of queuing at hospitals. It only works if a qualified pharmacy is actually close to where people live.
+            </p>
+            <p>The study set three objectives:</p>
+            <ul>
+              <li>Describe how drugstores are distributed across the province &mdash; clustered or spread out?</li>
+              <li>Measure how many communities the current participating pharmacies can actually serve.</li>
+              <li>Find where to add pharmacies to close the coverage gap most efficiently.</li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>How I did it</h2>
             <p>
               <strong>Distribution first.</strong> The Nearest Neighbor Index measured whether stores cluster or spread, giving an objective pattern (clustered) rather than an eyeballed map.
             </p>
@@ -191,7 +161,28 @@
           </section>
 
           <section class="study-block">
-            <h2>Worth stating up front</h2>
+            <h2>The data</h2>
+            <p>
+              A cross-section built from field surveys (August&ndash;December 2022) and public agencies. GPS coordinates of Type&nbsp;1 pharmacies came from on-site visits; participating-pharmacy records from the National Health Security Office (NHSO); the road network from GISTDA; village coordinates from the Ministry of Interior; and pharmacy licensing from the FDA.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table">
+                <thead>
+                  <tr><th scope="col">Layer</th><th scope="col">Detail</th><th scope="col">Source</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Type 1 pharmacies</td><td>433 stores, GPS located</td><td>Field survey + FDA</td></tr>
+                  <tr><td>Participating pharmacies</td><td>27 (16 from NHSO + 11 field-found)</td><td>NHSO + field survey</td></tr>
+                  <tr><td>Villages</td><td>511, as demand points</td><td>Ministry of Interior</td></tr>
+                  <tr><td>Road network</td><td>Travel paths for reach</td><td>GISTDA</td></tr>
+                  <tr><td>Population weight</td><td>Ages 41&ndash;80, 5&nbsp;km service radius</td><td>NHSO criteria</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="study-block">
+            <h2>Limitations</h2>
             <ul>
               <li><strong>A snapshot in time.</strong> The network was surveyed in late 2022; coverage shifts as pharmacies join, leave, or change hours.</li>
               <li><strong>Modelling assumptions.</strong> The 5&nbsp;km radius and the ages 41&ndash;80 population weight are NHSO criteria, not observed patient behaviour.</li>
@@ -200,21 +191,21 @@
             </ul>
           </section>
 
-                    <section class="study-block" id="takeaways">
+          <section class="study-block" id="takeaways">
             <h2>Key takeaways</h2>
             <ul>
               <li><strong>Count is not coverage.</strong> The province had 433 drugstores, yet the participating pharmacies reached only 199 of 511 villages. Where services sit matters more than how many there are.</li>
               <li><strong>Measure distance the way people travel.</strong> Network analysis along real roads gives a truer picture of access than drawing straight-line circles on a map.</li>
               <li><strong>Analysis should end in a decision.</strong> Location-allocation turned the gap into a plan: 22 well-placed pharmacies would bring 417 of 511 villages within reach.</li>
               <li><strong>Field data and official data work best together.</strong> GPS surveys found 11 participating pharmacies the official list missed, so checking records on the ground changed the answer.</li>
-              <li><strong>Research is a team effort.</strong> As one of eight co-authors, I learned how a GIS study moves from fieldwork to a peer-reviewed conference paper.</li>
+              <li><strong>Research is a team effort.</strong> As the 4th of eight co-authors, I learned how a GIS study moves from fieldwork to a peer-reviewed conference paper.</li>
             </ul>
           </section>
 
           <section class="study-block ref-block" id="references">
             <h2>References and data sources</h2>
             <ol class="ref-list">
-              <li>Co-authored paper: <em>Service Area and Spatial Distribution Pattern of Drugstores in Nonthaburi Province</em>. 2023 Asian Conference on Remote Sensing (ACRS 2023), Spatial Information Sciences. <a href="https://acrs-aars.org/proceeding/ACRS2023/Spatial%20Information%20Sciences/ACRS2023034.pdf" target="_blank" rel="noreferrer">Read the paper (PDF)</a></li>
+              <li>Co-authored paper (4th of 8 authors): <em>Service Area and Spatial Distribution Pattern of Drugstores in Nonthaburi Province</em>. 2023 Asian Conference on Remote Sensing (ACRS 2023), Spatial Information Sciences. <a href="https://acrs-aars.org/proceeding/ACRS2023/Spatial%20Information%20Sciences/ACRS2023034.pdf" target="_blank" rel="noreferrer">Read the paper (PDF)</a></li>
               <li>Field survey by the research team, August to December 2022: GPS locations of Type 1 pharmacies.</li>
               <li>National Health Security Office (NHSO), Thailand: list of pharmacies participating in the medicine pickup programme.</li>
               <li>Geo-Informatics and Space Technology Development Agency (GISTDA): road network.</li>
@@ -226,7 +217,7 @@
 
           <div class="study-actions study-footer-actions">
             <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> All projects</a>
-            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to CV</a>
+            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to home</a>
           </div>
         </article>
       </main>

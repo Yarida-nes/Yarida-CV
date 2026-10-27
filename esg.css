@@ -13,7 +13,7 @@
 
 /* Hero chart */
 .esg-hero { margin: 0 0 3rem; }
-.esg-hero figcaption, .esg-subchart figcaption, .esg-shot figcaption { margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .72rem; line-height: 1.6; }
+.esg-hero figcaption, .esg-subchart figcaption, .esg-shot figcaption { margin-top: .8rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .82rem; line-height: 1.6; }
 .esg-chart { display: block; width: 100%; height: auto; background: var(--surface); border: 1px solid var(--line); padding: 1rem .75rem .5rem; }
 .esg-chart .grid line { stroke: var(--line); stroke-width: 1; }
 .esg-chart .grid line.axis { stroke: var(--ink); }

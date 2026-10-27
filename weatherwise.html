@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -50,7 +49,7 @@
           <a href="index.html#contact">Contact</a>
         </nav>
         <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
-          Repository <span aria-hidden="true">&#8599;</span>
+          GitHub <span aria-hidden="true">&#8599;</span>
         </a>
       </header>
 
@@ -58,15 +57,22 @@
         <article class="ww-case">
           <header class="ww-hero">
             <p class="eyebrow">06 / Python</p>
-            <h1>Can a notebook answer &ldquo;do I need an umbrella tomorrow?&rdquo;</h1>
+            <h1>A Python weather advisor that answers plain-English questions</h1>
             <p class="lede">
               WeatherWise is a console weather advisor built in Python. It pulls a five-day forecast from OpenWeatherMap, folds the 3-hourly readings into daily summaries, and charts them. Ask a plain-English question and it hands both the question and the forecast to a language model for an answer.
             </p>
             <div class="ww-actions">
-              <a class="button primary" href="https://github.com/Yarida2543/weatherwise.Yarida" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">&#8599;</span></a>
-              <a class="button text-button" href="projects.html">Other case studies <span aria-hidden="true">&rarr;</span></a>
+              <a class="button primary" href="https://github.com/Yarida2543/weatherwise.Yarida" target="_blank" rel="noreferrer">View the code on GitHub <span aria-hidden="true">&#8599;</span></a>
+              <a class="button text-button" href="projects.html">All projects <span aria-hidden="true">&rarr;</span></a>
             </div>
           </header>
+
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>Build a weather advisor that fetches a live forecast, charts it, and answers questions in plain English.</dd></div>
+            <div><dt>What I did</dt><dd>Sole author, starting from a notebook with five empty function stubs: data functions, charts, question parser, menu and AI response. Curtin University, Assessment 2, October 2025.</dd></div>
+            <div><dt>Tools</dt><dd>Python · requests · OpenWeatherMap API · Matplotlib · pyinputplus · hands-on-ai (llama3.2)</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>Turns 40 three-hourly readings into 5 daily summaries and two charts, across 10 functions, and answers plain-English questions from the live data.</dd></div>
+          </dl>
 
           <section class="metrics ww-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">10</span><span>functions across the<br />seven required notebook sections</span></div>
@@ -90,41 +96,6 @@
             </figcaption>
           </figure>
 
-          <dl class="ww-meta">
-            <div>
-              <dt>Role</dt>
-              <dd>Sole author, built on a starter notebook that supplied five empty function stubs. Data functions, charts, parser, menu and AI response are mine.</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>Python &middot; requests &middot; OpenWeatherMap API &middot; Matplotlib &middot; pyinputplus &middot; hands-on-ai (llama3.2)</dd>
-            </div>
-            <div>
-              <dt>Context</dt>
-              <dd>Curtin University, Perth. Assessment 2, October 2025.</dd>
-            </div>
-          </dl>
-
-          <section class="ww-block">
-            <h2>The question</h2>
-            <p>
-              The brief asked for a &ldquo;Weather Advisor&rdquo;. It had to fetch weather for a named place, show current conditions and a forecast, draw at least two charts, and answer questions in plain English instead of a table. The brief also offered a choice of data source. The simplest was a wrapper library over wttr.in; the hardest was a commercial API with your own key and error handling. I picked the hardest, OpenWeatherMap. Handling a real API key, a real JSON payload and real failure cases is closer to actual analytics work.
-            </p>
-          </section>
-
-          <section class="ww-block">
-            <h2>The data</h2>
-            <p>
-              OpenWeatherMap&rsquo;s free forecast endpoint does not return days. It returns 40 readings, one every three hours. Each carries a temperature, &ldquo;feels like&rdquo;, description, wind and any rain over the previous three hours. Most of the data work here is turning that into something a person can read.
-            </p>
-            <ul>
-              <li><strong>Fetch.</strong> <code>Get_data_from_Web(city, units)</code> reads the key from an environment variable, never hard-coded, and builds the request. Every failure returns a dictionary with an <code>error</code> key instead of crashing: missing key, unknown city, HTTP error, network drop.</li>
-              <li><strong>Group.</strong> <code>get_weather_data(city, forecast_days)</code> clamps the day count to 1&ndash;5, splits the readings by calendar date, and keeps only the next N dates.</li>
-              <li><strong>Summarise.</strong> <code>_process_daily_forecast_items()</code> collapses each day&rsquo;s eight readings into a maximum, a minimum, total rainfall in millimetres, and the description from the reading closest to midday.</li>
-              <li><strong>Snapshot.</strong> Today&rsquo;s first reading stands in for &ldquo;current conditions&rdquo;, with wind converted from m/s to km/h. This avoids a second API call at some cost to accuracy, noted under Limitations.</li>
-            </ul>
-          </section>
-
           <section class="ww-block">
             <h2>What it does</h2>
             <p>
@@ -139,6 +110,13 @@
             </ol>
             <p>
               Option 4 is two functions working together. <code>parse_weather_question()</code> uses keyword and regular-expression matching to pull out three things: the attribute (temperature, precipitation or wind), the day (today or tomorrow), and a location from phrases like &ldquo;in Melbourne&rdquo;. <code>generate_weather_response()</code> writes the current snapshot and every daily summary into a text block, appends the original question, and sends it to a llama3.2 model through the hands-on-ai library. The model answers from the data it was given, not from memory.
+            </p>
+          </section>
+
+          <section class="ww-block">
+            <h2>The problem</h2>
+            <p>
+              The brief asked for a &ldquo;Weather Advisor&rdquo;. It had to fetch weather for a named place, show current conditions and a forecast, draw at least two charts, and answer questions in plain English instead of a table. The brief also offered a choice of data source. The simplest was a wrapper library over wttr.in; the hardest was a commercial API with your own key and error handling. I picked the hardest, OpenWeatherMap. Handling a real API key, a real JSON payload and real failure cases is closer to actual analytics work.
             </p>
           </section>
 
@@ -171,11 +149,15 @@
           </section>
 
           <section class="ww-block">
-            <h2>Key takeaways</h2>
+            <h2>The data</h2>
+            <p>
+              OpenWeatherMap&rsquo;s free forecast endpoint does not return days. It returns 40 readings, one every three hours. Each carries a temperature, &ldquo;feels like&rdquo;, description, wind and any rain over the previous three hours. Most of the data work here is turning that into something a person can read.
+            </p>
             <ul>
-              <li>I am proudest of the data layer and the menu: getting a commercial API to return something readable, and wrapping it so a wrong city name gives a sentence instead of a stack trace.</li>
-              <li>A test cell with fake three-day data let me check the charts, the parser and the response function without spending API calls. Iterating got much faster.</li>
-              <li>With more time I would move from the console menu to ipywidgets, add UV index to the menu, and widen the parser beyond today, tomorrow and three attributes.</li>
+              <li><strong>Fetch.</strong> <code>Get_data_from_Web(city, units)</code> reads the key from an environment variable, never hard-coded, and builds the request. Every failure returns a dictionary with an <code>error</code> key instead of crashing: missing key, unknown city, HTTP error, network drop.</li>
+              <li><strong>Group.</strong> <code>get_weather_data(city, forecast_days)</code> clamps the day count to 1&ndash;5, splits the readings by calendar date, and keeps only the next N dates.</li>
+              <li><strong>Summarise.</strong> <code>_process_daily_forecast_items()</code> collapses each day&rsquo;s eight readings into a maximum, a minimum, total rainfall in millimetres, and the description from the reading closest to midday.</li>
+              <li><strong>Snapshot.</strong> Today&rsquo;s first reading stands in for &ldquo;current conditions&rdquo;, with wind converted from m/s to km/h. This avoids a second API call at some cost to accuracy, noted under Limitations.</li>
             </ul>
           </section>
 
@@ -190,7 +172,16 @@
             </ul>
           </section>
 
-                    <section class="ww-block ref-block" id="references">
+          <section class="ww-block">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>I am proudest of the data layer and the menu: getting a commercial API to return something readable, and wrapping it so a wrong city name gives a sentence instead of a stack trace.</li>
+              <li>A test cell with fake three-day data let me check the charts, the parser and the response function without spending API calls. Iterating got much faster.</li>
+              <li>With more time I would move from the console menu to ipywidgets, add UV index to the menu, and widen the parser beyond today, tomorrow and three attributes.</li>
+            </ul>
+          </section>
+
+          <section class="ww-block ref-block" id="references">
             <h2>References and data sources</h2>
             <ol class="ref-list">
               <li>OpenWeatherMap. <em>5 day / 3 hour forecast API</em>, free tier, accessed with my own API key. <a href="https://openweathermap.org/api" target="_blank" rel="noreferrer">openweathermap.org</a></li>
@@ -200,7 +191,7 @@
           </section>
 
           <div class="ww-actions ww-footer-actions">
-            <a class="button primary" href="https://github.com/Yarida2543/weatherwise.Yarida" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">&#8599;</span></a>
+            <a class="button primary" href="https://github.com/Yarida2543/weatherwise.Yarida" target="_blank" rel="noreferrer">View the code on GitHub <span aria-hidden="true">&#8599;</span></a>
             <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> Back to case studies</a>
           </div>
         </article>

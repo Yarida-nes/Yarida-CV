@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -68,62 +67,21 @@
             </div>
           </header>
 
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>Where and when are people walking and cycling most at risk in Melbourne, and what makes a crash more serious?</dd></div>
+            <div><dt>What I did</dt><dd>Sole author. Cleaned 14 years of Victorian crash records, ran hot-spot and injury-severity analysis, made the maps (one of them in QGIS) and wrote it up. Independent project, October 2026.</dd></div>
+            <div><dt>Tools</dt><dd>R (sf, dplyr, ggplot2) · QGIS · Getis-Ord Gi* hot spots · hexagon grids · confidence intervals · chi-square trend test</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>49% of pedestrian and cyclist crashes fall in hot spots covering 6% of the area. A pedestrian’s serious-injury share rises from 41% in 40 km/h zones to 65% in 80+ km/h zones.</dd></div>
+          </dl>
+
           <div class="metrics study-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">30,469</span><span>pedestrian and cyclist crashes<br />metro Melbourne, 2012&ndash;2025</span></div>
             <div><span class="metric-number">49% in 6%</span><span>of crashes fall in hot spots<br />covering 6% of the map</span></div>
             <div><span class="metric-number">41% &rarr; 65%</span><span>serious-injury share for pedestrians<br />from 40 to 80+ km/h zones</span></div>
           </div>
 
-          <dl class="study-meta">
-            <div>
-              <dt>Role</dt>
-              <dd>Sole author: data cleaning, spatial analysis, statistics, maps and write-up</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>R (sf, dplyr, ggplot2) &middot; Getis-Ord Gi* hot spots &middot; hexagon grids &middot; confidence intervals &middot; chi-square trend test</dd>
-            </div>
-            <div>
-              <dt>Context</dt>
-              <dd>Independent project, October 2026</dd>
-            </div>
-          </dl>
-
-          <section class="study-block">
-            <h2>The question</h2>
-            <p>
-              In metro Melbourne, roughly one injury crash in five involves someone walking or cycling. To protect them, a council or road agency needs to know three things: <strong>where</strong> to act, <strong>when</strong> the risk peaks, and <strong>what</strong> makes a crash more severe.
-            </p>
-            <ul>
-              <li>Where do pedestrian and cyclist crashes cluster, beyond what chance would produce?</li>
-              <li>At what times of day and week do they happen, and is it the same for both groups?</li>
-              <li>How much do the speed zone and lighting change the chance of a serious outcome?</li>
-            </ul>
-          </section>
-
-          <section class="study-block">
-            <h2>The data</h2>
-            <p>
-              Victoria's official road crash records, published by the Department of Transport and Planning from police and hospital reports (CC BY 4.0). Every crash has a location, time, speed zone, light condition, crash movement and severity. I kept metro Melbourne from 2012 to 2025, logged every filtering step, and projected the points to GDA2020 / MGA Zone 55 so distances are in metres.
-            </p>
-            <div class="table-wrap">
-              <table class="study-table">
-                <thead>
-                  <tr><th scope="col">Step</th><th scope="col">Records</th><th scope="col">Note</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>All Victorian crashes</td><td>200,754</td><td>2012 to January 2026</td></tr>
-                  <tr><td>Metro Melbourne, full years</td><td>142,875</td><td>Partial January 2026 and 3 non-injury records removed</td></tr>
-                  <tr><td>Involving a pedestrian</td><td>14,378</td><td>At least one pedestrian in the crash</td></tr>
-                  <tr><td>Involving a cyclist</td><td>16,357</td><td>At least one cyclist in the crash</td></tr>
-                  <tr><td>Hot-spot window, 2021&ndash;2025</td><td>10,428</td><td>Pedestrian or cyclist crashes</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
           <section class="study-block" id="findings">
-            <h2>What the data showed</h2>
+            <h2>What I found</h2>
             <ol class="findings">
               <li>
                 <span class="finding-number">01</span>
@@ -155,6 +113,10 @@
           <section class="study-block">
             <h2>On the map</h2>
             <p>Each map is laid out like a GIS export: framed map with latitude and longitude, north arrow, scale bar, legend, a Victoria locator map and a key-finding box, with credits underneath. Click any map to enlarge it.</p>
+            <figure class="study-hero">
+              <a href="images/melbourne-qgis.png" target="_blank" rel="noreferrer"><img src="images/melbourne-qgis.png" alt="Map made in QGIS: metro Melbourne with dark-red hexagon hot spots over the CBD, inner north and bayside suburbs and a smaller cluster at Dandenong, with legend, north arrow, scale bar, Victoria locator map and a key-finding box." loading="lazy" width="1240" height="1753" /></a>
+              <figcaption><strong>Map</strong>Made in QGIS by Yarida Kaewthong: hot spots for people walking and cycling, 2021–2025. Basemap © OpenStreetMap contributors. <span class="enlarge-hint">Tap or click to enlarge</span></figcaption>
+            </figure>
             <figure class="study-hero">
               <a href="images/melbourne-hotspots.png" target="_blank" rel="noreferrer"><img src="images/melbourne-hotspots.png" alt="Map layout of metro Melbourne with blue sea and grey land. Red hexagon hot spots cover the CBD, inner north and bayside suburbs to St Kilda and beyond, with a smaller cluster at Dandenong. Includes north arrow, scale bar, legend and a locator map of Victoria." loading="lazy" width="2420" height="2420" /></a>
               <figcaption><strong>Fig 1</strong>Statistically significant hot spots for pedestrian and cyclist crashes, 2021&ndash;2025. Coastline: ABS ASGS 2021.</figcaption>
@@ -243,7 +205,19 @@
           </section>
 
           <section class="study-block">
-            <h2>How it was done</h2>
+            <h2>The problem</h2>
+            <p>
+              In metro Melbourne, roughly one injury crash in five involves someone walking or cycling. To protect them, a council or road agency needs to know three things: <strong>where</strong> to act, <strong>when</strong> the risk peaks, and <strong>what</strong> makes a crash more severe.
+            </p>
+            <ul>
+              <li>Where do pedestrian and cyclist crashes cluster, beyond what chance would produce?</li>
+              <li>At what times of day and week do they happen, and is it the same for both groups?</li>
+              <li>How much do the speed zone and lighting change the chance of a serious outcome?</li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>How I did it</h2>
             <p>
               <strong>Hot spots, not just dots.</strong> A dot map shows where crashes happened, not whether a cluster is unusual. I built a 1&nbsp;km hexagon grid over every area with at least one crash and ran Getis-Ord Gi*, which compares each hexagon and its neighbours within 2&nbsp;km against the metro average and returns a z-score. Hexagons above 2.58 are hot spots at 99% confidence.
             </p>
@@ -256,7 +230,28 @@
           </section>
 
           <section class="study-block">
-            <h2>What it suggests</h2>
+            <h2>The data</h2>
+            <p>
+              Victoria's official road crash records, published by the Department of Transport and Planning from police and hospital reports (CC BY 4.0). Every crash has a location, time, speed zone, light condition, crash movement and severity. I kept metro Melbourne from 2012 to 2025, logged every filtering step, and projected the points to GDA2020 / MGA Zone 55 so distances are in metres.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table">
+                <thead>
+                  <tr><th scope="col">Step</th><th scope="col">Records</th><th scope="col">Note</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>All Victorian crashes</td><td>200,754</td><td>2012 to January 2026</td></tr>
+                  <tr><td>Metro Melbourne, full years</td><td>142,875</td><td>Partial January 2026 and 3 non-injury records removed</td></tr>
+                  <tr><td>Involving a pedestrian</td><td>14,378</td><td>At least one pedestrian in the crash</td></tr>
+                  <tr><td>Involving a cyclist</td><td>16,357</td><td>At least one cyclist in the crash</td></tr>
+                  <tr><td>Hot-spot window, 2021&ndash;2025</td><td>10,428</td><td>Pedestrian or cyclist crashes</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="study-block">
+            <h2>What it means</h2>
             <ul>
               <li><strong>Lower speeds where people walk.</strong> Moving from 60 to 40&nbsp;km/h is linked to 13 fewer serious injuries in every 100 pedestrian crashes. Extending 40&nbsp;km/h zones across the inner-city hot spots targets the places with the most crashes.</li>
               <li><strong>Protected bike lanes and door-zone design</strong> on the commuter routes into the CBD, Yarra and Port Phillip.</li>
@@ -265,7 +260,7 @@
           </section>
 
           <section class="study-block">
-            <h2>Worth stating up front</h2>
+            <h2>Limitations</h2>
             <ul>
               <li><strong>Injury crashes only.</strong> Crashes with property damage only are not in the open data.</li>
               <li><strong>No exposure measure.</strong> There is no count of how many people walk or cycle in each area, so hot spots partly reflect where people walk and cycle most. They show where crashes concentrate, not where each trip is riskiest.</li>
@@ -274,7 +269,7 @@
             </ul>
           </section>
 
-                    <section class="study-block" id="takeaways">
+          <section class="study-block" id="takeaways">
             <h2>Key takeaways</h2>
             <ul>
               <li><strong>A hot-spot test beats a dot map.</strong> Dots show where crashes happened; Getis-Ord Gi* shows which clusters are bigger than chance would give. That turned 30,000 points into one clear message: half the crashes fall in 6% of the area.</li>
@@ -297,7 +292,7 @@
 
           <div class="study-actions study-footer-actions">
             <a class="back-link" href="projects.html"><span aria-hidden="true">&larr;</span> All projects</a>
-            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to CV</a>
+            <a class="back-link" href="index.html#projects"><span aria-hidden="true">&larr;</span> Back to home</a>
           </div>
         </article>
       </main>
