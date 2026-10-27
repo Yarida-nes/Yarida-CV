@@ -394,3 +394,7 @@ main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings 
 
 /* Small text never below 12px */
 sup, sub { font-size: max(.75em, 12px); line-height: 0; }
+
+/* Comfortable tap targets for the home project links */
+.card-btn, .card-btn.is-primary { display: inline-block; padding: .3rem 0; }
+.card-link { display: inline-block; padding: .2rem 0; }
