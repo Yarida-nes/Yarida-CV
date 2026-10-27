@@ -59,7 +59,6 @@
   font-family: "Public Sans", sans-serif;
   font-size: .82rem;
   letter-spacing: .04em;
-  text-transform: uppercase;
 }
 .cs-meta dd { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 

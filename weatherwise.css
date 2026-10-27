@@ -23,18 +23,17 @@
   font-family: "Public Sans", sans-serif; font-size: .8rem; color: var(--muted);
 }
 .ww-shot-fallback[hidden] { display: none; }
-.ww-shot figcaption { max-width: 760px; margin-top: .8rem; color: var(--muted); font-family: "Public Sans", sans-serif; font-size: .82rem; line-height: 1.6; text-transform: uppercase; }
+.ww-shot figcaption { max-width: 760px; margin-top: .8rem; color: var(--muted); font-family: "Public Sans", sans-serif; font-size: .82rem; line-height: 1.6; }
 
 /* Role / tools / context strip */
 .ww-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0 0; padding: 1.6rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .ww-meta div { min-width: 0; }
-.ww-meta dt { margin-bottom: .5rem; color: var(--accent); font-family: "Public Sans", sans-serif; font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; }
+.ww-meta dt { margin-bottom: .5rem; color: var(--accent); font-family: "Public Sans", sans-serif; font-size: .82rem; letter-spacing: .04em; }
 .ww-meta dd { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 
 /* Body sections */
 .ww-block { margin-top: 3.4rem; }
 .ww-block h2 { margin-bottom: 1rem; font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
-.ww-block h2::before { content: counter(wwb, decimal-leading-zero) " / "; counter-increment: wwb; color: var(--accent); font-family: "Public Sans", sans-serif; font-size: .75rem; vertical-align: .35em; margin-right: .35rem; }
 .ww-case { counter-reset: wwb; }
 .ww-block p, .ww-block > ul, .ww-block > ol { max-width: 760px; color: var(--muted); font-size: 1.06rem; line-height: 1.72; }
 .ww-block > ul { margin: .5rem 0 0; padding-left: 1.15rem; }

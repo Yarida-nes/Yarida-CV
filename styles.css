@@ -55,14 +55,14 @@ a { color: inherit; }
 .wordmark { font-size: 1.2rem; white-space: nowrap; font-weight: 700; text-decoration: none; letter-spacing: 0; }
 .wordmark span { color: var(--accent); }
 nav { display: flex; gap: 2rem; }
-nav a, .github-link { font-family: "Public Sans", sans-serif; font-size: .85rem; text-decoration: none; text-transform: uppercase; letter-spacing: 0; white-space: nowrap; }
+nav a, .github-link { font-family: "Public Sans", sans-serif; font-size: .85rem; text-decoration: none; letter-spacing: 0; white-space: nowrap; }
 nav a:hover, .github-link:hover { color: var(--accent); }
 nav a.is-active { color: var(--accent); }
 
 /* ── Hero ────────────────────────────────────────────────────────────── */
 .intro { min-height: 620px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); align-items: center; gap: clamp(3rem, 9vw, 10rem); padding: 7rem 0 5rem; }
 .eyebrow, .section-label > span, .timeline-date, .card-top, footer, .tags, .cap-num, .cap-tool, .cap-where, .project-tags, .project-row-meta, .award-list span { font-family: "Public Sans", sans-serif; font-size: .82rem; letter-spacing: 0; }
-.eyebrow { margin: 0 0 1.15rem; color: var(--accent); text-transform: uppercase; }
+.eyebrow { margin: 0 0 1.15rem; color: var(--accent); }
 h1, h2, h3, p { margin-top: 0; }
 h1 { max-width: 820px; margin-bottom: 1.5rem; font-size: clamp(2.7rem, 5.6vw, 5.4rem); line-height: .98; letter-spacing: 0; }
 .lede { max-width: 590px; color: var(--muted); font-size: clamp(1.12rem, 1.6vw, 1.32rem); line-height: 1.6; }
@@ -100,7 +100,7 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 .section { padding: 7rem 0; display: grid; grid-template-columns: minmax(180px, .28fr) 1fr; gap: 3rem; border-bottom: 1px solid var(--line); }
 .section-label h2 { margin: .35rem 0 0; font-size: 1.35rem; letter-spacing: 0; }
 .section-label > span { color: var(--accent); }
-.section-side-link { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; font-family: "Public Sans", sans-serif; font-size: .82rem; text-transform: uppercase; text-decoration: none; color: var(--accent); border-bottom: 1px solid transparent; }
+.section-side-link { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; font-family: "Public Sans", sans-serif; font-size: .82rem; text-decoration: none; color: var(--accent); border-bottom: 1px solid transparent; }
 .section-side-link:hover { border-color: var(--accent); }
 
 /* ── Timeline (experience, education) ────────────────────────────────── */
@@ -147,7 +147,7 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 .cap-where { grid-column: 2; grid-row: 2; color: var(--muted); }
 .cap-where a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
 .cap-where a:hover { border-color: var(--accent); }
-.cap-tool { grid-column: 3; grid-row: 1 / span 2; color: var(--muted); text-transform: uppercase; text-align: right; }
+.cap-tool { grid-column: 3; grid-row: 1 / span 2; color: var(--muted); text-align: right; }
 .cap-tool { display: flex; justify-content: flex-end; align-items: center; align-self: center; gap: .6rem; }
 .cap-tool img { width: 28px; height: 28px; display: block; }
 
@@ -158,13 +158,13 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 .contact-links { display: flex; flex-wrap: wrap; gap: 1.2rem 2.6rem; }
 .contact-link { font-size: 1.2rem; font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); }
 .contact-link:hover { color: var(--accent); }
-footer { display: flex; justify-content: space-between; padding: 1.8rem 0; border-top: 1px solid var(--line); color: var(--muted); text-transform: uppercase; }
+footer { display: flex; justify-content: space-between; padding: 1.8rem 0; border-top: 1px solid var(--line); color: var(--muted); }
 
 /* ── All projects index (projects.html) ──────────────────────────────── */
 .project-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
 .project-row { display: grid; grid-template-columns: 180px 1fr auto; gap: 1.5rem; align-items: start; padding: 1.6rem 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); }
 .project-row:hover .project-row-title { color: var(--accent); }
-.project-row-meta { color: var(--accent); text-transform: uppercase; padding-top: .3rem; }
+.project-row-meta { color: var(--accent); padding-top: .3rem; }
 .project-row-main { display: flex; flex-direction: column; gap: .4rem; }
 .project-row-title { font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
 .project-row-desc { max-width: 640px; color: var(--muted); line-height: 1.65; }
@@ -228,7 +228,7 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   .contact-note { display: none; }
   .contact-links { display: block; }
   .contact-link { display: block; font-size: 1rem; border-bottom: 0; margin-bottom: .4rem; }
-  .contact-link[data-print-value]::after { content: " — " attr(data-print-value); font-weight: 400; font-size: .85rem; color: var(--muted); }
+  .contact-link[data-print-value]::after { content: ": " attr(data-print-value); font-weight: 400; font-size: .85rem; color: var(--muted); }
   button.contact-link { display: none; }
   .timeline-item, .project-card, .capability-list li, .project-row { break-inside: avoid; }
   .project-row { grid-template-columns: 140px 1fr; }
@@ -240,11 +240,11 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 .case { padding: 4.5rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: minmax(180px, .28fr) 1fr; gap: 3rem; }
 .case-side { position: sticky; top: 2rem; align-self: start; }
 .case-side h2 { margin: .35rem 0 1.1rem; font-size: 1.35rem; }
-.case-meta { margin: 0; padding: 0; list-style: none; font-family: "Public Sans", sans-serif; font-size: .82rem; text-transform: uppercase; color: var(--muted); line-height: 1.9; }
+.case-meta { margin: 0; padding: 0; list-style: none; font-family: "Public Sans", sans-serif; font-size: .82rem; color: var(--muted); line-height: 1.9; }
 .case-body { max-width: 720px; }
 .case-body > p:first-child { font-size: 1.15rem; line-height: 1.6; color: var(--ink); }
 .case-body p { color: var(--muted); line-height: 1.65; }
-.case-body h3 { margin: 2.2rem 0 .8rem; font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; font-family: "Public Sans", sans-serif; color: var(--accent); }
+.case-body h3 { margin: 2.2rem 0 .8rem; font-size: 1rem; letter-spacing: .04em; font-family: "Public Sans", sans-serif; color: var(--accent); }
 .case-body ul { margin: 0 0 1.25rem; padding-left: 1.15rem; color: var(--muted); line-height: 1.65; }
 .case-body li { margin-bottom: .45rem; }
 .back-link { display: inline-flex; align-items: center; gap: .6rem; margin: 3rem 0 0; font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); }
@@ -287,7 +287,7 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 .glance div { padding: 1.15rem 1.35rem; border-bottom: 1px solid var(--line); }
 .glance div:nth-child(odd) { border-right: 1px solid var(--line); }
 .glance div:nth-last-child(-n+2) { border-bottom: 0; }
-.glance dt { margin-bottom: .4rem; font-family: "Public Sans", sans-serif; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; color: var(--accent-strong); }
+.glance dt { margin-bottom: .4rem; font-family: "Public Sans", sans-serif; font-size: .82rem; letter-spacing: .04em; color: var(--accent-strong); }
 .glance dd { margin: 0; color: var(--ink); font-size: 1rem; line-height: 1.6; }
 .glance-result dd { font-weight: 600; }
 .enlarge-hint { display: block; margin-top: .35rem; color: var(--accent-strong); font-family: "Public Sans", sans-serif; font-size: .8rem; }
@@ -334,3 +334,36 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
 h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 400; letter-spacing: -.01em; }
 /* Blue is kept for links, section headings and the one main action */
 .section-label h2, .study-block h2, .cs-block h2, .esg-block h2, .ww-block h2 { color: var(--accent); }
+
+/* Quiet labels: sentence case, Public Sans, muted */
+.eyebrow, .card-top, .project-row-meta, .glance dt, .study-meta dt, .esg-meta dt, .ww-meta dt, .cs-meta dt, .hero-proj span, .timeline-date, .award-list span, .cap-where, footer { font-family: "Public Sans", sans-serif; font-size: .9rem; letter-spacing: 0; color: var(--muted); }
+.project-card[data-tone] .card-top span:first-child { color: var(--muted); font-weight: 400; }
+nav a, .github-link { font-size: .95rem; }
+
+/* Links instead of pill buttons; one filled main action in the hero */
+.button { gap: .4rem; font-size: 1rem; font-weight: 500; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.button:hover { color: var(--accent-strong); }
+.primary, .primary:hover { padding: 0; background: none; border-radius: 0; }
+.primary { color: var(--accent); }
+.text-button { border-bottom: 0; padding-bottom: 0; }
+.intro-actions .button.primary { padding: .8rem 1.15rem; background: var(--accent); color: #fff; border-radius: 8px; text-decoration: none; }
+.intro-actions .button.primary:hover { background: var(--accent-strong); color: #fff; }
+.card-btn, .card-btn.is-primary { padding: 0; border: 0; border-radius: 0; background: none; color: var(--accent); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.card-btn:hover, .card-btn.is-primary:hover { background: none; color: var(--accent-strong); }
+.card-actions { gap: .5rem 1.25rem; }
+.demo-back { color: var(--accent); }
+.section-side-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; font-size: .95rem; }
+
+/* Availability: one plain muted line under the name */
+.availability { display: block; margin: .2rem 0 0; padding: 0; border: 0; border-radius: 0; background: none; color: var(--muted); font-family: "Public Sans", sans-serif; font-size: 1.05rem; }
+.availability::before { content: none; }
+@media print { .availability, .section-side-link { display: none; } }
+
+/* Capability list without row numbers */
+.capability-list li { grid-template-columns: 1fr 140px; }
+.cap-name, .cap-where { grid-column: 1; }
+.cap-tool { grid-column: 2; }
+@media (max-width: 720px) {
+  .capability-list li { grid-template-columns: 1fr; }
+  .cap-tool { grid-column: 1; grid-row: 3; }
+}
