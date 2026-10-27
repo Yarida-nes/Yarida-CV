@@ -115,6 +115,14 @@ button.button, button.contact-link { background: none; border: 0; padding: 0; fo
 .portrait-art { display: block; width: min(100%, 365px); height: auto; aspect-ratio: 1; }
 .portrait-wrap figcaption { margin-top: .75rem; color: var(--muted); font-family: "DM Mono", monospace; font-size: .7rem; text-transform: uppercase; }
 
+/* Hero project thumbnails (right side of the intro) */
+.hero-projects { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; width: min(100%, 430px); align-self: center; justify-self: end; }
+.hero-proj { display: block; text-decoration: none; color: inherit; }
+.hero-proj img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 1px solid var(--line); border-radius: 8px; background: var(--signal); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.hero-proj:hover img, .hero-proj:focus-visible img { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 8px 22px rgba(16, 35, 63, .1); }
+.hero-proj span { display: block; margin-top: .4rem; font-family: "DM Mono", monospace; font-size: .66rem; text-transform: uppercase; letter-spacing: .02em; color: var(--muted); }
+.hero-proj:hover span, .hero-proj:focus-visible span { color: var(--accent); }
+
 /* ── Metrics strip ───────────────────────────────────────────────────── */
 .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .metrics-home { grid-template-columns: repeat(3, 1fr); }
@@ -251,7 +259,8 @@ footer { display: flex; justify-content: space-between; padding: 1.8rem 0; borde
   @page { margin: 14mm; }
   body { background: white; }
   .site-shell { max-width: none; padding: 0; }
-  .skip-link, .topbar nav, .github-link, .theme-toggle, .to-top, .intro-actions, .availability, .section-side-link, .project-shot, .project-cta, .no-print { display: none; }
+  .skip-link, .topbar nav, .github-link, .theme-toggle, .to-top, .intro-actions, .availability, .section-side-link, .project-shot, .project-cta, .hero-projects, .no-print { display: none; }
+  .intro { grid-template-columns: 1fr; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .topbar { min-height: auto; padding-bottom: .6rem; }
   .intro { min-height: auto; grid-template-columns: 1fr 150px; padding: 1.25rem 0 1.5rem; gap: 2rem; }
