@@ -44,8 +44,11 @@
 .esg-subchart { margin: 1.4rem 0 0; }
 
 /* Tableau embed and screenshot placeholder */
-.esg-embed { position: relative; width: 100%; aspect-ratio: 4 / 3; min-height: 480px; margin: 1.5rem 0; background: var(--surface); border: 1px solid var(--line); }
-.esg-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* The Tableau story has a fixed size (about 1016 x 1000 px). The iframe keeps that size and is
+   scaled down to fit the column, so the whole dashboard is visible instead of a cropped corner. */
+.esg-embed { position: relative; width: 100%; margin: 1.5rem 0; background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
+.esg-embed iframe { display: block; width: 1016px; height: 1000px; border: 0; transform-origin: 0 0; }
+.esg-embed.is-scrolling { overflow-x: auto; }
 .esg-shot { margin: 1.5rem 0 0; }
 .esg-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: var(--surface); }
 .esg-placeholder { display: flex; flex-direction: column; justify-content: center; min-height: 240px; padding: 2rem; border: 1px dashed var(--muted); background: var(--surface); }
@@ -60,7 +63,7 @@
   .esg-case h1 { font-size: 2.3rem; }
   .esg-meta { grid-template-columns: 1fr; gap: 1.25rem; }
   .esg-findings > li { grid-template-columns: 40px 1fr; gap: .75rem; }
-  .esg-embed { aspect-ratio: auto; height: 70vh; min-height: 420px; }
+  .esg-embed { min-height: 0; }
 }
 
 @media print {

@@ -237,5 +237,23 @@
       </footer>
     </div>
     <script src="app.js"></script>
+    <script>
+      // Scale the fixed-size Tableau story to the width of its box.
+      (function () {
+        var box = document.querySelector(".esg-embed");
+        var frame = box && box.querySelector("iframe");
+        if (!frame) return;
+        var W = 1016, H = 1000, MIN = 0.55;
+        function fit() {
+          var s = box.clientWidth / W;
+          if (s > 1) s = 1;
+          if (s < MIN) { s = MIN; box.classList.add("is-scrolling"); } else { box.classList.remove("is-scrolling"); }
+          frame.style.transform = "scale(" + s + ")";
+          box.style.height = Math.round(H * s) + "px";
+        }
+        fit();
+        window.addEventListener("resize", fit);
+      })();
+    </script>
   </body>
 </html>
