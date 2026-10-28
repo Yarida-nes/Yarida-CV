@@ -85,7 +85,8 @@
       .sliders label { display: flex; justify-content: space-between; gap: 1rem; font-weight: 600; }
       .sliders output { font-family: "Public Sans", sans-serif; color: var(--tone-ink); }
       .sliders input { width: 100%; margin-bottom: 1rem; accent-color: var(--tone); }
-      .trend { display: flex; gap: .6rem; margin: 0 0 1.1rem; max-width: 420px; }
+      .trend { display: flex; gap: .6rem; margin: 0 0 1.1rem; max-width: 460px; }
+      .trend button { white-space: nowrap; }
       .trend button { flex: 1; font: inherit; text-align: left; padding: .5rem .6rem .45rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--muted); }
       .trend button b { display: block; font-size: 1.3rem; color: var(--ink); line-height: 1.1; }
       .trend button i { display: block; height: 6px; margin-top: .4rem; border-radius: 3px; background: var(--line); }
@@ -181,8 +182,8 @@
           </fieldset>
           <div class="trend" aria-label="Villages within reach by number of pharmacies added">
             <button type="button" data-group-link="ph" data-v="0">Today (27)<b>199 of 511</b><i><span style="width: 39%"></span></i></button>
-            <button type="button" data-group-link="ph" data-v="5">+5 pharmacies<b>325 of 511</b><i><span style="width: 64%"></span></i></button>
-            <button type="button" data-group-link="ph" data-v="22">+22 pharmacies<b>417 of 511</b><i><span style="width: 82%"></span></i></button>
+            <button type="button" data-group-link="ph" data-v="5">+5 added<b>325 of 511</b><i><span style="width: 64%"></span></i></button>
+            <button type="button" data-group-link="ph" data-v="22">+22 added<b>417 of 511</b><i><span style="width: 82%"></span></i></button>
           </div>
           <div class="villages">
             <div class="big"><span id="ph-n">199</span><small> of 511 villages</small></div>
