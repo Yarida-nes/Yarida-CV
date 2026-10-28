@@ -179,11 +179,17 @@
             <button type="button" data-v="5">+5</button>
             <button type="button" data-v="22">+22</button>
           </fieldset>
+          <div class="trend" aria-label="Villages within reach by number of pharmacies added">
+            <button type="button" data-group-link="ph" data-v="0">Today (27)<b>199 of 511</b><i><span style="width: 39%"></span></i></button>
+            <button type="button" data-group-link="ph" data-v="5">+5 pharmacies<b>325 of 511</b><i><span style="width: 64%"></span></i></button>
+            <button type="button" data-group-link="ph" data-v="22">+22 pharmacies<b>417 of 511</b><i><span style="width: 82%"></span></i></button>
+          </div>
           <div class="villages">
             <div class="big"><span id="ph-n">199</span><small> of 511 villages</small></div>
             <div class="vbar" role="img" id="ph-bar" aria-label="Villages within reach"><div class="fill" id="ph-fill"></div></div>
             <div class="vscale"><span>0</span><span>511 villages</span></div>
             <p class="readout" aria-live="polite"><span id="ph-text" style="color: var(--muted)"></span></p>
+            <p class="sowhat"><strong>So what:</strong> five well-placed pharmacies add 126 villages, so placement matters more than count. Today each participating pharmacist serves about 13,451 people, well above the NHSO guideline of 10,000, which is the case for adding them.</p>
           </div>
           <p class="note">From the 2023 Asian Conference on Remote Sensing paper I co-authored. The paper also reports coverage as 82.74% (+5) and over 95% (+22); those percentages use a different coverage measure from the village counts shown here.</p>
         </section>
@@ -286,12 +292,17 @@
         var speed = { 40: 41, 60: 54, 80: 65 };
         var trend = document.querySelectorAll(".trend button");
         trend.forEach(function (t) { t.addEventListener("click", function () {
-          var target = document.querySelector('[data-group="speed"] button[data-v="' + t.getAttribute("data-v") + '"]');
+          var target = document.querySelector('[data-group="' + t.getAttribute("data-group-link") + '"] button[data-v="' + t.getAttribute("data-v") + '"]');
           if (target) target.click();
         }); });
+        function markTiles(groupName, v) {
+          trend.forEach(function (t) {
+            if (t.getAttribute("data-group-link") === groupName) t.setAttribute("aria-pressed", t.getAttribute("data-v") === v ? "true" : "false");
+          });
+        }
         group("speed", function (v) {
           var n = speed[v];
-          trend.forEach(function (t) { t.setAttribute("aria-pressed", t.getAttribute("data-v") === v ? "true" : "false"); });
+          markTiles("speed", v);
           for (var i = 0; i < 100; i++) dots[i].classList.toggle("on", i < n);
           document.getElementById("speed-n").textContent = n;
           document.getElementById("speed-text").innerHTML =
@@ -308,6 +319,7 @@
         };
         group("ph", function (v) {
           var d = ph[v];
+          markTiles("ph", v);
           document.getElementById("ph-n").textContent = d[0];
           document.getElementById("ph-fill").style.width = (d[0] / 511 * 100) + "%";
           document.getElementById("ph-bar").setAttribute("aria-label", d[0] + " of 511 villages within reach");
