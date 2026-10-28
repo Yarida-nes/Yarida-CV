@@ -68,6 +68,7 @@
           </p>
           <div class="cs-actions">
             <a class="button primary" href="try-it.html#credit">Try the demo</a>
+            <a class="button text-button" href="https://github.com/Yarida-nes/credit-risk-loan-data" target="_blank" rel="noreferrer">Code on GitHub</a>
             <a class="button text-button" href="projects.html">All projects</a>
             <a class="button text-button" href="index.html#projects">Back to home</a>
           </div>
@@ -211,7 +212,7 @@
               <li><strong>The income model is descriptive, not predictive.</strong> It was fitted and assessed on the same data, with no hold-out. R&sup2; of 0.34 leaves two thirds of the variation unexplained. The positive coefficient on <em>default</em> (about $6,396) is an association in this sample, not a causal claim.</li>
               <li><strong>One predictor is mechanically tied to the outcome.</strong> <code>loanpctincome</code> is loan amount divided by income, so its large coefficient in an income regression should not be over-read.</li>
               <li><strong>Age and credit history are near-collinear (0.86).</strong> Their individual coefficients and standard errors are less trustworthy than the joint fit.</li>
-              <li><strong>Not every result is on this page.</strong> My knitted copy records the cleaning, the plots and the full income regression. The backward-stepwise selection ran, but its chosen model was not captured. The default classifier (logistic regression, ROC and AUC) was the assessment's final section. I quote no figures for either.</li>
+              <li><strong>The submitted group file was lost, so part of the code was rebuilt.</strong> The <a href="https://github.com/Yarida-nes/credit-risk-loan-data" target="_blank" rel="noreferrer">repository on GitHub</a> holds the cleaning, plots and income regression from our working file, plus the backward-stepwise selection and the default classifier rebuilt afterwards following the assignment&rsquo;s steps. On a 30% test set that logistic model scores accuracy 0.845, sensitivity 0.473, specificity 0.951 and AUC 0.854. Those figures come from the re-run, not from the submitted report.</li>
               <li><strong>No dates, so no out-of-time test.</strong> The dataset is a single cross-section. Nothing here shows whether the patterns hold for next year's applicants.</li>
             </ul>
           </section>
