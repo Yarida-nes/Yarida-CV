@@ -44,10 +44,10 @@
 .esg-subchart { margin: 1.4rem 0 0; }
 
 /* Tableau embed and screenshot placeholder */
-/* The Tableau story has a fixed size (about 1016 x 665 px). The iframe keeps that size and is
+/* The Tableau story has a fixed size (about 1016 x 815 px). The iframe keeps that size and is
    scaled down to fit the column, so the whole dashboard is visible instead of a cropped corner. */
 .esg-embed { position: relative; width: 100%; margin: 1.5rem 0; background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
-.esg-embed iframe { display: block; width: 1016px; height: 665px; border: 0; transform-origin: 0 0; }
+.esg-embed iframe { display: block; width: 1016px; height: 815px; border: 0; transform-origin: 0 0; }
 .esg-embed.is-scrolling { overflow-x: auto; }
 .esg-shot { margin: 1.5rem 0 0; }
 .esg-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: var(--surface); }
