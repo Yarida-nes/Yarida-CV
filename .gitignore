@@ -1,1 +1,4 @@
 .claude/
+cv/private.json
+cv/node_modules/
+cv/*.docx

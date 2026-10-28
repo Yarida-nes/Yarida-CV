@@ -1,0 +1,11 @@
+{
+  "name": "yarida-cv-builder",
+  "private": true,
+  "scripts": {
+    "build": "node make_cv.js",
+    "build:public": "node make_cv.js --public"
+  },
+  "dependencies": {
+    "docx": "^9.15.0"
+  }
+}
