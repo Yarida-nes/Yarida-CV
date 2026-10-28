@@ -445,3 +445,42 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
   #main :is(.study-block, .cs-block, .esg-block, .ww-block, .case-body) :is(p, li):not(.ref-list li):not(.table-note):not(.ref-provided) { color: var(--ink); }
 }
 ::selection { background: var(--accent-soft); color: var(--ink); }
+
+/* ── Taste review, round 1 (28 Oct 2026) ─────────────────────────────────
+   One thing leads the first screen; running text in the full ink;
+   Experience, Education and Skills use the whole width; the section
+   links return on phones. */
+@media (min-width: 721px) { .intro { grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr); gap: clamp(2rem, 6vw, 6rem); } }
+@media screen { #main .intro h1 { font-size: clamp(3rem, 6.6vw, 6.1rem); line-height: .98; letter-spacing: -.02em; margin-bottom: 1.1rem; } }
+.hero-projects { width: min(100%, 380px); }
+.availability { color: var(--ink); font-size: 1.1rem; }
+
+.lede, .description, .exp-bullets, .award-list, .project-card p, .section-intro, .projects-more, .contact-note { color: var(--ink); }
+
+.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+.exp-grid .timeline-item { grid-template-columns: 1fr; gap: .2rem; align-content: start; }
+.exp-grid .timeline-date { margin-bottom: .3rem; }
+.exp-grid .timeline-item:nth-last-child(-n+2) { border-bottom: 0; }
+
+.edu-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; align-items: start; }
+.edu-split .timeline-item { grid-template-columns: 1fr; gap: .2rem; }
+.edu-split .timeline-date { margin-bottom: .3rem; }
+.edu-split .award-list { max-width: none; }
+
+.capability-list { display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(3, auto); gap: 0 3rem; }
+.capability-list li { grid-template-columns: 1fr; grid-template-rows: auto auto auto; row-gap: .45rem; align-content: start; }
+.capability-list .cap-tool { grid-column: 1; grid-row: 3; justify-content: flex-start; }
+.capability-list li:nth-child(3), .capability-list li:nth-child(5) { border-bottom: 0; }
+
+@media (max-width: 720px) {
+  .exp-grid, .edu-split, .capability-list { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+  .exp-grid .timeline-item:nth-last-child(-n+2), .capability-list li:nth-child(3) { border-bottom: 1px solid var(--line); }
+  .exp-grid .timeline-item:last-child { border-bottom: 0; }
+}
+
+@media (max-width: 860px) {
+  .topbar { flex-wrap: wrap; gap: .2rem 1rem; padding: .9rem 0 .5rem; }
+  .topbar nav { order: 3; width: 100%; margin-left: 0; flex-wrap: wrap; gap: 0 1.1rem; }
+  .topbar nav a { display: inline-block; padding: .35rem 0; font-size: .9rem; }
+  .github-link { margin-left: auto; }
+}
