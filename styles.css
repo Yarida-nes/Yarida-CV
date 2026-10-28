@@ -425,3 +425,23 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
 
 /* No double rule where a list ends just before the section divider */
 .timeline-item:last-child, .capability-list li:last-child { border-bottom: 0; }
+
+/* ── Type scale and colour roles (UI UX Pro Max review) ──────────────────
+   One size per heading level on every page, heading line-height for headings,
+   balanced wrapping, ink for reading text and muted only for meta. */
+:root {
+  --step-h1: clamp(2.5rem, 5vw, 4rem);      /* page title, every page */
+  --step-h2: clamp(2rem, 4vw, 2.8rem);      /* home section headings */
+  --step-h2-article: clamp(1.6rem, 2.6vw, 2rem); /* case-study and demo sections */
+  --step-h3: 1.4rem;
+}
+@media screen {
+  #main h1 { font-size: var(--step-h1); line-height: 1.05; letter-spacing: -.015em; max-width: 22ch; text-wrap: balance; }
+  #main .intro h1 { max-width: none; }
+  #main .section-label h2, #main .contact h2 { font-size: var(--step-h2); }
+  #main :is(.study-block, .cs-block, .esg-block, .ww-block) > h2, #main .demo h2 { font-size: var(--step-h2-article); line-height: 1.2; }
+  #main h2, #main h3 { text-wrap: balance; }
+  #main .project-card h3 { font-size: var(--step-h3); line-height: 1.2; }
+  #main :is(.study-block, .cs-block, .esg-block, .ww-block, .case-body) :is(p, li):not(.ref-list li):not(.table-note):not(.ref-provided) { color: var(--ink); }
+}
+::selection { background: var(--accent-soft); color: var(--ink); }
