@@ -17,8 +17,9 @@ from your phone on github.com (open this file, press the pencil, type, press
 The routines never invent facts, so if a detail is missing they leave it out
 and ask for it in the pull request.
 
-When an entry has been used on the site, the CV and LinkedIn, move it under
-**Done** (the routines do this for you).
+Once the Website routine has used an entry it moves it under **Done** with the date.
+The CV and LinkedIn routines also read entries under **Done** from the last ten days,
+so nothing is missed while a pull request is still waiting for you.
 
 ## New entries
 
