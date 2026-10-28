@@ -31,14 +31,14 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .demo { --tone: var(--accent); --tone-ink: var(--accent-strong); --tone-soft: var(--accent-soft); display: none; margin: 1.25rem 0 2rem; padding: clamp(1rem, 2.5vw, 1.6rem); background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--tone); border-radius: 12px; scroll-margin-top: 1.5rem; font-size: .92rem; max-width: 720px; }
+      .demo { --tone: var(--accent); --tone-ink: var(--accent-strong); --tone-soft: var(--accent-soft); display: none; margin: 1.25rem 0 2rem; padding: clamp(1rem, 2.5vw, 1.6rem); background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--tone); border-radius: 12px; scroll-margin-top: 1.5rem; font-size: 1rem; max-width: 780px; }
       .demo.is-active { display: block; }
       .case-intro { padding: 2.5rem 0 1.25rem; }
       .case-intro h1 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin-bottom: .8rem; }
       .case-intro .lede { font-size: 1rem; max-width: 560px; }
       .demo-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; align-items: baseline; }
       .demo-kicker { margin: 0 0 .4rem; font-family: "Public Sans", sans-serif; font-size: .9rem; color: var(--muted); }
-      .demo h2 { margin: 0 0 .4rem; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.2; }
+      .demo h2 { margin: 0 0 .4rem; font-size: clamp(1.4rem, 2.3vw, 1.8rem); line-height: 1.2; }
       .demo-intro { max-width: 600px; color: var(--muted); margin-bottom: 1.1rem; }
       .demo-back { font-weight: 600; color: var(--tone-ink); white-space: nowrap; }
       .pick { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.5rem; padding: 0; border: 0; }
@@ -47,21 +47,21 @@
       .pick button:hover { background: var(--tone-soft); }
       .pick button[aria-pressed="true"] { background: var(--tone-ink); border-color: var(--tone-ink); color: #fff; }
       .demo-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; align-items: center; }
-      .big { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 700; line-height: 1; color: var(--tone-ink); }
+      .big { font-size: clamp(2rem, 3.8vw, 2.7rem); font-weight: 700; line-height: 1; color: var(--tone-ink); }
       .big small { font-size: .35em; font-weight: 500; color: var(--muted); }
       .readout p { color: var(--muted); max-width: 400px; margin-bottom: .5rem; }
       .readout p strong { color: var(--ink); }
       .delta { display: inline-block; margin-top: .4rem; padding: .3rem .7rem; border-radius: 999px; background: var(--tone-soft); color: var(--tone-ink); font-family: "Public Sans", sans-serif; font-size: .85rem; }
-      .note { margin: 1.2rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
+      .note { margin: 1.2rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
       /* 100-person grid */
-      .people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; max-width: 210px; }
+      .people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; max-width: 250px; }
       .people span { aspect-ratio: 1; border-radius: 50%; background: var(--line); transition: background-color .35s ease, transform .35s ease; }
       .people span.on { background: var(--tone); transform: scale(1.06); }
       .legend { display: flex; gap: 1.2rem; margin-top: .8rem; font-size: .85rem; color: var(--muted); }
       .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: .4rem; vertical-align: -1px; }
       /* village bar */
       .villages { width: 100%; max-width: 480px; }
-      .vbar { position: relative; height: 24px; border-radius: 8px; background: var(--line); overflow: hidden; }
+      .vbar { position: relative; height: 28px; border-radius: 8px; background: var(--line); overflow: hidden; }
       .vbar .fill { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--tone-ink), var(--tone)); border-radius: 8px; transition: width .6s cubic-bezier(.2, .7, .3, 1); }
       .vscale { display: flex; justify-content: space-between; margin-top: .4rem; font-family: "DM Mono", monospace; font-size: .78rem; color: var(--muted); }
       /* model bars */
@@ -75,7 +75,7 @@
       .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; margin: 1rem 0 0; }
       .stats div { padding: .7rem .9rem; border-radius: 8px; background: var(--tone-soft); }
       .stats dt { font-family: "Public Sans", sans-serif; font-size: .85rem; color: var(--muted); }
-      .stats dd { margin: 0; font-size: 1.05rem; font-weight: 600; }
+      .stats dd { margin: 0; font-size: 1.2rem; font-weight: 600; }
       .jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; }
       .jump a { padding: .4rem .85rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: .9rem; }
       .jump a:hover { border-color: var(--accent); color: var(--accent); }
@@ -87,12 +87,12 @@
       .sliders input { width: 100%; margin-bottom: 1rem; accent-color: var(--tone); }
       .trend { display: flex; gap: .6rem; margin: 0 0 1.1rem; max-width: 420px; }
       .trend button { flex: 1; font: inherit; text-align: left; padding: .5rem .6rem .45rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--muted); }
-      .trend button b { display: block; font-size: 1.15rem; color: var(--ink); line-height: 1.1; }
+      .trend button b { display: block; font-size: 1.3rem; color: var(--ink); line-height: 1.1; }
       .trend button i { display: block; height: 6px; margin-top: .4rem; border-radius: 3px; background: var(--line); }
       .trend button i span { display: block; height: 100%; border-radius: 3px; background: var(--tone); }
       .trend button[aria-pressed="true"] { border-color: var(--tone); background: var(--tone-soft); color: var(--tone-ink); }
       .trend button[aria-pressed="true"] b { color: var(--tone-ink); }
-      .sowhat { margin: .9rem 0 0; padding: .6rem .8rem; border-left: 3px solid var(--tone); background: var(--paper); color: var(--ink); font-size: .9rem; }
+      .sowhat { margin: .9rem 0 0; padding: .6rem .8rem; border-left: 3px solid var(--tone); background: var(--paper); color: var(--ink); font-size: .97rem; }
       @media (max-width: 760px) { .demo-body { grid-template-columns: 1fr; } }
     </style>
   </head>
