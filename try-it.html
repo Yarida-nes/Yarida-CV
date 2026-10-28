@@ -85,6 +85,14 @@
       .sliders label { display: flex; justify-content: space-between; gap: 1rem; font-weight: 600; }
       .sliders output { font-family: "Public Sans", sans-serif; color: var(--tone-ink); }
       .sliders input { width: 100%; margin-bottom: 1rem; accent-color: var(--tone); }
+      .trend { display: flex; gap: .6rem; margin: 0 0 1.1rem; max-width: 420px; }
+      .trend button { flex: 1; font: inherit; text-align: left; padding: .5rem .6rem .45rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--muted); }
+      .trend button b { display: block; font-size: 1.15rem; color: var(--ink); line-height: 1.1; }
+      .trend button i { display: block; height: 6px; margin-top: .4rem; border-radius: 3px; background: var(--line); }
+      .trend button i span { display: block; height: 100%; border-radius: 3px; background: var(--tone); }
+      .trend button[aria-pressed="true"] { border-color: var(--tone); background: var(--tone-soft); color: var(--tone-ink); }
+      .trend button[aria-pressed="true"] b { color: var(--tone-ink); }
+      .sowhat { margin: .9rem 0 0; padding: .6rem .8rem; border-left: 3px solid var(--tone); background: var(--paper); color: var(--ink); font-size: .9rem; }
       @media (max-width: 760px) { .demo-body { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -135,6 +143,11 @@
             <button type="button" data-v="60">60 km/h</button>
             <button type="button" data-v="80">80+ km/h</button>
           </fieldset>
+          <div class="trend" aria-label="Serious-injury share by speed zone">
+            <button type="button" data-group-link="speed" data-v="40">40 km/h<b>41 in 100</b><i><span style="width: 41%"></span></i></button>
+            <button type="button" data-group-link="speed" data-v="60">60 km/h<b>54 in 100</b><i><span style="width: 54%"></span></i></button>
+            <button type="button" data-group-link="speed" data-v="80">80+ km/h<b>65 in 100</b><i><span style="width: 65%"></span></i></button>
+          </div>
           <div class="demo-body">
             <div>
               <div class="people" id="people" aria-hidden="true"></div>
@@ -144,6 +157,7 @@
               <div class="big"><span id="speed-n">41</span><small> in 100</small></div>
               <p id="speed-text"></p>
               <span class="delta" id="speed-delta"></span>
+              <p class="sowhat"><strong>So what:</strong> moving a road from 60 to 40 km/h is linked to about 13 fewer serious injuries in every 100 pedestrian crashes, which is why the case study recommends 40 km/h zones in the inner-city hot spots.</p>
             </div>
           </div>
           <p class="note">Victorian police and hospital crash records, metro Melbourne 2012–2025. The rise across speed zones passes a chi-square test for trend (χ² = 274.9, p &lt; 0.001). This is an association, not a controlled experiment: faster roads also differ in design and traffic.</p>
@@ -270,8 +284,14 @@
         for (var i = 0; i < 100; i++) people.appendChild(document.createElement("span"));
         var dots = people.children;
         var speed = { 40: 41, 60: 54, 80: 65 };
+        var trend = document.querySelectorAll(".trend button");
+        trend.forEach(function (t) { t.addEventListener("click", function () {
+          var target = document.querySelector('[data-group="speed"] button[data-v="' + t.getAttribute("data-v") + '"]');
+          if (target) target.click();
+        }); });
         group("speed", function (v) {
           var n = speed[v];
+          trend.forEach(function (t) { t.setAttribute("aria-pressed", t.getAttribute("data-v") === v ? "true" : "false"); });
           for (var i = 0; i < 100; i++) dots[i].classList.toggle("on", i < n);
           document.getElementById("speed-n").textContent = n;
           document.getElementById("speed-text").innerHTML =
