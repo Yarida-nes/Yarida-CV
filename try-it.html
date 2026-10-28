@@ -31,37 +31,41 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .demo { --tone: var(--accent); --tone-ink: var(--accent-strong); --tone-soft: var(--accent-soft); margin: 3rem 0; padding: clamp(1.25rem, 3vw, 2.25rem); background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--tone); border-radius: 12px; scroll-margin-top: 1.5rem; }
+      .demo { --tone: var(--accent); --tone-ink: var(--accent-strong); --tone-soft: var(--accent-soft); display: none; margin: 1.25rem 0 2rem; padding: clamp(1rem, 2.5vw, 1.6rem); background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--tone); border-radius: 12px; scroll-margin-top: 1.5rem; font-size: .95rem; }
+      .demo.is-active { display: block; }
+      .case-intro { padding: 2.5rem 0 1.25rem; }
+      .case-intro h1 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin-bottom: .8rem; }
+      .case-intro .lede { font-size: 1rem; max-width: 560px; }
       .demo-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; align-items: baseline; }
       .demo-kicker { margin: 0 0 .4rem; font-family: "Public Sans", sans-serif; font-size: .9rem; color: var(--muted); }
-      .demo h2 { margin: 0 0 .5rem; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.15; }
-      .demo-intro { max-width: 680px; color: var(--muted); margin-bottom: 1.4rem; }
+      .demo h2 { margin: 0 0 .4rem; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.2; }
+      .demo-intro { max-width: 600px; color: var(--muted); margin-bottom: 1.1rem; }
       .demo-back { font-weight: 600; color: var(--tone-ink); white-space: nowrap; }
       .pick { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.5rem; padding: 0; border: 0; }
       .pick legend { width: 100%; margin-bottom: .55rem; font-family: "Public Sans", sans-serif; font-size: .9rem; color: var(--muted); }
-      .pick button { font: inherit; font-weight: 600; padding: .55rem 1.05rem; border-radius: 999px; border: 1.5px solid var(--tone); background: var(--surface); color: var(--tone-ink); cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+      .pick button { font: inherit; font-weight: 600; padding: .45rem .9rem; border-radius: 999px; border: 1.5px solid var(--tone); background: var(--surface); color: var(--tone-ink); cursor: pointer; transition: background-color .2s ease, color .2s ease; }
       .pick button:hover { background: var(--tone-soft); }
       .pick button[aria-pressed="true"] { background: var(--tone-ink); border-color: var(--tone-ink); color: #fff; }
       .demo-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; align-items: center; }
-      .big { font-size: clamp(3rem, 7vw, 5rem); font-weight: 700; line-height: 1; color: var(--tone-ink); }
+      .big { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; line-height: 1; color: var(--tone-ink); }
       .big small { font-size: .35em; font-weight: 500; color: var(--muted); }
-      .readout p { color: var(--muted); max-width: 420px; }
+      .readout p { color: var(--muted); max-width: 400px; margin-bottom: .5rem; }
       .readout p strong { color: var(--ink); }
       .delta { display: inline-block; margin-top: .4rem; padding: .3rem .7rem; border-radius: 999px; background: var(--tone-soft); color: var(--tone-ink); font-family: "Public Sans", sans-serif; font-size: .85rem; }
-      .note { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+      .note { margin: 1.2rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
       /* 100-person grid */
-      .people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; max-width: 340px; }
+      .people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; max-width: 260px; }
       .people span { aspect-ratio: 1; border-radius: 50%; background: var(--line); transition: background-color .35s ease, transform .35s ease; }
       .people span.on { background: var(--tone); transform: scale(1.06); }
       .legend { display: flex; gap: 1.2rem; margin-top: .8rem; font-size: .85rem; color: var(--muted); }
       .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: .4rem; vertical-align: -1px; }
       /* village bar */
       .villages { width: 100%; }
-      .vbar { position: relative; height: 46px; border-radius: 8px; background: var(--line); overflow: hidden; }
+      .vbar { position: relative; height: 34px; border-radius: 8px; background: var(--line); overflow: hidden; }
       .vbar .fill { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--tone-ink), var(--tone)); border-radius: 8px; transition: width .6s cubic-bezier(.2, .7, .3, 1); }
       .vscale { display: flex; justify-content: space-between; margin-top: .4rem; font-family: "DM Mono", monospace; font-size: .78rem; color: var(--muted); }
       /* model bars */
-      .models { display: grid; grid-template-columns: repeat(5, 1fr); gap: .7rem; align-items: end; height: 220px; padding-bottom: 1.6rem; position: relative; }
+      .models { display: grid; grid-template-columns: repeat(5, 1fr); gap: .6rem; align-items: end; height: 170px; padding-bottom: 1.6rem; position: relative; }
       .models div { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
       .models b { display: block; border-radius: 6px 6px 0 0; background: #c9d6ea; transition: background-color .3s ease, height .5s ease; }
       .models div.sel b { background: var(--tone); }
@@ -71,10 +75,11 @@
       .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; margin: 1rem 0 0; }
       .stats div { padding: .7rem .9rem; border-radius: 8px; background: var(--tone-soft); }
       .stats dt { font-family: "Public Sans", sans-serif; font-size: .85rem; color: var(--muted); }
-      .stats dd { margin: 0; font-size: 1.35rem; font-weight: 600; }
-      .jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
-      .jump a { padding: .45rem .9rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: .92rem; }
+      .stats dd { margin: 0; font-size: 1.15rem; font-weight: 600; }
+      .jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; }
+      .jump a { padding: .4rem .85rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: .9rem; }
       .jump a:hover { border-color: var(--accent); color: var(--accent); }
+      .jump a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
       /* credit sliders */
       .sliders { display: grid; gap: .5rem; }
       .sliders label { display: flex; justify-content: space-between; gap: 1rem; font-weight: 600; }
@@ -104,9 +109,9 @@
           <p class="eyebrow">Try it</p>
           <h1>Click through the results yourself.</h1>
           <p class="lede">
-            Small interactive demos of my projects. The numbers come from the finished analyses, except the made-up models in the credit-risk demo. Each case study has the full method.
+            Small interactive demos of my projects, one at a time. Pick one below. The numbers come from the finished analyses, except the made-up models in the credit-risk demo.
           </p>
-          <div class="jump">
+          <div class="jump" aria-label="Choose a demo">
             <a href="#speed">Speed and injury</a>
             <a href="#pharmacies">Pharmacy coverage</a>
             <a href="#housing">Housing models</a>
@@ -346,6 +351,22 @@
           flagged.value = presets[v][1];
           credit();
         });
+
+        // Show one demo at a time: the one named in the link (#housing etc.), or the first.
+        var ids = ["speed", "pharmacies", "housing", "credit"];
+        var tabs = document.querySelectorAll(".jump a");
+        function show(id) {
+          if (ids.indexOf(id) < 0) id = ids[0];
+          ids.forEach(function (k) { document.getElementById(k).classList.toggle("is-active", k === id); });
+          tabs.forEach(function (a) { a.setAttribute("aria-current", a.getAttribute("href") === "#" + id ? "true" : "false"); });
+        }
+        function fromHash() {
+          show(location.hash.replace("#", ""));
+          var jump = document.querySelector(".jump");
+          if (jump && location.hash) jump.scrollIntoView({ block: "start" });
+        }
+        window.addEventListener("hashchange", fromHash);
+        fromHash();
       })();
     </script>
   </body>
