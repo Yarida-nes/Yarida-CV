@@ -85,7 +85,7 @@ const children = [
   heading("Key Skills"),
   bullet([b("Data analysis: "), "R (tidyverse, sf, R Markdown), SQL, Python, Microsoft Excel"]),
   bullet([b("Statistics: "), "linear and logistic regression, hypothesis testing, confidence intervals, model evaluation (R², RMSE, ROC/AUC)"]),
-  bullet([b("Visualisation and BI: "), "Tableau (stories, dashboard actions, parameters), Power BI (dashboards), Excel"]),
+  bullet([b("Visualisation and BI: "), "Tableau (stories, dashboard actions, parameters), Power BI (dashboards)"]),
   bullet([b("GIS and spatial: "), "hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout"]),
   bullet([b("Digital marketing: "), "SEO, keyword research, copywriting, social media analytics, campaign performance reporting"]),
 
@@ -94,12 +94,12 @@ const children = [
   titleLine([b("Walking and Cycling Safety in Melbourne")], "Independent project, Oct 2026"),
   toolsLine("R (sf, dplyr, ggplot2), GIS, hot-spot analysis", "melbourne-crash.html"),
   bullet(["Analysed ", b("142,875 real Victorian injury crash records (2012–2025)"), ", focusing on 30,469 involving a pedestrian or cyclist."], true),
-  bullet(["Found statistically significant hot spots with Getis-Ord Gi* on a 1 km hexagon grid: ", b("49% of 2021–2025 crashes occur in 6% of the area"), "."], true),
-  bullet(["Showed a pedestrian's chance of serious injury or death rises from ", b("41% in 40 km/h zones to 65% in 80+ km/h zones"), " (95% confidence intervals, χ² trend test, p < 0.001)."]),
+  bullet(["Mapped statistically significant crash hot spots (Getis-Ord Gi*, 1 km hexagon grid): ", b("49% of 2021–2025 crashes occur in 6% of the area"), "."], true),
+  bullet(["Showed a pedestrian's chance of serious injury or death rises from ", b("41% in 40 km/h zones to 65% in 80+ km/h zones"), ", a pattern unlikely to be chance (p < 0.001)."]),
 
   titleLine([b("Published Research: Drugstore Access in Thailand")], "ACRS 2023, co-author"),
   toolsLine("GIS, nearest-neighbour analysis, network analysis, location-allocation", "drugstores.html"),
-  bullet(["My part: field survey (GPS), network analysis, service-area maps and writing. Mapped ", b("433 drugstores"), " and showed they cluster (Z = −19.71)."], true),
+  bullet(["My part: field survey (GPS), network analysis, service-area maps and writing. Mapped ", b("433 drugstores"), " and showed they are clustered rather than evenly spread (Z = −19.71)."], true),
   bullet(["Modelled coverage by road distance: adding 22 well-placed pharmacies raises coverage from ", b("199 to 417 of 511 villages"), "."], true),
   bullet(["Showed each participating pharmacist serves about ", b("13,451 people"), ", above the NHSO guideline of 10,000."]),
 
@@ -111,7 +111,7 @@ const children = [
 
   titleLine([b("Credit Risk Analysis")], "Curtin University, group of three, Oct 2025"),
   toolsLine("RStudio, R Markdown", "credit-risk.html"),
-  bullet(["Cleaned ", b("32,581 loan records to 28,578"), " (21.6% defaulted). My part: cleaning, charts, regression, write-up."]),
+  bullet(["Cleaned ", b("32,581 loan records down to 28,578"), " (21.6% of them defaulted). My part: cleaning, charts, regression, write-up."]),
   bullet("Built a logistic regression model with forward stepwise selection to predict loan default, evaluated with accuracy, sensitivity, specificity and ROC/AUC."),
 
   titleLine([b("Australian Housing Price Regression")], "Curtin University, May 2026"),
@@ -126,25 +126,25 @@ const children = [
 
   // ---- Experience ----
   heading("Work Experience"),
-  titleLine([b("Manager")], "September 2023 – Present"),
+  titleLine([b("Manager")], "Sep 2023 – Present"),
   titleLine([run("Six Senses Gourmet Thai, Leederville, Perth WA · Part-time", { color: GREY })], "", true),
   bullet("Track daily sales to identify best-selling dishes, and use this data to recommend new menu items to the owners."),
   bullet(["Helped lift the customer rating from ", b("3.6 to 4.0 stars"), " through menu and service improvements."]),
   bullet("Train and lead staff, coordinate daily workflow and stock, and resolve customer issues on the spot."),
 
-  titleLine([b("Digital Marketing Executive")], "September 2022 – September 2023"),
+  titleLine([b("Digital Marketing Executive")], "Sep 2022 – Sep 2023"),
   titleLine([run("Divana, Bangkok, Thailand · Full-time", { color: GREY })], "", true),
   bullet("Created SEO-focused content for the website (divanawellness.com), Instagram and digital marketing campaigns."),
   bullet("Researched keywords and customer interests to improve content relevance and online visibility."),
   bullet(["Tracked social media and campaign performance in ", b("Excel and Power BI"), " reports, using the results to plan which content to produce next."]),
 
-  titleLine([b("Data-Driven Marketing Intern")], "November 2022 – February 2023"),
+  titleLine([b("Data-Driven Marketing Intern")], "Nov 2022 – Feb 2023"),
   titleLine([run("Like Me X Co., Ltd. / Futureskill, Thailand · Remote", { color: GREY })], "", true),
   bullet(["Built ", b("Excel and Power BI dashboards"), " on online content and audience data to guide campaign planning."]),
   bullet("Reviewed campaign results and wrote reports with recommendations for the marketing team."),
   bullet("Researched online content trends and prepared short content for digital platforms."),
 
-  titleLine([b("Mapping and GIS Solution Intern")], "April 2022 – June 2022"),
+  titleLine([b("Mapping and GIS Solution Intern")], "Apr 2022 – Jun 2022"),
   titleLine([run("THIKNET Co., Ltd., Thailand", { color: GREY })], "", true),
   bullet(["Used ", b("SQL"), " to maintain location data for a commercial navigation and mapping product."]),
   bullet(["Updated road, route and turn-restriction records for ", b("every province in Thailand"), ", and added EV charging station locations."]),
@@ -152,9 +152,9 @@ const children = [
 
   // ---- Achievements ----
   heading("Achievements and Certifications"),
-  bullet([b("Google Data Analytics Professional Certificate"), ", Google / Coursera, 2026: completed the full program, covering data cleaning, analysis, visualisation, SQL, R and a capstone case study."]),
+  bullet([b("Google Data Analytics Professional Certificate"), ", Google / Coursera, 2026: completed the full programme, covering data cleaning, analysis, visualisation, SQL, R and a capstone case study."]),
   bullet([b("Conference presenter"), ", 8th Annual International Academic Conference on Education and Technology, May 2026: presented a Curtin sustainability student project, recognised in the Curtin Vice-Chancellor's communications."]),
-  bullet([b("NSO Data Camp 2023"), ", “Branding is All About Counting”, February 2023: data and business case study pitch using the Business Model Canvas."]),
+  bullet([b("NSO Data Camp 2023"), ", “Branding is All About Counting”, Feb 2023: data and business case study pitch using the Business Model Canvas."]),
 
   // ---- References ----
   heading("References"),
