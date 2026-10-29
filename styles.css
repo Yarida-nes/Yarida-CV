@@ -484,3 +484,26 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
   .topbar nav a { display: inline-block; padding: .35rem 0; font-size: .9rem; }
   .github-link { margin-left: auto; }
 }
+
+/* ── Taste review, round 2: home page only (28 Oct 2026) ─────────────────
+   Surfaces are told apart by a step in tone and by space, not by shadows,
+   outlines or rules. The sentence under the name is the second-largest text
+   on the first screen. Other pages are unchanged. */
+.home .topbar, .home .section, .home footer { border: 0; }
+.home .timeline, .home .capability-list { border: 0; }
+.home .timeline-item, .home .capability-list li { border: 0 !important; }
+.home .exp-grid, .home .edu-split { gap: 1.5rem 4rem; }
+.home .capability-list { gap: 0 4rem; }
+.home .timeline-item, .home .capability-list li { padding: 1.2rem 0; }
+.home .project-card, .home .project-card[data-tone] { border: 0; box-shadow: none; }
+.home .project-card[data-tone]:hover, .home .project-card[data-tone]:focus-within { box-shadow: none; background: #fbfcff; }
+.home .project-shot, .home .project-card[data-tone] .project-shot { border: 0; }
+.home .hero-proj img { border: 0; box-shadow: none; background: var(--surface); }
+.home .hero-proj:hover img, .home .hero-proj:focus-visible img { box-shadow: none; }
+.home .availability { max-width: 36ch; font-family: "Newsreader", Georgia, serif; font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.3; margin-top: 0; }
+.home .contact { padding: 3rem 0 3.5rem; }
+@media (max-width: 720px) {
+  .home .hero-projects { grid-template-columns: repeat(3, 1fr); gap: .5rem; width: 100%; }
+  .home .hero-proj span { font-size: .8125rem; }
+  .home .exp-grid, .home .edu-split { gap: 0; }
+}
