@@ -1,13 +1,14 @@
+/* Formal palette: deep claret accent on warm paper, neutral ink */
 :root {
-  --paper: #f7f6f2;
+  --paper: #f7f5f1;
   --surface: #ffffff;
-  --ink: #1a1f2b;
-  --signal: #1a1f2b;
-  --muted: #5a6170;
-  --line: #e4e1d9;
-  --accent: #2457c5;
-  --accent-strong: #1b4399;
-  --accent-soft: #e3ebfa;
+  --ink: #1d1a1b;
+  --signal: #1d1a1b;
+  --muted: #5d5759;
+  --line: #e3ddd6;
+  --accent: #7a2434;
+  --accent-strong: #5c1a27;
+  --accent-soft: #f3e5e7;
   color-scheme: light;
 }
 
@@ -506,4 +507,32 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
   .home .hero-projects { grid-template-columns: repeat(3, 1fr); gap: .5rem; width: 100%; }
   .home .hero-proj span { font-size: .8125rem; }
   .home .exp-grid, .home .edu-split { gap: 0; }
+}
+
+.home .project-card[data-tone]:hover, .home .project-card[data-tone]:focus-within { background: var(--surface); }
+
+/* Home projects as rows: picture left, words right */
+@media screen and (min-width: 861px) {
+  .home .project-grid { grid-template-columns: 1fr; gap: 0; }
+  .home .project-card[data-tone] {
+    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-areas: "shot top" "shot body"; grid-template-rows: auto 1fr;
+    column-gap: clamp(2rem, 4vw, 3.5rem); padding: 2.4rem 0;
+    background: transparent; border: 0; border-top: 1px solid var(--line); border-radius: 0; box-shadow: none;
+  }
+  .home .project-card[data-tone]:first-child { border-top: 0; padding-top: .6rem; }
+  .home .project-card[data-tone]:hover, .home .project-card[data-tone]:focus-within { transform: none; box-shadow: none; background: transparent; }
+  .home .project-card[data-tone] .card-top { grid-area: top; align-self: end; justify-content: flex-start; gap: 1rem; }
+  .home .project-card[data-tone] .project-shot { grid-area: shot; margin: 0; align-self: start; }
+  .home .project-card[data-tone] .project-body { grid-area: body; display: flex; flex-direction: column; }
+  .home .project-card[data-tone] .card-actions { margin-top: 0; padding-top: 1rem; }
+  .home .project-card[data-tone]:hover .project-shot { border-color: var(--accent); }
+}
+
+/* Phones: one header row with name, CV and GitHub */
+@media (max-width: 860px) {
+  html .topbar { display: flex; flex-wrap: nowrap; align-items: center; gap: 1rem; }
+  html .topbar nav { display: flex; margin-left: auto; gap: 0; }
+  html .topbar nav a:not([href$=".pdf"]) { display: none; }
+  html .topbar .wordmark { white-space: nowrap; }
 }

@@ -9,7 +9,7 @@
     />
     <title>Try it | Yarida Kaewthong</title>
     <meta name="author" content="Yarida Kaewthong" />
-    <meta name="theme-color" content="#f7f6f2" />
+    <meta name="theme-color" content="#f7f5f1" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="canonical" href="https://yarida-cv.vercel.app/try-it.html" />
@@ -67,7 +67,7 @@
       /* model bars */
       .models { display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem; align-items: end; height: 140px; padding-bottom: 1.6rem; position: relative; }
       .models div { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
-      .models b { display: block; border-radius: 6px 6px 0 0; background: #c9d6ea; transition: background-color .3s ease, height .5s ease; }
+      .models b { display: block; border-radius: 6px 6px 0 0; background: #e6cfd3; transition: background-color .3s ease, height .5s ease; }
       .models div.sel b { background: var(--tone); }
       .models em { font-style: normal; font-family: "DM Mono", monospace; font-size: .78rem; text-align: center; margin-bottom: .3rem; color: var(--muted); }
       .models div.sel em { color: var(--tone-ink); font-weight: 600; }
@@ -87,12 +87,13 @@
       .sliders input { width: 100%; margin-bottom: 1rem; accent-color: var(--tone); }
       .trend { display: flex; gap: .6rem; margin: 0 0 1.1rem; max-width: 460px; }
       .trend button { white-space: nowrap; }
-      .trend button { flex: 1; font: inherit; text-align: left; padding: .5rem .6rem .45rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--muted); }
+      .trend button { flex: 1; min-width: 0; font: inherit; text-align: left; padding: .5rem .6rem .45rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--muted); }
       .trend button b { display: block; font-size: 1.3rem; color: var(--ink); line-height: 1.1; }
       .trend button i { display: block; height: 6px; margin-top: .4rem; border-radius: 3px; background: var(--line); }
       .trend button i span { display: block; height: 100%; border-radius: 3px; background: var(--tone); }
       .trend button[aria-pressed="true"] { border-color: var(--tone); background: var(--tone-soft); color: var(--tone-ink); }
       .trend button[aria-pressed="true"] b { color: var(--tone-ink); }
+      @media (max-width: 420px) { .trend { gap: .4rem; } .trend button { padding: .45rem .45rem .4rem; } .trend button b { font-size: 1.1rem; } }
       .sowhat { margin: .9rem 0 0; padding: .6rem .8rem; border-left: 3px solid var(--tone); background: var(--paper); color: var(--ink); font-size: .97rem; }
       @media (max-width: 760px) { .demo-body { grid-template-columns: 1fr; } }
     </style>
