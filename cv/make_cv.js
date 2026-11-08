@@ -6,12 +6,13 @@
 //
 // private.json (never committed; see private.example.json) holds the phone
 // number and referees. Without it the build is always the public version.
+//
+// Layout: bold centred name, centred contact lines, claret uppercase section
+// headings over a black rule, "Title | Date" heads, grey italic organisation
+// lines and claret "Project:" links. Calibri 10 pt, A4.
 const fs = require("fs");
 const path = require("path");
-const {
-  Document, Packer, Paragraph, TextRun, ExternalHyperlink, AlignmentType, BorderStyle,
-  LevelFormat, PositionalTab, PositionalTabAlignment, PositionalTabRelativeTo, PositionalTabLeader,
-} = require("docx");
+const { Document, Packer, Paragraph, TextRun, ExternalHyperlink, AlignmentType, BorderStyle, LevelFormat } = require("docx");
 
 let PRIVATE = null;
 try { PRIVATE = JSON.parse(fs.readFileSync(path.join(__dirname, "private.json"), "utf8")); } catch {}
@@ -19,156 +20,150 @@ const ARGS = process.argv.slice(2).filter(a => !a.startsWith("--"));
 const PUBLIC = process.env.CV_PUBLIC === "1" || process.argv.includes("--public") || !PRIVATE;
 const OUT = ARGS[0] || path.join(__dirname, PUBLIC ? "Yarida_Kaewthong_CV_public.docx" : "Yarida_Kaewthong_CV_2026.docx");
 
-const NAVY = "10233F", TEAL = "0563C1", GREY = "555B66", BODY = 21;
-const FONT = "Calibri";
+const ACCENT = "7A2434", INK = "1A1A1A", GREY = "555555";
+const FONT = "Calibri", SZ = 20;   // 10 pt
 
-const run = (text, o = {}) => new TextRun({ text, font: FONT, size: o.size || BODY, bold: o.bold, italics: o.italics, color: o.color || "000000" });
-const link = (text, url) => new ExternalHyperlink({ link: url, children: [new TextRun({ text, font: FONT, size: BODY, color: TEAL, underline: {} })] });
-const sep = () => run(" | ");
+const run = (text, o = {}) => new TextRun({ text, font: FONT, size: SZ, color: INK, ...o });
+const link = (text, url, o = {}) => new ExternalHyperlink({ link: url, children: [run(text, { color: ACCENT, ...o })] });
+const bare = (u) => u.replace(/^https?:\/\/(www\.)?/, "").replace(/^mailto:/, "").replace(/\/$/, "");
+const SITE = "https://yarida-cv.vercel.app/";
 
+const center = (children, after = 0) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after }, children });
 const heading = (text) => new Paragraph({
   keepNext: true,
-  spacing: { before: 160, after: 60 },
-  border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: NAVY, space: 1 } },
-  children: [run(text.toUpperCase(), { size: 21, bold: true, color: NAVY })],
+  spacing: { before: 160, after: 80 },
+  border: { bottom: { style: BorderStyle.SINGLE, size: 10, color: INK, space: 1 } },
+  children: [run(text.toUpperCase(), { size: 24, bold: true, color: ACCENT, characterSpacing: 10 })],
+});
+const para = (children, after = 80) => new Paragraph({ spacing: { after }, children: Array.isArray(children) ? children : [run(children)] });
+const bullet = (text, last) => new Paragraph({
+  numbering: { reference: "bullets", level: 0 }, spacing: { after: last ? 100 : 20 }, children: [run(text)],
 });
 
-// Title on the left, date pushed to the right margin
-const titleLine = (left, right, sub) => new Paragraph({
-  spacing: { before: sub ? 0 : 80, after: sub ? 20 : 0 },
-  keepNext: true,
-  children: [
-    ...left,
-    new TextRun({ children: [new PositionalTab({ alignment: PositionalTabAlignment.RIGHT, relativeTo: PositionalTabRelativeTo.MARGIN, leader: PositionalTabLeader.NONE })] }),
-    run(right, { color: GREY }),
-  ],
-});
-
-const bullet = (parts, keepNext = false) => new Paragraph({
-  keepNext,
-  numbering: { reference: "bullets", level: 0 },
-  spacing: { after: 30 },
-  children: (Array.isArray(parts) ? parts : [parts]).map(p => typeof p === "string" ? run(p) : p),
-});
-const b = (t) => run(t, { bold: true });
-
-const plain = (children, after = 40) => new Paragraph({ spacing: { after }, children });
-
-// Tools line under a project title, with the link to its case study
-const toolsLine = (tools, page) => titleLine([run(tools + "  ·  ", { italics: true, color: GREY }),
-  link("yarida-cv.vercel.app/" + page, "https://yarida-cv.vercel.app/" + page)], "", true);
+// One entry: "Title | Date", grey italic line, note lines, "Project:" link, bullets
+const entry = ({ title, date, org, notes = [], page, bullets = [] }) => {
+  const out = [];
+  const tail = notes.length || page || bullets.length;
+  out.push(new Paragraph({ keepNext: true, spacing: { after: 0 },
+    children: [run(title, { bold: true }), ...(date ? [run(" | "), run(date, { bold: true, color: ACCENT })] : [])] }));
+  if (org) out.push(new Paragraph({ keepNext: !!tail, spacing: { after: tail ? 0 : 100 }, children: [run(org, { italics: true, color: GREY })] }));
+  notes.forEach((n, i) => out.push(new Paragraph({ keepNext: true,
+    spacing: { after: i === notes.length - 1 && !page && !bullets.length ? 100 : 0 }, children: [run(n)] })));
+  if (page) out.push(new Paragraph({ keepNext: true, spacing: { after: bullets.length ? 40 : 100 },
+    children: [run("Project: ", { color: ACCENT }), link(bare(SITE) + "/" + page, SITE + page)] }));
+  bullets.forEach((b, i) => out.push(bullet(b, i === bullets.length - 1)));
+  return out;
+};
 
 const children = [
   // ---- Header ----
-  new Paragraph({ spacing: { after: 0 }, children: [run("Yarida Kaewthong", { size: 40, bold: true, color: NAVY })] }),
-  new Paragraph({ spacing: { after: 20 }, children: [b("Master of Commerce | Artificial Intelligence and Business Analytics")] }),
-  new Paragraph({ spacing: { after: 0 }, children: [run("Perth, WA"), sep(), ...(PUBLIC ? [] : [run(PRIVATE.phone), sep()]),
-      link("nestyarida@gmail.com", "mailto:nestyarida@gmail.com")] }),
-  new Paragraph({ spacing: { after: 0 }, children: [run("Portfolio: "), link("https://yarida-cv.vercel.app/", "https://yarida-cv.vercel.app"), sep(),
-      run("LinkedIn: "), link("www.linkedin.com/in/yarida-kaewthong", "https://www.linkedin.com/in/yarida-kaewthong")] }),
-  new Paragraph({ spacing: { after: 60 }, children: [run("GitHub: "), link("https://github.com/Yarida-nes", "https://github.com/Yarida-nes")] }),
+  center([run("Yarida Kaewthong", { size: 44, bold: true, color: "111111" })], 60),
+  center([run("Perth, WA | "), ...(PUBLIC ? [] : [run(PRIVATE.phone + " | ")]),
+    link("nestyarida@gmail.com", "mailto:nestyarida@gmail.com"), run(" | Student visa (subclass 500)")]),
+  center([run("Portfolio: "), link("yarida-cv.vercel.app", "https://yarida-cv.vercel.app"), run(" | LinkedIn: "),
+    link("linkedin.com/in/yarida-kaewthong", "https://www.linkedin.com/in/yarida-kaewthong"), run(" | GitHub: "),
+    link("github.com/Yarida-nes", "https://github.com/Yarida-nes")], 40),
 
-  // ---- Profile ----
-  heading("Profile"),
-  plain([run("Data analytics student at Curtin University with a GIS background and a co-authored research paper (ACRS 2023). I work with R, SQL, Python, Tableau, Power BI and GIS, and most recently analysed 30,000+ real crash records to find where people walking and cycling are most at risk in Melbourne. Seeking an internship in data analytics, business intelligence or GIS.")]),
-
-  // ---- Education ----
-  heading("Education"),
-  titleLine([b("Master of Commerce (Artificial Intelligence and Business Analytics)")], "2025 – June 2027 (expected)"),
-  titleLine([b("Curtin University, Perth, Australia")], "", true),
-  bullet("Faculty of Business and Law Academic Performance Recognition, Semester 2, 2025"),
-  titleLine([b("Bachelor of Social Science, Major in Geography (First Class Honours)")], "2019 – 2022"),
-  titleLine([b("Kasetsart University, Thailand")], "", true),
-  bullet("Co-authored a GIS research paper presented at the 2023 Asian Conference on Remote Sensing (ACRS 2023)"),
+  // ---- Professional Summary ----
+  heading("Professional Summary"),
+  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I map data in GIS and R, and I test whether a pattern is real before I report it. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Several projects at yarida-cv.vercel.app have a live demo you can try. Seeking a data analytics, business intelligence or GIS internship in Perth, and graduate roles from July 2027."),
 
   // ---- Skills ----
-  heading("Key Skills"),
-  bullet([b("Data analysis: "), "R (tidyverse, sf, R Markdown), SQL, Python, Microsoft Excel"]),
-  bullet([b("Statistics: "), "linear and logistic regression, hypothesis testing, confidence intervals, model evaluation (R², RMSE, ROC/AUC)"]),
-  bullet([b("Visualisation and BI: "), "Tableau (stories, dashboard actions, parameters), Power BI (dashboards)"]),
-  bullet([b("GIS and spatial: "), "hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout"]),
-  bullet([b("Digital marketing: "), "SEO, keyword research, copywriting, social media analytics, campaign performance reporting"]),
+  heading("Skills"),
+  ...[
+    ["Programming and Data", "Python (APIs, Matplotlib), SQL, R (tidyverse, sf, R Markdown), Microsoft Excel."],
+    ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters), Power BI (dashboards)."],
+    ["Statistics", "Linear and logistic regression, hypothesis testing, confidence intervals, model evaluation (R², RMSE, ROC/AUC)."],
+    ["GIS and Spatial", "Hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
+    ["AI Tools", "ChatGPT and Gemini for drafting and testing code; an AI API for answering plain-English questions in an app."],
+  ].map(([n, d], i, all) => para([run(n + ": ", { bold: true }), run(d)], i === all.length - 1 ? 60 : 40)),
 
   // ---- Projects ----
   heading("Projects"),
-  titleLine([b("Walking and Cycling Safety in Melbourne")], "Independent project, Oct 2026"),
-  toolsLine("R (sf, dplyr, ggplot2), GIS, hot-spot analysis", "melbourne-crash.html"),
-  bullet(["Analysed ", b("142,875 real Victorian injury crash records (2012–2025)"), ", focusing on 30,469 involving a pedestrian or cyclist."], true),
-  bullet(["Mapped statistically significant crash hot spots (Getis-Ord Gi*, 1 km hexagon grid): ", b("49% of 2021–2025 crashes occur in 6% of the area"), "."], true),
-  bullet(["Showed a pedestrian's chance of serious injury or death rises from ", b("41% in 40 km/h zones to 65% in 80+ km/h zones"), ", a pattern unlikely to be chance (p < 0.001)."]),
+  ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), GIS, hot-spot analysis",
+    page: "melbourne-crash.html", bullets: [
+    "Analysed 142,875 Victorian crash records in R and GIS to find where and when people walking and cycling in Melbourne are most at risk.",
+    "Found that half of the pedestrian and cyclist crashes from 2021 to 2025 fell in just 6% of the area, so councils know where to act first.",
+    "Showed pedestrians are far more likely to be seriously hurt on faster roads (41% at 40 km/h against 65% at 80+ km/h) and on unlit roads, and recommended 40 km/h zones, separated bike lanes and better lighting.",
+  ] }),
+  ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
+    "Built an interactive Tableau Story of three linked dashboards on ESG and financial data for 8 Asia-Pacific markets, 2010 to 2024.",
+    "Found that higher ESG scores barely relate to profitability, so a strong rating alone is a weak guide for investors.",
+    "Wrote a business analyst report with recommendations for firms, investors and regulators.",
+  ] }),
+  ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
+    "Built a Python app that pulls live five-day forecasts from the OpenWeatherMap API and turns them into daily summaries and charts.",
+    "Added plain-English questions, such as \"Will it rain tomorrow in Perth?\", answered by an AI API from the same forecast data.",
+    "Used ChatGPT and Gemini to draft and test the code, and logged the AI conversations as a record of how it was built.",
+  ] }),
+  ...entry({ title: "Credit Risk Analysis", date: "Oct 2025", org: "Curtin University, group of three | RStudio, R Markdown", page: "credit-risk.html", bullets: [
+    "Cleaned a 32,581-row loan dataset in R and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
+    "Built an income regression and flagged a predictor calculated from income itself, so its effect should not be over-read.",
+    "Built a logistic regression model with forward stepwise selection to predict loan default, evaluated with accuracy, sensitivity, specificity and ROC/AUC.",
+  ] }),
+  ...entry({ title: "Australian Housing Price Regression", date: "May 2026", org: "Curtin University, individual project | RStudio, R Markdown", page: "housing.html", bullets: [
+    "Compared five regression models of house price growth across five Australian states, and chose the one with the best balance of accuracy and simplicity.",
+    "Found the COVID-19 period added about 2.6 percentage points to quarterly price growth, while household income and election years made no clear difference.",
+  ] }),
+  ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author, ACRS 2023 | GIS, network analysis, location-allocation",
+    page: "drugstores.html", bullets: [
+    "Co-authored a peer-reviewed conference paper: took part in the GPS field survey, ran the network analysis and helped make the service-area maps.",
+    "Showed only 199 of 511 villages were within reach of a pharmacy in the medicine pick-up scheme, and that 22 more well-placed pharmacies would more than double that.",
+  ] }),
 
-  titleLine([b("Published Research: Drugstore Access in Thailand")], "ACRS 2023, co-author"),
-  toolsLine("GIS, nearest-neighbour analysis, network analysis, location-allocation", "drugstores.html"),
-  bullet(["My part: field survey (GPS), network analysis, service-area maps and writing. Mapped ", b("433 drugstores"), " and showed they are clustered rather than evenly spread (Z = −19.71)."], true),
-  bullet(["Modelled coverage by road distance: adding 22 well-placed pharmacies raises coverage from ", b("199 to 417 of 511 villages"), "."], true),
-  bullet(["Showed each participating pharmacist serves about ", b("13,451 people"), ", above the NHSO guideline of 10,000."]),
+  // ---- Relevant Experience ----
+  heading("Relevant Experience"),
+  ...entry({ title: "Digital Marketing Executive", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
+    "Tracked campaign performance in Excel and Power BI reports, and used the results to decide what content to make next.",
+    "Wrote SEO-focused content for divanawellness.com and Instagram, based on keyword and customer-interest research.",
+  ] }),
+  ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand | Remote", bullets: [
+    "Built Excel and Power BI dashboards on content and audience data that the marketing team used to plan campaigns.",
+    "Reviewed campaign results and wrote reports with recommendations for the marketing team.",
+  ] }),
+  ...entry({ title: "Mapping and GIS Solution Intern", date: "Apr 2022 – Jun 2022", org: "THIKNET Co., Ltd., Thailand", bullets: [
+    "Used SQL to maintain location data for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
+    "Checked every record against its source before committing it, because one wrong point can send a driver the wrong way.",
+  ] }),
 
-  titleLine([b("ESG and Financial Analytics, Asia-Pacific")], "Curtin University, May 2026"),
-  toolsLine("Tableau", "esg.html"),
-  bullet(["Built a Tableau Story of three linked dashboards on ", b("16,752 company-year records across 8 Asia-Pacific markets"), ", using parameters, dashboard actions and forecasting."]),
-  bullet(["Found average ESG scores rose from 36.5 to 43.7 (2010–2024), with China more than doubling from ", b("20.7 to 44.4"), "."]),
-  bullet("Wrote a business analyst report with recommendations on ESG, governance and financial performance."),
+  // ---- Education ----
+  heading("Education"),
+  ...entry({ title: "Master of Commerce (Artificial Intelligence and Business Analytics)", date: "2025 – Present",
+    org: "Curtin University, Perth, Australia", notes: ["Expected graduation: June 2027"] }),
+  ...entry({ title: "Bachelor of Social Science", date: "2019 – 2022", org: "Kasetsart University, Thailand", notes: [
+    "Major: Geography | First Class Honours",
+  ] }),
 
-  titleLine([b("Credit Risk Analysis")], "Curtin University, group of three, Oct 2025"),
-  toolsLine("RStudio, R Markdown", "credit-risk.html"),
-  bullet(["Cleaned ", b("32,581 loan records down to 28,578"), " (21.6% of them defaulted). My part: cleaning, charts, regression, write-up."]),
-  bullet("Built a logistic regression model with forward stepwise selection to predict loan default, evaluated with accuracy, sensitivity, specificity and ROC/AUC."),
-
-  titleLine([b("Australian Housing Price Regression")], "Curtin University, May 2026"),
-  toolsLine("RStudio, R Markdown", "housing.html"),
-  bullet(["Built five regression models of housing price growth using macroeconomic, seasonal and COVID-19 variables, and compared them on adjusted R², RMSE and MAE; adjusted R² improved from ", b("0.049 to 0.238"), "."]),
-  bullet(["Found COVID-19 was the largest single effect (", b("+2.63 percentage points"), " of quarterly growth, p < 0.001), and rejected a fifth model because adjusted R² fell."]),
-
-  titleLine([b("WeatherWise: Python Weather Advisor")], "Curtin University, Oct 2025"),
-  toolsLine("Python, OpenWeatherMap API, Matplotlib", "weatherwise.html"),
-  bullet(["Built a console weather advisor that pulls a five-day forecast from the OpenWeatherMap API and summarises ", b("40 three-hourly readings into 5 daily"), " highs, lows and rainfall totals."]),
-  bullet("Charted temperature and rainfall with Matplotlib and passed plain-English questions to a language model."),
-
-  // ---- Experience ----
+  // ---- Work Experience ----
   heading("Work Experience"),
-  titleLine([b("Manager")], "Sep 2023 – Present"),
-  titleLine([run("Six Senses Gourmet Thai, Leederville, Perth WA · Part-time", { color: GREY })], "", true),
-  bullet("Track daily sales to identify best-selling dishes, and use this data to recommend new menu items to the owners."),
-  bullet(["Helped lift the customer rating from ", b("3.6 to 4.0 stars"), " through menu and service improvements."]),
-  bullet("Train and lead staff, coordinate daily workflow and stock, and resolve customer issues on the spot."),
-
-  titleLine([b("Digital Marketing Executive")], "Sep 2022 – Sep 2023"),
-  titleLine([run("Divana, Bangkok, Thailand · Full-time", { color: GREY })], "", true),
-  bullet("Created SEO-focused content for the website (divanawellness.com), Instagram and digital marketing campaigns."),
-  bullet("Researched keywords and customer interests to improve content relevance and online visibility."),
-  bullet(["Tracked social media and campaign performance in ", b("Excel and Power BI"), " reports, using the results to plan which content to produce next."]),
-
-  titleLine([b("Data-Driven Marketing Intern")], "Nov 2022 – Feb 2023"),
-  titleLine([run("Like Me X Co., Ltd. / Futureskill, Thailand · Remote", { color: GREY })], "", true),
-  bullet(["Built ", b("Excel and Power BI dashboards"), " on online content and audience data to guide campaign planning."]),
-  bullet("Reviewed campaign results and wrote reports with recommendations for the marketing team."),
-  bullet("Researched online content trends and prepared short content for digital platforms."),
-
-  titleLine([b("Mapping and GIS Solution Intern")], "Apr 2022 – Jun 2022"),
-  titleLine([run("THIKNET Co., Ltd., Thailand", { color: GREY })], "", true),
-  bullet(["Used ", b("SQL"), " to maintain location data for a commercial navigation and mapping product."]),
-  bullet(["Updated road, route and turn-restriction records for ", b("every province in Thailand"), ", and added EV charging station locations."]),
-  bullet("Checked every record against its source before committing, since a wrong point sends drivers the wrong way."),
+  ...entry({ title: "Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
+    "Track daily sales to spot best-selling dishes and suggest new menu items, part of the menu and service changes that helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
+    "Train and lead around 5 staff per shift, and handle stock and customer issues on the spot.",
+  ] }),
 
   // ---- Achievements ----
   heading("Achievements and Certifications"),
-  bullet([b("Google Data Analytics Professional Certificate"), ", Google / Coursera, 2026: completed the full programme, covering data cleaning, analysis, visualisation, SQL, R and a capstone case study."]),
-  bullet([b("Conference presenter"), ", 8th Annual International Academic Conference on Education and Technology, May 2026: presented a Curtin sustainability student project, recognised in the Curtin Vice-Chancellor's communications."]),
-  bullet([b("NSO Data Camp 2023"), ", “Branding is All About Counting”, Feb 2023: data and business case study pitch using the Business Model Canvas."]),
+  bullet("Google Data Analytics Professional Certificate, Google / Coursera, 2026."),
+  bullet("Conference presenter, 8th Annual International Academic Conference on Education and Technology, May 2026: presented a Curtin sustainability student project, recognised in the Curtin Vice-Chancellor's communications."),
+  bullet("NSO Data Camp, Feb 2023: \"Branding is All About Counting\", a data and business case pitch.", true),
 
   // ---- References ----
   heading("References"),
-  ...(PUBLIC ? [plain([run("Available on request.", { color: GREY })], 0)] :
-    PRIVATE.referees.map((r, i, all) => plain([b(r.name), run(", " + r.role + " · "), run(r.contact, { color: GREY })], i === all.length - 1 ? 0 : 40))),
+  ...(PUBLIC ? [para("Available on request.", 0)] :
+    PRIVATE.referees.flatMap((r, i, all) => [
+      new Paragraph({ keepNext: true, spacing: { after: 0 }, children: [run(r.name, { bold: true })] }),
+      new Paragraph({ keepNext: true, spacing: { after: 0 }, children: [run(r.role, { italics: true, color: GREY })] }),
+      para(r.contact, i === all.length - 1 ? 0 : 100),
+    ])),
 ];
 
 const doc = new Document({
   creator: "Yarida Kaewthong",
   title: "Yarida Kaewthong CV",
-  styles: { default: { document: { run: { font: FONT, size: 20 } } } },
+  styles: { default: { document: { run: { font: FONT, size: SZ, color: INK }, paragraph: { spacing: { line: 240 } } } } },
   numbering: { config: [{ reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT,
-    style: { paragraph: { indent: { left: 360, hanging: 360 } } } }] }] },
-  sections: [{ properties: { page: { margin: { top: 600, bottom: 600, left: 1020, right: 1020 } } }, children }],
+    style: { paragraph: { indent: { left: 300, hanging: 200 } } } }] }] },
+  sections: [{ properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 624, bottom: 624, left: 850, right: 850 } } }, children }],
 });
 
 Packer.toBuffer(doc).then(buf => {
