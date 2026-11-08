@@ -30,7 +30,19 @@ powershell -ExecutionPolicy Bypass -File topdf.ps1
 ```
 
 The public PDF lands at the repo root as `Yarida-Kaewthong-CV.pdf`; commit and push it
-to update the website's download. The private PDF goes to the Desktop "Yarida CV" folder.
+to update the website's download. Both PDFs are also placed in the Desktop folder
+`Yarida CV\1 Current CV`, which is the folder to attach from when applying.
+
+## Where the other CV files live
+
+Everything outside this repo sits in `Desktop\Yarida CV`:
+
+| Folder | Contents |
+| --- | --- |
+| `1 Current CV` | The two latest PDFs (private and public) |
+| `2 Applications` | One subfolder per job applied for, with the CV and cover letter sent |
+| `3 Old versions` | Earlier CVs and drafts, kept for reference |
+| `4 Website work` | Charts, screenshots and planning notes for the website |
 
 ## Rules for editing the text
 
