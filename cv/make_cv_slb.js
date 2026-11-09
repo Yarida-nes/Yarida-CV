@@ -37,7 +37,7 @@ const heading = (text) => new Paragraph({
 });
 const para = (children, after = 80) => new Paragraph({ spacing: { after }, children: Array.isArray(children) ? children : [run(children)] });
 const bullet = (text, last) => new Paragraph({
-  numbering: { reference: "bullets", level: 0 }, spacing: { after: last ? 100 : 20 }, children: [run(text)],
+  numbering: { reference: "bullets", level: 0 }, spacing: { after: last ? 80 : 10 }, children: [run(text)],
 });
 
 // One entry: "Title | Date", grey italic line, note lines, "Project:" link, bullets
@@ -82,16 +82,16 @@ const children = [
   // ---- Relevant Experience ----
   heading("Relevant Experience"),
   ...entry({ title: "Marketing Data Analyst", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
-    "Tracked revenue and sales for all 18 Divana branches, cleaning the data in Excel and Python so every branch could be compared on the same basis.",
+    "Tracked revenue and sales for all 18 Divana branches in Excel and Power BI, cleaning the data in Excel and Python so every branch could be compared on the same basis.",
     "Compared sales of 23 products and found one was especially popular with a specific age group, then recommended the marketing team build a campaign aimed at that group.",
-    "Built Excel and Power BI reports with recommendations that guided what the marketing team produced next.",
   ] }),
   ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand", bullets: [
     "Analysed audience data in Facebook Ads and tracked campaign results in Excel.",
     "Ran A/B tests on different marketing posts and reported which content suited each type of customer, so the team could match each post to the right audience.",
   ] }),
   ...entry({ title: "Mapping and GIS Solution Intern", date: "Apr 2022 – Jun 2022", org: "THIKNET Co., Ltd., Thailand", bullets: [
-    "Maintained location data in SQL and ArcGIS for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
+    "Mapped EV charging stations on main roads in all 77 provinces of Thailand in ArcGIS and SQL for a navigation product.",
+    "Found about 80% of charging stations were in central Thailand, meaning drivers elsewhere had few places to charge.",
     "Checked every record against its source before committing it, because one wrong point can send a driver the wrong way.",
   ] }),
 
@@ -149,10 +149,8 @@ const children = [
   // ---- References ----
   heading("References"),
   ...(PUBLIC ? [para("Available on request.", 0)] :
-    PRIVATE.referees.flatMap((r, i, all) => [
-      new Paragraph({ keepNext: true, spacing: { after: 0 }, children: [run(r.name, { bold: true })] }),
-      para([run(r.role + " | ", { italics: true, color: GREY }), run(r.contact)], i === all.length - 1 ? 0 : 60),
-    ])),
+    PRIVATE.referees.map((r, i, all) =>
+      para([run(r.name, { bold: true }), run(", " + r.role + " | ", { color: GREY }), run(r.contact)], i === all.length - 1 ? 0 : 40))),
 ];
 
 const doc = new Document({
