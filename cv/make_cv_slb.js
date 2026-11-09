@@ -87,8 +87,8 @@ const children = [
     "Recommended three targeted fixes (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money on the few areas where most crashes happen.",
   ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
-    "Built three linked Tableau dashboards on 15 years of ESG and financial data for 8 Asia-Pacific markets, and found average ESG scores rose by about a fifth, with China more than doubling.",
-    "Measured how ESG score relates to return on assets, showing ESG explains only about 2% of the difference in profit between firms, meaning a high ESG rating alone is a poor sign of a more profitable company.",
+    "Measured how ESG score relates to return on assets across 8 Asia-Pacific markets, and found ESG explains only about 2% of the difference in profit between firms, so a high ESG rating alone is a poor guide to profitability.",
+    "Built three linked Tableau dashboards on 15 years of ESG and financial data, showing average ESG scores rose by about a fifth, with China more than doubling.",
     "Wrote a business analyst report with recommendations for firms, investors and regulators, so investors compare ESG scores under one reporting standard (ISSB) instead of ratings that differ by market.",
   ] }),
   ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
@@ -97,18 +97,15 @@ const children = [
   ] }),
   ...entry({ title: "Credit Risk Analysis", date: "Oct 2025", org: "Curtin University, group of three | RStudio, R Markdown", page: "credit-risk.html", bullets: [
     "Cleaned a 32,581-row loan dataset in R and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
-    "Modelled borrower income with backward stepwise regression, and flagged a predictor calculated from income itself, meaning its large effect is misleading and should not drive lending decisions.",
-    "Trained a logistic regression model to predict loan default, evaluated on accuracy, sensitivity and ROC/AUC, so a lender can see which borrower details signal risk before approving a loan.",
+    "Trained a logistic regression model to predict loan default, reaching an AUC of 0.85 on unseen test data, so a lender can see which borrower details signal risk before approving a loan.",
   ] }),
   ...entry({ title: "Australian Housing Price Regression", date: "May 2026", org: "Curtin University, individual project | RStudio, R Markdown", page: "housing.html", bullets: [
     "Analysed quarterly data for five Australian states (2014 to 2025) in R to find what drives house price growth: interest rates, inflation, migration and the COVID-19 period all mattered, while household income did not.",
-    "Compared five nested regression models, showing the COVID-19 period added about 2.6 percentage points to quarterly price growth, meaning the pandemic, not election years, explains the 2020 to 2021 jump.",
-    "Selected the model with the best balance of accuracy and simplicity, so the forecast relies only on factors that actually move prices.",
+    "Compared five nested regression models and found the COVID-19 period added about 2.6 percentage points to quarterly price growth, while election years made no difference.",
   ] }),
   ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | GIS, network analysis, location-allocation",
     page: "drugstores.html", bullets: [
     "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and GIS network analysis of 433 drugstores, and found only 199 villages could reach a pharmacy in the medicine pick-up scheme.",
-    "Identified with nearest-neighbour analysis that the drugstores cluster along main roads near two hub hospitals, meaning outer villages are left without nearby access.",
     "Located 22 new pharmacy sites with location-allocation that would bring 417 villages within reach, so health planners have a ready shortlist of where to add pharmacies.",
   ] }),
 
