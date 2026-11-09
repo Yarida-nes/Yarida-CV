@@ -81,7 +81,7 @@ const children = [
 
   // ---- Relevant Experience ----
   heading("Relevant Experience"),
-  ...entry({ title: "Digital Marketing Executive", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
+  ...entry({ title: "Marketing Data Analyst", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
     "Tracked revenue and sales for all 18 Divana branches, cleaning the data in Excel and Python so every branch could be compared on the same basis.",
     "Compared sales of 23 products and found one was especially popular with a specific age group, then recommended the marketing team build a campaign aimed at that group.",
     "Built Excel and Power BI reports and wrote recommendations for the marketing team, using the results to decide what content to produce next.",
