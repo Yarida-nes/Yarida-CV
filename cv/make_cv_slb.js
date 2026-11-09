@@ -84,14 +84,14 @@ const children = [
   ...entry({ title: "Marketing Data Analyst", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
     "Tracked revenue and sales for all 18 Divana branches, cleaning the data in Excel and Python so every branch could be compared on the same basis.",
     "Compared sales of 23 products and found one was especially popular with a specific age group, then recommended the marketing team build a campaign aimed at that group.",
-    "Built Excel and Power BI reports and wrote recommendations for the marketing team, using the results to decide what content to produce next.",
+    "Built Excel and Power BI reports with recommendations that guided what the marketing team produced next.",
   ] }),
-  ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand | Remote", bullets: [
-    "Built Excel and Power BI dashboards on content and audience data that the marketing team used to plan campaigns.",
-    "Reviewed campaign results and wrote reports with recommendations for the marketing team.",
+  ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand", bullets: [
+    "Analysed audience data in Facebook Ads and tracked campaign results in Excel.",
+    "Ran A/B tests on different marketing posts and reported which content suited each type of customer, so the team could match each post to the right audience.",
   ] }),
   ...entry({ title: "Mapping and GIS Solution Intern", date: "Apr 2022 – Jun 2022", org: "THIKNET Co., Ltd., Thailand", bullets: [
-    "Maintained location data in SQL for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
+    "Maintained location data in SQL and ArcGIS for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
     "Checked every record against its source before committing it, because one wrong point can send a driver the wrong way.",
   ] }),
 
