@@ -79,6 +79,21 @@ const children = [
     ["Communication", "Analyst reports, conference presentations, explaining data to non-technical people."],
   ].map(([n, d], i, all) => para([run(n + ": ", { bold: true }), run(d)], i === all.length - 1 ? 60 : 40)),
 
+  // ---- Relevant Experience ----
+  heading("Relevant Experience"),
+  ...entry({ title: "Digital Marketing Executive", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
+    "Tracked campaign performance in Excel and Power BI reports, and used the results to decide what content to make next.",
+    "Wrote SEO-focused content for divanawellness.com and Instagram, based on keyword and customer-interest research.",
+  ] }),
+  ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand | Remote", bullets: [
+    "Built Excel and Power BI dashboards on content and audience data that the marketing team used to plan campaigns.",
+    "Reviewed campaign results and wrote reports with recommendations for the marketing team.",
+  ] }),
+  ...entry({ title: "Mapping and GIS Solution Intern", date: "Apr 2022 – Jun 2022", org: "THIKNET Co., Ltd., Thailand", bullets: [
+    "Maintained location data in SQL for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
+    "Checked every record against its source before committing it, because one wrong point can send a driver the wrong way.",
+  ] }),
+
   // ---- Projects ----
   heading("Projects"),
   ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), QGIS, hot-spot analysis",
@@ -108,21 +123,6 @@ const children = [
     page: "drugstores.html", bullets: [
     "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and ArcGIS network analysis of 433 drugstores, and found only 199 villages could reach a pharmacy in the medicine pick-up scheme.",
     "Located 22 new pharmacy sites with location-allocation that would bring 417 villages within reach, so health planners have a ready shortlist of where to add pharmacies.",
-  ] }),
-
-  // ---- Relevant Experience ----
-  heading("Relevant Experience"),
-  ...entry({ title: "Digital Marketing Executive", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
-    "Tracked campaign performance in Excel and Power BI reports, and used the results to decide what content to make next.",
-    "Wrote SEO-focused content for divanawellness.com and Instagram, based on keyword and customer-interest research.",
-  ] }),
-  ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand | Remote", bullets: [
-    "Built Excel and Power BI dashboards on content and audience data that the marketing team used to plan campaigns.",
-    "Reviewed campaign results and wrote reports with recommendations for the marketing team.",
-  ] }),
-  ...entry({ title: "Mapping and GIS Solution Intern", date: "Apr 2022 – Jun 2022", org: "THIKNET Co., Ltd., Thailand", bullets: [
-    "Maintained location data in SQL for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
-    "Checked every record against its source before committing it, because one wrong point can send a driver the wrong way.",
   ] }),
 
   // ---- Education ----
