@@ -146,8 +146,7 @@ const children = [
   // ---- Achievements ----
   heading("Achievements and Certifications"),
   bullet("Google Data Analytics Professional Certificate, Google / Coursera, 2026."),
-  bullet("Conference presenter, 8th Annual International Academic Conference on Education and Technology, May 2026: presented a Curtin sustainability student project, recognised in the Curtin Vice-Chancellor's communications."),
-  bullet("NSO Data Camp, Feb 2023: \"Branding is All About Counting\", a data and business case pitch.", true),
+  bullet("Conference presenter, 8th Annual International Academic Conference on Education and Technology, May 2026: presented a Curtin sustainability student project, recognised in the Curtin Vice-Chancellor's communications.", true),
 
   // ---- References ----
   heading("References"),
