@@ -67,22 +67,23 @@ const children = [
 
   // ---- Professional Summary ----
   heading("Professional Summary"),
-  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I work with data in R, Python and SQL, map it in GIS, and test whether a pattern is real before I report it. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Several projects at yarida-cv.vercel.app have a live demo you can try. Seeking an IT and digital internship in Perth, and graduate roles from July 2027."),
+  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I work with data in R, Python and SQL, map it in QGIS and ArcGIS, and test whether a pattern is real before I report it. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Several projects at yarida-cv.vercel.app have a live demo you can try. Seeking an IT and digital internship in Perth, and graduate roles from July 2027."),
 
   // ---- Skills ----
   heading("Skills"),
   ...[
-    ["Programming and Data", "Python (APIs, Matplotlib), SQL, R (tidyverse, sf, R Markdown), Microsoft Excel."],
-    ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters), Power BI (dashboards)."],
-    ["Statistics", "Linear and logistic regression, hypothesis testing, confidence intervals, model evaluation (R squared, RMSE, ROC/AUC)."],
-    ["GIS and Spatial", "Hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
+    ["Programming and Data", "Python (APIs, Matplotlib), SQL, R (tidyverse, sf, ggplot2, R Markdown), Microsoft Excel, data cleaning and validation."],
+    ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, time-series trend and seasonal analysis, model comparison (R squared, RMSE, MAE, ROC/AUC)."],
+    ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters, forecasting), Power BI (dashboards, DAX)."],
+    ["GIS and Spatial", "QGIS and ArcGIS, hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
+    ["Communication", "Analyst reports, conference presentations, explaining data to non-technical people."],
   ].map(([n, d], i, all) => para([run(n + ": ", { bold: true }), run(d)], i === all.length - 1 ? 60 : 40)),
 
   // ---- Projects ----
   heading("Projects"),
-  ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), GIS, hot-spot analysis",
+  ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), QGIS, hot-spot analysis",
     page: "melbourne-crash.html", bullets: [
-    "Mapped 142,875 Victorian crash records (2012 to 2025) with hot-spot analysis in R and GIS, and found that half of the 2021 to 2025 pedestrian and cyclist crashes happened in just 6% of metro Melbourne.",
+    "Mapped 142,875 Victorian crash records (2012 to 2025) with hot-spot analysis in R and QGIS, and found that half of the 2021 to 2025 pedestrian and cyclist crashes happened in just 6% of metro Melbourne.",
     "Tested injury severity across speed zones with a chi-square trend test, showing pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), meaning the risk rises with speed and is not due to chance.",
     "Recommended three targeted fixes (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money on the few areas where most crashes happen.",
   ] }),
@@ -103,9 +104,9 @@ const children = [
     "Analysed quarterly data for five Australian states (2014 to 2025) in R to find what drives house price growth: interest rates, inflation, migration and the COVID-19 period all mattered, while household income did not.",
     "Compared five nested regression models and found the COVID-19 period added about 2.6 percentage points to quarterly price growth, while election years made no difference.",
   ] }),
-  ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | GIS, network analysis, location-allocation",
+  ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | ArcGIS, network analysis, location-allocation",
     page: "drugstores.html", bullets: [
-    "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and GIS network analysis of 433 drugstores, and found only 199 villages could reach a pharmacy in the medicine pick-up scheme.",
+    "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and ArcGIS network analysis of 433 drugstores, and found only 199 villages could reach a pharmacy in the medicine pick-up scheme.",
     "Located 22 new pharmacy sites with location-allocation that would bring 417 villages within reach, so health planners have a ready shortlist of where to add pharmacies.",
   ] }),
 
