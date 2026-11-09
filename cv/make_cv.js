@@ -67,7 +67,7 @@ const children = [
 
   // ---- Professional Summary ----
   heading("Professional Summary"),
-  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I analyse data in R, Python and SQL, map it in QGIS and ArcGIS and present it in Tableau and Power BI, and I test whether a pattern is real before I report it. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Several projects at yarida-cv.vercel.app have a live demo you can try. Seeking a data analytics, business intelligence or GIS internship in Perth, and graduate roles from July 2027."),
+  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I analyse data in R, Python and SQL, map it in QGIS and ArcGIS and present it in Tableau and Power BI, and I test whether a pattern is real before I report it. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Seeking a data analytics, business intelligence or GIS internship in Perth, and graduate roles from July 2027."),
 
   // ---- Skills ----
   heading("Skills"),
@@ -138,7 +138,7 @@ const children = [
   heading("Work Experience"),
   ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
     "Track daily sales to spot best-selling dishes and suggest new menu items, part of the menu and service changes that helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
-    "Train and lead around 5 staff per shift, and explain decisions clearly to people without time for the detail.",
+    "Train and lead around 5 staff per shift, coordinating daily workflow and stock and resolving customer issues on the spot.",
   ] }),
 
   // ---- Achievements ----
