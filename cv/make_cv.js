@@ -82,7 +82,7 @@ const children = [
   // ---- Relevant Experience ----
   heading("Relevant Experience"),
   ...entry({ title: "Marketing Data Analyst", date: "Sep 2022 – Sep 2023", org: "Divana, Bangkok, Thailand | Full-time", bullets: [
-    "Tracked revenue and sales for all 18 Divana branches in Excel and Power BI, cleaning the data in Excel and Python so every branch could be compared on the same basis.",
+    "Tracked revenue and sales for all 18 Divana branches in Excel and Power BI (DAX), cleaning the data in Excel and Python so every branch could be compared on the same basis.",
     "Compared sales of 23 products and found one was especially popular with a specific age group, then recommended a campaign aimed at that group, which lifted the product's sales by about 38% within 3 months.",
   ] }),
   ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand", bullets: [
