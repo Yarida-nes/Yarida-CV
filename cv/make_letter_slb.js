@@ -9,12 +9,11 @@ const link = (text, url) => new ExternalHyperlink({ link: url, children: [run(te
 const p = (children, after = 200) => new Paragraph({ spacing: { after, line: 276 }, children: Array.isArray(children) ? children : [run(children)] });
 
 const body = [
-  "I am applying for SLB's Early Careers IT & Digital Internship in Perth. [your reason: one sentence on why SLB or this internship]",
+  "I am applying for SLB's Early Careers IT & Digital Internship in Perth. I want to apply my GIS and data analysis skills in the energy industry, where location data matters as much as it did when I mapped EV charging stations across Thailand.",
   "The internship is open to students in data analytics, data science and related fields. I am studying a Master of Commerce (Artificial Intelligence and Business Analytics) at Curtin University, after a geography degree with First Class Honours.",
-  "Most of my recent work is with data. In my own project on Melbourne road safety, I analysed 142,875 crash records in R and GIS and found that half of the pedestrian and cyclist crashes from 2021 to 2025 fell in just 6% of the area. For an ESG unit, I built a Tableau Story of three linked dashboards across 8 Asia-Pacific markets and wrote a report with recommendations for firms, investors and regulators.",
-  "On the technical side, I built WeatherWise in Python, an app that pulls live forecasts from the OpenWeatherMap API and answers plain-English questions through an AI API. Before Curtin, I used SQL at THIKNET to maintain location data for a commercial navigation product, checking every record against its source before committing it.",
-  "I also co-authored a GIS research paper presented at ACRS 2023, and I manage a restaurant team part-time in Leederville.",
-  "I hold an Australian Student visa (subclass 500). My projects are at yarida-cv.vercel.app, and several have a live demo. I would welcome the chance to talk about the internship.",
+  "As a Marketing Data Analyst at Divana, I tracked revenue and sales for 18 branches, cleaned the data in Excel and Python, and compared 23 products. One product was especially popular with a specific age group, and the campaign I recommended for that group lifted its sales by about 38% within 3 months. At THIKNET, I mapped EV charging stations on main roads in all 77 provinces of Thailand in ArcGIS and SQL, and found about 80% were in central Thailand.",
+  "In my own project on Melbourne road safety, I analysed 142,875 crash records in R and QGIS and found that half of the pedestrian and cyclist crashes from 2021 to 2025 happened in just 6% of the area. I also built WeatherWise, a Python app that pulls live forecasts from the OpenWeatherMap API and answers plain-English questions through an AI API.",
+  "I hold an Australian Student visa (subclass 500) and am available full-time from 16 November 2026 to 5 February 2027. My projects are at yarida-cv.vercel.app, and several have a live demo. I would welcome the chance to talk about the internship.",
 ];
 
 const children = [
@@ -24,7 +23,7 @@ const children = [
     border: { bottom: { style: BorderStyle.SINGLE, size: 10, color: INK, space: 6 } },
     children: [run("Portfolio: "), link("yarida-cv.vercel.app", "https://yarida-cv.vercel.app"), run(" | LinkedIn: "),
       link("linkedin.com/in/yarida-kaewthong", "https://www.linkedin.com/in/yarida-kaewthong")] }),
-  p("[add: date]"),
+  p("9 November 2026"),
   p([run("Re: Early Careers - IT & Digital Internships (Perth)", { bold: true })]),
   p("Dear Hiring Team,"),
   ...body.map((t) => p(t)),
