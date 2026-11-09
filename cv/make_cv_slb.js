@@ -76,40 +76,40 @@ const children = [
     ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters), Power BI (dashboards)."],
     ["Statistics", "Linear and logistic regression, hypothesis testing, confidence intervals, model evaluation (R squared, RMSE, ROC/AUC)."],
     ["GIS and Spatial", "Hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
-    ["AI Tools", "ChatGPT and Gemini for drafting and testing code; an AI API for answering plain-English questions in an app."],
   ].map(([n, d], i, all) => para([run(n + ": ", { bold: true }), run(d)], i === all.length - 1 ? 60 : 40)),
 
   // ---- Projects ----
   heading("Projects"),
   ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), GIS, hot-spot analysis",
     page: "melbourne-crash.html", bullets: [
-    "Analysed 142,875 Victorian crash records in R and GIS to find where and when people walking and cycling in Melbourne are most at risk.",
-    "Found that half of the pedestrian and cyclist crashes from 2021 to 2025 fell in just 6% of the area, so councils know where to act first.",
-    "Showed pedestrians are far more likely to be seriously hurt on faster roads (41% at 40 km/h against 65% at 80+ km/h) and on unlit roads, and recommended 40 km/h zones, separated bike lanes and better lighting.",
+    "Used 142,875 Victorian crash records (2012 to 2025) and hot-spot mapping in R and GIS to analyse where people walking and cycling get hurt, and found that half of the 2021 to 2025 crashes happened in just 6% of metro Melbourne.",
+    "Used a chi-square trend test to show pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), meaning the risk rises with speed and is not due to chance.",
+    "Turned the findings into three targeted fixes (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money on the few areas where most crashes happen.",
   ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
-    "Built an interactive Tableau Story of three linked dashboards on ESG and financial data for 8 Asia-Pacific markets, 2010 to 2024.",
-    "Found that higher ESG scores barely relate to profitability, so a strong rating alone is a weak guide for investors.",
-    "Wrote a business analyst report with recommendations for firms, investors and regulators.",
+    "Used 15 years of ESG and financial data for 8 Asia-Pacific markets to build three linked Tableau dashboards, and found average ESG scores rose by about a fifth, with China more than doubling.",
+    "Used a trend line of ESG score against return on assets to show ESG explains only about 2% of the difference in profit between firms, meaning a high ESG rating alone is a poor sign of a more profitable company.",
+    "Wrote a business analyst report with recommendations for firms, investors and regulators, so investors compare ESG scores under one reporting standard (ISSB) instead of ratings that differ by market.",
   ] }),
   ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
-    "Built a Python app that pulls live five-day forecasts from the OpenWeatherMap API and turns them into daily summaries and charts.",
-    "Added plain-English questions, such as \"Will it rain tomorrow in Perth?\", answered by an AI API from the same forecast data.",
-    "Used ChatGPT and Gemini to draft and test the code, and logged the AI conversations as a record of how it was built.",
+    "Used the OpenWeatherMap API in Python to pull live five-day forecasts, and turned 40 raw three-hourly readings into simple daily highs, lows and rainfall totals.",
+    "Used Matplotlib charts and an AI API to answer plain-English questions such as \"Will it rain tomorrow in Perth?\", meaning people who don't read charts still get a clear answer.",
   ] }),
   ...entry({ title: "Credit Risk Analysis", date: "Oct 2025", org: "Curtin University, group of three | RStudio, R Markdown", page: "credit-risk.html", bullets: [
-    "Cleaned a 32,581-row loan dataset in R and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
-    "Built an income regression and flagged a predictor calculated from income itself, so its effect should not be over-read.",
-    "Built a logistic regression model with forward stepwise selection to predict loan default, evaluated with accuracy, sensitivity, specificity and ROC/AUC.",
+    "Used a 32,581-row loan dataset in R to analyse who defaults, and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
+    "Used backward stepwise regression to model borrower income, and flagged a predictor calculated from income itself, meaning its large effect is misleading and should not drive lending decisions.",
+    "Built a logistic regression model to predict loan default, evaluated on accuracy, sensitivity and ROC/AUC, so a lender can see which borrower details signal risk before approving a loan.",
   ] }),
   ...entry({ title: "Australian Housing Price Regression", date: "May 2026", org: "Curtin University, individual project | RStudio, R Markdown", page: "housing.html", bullets: [
-    "Compared five regression models of house price growth across five Australian states, and chose the one with the best balance of accuracy and simplicity.",
-    "Found the COVID-19 period added about 2.6 percentage points to quarterly price growth, while household income and election years made no clear difference.",
+    "Used quarterly data for five Australian states (2014 to 2025) in R to analyse what drives house price growth, and found interest rates, inflation, migration and the COVID-19 period all mattered, while household income did not.",
+    "Used five nested regression models to show the COVID-19 period added about 2.6 percentage points to quarterly price growth, meaning the pandemic, not election years, explains the 2020 to 2021 jump.",
+    "Chose the model with the best balance of accuracy and simplicity, so the forecast relies only on factors that actually move prices.",
   ] }),
-  ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author, ACRS 2023 | GIS, network analysis, location-allocation",
+  ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | GIS, network analysis, location-allocation",
     page: "drugstores.html", bullets: [
-    "Co-authored a peer-reviewed conference paper: took part in the GPS field survey, ran the network analysis and helped make the service-area maps.",
-    "Showed only 199 of 511 villages were within reach of a pharmacy in the medicine pick-up scheme, and that 22 more well-placed pharmacies would more than double that.",
+    "Used GPS field survey data and GIS network analysis of 433 drugstores near Bangkok, and found only 199 of 511 villages could reach a pharmacy in the medicine pick-up scheme.",
+    "Used nearest-neighbour analysis to show the drugstores cluster along main roads near two hub hospitals, meaning outer villages are left without nearby access.",
+    "Used location-allocation to choose 22 new sites that would bring 417 villages within reach, so health planners have a ready shortlist of where to add pharmacies.",
   ] }),
 
   // ---- Relevant Experience ----
@@ -152,8 +152,7 @@ const children = [
   ...(PUBLIC ? [para("Available on request.", 0)] :
     PRIVATE.referees.flatMap((r, i, all) => [
       new Paragraph({ keepNext: true, spacing: { after: 0 }, children: [run(r.name, { bold: true })] }),
-      new Paragraph({ keepNext: true, spacing: { after: 0 }, children: [run(r.role, { italics: true, color: GREY })] }),
-      para(r.contact, i === all.length - 1 ? 0 : 100),
+      para([run(r.role + " | ", { italics: true, color: GREY }), run(r.contact)], i === all.length - 1 ? 0 : 60),
     ])),
 ];
 
@@ -163,7 +162,7 @@ const doc = new Document({
   styles: { default: { document: { run: { font: FONT, size: SZ, color: INK }, paragraph: { spacing: { line: 240 } } } } },
   numbering: { config: [{ reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT,
     style: { paragraph: { indent: { left: 300, hanging: 200 } } } }] }] },
-  sections: [{ properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 624, bottom: 624, left: 850, right: 850 } } }, children }],
+  sections: [{ properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 567, bottom: 567, left: 850, right: 850 } } }, children }],
 });
 
 Packer.toBuffer(doc).then(buf => {
