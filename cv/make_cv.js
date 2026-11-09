@@ -59,10 +59,11 @@ const children = [
   // ---- Header ----
   center([run("Yarida Kaewthong", { size: 44, bold: true, color: "111111" })], 60),
   center([run("Perth, WA | "), ...(PUBLIC ? [] : [run(PRIVATE.phone + " | ")]),
-    link("nestyarida@gmail.com", "mailto:nestyarida@gmail.com"), run(" | Student visa (subclass 500)")]),
+    link("nestyarida@gmail.com", "mailto:nestyarida@gmail.com"), run("")]),
   center([run("Portfolio: "), link("yarida-cv.vercel.app", "https://yarida-cv.vercel.app"), run(" | LinkedIn: "),
     link("linkedin.com/in/yarida-kaewthong", "https://www.linkedin.com/in/yarida-kaewthong"), run(" | GitHub: "),
-    link("github.com/Yarida-nes", "https://github.com/Yarida-nes")], 40),
+    link("github.com/Yarida-nes", "https://github.com/Yarida-nes")]),
+  center([run("Student visa (subclass 500) | Available full-time 16 Nov 2026 to 5 Feb 2027")], 40),
 
   // ---- Professional Summary ----
   heading("Professional Summary"),
@@ -71,18 +72,19 @@ const children = [
   // ---- Skills ----
   heading("Skills"),
   ...[
-    ["Programming and Data", "Python (APIs, Matplotlib), SQL, R (tidyverse, sf, R Markdown), Microsoft Excel."],
-    ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters), Power BI (dashboards)."],
-    ["Statistics", "Linear and logistic regression, hypothesis testing, confidence intervals, model evaluation (R², RMSE, ROC/AUC)."],
+    ["Programming and Data", "Python (APIs, Matplotlib), SQL, R (tidyverse, sf, ggplot2, R Markdown), Microsoft Excel."],
+    ["Time-Based Data", "Trend, seasonal and timing analysis across multi-year records; Tableau forecasting."],
+    ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, model comparison (R squared, RMSE, MAE, ROC/AUC)."],
+    ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters), Power BI (dashboards, DAX)."],
     ["GIS and Spatial", "Hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
-    ["AI Tools", "ChatGPT and Gemini for drafting and testing code; an AI API for answering plain-English questions in an app."],
+    ["Communication", "Analyst reports, conference presentations, explaining data to non-technical people."],
   ].map(([n, d], i, all) => para([run(n + ": ", { bold: true }), run(d)], i === all.length - 1 ? 60 : 40)),
 
   // ---- Projects ----
   heading("Projects"),
   ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), GIS, hot-spot analysis",
     page: "melbourne-crash.html", bullets: [
-    "Analysed 142,875 Victorian crash records in R and GIS to find where and when people walking and cycling in Melbourne are most at risk.",
+    "Analysed 142,875 Victorian crash records across 14 years in R and GIS to find where and when people walking and cycling in Melbourne are most at risk.",
     "Found that half of the pedestrian and cyclist crashes from 2021 to 2025 fell in just 6% of the area, so councils know where to act first.",
     "Showed pedestrians are far more likely to be seriously hurt on faster roads (41% at 40 km/h against 65% at 80+ km/h) and on unlit roads, and recommended 40 km/h zones, separated bike lanes and better lighting.",
   ] }),
@@ -136,9 +138,9 @@ const children = [
 
   // ---- Work Experience ----
   heading("Work Experience"),
-  ...entry({ title: "Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
+  ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
     "Track daily sales to spot best-selling dishes and suggest new menu items, part of the menu and service changes that helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
-    "Train and lead around 5 staff per shift, and handle stock and customer issues on the spot.",
+    "Train and lead around 5 staff per shift, and explain decisions clearly to people without time for the detail.",
   ] }),
 
   // ---- Achievements ----
