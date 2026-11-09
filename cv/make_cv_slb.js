@@ -82,34 +82,34 @@ const children = [
   heading("Projects"),
   ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), GIS, hot-spot analysis",
     page: "melbourne-crash.html", bullets: [
-    "Used 142,875 Victorian crash records (2012 to 2025) and hot-spot mapping in R and GIS to analyse where people walking and cycling get hurt, and found that half of the 2021 to 2025 crashes happened in just 6% of metro Melbourne.",
-    "Used a chi-square trend test to show pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), meaning the risk rises with speed and is not due to chance.",
-    "Turned the findings into three targeted fixes (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money on the few areas where most crashes happen.",
+    "Mapped 142,875 Victorian crash records (2012 to 2025) with hot-spot analysis in R and GIS, and found that half of the 2021 to 2025 pedestrian and cyclist crashes happened in just 6% of metro Melbourne.",
+    "Tested injury severity across speed zones with a chi-square trend test, showing pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), meaning the risk rises with speed and is not due to chance.",
+    "Recommended three targeted fixes (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money on the few areas where most crashes happen.",
   ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
-    "Used 15 years of ESG and financial data for 8 Asia-Pacific markets to build three linked Tableau dashboards, and found average ESG scores rose by about a fifth, with China more than doubling.",
-    "Used a trend line of ESG score against return on assets to show ESG explains only about 2% of the difference in profit between firms, meaning a high ESG rating alone is a poor sign of a more profitable company.",
+    "Built three linked Tableau dashboards on 15 years of ESG and financial data for 8 Asia-Pacific markets, and found average ESG scores rose by about a fifth, with China more than doubling.",
+    "Measured how ESG score relates to return on assets, showing ESG explains only about 2% of the difference in profit between firms, meaning a high ESG rating alone is a poor sign of a more profitable company.",
     "Wrote a business analyst report with recommendations for firms, investors and regulators, so investors compare ESG scores under one reporting standard (ISSB) instead of ratings that differ by market.",
   ] }),
   ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
-    "Used the OpenWeatherMap API in Python to pull live five-day forecasts, and turned 40 raw three-hourly readings into simple daily highs, lows and rainfall totals.",
-    "Used Matplotlib charts and an AI API to answer plain-English questions such as \"Will it rain tomorrow in Perth?\", meaning people who don't read charts still get a clear answer.",
+    "Developed a Python app that pulls live five-day forecasts from the OpenWeatherMap API and turns 40 raw three-hourly readings into simple daily highs, lows and rainfall totals.",
+    "Added Matplotlib charts and plain-English questions such as \"Will it rain tomorrow in Perth?\", answered by an AI API, so people who don't read charts still get a clear answer.",
   ] }),
   ...entry({ title: "Credit Risk Analysis", date: "Oct 2025", org: "Curtin University, group of three | RStudio, R Markdown", page: "credit-risk.html", bullets: [
-    "Used a 32,581-row loan dataset in R to analyse who defaults, and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
-    "Used backward stepwise regression to model borrower income, and flagged a predictor calculated from income itself, meaning its large effect is misleading and should not drive lending decisions.",
-    "Built a logistic regression model to predict loan default, evaluated on accuracy, sensitivity and ROC/AUC, so a lender can see which borrower details signal risk before approving a loan.",
+    "Cleaned a 32,581-row loan dataset in R and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
+    "Modelled borrower income with backward stepwise regression, and flagged a predictor calculated from income itself, meaning its large effect is misleading and should not drive lending decisions.",
+    "Trained a logistic regression model to predict loan default, evaluated on accuracy, sensitivity and ROC/AUC, so a lender can see which borrower details signal risk before approving a loan.",
   ] }),
   ...entry({ title: "Australian Housing Price Regression", date: "May 2026", org: "Curtin University, individual project | RStudio, R Markdown", page: "housing.html", bullets: [
-    "Used quarterly data for five Australian states (2014 to 2025) in R to analyse what drives house price growth, and found interest rates, inflation, migration and the COVID-19 period all mattered, while household income did not.",
-    "Used five nested regression models to show the COVID-19 period added about 2.6 percentage points to quarterly price growth, meaning the pandemic, not election years, explains the 2020 to 2021 jump.",
-    "Chose the model with the best balance of accuracy and simplicity, so the forecast relies only on factors that actually move prices.",
+    "Analysed quarterly data for five Australian states (2014 to 2025) in R to find what drives house price growth: interest rates, inflation, migration and the COVID-19 period all mattered, while household income did not.",
+    "Compared five nested regression models, showing the COVID-19 period added about 2.6 percentage points to quarterly price growth, meaning the pandemic, not election years, explains the 2020 to 2021 jump.",
+    "Selected the model with the best balance of accuracy and simplicity, so the forecast relies only on factors that actually move prices.",
   ] }),
   ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | GIS, network analysis, location-allocation",
     page: "drugstores.html", bullets: [
-    "Used GPS field survey data and GIS network analysis of 433 drugstores near Bangkok, and found only 199 of 511 villages could reach a pharmacy in the medicine pick-up scheme.",
-    "Used nearest-neighbour analysis to show the drugstores cluster along main roads near two hub hospitals, meaning outer villages are left without nearby access.",
-    "Used location-allocation to choose 22 new sites that would bring 417 villages within reach, so health planners have a ready shortlist of where to add pharmacies.",
+    "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and GIS network analysis of 433 drugstores, and found only 199 villages could reach a pharmacy in the medicine pick-up scheme.",
+    "Identified with nearest-neighbour analysis that the drugstores cluster along main roads near two hub hospitals, meaning outer villages are left without nearby access.",
+    "Located 22 new pharmacy sites with location-allocation that would bring 417 villages within reach, so health planners have a ready shortlist of where to add pharmacies.",
   ] }),
 
   // ---- Relevant Experience ----
@@ -123,7 +123,7 @@ const children = [
     "Reviewed campaign results and wrote reports with recommendations for the marketing team.",
   ] }),
   ...entry({ title: "Mapping and GIS Solution Intern", date: "Apr 2022 – Jun 2022", org: "THIKNET Co., Ltd., Thailand", bullets: [
-    "Used SQL to maintain location data for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
+    "Maintained location data in SQL for a commercial navigation product, updating road and route records for every province in Thailand and adding EV charging stations.",
     "Checked every record against its source before committing it, because one wrong point can send a driver the wrong way.",
   ] }),
 
