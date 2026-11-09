@@ -67,7 +67,7 @@ const children = [
 
   // ---- Professional Summary ----
   heading("Professional Summary"),
-  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I analyse data in R, Python and SQL, map it in QGIS and ArcGIS and present it in Tableau and Power BI, and I test whether a pattern is real before I report it. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Seeking a data analytics, business intelligence or GIS internship in Perth, and graduate roles from July 2027."),
+  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I analyse data in R, Python and SQL, map it in QGIS and ArcGIS, and present it in Tableau and Power BI. Before I report a pattern, I test whether it is real. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Seeking a data analytics, business intelligence or GIS internship in Perth, and graduate roles from July 2027."),
 
   // ---- Skills ----
   heading("Skills"),
@@ -100,13 +100,13 @@ const children = [
   ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), QGIS, hot-spot analysis",
     page: "melbourne-crash.html", bullets: [
     "Mapped 142,875 Victorian crash records (2012 to 2025) with hot-spot analysis in R and QGIS, and found that half of the 2021 to 2025 pedestrian and cyclist crashes happened in just 6% of metro Melbourne.",
-    "Tested injury severity across speed zones with a chi-square trend test, showing pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), meaning the risk rises with speed and is not due to chance.",
-    "Recommended three targeted fixes (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money on the few areas where most crashes happen.",
+    "Showed with a chi-square trend test that pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), a rise too large to be chance.",
+    "Recommended three fixes for those areas (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money where most crashes happen.",
   ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
     "Measured how ESG score relates to return on assets across 8 Asia-Pacific markets, and found ESG explains only about 2% of the difference in profit between firms, so a high ESG rating alone is a poor guide to profitability.",
     "Built three linked Tableau dashboards on 15 years of ESG and financial data, showing average ESG scores rose by about a fifth, with China more than doubling.",
-    "Wrote a business analyst report with recommendations for firms, investors and regulators, so investors compare ESG scores under one reporting standard (ISSB) instead of ratings that differ by market.",
+    "Wrote a business analyst report recommending that firms, investors and regulators compare ESG scores under one reporting standard (ISSB), because ratings differ by market.",
   ] }),
   ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
     "Developed a Python app that pulls live five-day forecasts from the OpenWeatherMap API and turns 40 raw three-hourly readings into simple daily highs, lows and rainfall totals.",
@@ -137,7 +137,7 @@ const children = [
   // ---- Work Experience ----
   heading("Work Experience"),
   ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
-    "Track daily sales to spot best-selling dishes and suggest new menu items, part of the menu and service changes that helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
+    "Track daily sales to spot best-selling dishes and suggest new menu items; these menu and service changes helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
     "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, keeping orders, payments and service consistent during busy periods.",
     "Trained around 8 new starters in service standards, ordering and payments.",
   ] }),
