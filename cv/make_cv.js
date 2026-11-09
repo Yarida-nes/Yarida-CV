@@ -139,6 +139,7 @@ const children = [
   ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
     "Track daily sales to spot best-selling dishes and suggest new menu items, part of the menu and service changes that helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
     "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, keeping orders, payments and service consistent during busy periods.",
+    "Trained around 8 new starters in service standards, ordering and payments.",
   ] }),
 
   // ---- Achievements ----
