@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A consultant report on customer feedback by Yarida Kaewthong: 360 support tickets and 240 reviews analysed in Orange Data Mining, with two sentiment tools tested against customers' own scores."
+    />
+    <title>Customer feedback text analytics | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/cloudcore.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/cloudcore.html" />
+    <meta property="og:title" content="Customer feedback text analytics | Yarida Kaewthong" />
+    <meta
+      property="og:description"
+      content="360 support tickets and 240 reviews analysed in Orange. One product is rated lowest everywhere, one region is losing customers, and the sentiment tool misses most unhappy customers."
+    />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/cloudcore-workflow.png" />
+    <meta property="og:image:width" content="1211" />
+    <meta property="og:image:height" content="945" />
+    <meta property="og:image:alt" content="Orange Data Mining workflow for the customer feedback analysis" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Customer feedback text analytics | Yarida Kaewthong" />
+    <meta
+      name="twitter:description"
+      content="360 support tickets and 240 reviews analysed in Orange, with two sentiment tools tested against customers' own scores."
+    />
+    <meta name="twitter:image" content="https://yarida-cv.vercel.app/images/cloudcore-workflow.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="housing.css" />
+    <style>
+      .result-shot { margin: 1.5rem 0 0; }
+      .result-shot img { display: block; width: 100%; max-width: 760px; height: auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+      .result-shot figcaption { margin-top: .6rem; color: var(--muted); font-size: .9rem; max-width: 720px; }
+      .cc-table { margin-top: 1.25rem; }
+      .cc-table td.low { color: #bf5f12; font-weight: 600; }
+      .quote-ticket { margin: 1.5rem 0 0; padding: 1.1rem 1.25rem; max-width: 720px; background: var(--surface, #fff); border: 1px solid var(--line); border-left: 3px solid var(--detail, #e07b22); border-radius: 4px; }
+      .quote-ticket p { margin: 0; }
+      .quote-ticket .q { font-family: "Newsreader", Georgia, serif; font-size: 1.25rem; line-height: 1.4; color: var(--accent); }
+      .quote-ticket .n { margin-top: .5rem; color: var(--muted); font-size: .95rem; }
+      .sub-h { margin: 2.5rem 0 .6rem; font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.45rem; color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">Yarida Kaewthong<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="Yarida-Kaewthong-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub</a>
+      </header>
+
+      <main id="main">
+        <article class="study">
+          <header class="study-head">
+            <p class="eyebrow">Text analytics · Orange Data Mining</p>
+            <h1>Customer feedback at scale</h1>
+            <p class="lede">
+              A software company has hundreds of support tickets and reviews and wants to know where to spend next quarter's support effort. Acting as the consultant, I analysed the feedback in Orange, separated a product problem from a regional one, and tested whether a sentiment tool could be trusted to find unhappy customers. It could not, and the report says so.
+            </p>
+            <div class="study-actions">
+              <a class="button primary" href="#findings">Jump to results</a>
+              <a class="button text-button" href="#sentiment">The sentiment test</a>
+            </div>
+          </header>
+
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>Customer satisfaction is low for one product and one region. Are these the same problem, and which should the support team fix first?</dd></div>
+            <div><dt>What I did</dt><dd>Sole author of the consultant report: stakeholder interview, Orange workflow, analysis, evaluation and recommendation. AI-Driven Knowledge Systems unit (ISYS6014), Curtin University, 2026.</dd></div>
+            <div><dt>Tools</dt><dd>Orange Data Mining with the Text add-on · VADER and Liu Hu sentiment · hierarchical clustering · ANOVA</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>Two separate problems. One product is rated lowest in every region, and one region loses 49% of its customers. The sentiment tool found only 42% of unhappy customers, so I recommended staff keep reading negative tickets.</dd></div>
+          </dl>
+
+          <div class="metrics study-metrics" aria-label="Project at a glance">
+            <div><span class="metric-number">360 + 240</span><span>support tickets and reviews<br />from 280 customers in 3 regions</span></div>
+            <div><span class="metric-number">49% vs 15%</span><span>customer churn<br />San Francisco against Singapore</span></div>
+            <div><span class="metric-number">42%</span><span>of unhappy customers found<br />by the sentiment tool, against a 70% target</span></div>
+          </div>
+
+          <figure class="study-hero">
+            <img
+              src="images/cloudcore-workflow.png"
+              alt="Orange Data Mining workflow. Three CSV files for tickets, customers and reviews feed text preprocessing, sentiment analysis, clustering, pivot tables and box plots."
+              width="1211"
+              height="945"
+            />
+            <figcaption>
+              The Orange workflow I built. Tickets, customers and reviews come in on the left. The branches clean the text, score its sentiment, cluster it, and compare the results with what customers actually scored.
+            </figcaption>
+          </figure>
+
+          <section class="study-block" id="findings">
+            <h2>What I found</h2>
+            <ul class="findings">
+              <li>
+                <div>
+                  <p><strong>There are two problems, not one.</strong> CloudSync is the lowest-rated product in every region, in both tickets and reviews. San Francisco is the lowest-rated region for every product. They need different responses, so I measured them separately.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>The regional problem is the bigger one for the business.</strong> San Francisco loses 49.2% of its customers, against 14.9% in Singapore and 20.8% in Sydney. That is a gap of 34 percentage points. The gap between the worst and best product is only 8 points.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>The product problem is reliability, not confusion.</strong> The support team wondered whether customers simply did not understand CloudSync. I read all 25 negative CloudSync tickets and none was about how to use it. They describe failed syncs, duplicated records, dropped integrations and API errors.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>Clustering found no themes, and I reported that.</strong> The 360 tickets contain only 48 different messages, so every clustering setting put almost all tickets in one group. I read the 38 negative tickets directly and grouped them by hand.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>The sentiment tool misses most unhappy customers.</strong> Checked against customers' own scores, VADER found 16 of the 38 negative tickets (42.1%). A second method, Liu Hu, found 22 (57.9%). Neither reached the 70% the client needs.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>One stakeholder claim did not hold up.</strong> I was told San Francisco customers are simply more willing to post feedback. They leave 0.92 reviews per customer, about the same as Singapore's 0.95, so the data does not support that.</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>Product and region</h2>
+            <p>
+              Average ticket satisfaction, on a scale of 1 to 5. CloudSync is lowest in every column and San Francisco is lowest in every row. The difference between regions is unlikely to be chance (ANOVA F = 26.46, p &lt; 0.001), though I treated that as supporting evidence because the scale is only 1 to 5.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table study-table-numeric cc-table">
+                <thead>
+                  <tr><th scope="col">Product</th><th scope="col">San Francisco</th><th scope="col">Singapore</th><th scope="col">Sydney</th><th scope="col">Overall</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>CloudSync</td><td class="low">2.37</td><td class="low">3.35</td><td class="low">3.04</td><td class="low">2.91</td></tr>
+                  <tr><td>Account</td><td>2.94</td><td>3.59</td><td>3.71</td><td>3.48</td></tr>
+                  <tr><td>Analytics Pro</td><td>3.15</td><td>3.70</td><td>3.82</td><td>3.65</td></tr>
+                  <tr><td>DataVault</td><td>3.52</td><td>4.05</td><td>3.97</td><td>3.90</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="sub-h">Who is leaving</h3>
+            <p>
+              Satisfaction and churn do not tell the same story. In San Francisco almost as many customers left as stayed.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table study-table-numeric cc-table">
+                <thead>
+                  <tr><th scope="col">Region</th><th scope="col">Customers</th><th scope="col">Churn rate</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>San Francisco</td><td>63</td><td class="low">49.2%</td></tr>
+                  <tr><td>Singapore</td><td>87</td><td>14.9%</td></tr>
+                  <tr><td>Sydney</td><td>130</td><td>20.8%</td></tr>
+                  <tr><td>Overall</td><td>280</td><td>25.4%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <figure class="result-shot">
+              <img src="images/cloudcore-churn.png" width="1151" height="746" loading="lazy" alt="Orange bar chart of customers who stayed and who churned, by region. In San Francisco 32 stayed and 31 churned. In Singapore and Sydney most customers stayed." />
+              <figcaption>Customers who stayed (left group) and who churned (right group). The San Francisco bars are almost equal: 32 stayed and 31 left.</figcaption>
+            </figure>
+          </section>
+
+          <section class="study-block" id="sentiment">
+            <h2>Can the sentiment tool be trusted?</h2>
+            <p>
+              The client wanted to use sentiment scores to find unhappy customers automatically. I set the test before running it: the tool must find at least 70% of the tickets that customers themselves scored 1 or 2. Overall accuracy would hide the answer, because only 38 of 360 tickets are negative.
+            </p>
+            <div class="table-wrap">
+              <table class="study-table study-table-numeric cc-table">
+                <thead>
+                  <tr><th scope="col">Measure, on 360 tickets</th><th scope="col">VADER</th><th scope="col">Liu Hu</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Unhappy customers found (target 70%)</td><td class="low">16 of 38 (42.1%)</td><td class="low">22 of 38 (57.9%)</td></tr>
+                  <tr><td>Negative labels that were correct</td><td>16 of 30 (53.3%)</td><td>22 of 61 (36.1%)</td></tr>
+                  <tr><td>Overall agreement with customers</td><td>63.6%</td><td>74.2%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              The tools fail in a predictable way. They read words, not meaning, so a polite or factual complaint looks neutral and a threat to leave can look positive.
+            </p>
+            <div class="quote-ticket">
+              <p class="q">"Honestly considering AWS for this, reliability has to improve."</p>
+              <p class="n">The customer scored this ticket as negative. VADER scored it +0.71, strongly positive, because of the words "honestly" and "improve".</p>
+            </div>
+            <figure class="result-shot">
+              <img src="images/cloudcore-vader.png" width="895" height="530" loading="lazy" alt="Orange chart comparing VADER's label with the customer's own score. For tickets customers scored negative, VADER labelled under half as negative and the rest as neutral or positive." />
+              <figcaption>Each bar is a group of tickets by the customer's own score. The colours show what VADER called them. In the top bar, customers were unhappy, and VADER agreed for less than half.</figcaption>
+            </figure>
+            <p>
+              The tool was weakest where it matters most. In San Francisco it found 9 of 23 unhappy customers (39.1%), and it found none of the 7 unhappy Account customers.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>What I recommended</h2>
+            <ul>
+              <li><strong>Fix CloudSync reliability first.</strong> The complaints are specific and the same in every region, so the fix is clear.</li>
+              <li><strong>Find out why San Francisco customers leave.</strong> The data shows the size of the problem but not its cause. It needs resolution-time data and the customer success team.</li>
+              <li><strong>Do not use the sentiment tool to sort customers.</strong> Staff should keep reading negative tickets, and any ticket that mentions a competitor should always be read by a person.</li>
+              <li><strong>Set a bar for any future model.</strong> It should find at least 70% of unhappy customers in every region before it is used.</li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>Limitations</h2>
+            <ul>
+              <li><strong>The data is small and repetitive.</strong> 48 different ticket messages and 40 different review messages are not enough for text clustering.</li>
+              <li><strong>Some customers leave without a word.</strong> 8 of the 71 churned customers (11%) wrote no ticket and no review, so feedback data cannot see them.</li>
+              <li><strong>Product churn is approximate.</strong> Some customers raised more than one ticket, so product figures are only used to compare products with each other.</li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li><strong>Treat what stakeholders say as a hypothesis.</strong> The interview pointed at one product. The data showed the region mattered more for churn.</li>
+              <li><strong>Measure the thing the decision depends on.</strong> A tool that is right about happy customers and wrong about unhappy ones is no use for finding unhappy ones.</li>
+              <li><strong>Report the method that failed.</strong> Saying the clustering found nothing, and why, is more useful than forcing five themes out of it.</li>
+              <li><strong>Keep a person in the loop where a mistake costs a customer.</strong></li>
+            </ul>
+          </section>
+
+          <section class="study-block ref-block" id="references">
+            <h2>About the data</h2>
+            <p class="ref-provided"><strong>Where the data comes from:</strong> CloudCore Networks is the case-study client for the AI-Driven Knowledge Systems unit (ISYS6014) at Curtin University. The tickets, reviews and customer records are the unit's client data extracts, and company names are not shown.</p>
+          </section>
+
+          <div class="study-actions study-footer-actions">
+            <a class="back-link" href="index.html#projects">All projects</a>
+            <a class="back-link" href="index.html#projects">Back to home</a>
+          </div>
+        </article>
+        <a class="next-project" href="melbourne-crash.html">
+          <span class="np-text">
+            <span class="np-label">Next project</span>
+            <span class="np-title">Walking and cycling safety in Melbourne</span>
+            <span class="np-blurb">Where and when people walking and cycling are most at risk, from 142,875 Victorian crash records.</span>
+          </span>
+          <img class="np-shot" src="images/melbourne-card.jpg" alt="" loading="lazy" decoding="async" />
+        </a>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span class="footer-links"><a href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">GitHub: Yarida-nes</a></span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

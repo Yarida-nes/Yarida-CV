@@ -31,7 +31,7 @@ const SITE = "https://yarida-cv.vercel.app/";
 const center = (children, after = 0) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after }, children });
 const heading = (text) => new Paragraph({
   keepNext: true,
-  spacing: { before: 160, after: 80 },
+  spacing: { before: 110, after: 70 },
   border: { bottom: { style: BorderStyle.SINGLE, size: 10, color: INK, space: 1 } },
   children: [run(text.toUpperCase(), { size: 24, bold: true, color: ACCENT, characterSpacing: 10 })],
 });
@@ -73,7 +73,7 @@ const children = [
   heading("Skills"),
   ...[
     ["Programming and Data", "Python (APIs, Matplotlib), SQL (Oracle), R (tidyverse, sf, ggplot2, R Markdown), Microsoft Excel, data cleaning and validation."],
-    ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, time-series trend and seasonal analysis, model comparison (R squared, RMSE, MAE, ROC/AUC)."],
+    ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, time-series analysis, model comparison (R squared, RMSE, MAE, ROC/AUC), sentiment analysis (Orange)."],
     ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters, forecasting), Power BI (dashboards, DAX)."],
     ["GIS and Spatial", "QGIS and ArcGIS, hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
     ["Communication", "Analyst reports, conference presentations, explaining data to non-technical people."],
@@ -103,30 +103,29 @@ const children = [
     "Showed with a chi-square trend test that pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), a rise too large to be chance.",
     "Recommended 40 km/h zones, separated bike lanes and better street lighting for those hot-spot areas.",
   ] }),
+  ...entry({ title: "Customer Feedback Text Analytics", date: "2026", org: "Curtin University, individual consultant report | Orange Data Mining, sentiment analysis, clustering", page: "cloudcore.html", bullets: [
+    "Analysed 360 support tickets and 240 reviews in Orange and separated two problems: one product rated lowest in every region, and one region losing 49% of its customers.",
+    "Tested two sentiment tools against customers' own scores and showed the better one found only 58% of unhappy customers against a 70% target, so I recommended staff keep reading negative tickets.",
+  ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
-    "Measured how ESG score relates to return on assets across 8 Asia-Pacific markets, and found ESG explains only about 2% of the difference in profit between firms, so a high ESG rating alone is a poor guide to profitability.",
-    "Built three linked Tableau dashboards on 15 years of ESG and financial data, showing average ESG scores rose by about a fifth, with China more than doubling.",
+    "Built three linked Tableau dashboards on 15 years of ESG and financial data for 8 Asia-Pacific markets, and found ESG explains only about 2% of the difference in profit between firms, so a high ESG rating alone is a poor guide to profitability.",
     "Wrote a business analyst report recommending that firms, investors and regulators compare ESG scores under one reporting standard (ISSB), because ratings differ by market.",
   ] }),
   ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
-    "Developed a Python app that pulls live five-day forecasts from the OpenWeatherMap API and turns 40 raw three-hourly readings into simple daily highs, lows and rainfall totals.",
-    "Added Matplotlib charts and plain-English questions such as \"Will it rain tomorrow in Perth?\", answered by an AI API, so people who don't read charts still get a clear answer.",
+    "Developed a Python app that pulls live five-day forecasts from the OpenWeatherMap API, turns 40 three-hourly readings into daily highs, lows and rainfall with Matplotlib charts, and answers plain-English questions through an AI API.",
   ] }),
   ...entry({ title: "Soccer Competition Database", date: "2026", org: "Curtin University, individual project | Oracle SQL, ERD, data dictionary", page: "soccer-database.html", bullets: [
     "Translated 18 business rules into a normalised 16-table Oracle schema with an entity relationship diagram and data dictionary, then wrote 13 SQL queries (joins, subqueries, aggregation) that produce the season ladder, top scorers and most valuable player.",
   ] }),
   ...entry({ title: "Credit Risk Analysis", date: "Oct 2025", org: "Curtin University, group of three | RStudio, R Markdown", page: "credit-risk.html", bullets: [
-    "Cleaned a 32,581-row loan dataset in R and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
-    "Trained a logistic regression model to predict loan default, reaching an AUC of 0.85 on unseen test data, so a lender can see which borrower details signal risk before approving a loan.",
+    "Cleaned a 32,581-row loan dataset in R, found about one in five loans had defaulted, and trained a logistic regression model that predicts default with an AUC of 0.85 on unseen test data. My part: cleaning, charts, regression and write-up.",
   ] }),
   ...entry({ title: "Australian Housing Price Regression", date: "May 2026", org: "Curtin University, individual project | RStudio, R Markdown", page: "housing.html", bullets: [
-    "Analysed quarterly data for five Australian states (2014 to 2025) in R to find what drives house price growth: interest rates, inflation, migration and the COVID-19 period all mattered, while household income did not.",
-    "Compared five nested regression models and found the COVID-19 period added about 2.6 percentage points to quarterly price growth, while election years made no difference.",
+    "Compared five nested regression models of quarterly house price growth in five Australian states (2014 to 2025) in R, and found the COVID-19 period added about 2.6 percentage points to quarterly growth, while election years made no difference.",
   ] }),
   ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | ArcGIS, network analysis, location-allocation",
     page: "drugstores.html", bullets: [
-    "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and ArcGIS network analysis of 433 drugstores, and found only 199 villages could reach a pharmacy in the medicine pick-up scheme.",
-    "Located 22 new pharmacy sites with location-allocation that would bring 417 villages within reach, so health planners have a ready shortlist of where to add pharmacies.",
+    "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and ArcGIS network analysis of 433 drugstores: only 199 villages could reach a pharmacy, and 22 new sites found with location-allocation would bring that to 417.",
   ] }),
 
   // ---- Education ----
