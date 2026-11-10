@@ -635,3 +635,8 @@ main :is(p, li) code { overflow-wrap: anywhere; }
   html .home .capability-list .cap-where a:hover { color: #9a4a0c; }
   html .home .intro-copy h1 { color: var(--accent); }
 }
+/* Label above every page title in orange; page titles navy like the name on the home page */
+@media screen {
+  html body main p.eyebrow { color: #bf5f12; }
+  html body main h1 { color: var(--accent); }
+}
