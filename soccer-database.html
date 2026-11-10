@@ -47,10 +47,17 @@
       .result-shot { margin: 1.5rem 0 0; }
       .result-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
       .result-shot figcaption { margin-top: .6rem; color: var(--muted); font-size: .9rem; }
-      .table-list { margin: 1.25rem 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem; }
-      .table-list h3 { margin: 0 0 .35rem; font-family: "Public Sans", sans-serif; font-size: 1rem; font-weight: 600; color: var(--accent); }
-      .table-list p { margin: 0; }
-      @media (max-width: 640px) { .table-list { grid-template-columns: 1fr; } }
+      .tgroups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0 0; }
+      .tgroup { padding: 1.25rem 1.35rem 1.35rem; background: var(--surface, #fff); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 6px; }
+      html body main .tgroup p.tgroup-count { margin: 0 0 .15rem; font-size: .85rem; font-weight: 600; letter-spacing: .02em; color: #bf5f12; }
+      .tgroup h3 { margin: 0 0 .7rem; font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.35rem; line-height: 1.2; color: var(--accent); }
+      .tgroup-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .8rem; }
+      .tgroup-chips code { padding: .18rem .5rem; border: 1px solid var(--line); border-radius: 4px; background: var(--accent-soft, #e4e9ef); font-family: "DM Mono", ui-monospace, monospace; font-size: .8rem; color: var(--accent-strong, #062a43); }
+      .tgroup p:last-child { margin: 0; color: var(--muted); font-size: .98rem; line-height: 1.55; }
+      .sub-h { margin: 2.5rem 0 .6rem; font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.45rem; color: var(--accent); }
+      .dict-table { width: 100%; margin-top: 1rem; }
+      .dict-table code { font-family: "DM Mono", ui-monospace, monospace; font-size: .85rem; }
+      @media (max-width: 640px) { .tgroups { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
@@ -142,29 +149,54 @@
           <section class="study-block">
             <h2>The design</h2>
             <p>
-              The 16 tables fall into four groups. Reference tables hold lists that rarely change. Linking tables record who took part in what.
+              The 16 tables fall into four groups. Linking tables record who took part in what, and lookup tables hold short lists that rarely change.
             </p>
-            <div class="table-list">
-              <div>
+            <div class="tgroups">
+              <div class="tgroup">
+                <p class="tgroup-count">5 tables</p>
                 <h3>People and places</h3>
-                <p>Club, Coach, Player, Referee and Ground. Each club has one coach and trains at one ground.</p>
+                <p class="tgroup-chips"><code>Club</code><code>Coach</code><code>Player</code><code>Referee</code><code>Ground</code></p>
+                <p>Each club has one coach and trains at one ground. Each player belongs to one club.</p>
               </div>
-              <div>
+              <div class="tgroup">
+                <p class="tgroup-count">2 tables</p>
                 <h3>The calendar</h3>
-                <p>Week and Game. Every game belongs to one week and is played at one ground.</p>
+                <p class="tgroup-chips"><code>Week</code><code>Game</code></p>
+                <p>Every game belongs to one week and is played at one ground.</p>
               </div>
-              <div>
+              <div class="tgroup">
+                <p class="tgroup-count">3 tables</p>
                 <h3>Who took part</h3>
-                <p>ClubGame, GamePlayer and GameReferee link clubs, players and referees to each game.</p>
+                <p class="tgroup-chips"><code>ClubGame</code><code>GamePlayer</code><code>GameReferee</code></p>
+                <p>Linking tables. Each row pairs one club, player or referee with one game.</p>
               </div>
-              <div>
+              <div class="tgroup">
+                <p class="tgroup-count">6 tables</p>
                 <h3>What happened</h3>
-                <p>ScoredGoal, AwardedCard and BogPlayer record goals, cards and awards, with Result, StartPosition and BestOnGround as lookup lists.</p>
+                <p class="tgroup-chips"><code>ScoredGoal</code><code>AwardedCard</code><code>BogPlayer</code><code>Result</code><code>StartPosition</code><code>BestOnGround</code></p>
+                <p>Goals, cards and best-on-ground awards, with three lookup lists for results, positions and award ranks.</p>
               </div>
             </div>
+
+            <h3 class="sub-h">The data dictionary</h3>
             <p>
-              Every column is described in a data dictionary: its meaning, data type, whether it is required, and the name of each primary key, foreign key and check constraint. That document is what the CREATE TABLE statements were written from.
+              Every column is described before any SQL is written: what it means, its data type, whether it is required, and the name of each key and constraint. The CREATE TABLE statements were written from this document. This is the entry for the Club table.
             </p>
+            <div class="table-wrap">
+              <table class="study-table dict-table">
+                <thead>
+                  <tr><th scope="col">Column</th><th scope="col">Description</th><th scope="col">Format</th><th scope="col">Rule</th><th scope="col">Constraint name</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>clubID</code></td><td>Unique identification of a club</td><td>CHAR (4)</td><td>Primary key</td><td><code>Club_PK</code></td></tr>
+                  <tr><td><code>clubName</code></td><td>Club's name</td><td>VARCHAR2 (50)</td><td>Required</td><td><code>Club_Name_NN</code></td></tr>
+                  <tr><td><code>establDate</code></td><td>Date the club was established</td><td>DATE</td><td>Optional</td><td></td></tr>
+                  <tr><td><code>majorSponsor</code></td><td>Name of the club's major sponsor</td><td>VARCHAR2 (50)</td><td>Optional</td><td></td></tr>
+                  <tr><td><code>numOfMembers</code></td><td>Total members registered with the club</td><td>NUMBER (3,0)</td><td>Optional</td><td></td></tr>
+                  <tr><td><code>coachID</code></td><td>The club's coach</td><td>CHAR (4)</td><td>Required, foreign key to Coach</td><td><code>Club_Coach_FK</code></td></tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section class="study-block">
