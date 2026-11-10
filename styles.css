@@ -640,3 +640,8 @@ main :is(p, li) code { overflow-wrap: anywhere; }
   html body main p.eyebrow { color: #bf5f12; }
   html body main h1 { color: var(--accent); }
 }
+/* Bold lead-ins in project page text in orange (not inside demos or tables) */
+@media screen {
+  html body main :is(.study-block, .cs-block, .esg-block, .ww-block) :is(p, li) strong { color: #bf5f12; }
+  html body main .demo strong, html body main table strong { color: inherit; }
+}
