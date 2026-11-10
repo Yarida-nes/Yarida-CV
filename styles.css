@@ -568,26 +568,18 @@ html .home .cap-tool img { width: 22px; height: 22px; filter: grayscale(1); opac
 html .home .project-card h3 { margin-bottom: .35rem; }
 html .home .project-card .card-meta { margin: 0 0 .85rem; color: var(--muted); font-size: .9rem; }
 
-/* Second accent: deep teal for everything you can click; claret stays for headings and data */
-:root { --link: #0f5c5c; --link-strong: #0a4242; --link-soft: #dfeeec; }
-a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: var(--link); }
-nav a.is-active { color: var(--link); }
-nav a::after { background: var(--link); }
-.button, .card-btn, .card-btn.is-primary, .section-side-link, .cap-where a, .ref-list a, .footer-links a,
-.section-intro a, .projects-more a, .award-list a, .project-cta, .enlarge-hint,
-main :is(p, dd, figcaption) a { color: var(--link); }
-.button:hover, .card-btn:hover, .card-btn.is-primary:hover, .section-side-link:hover, .cap-where a:hover, .ref-list a:hover,
-.footer-links a:hover, .section-intro a:hover, .projects-more a:hover, .award-list a:hover,
-main :is(p, dd, figcaption) a:hover { color: var(--link-strong); }
-.section-intro a, .projects-more a { border-bottom-color: var(--link); }
-.cap-where a:hover { border-color: var(--link); }
-html .home .project-card[data-tone]:hover .project-shot, .hero-proj:hover img { border-color: var(--link); }
-.demo-list a:hover, .demo-list a:focus-visible { border-color: var(--link); }
-.demo-list strong { color: var(--link); }
+/* Gold details: claret stays the main colour; gold marks links, headings and the contact block */
+:root { --gold: #c39a3b; }
+.button, .card-btn, .card-btn.is-primary, .section-side-link, .footer-links a, .ref-list a { text-decoration-color: var(--gold); text-decoration-thickness: 2px; }
+.section-intro a, .projects-more a { border-bottom-color: var(--gold); }
+nav a::after { background: var(--gold); }
+nav a.is-active { color: var(--ink); }
+.wordmark span { color: var(--gold); }
+.section .section-label h2 { padding-bottom: .6rem; background: linear-gradient(var(--gold), var(--gold)) left bottom / 56px 3px no-repeat; }
 /* Contact as one strong block */
-html .home .contact { margin: 1rem 0 3rem; padding: clamp(2rem, 5vw, 3.5rem); border: 0; border-radius: 6px; background: var(--link-strong); color: #f7f5f1; }
+html .home .contact { margin: 1rem 0 3rem; padding: clamp(2rem, 5vw, 3.5rem); border: 0; border-radius: 6px; background: var(--accent-strong); color: #f7f5f1; }
 html .home .contact h2, html .home .contact .contact-note { color: #f7f5f1; }
-html .home .contact .contact-link { color: #f7f5f1; border-bottom-color: rgba(247, 245, 241, .55); }
+html .home .contact .contact-link { color: #f7f5f1; border-bottom-color: var(--gold); }
 html .home .contact .contact-link:hover { color: #ffffff; border-bottom-color: #ffffff; }
 html .home .contact a:focus-visible { outline-color: #f7f5f1; }
-@media print { html .home .contact { background: none; color: inherit; padding: 2rem 0; } html .home .contact h2, html .home .contact .contact-note, html .home .contact .contact-link { color: inherit; } }
+@media print { html .home .contact { background: none; color: inherit; padding: 2rem 0; } html .home .contact h2, html .home .contact .contact-note, html .home .contact .contact-link { color: inherit; } .section .section-label h2 { background: none; padding-bottom: 0; } }
