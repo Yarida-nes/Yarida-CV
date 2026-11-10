@@ -629,3 +629,9 @@ main :is(p, li) code { overflow-wrap: anywhere; }
 @media screen { html .home .timeline .company { color: #bf5f12; } }
 /* Project card subtitles in the same orange */
 @media screen { html .home .project-card[data-tone] p.card-meta, html main p.card-meta { color: #bf5f12; } }
+/* Skills proof links in orange; name in navy */
+@media screen {
+  html .home .capability-list .cap-where a { color: #bf5f12; }
+  html .home .capability-list .cap-where a:hover { color: #9a4a0c; }
+  html .home .intro-copy h1 { color: var(--accent); }
+}
