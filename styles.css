@@ -536,3 +536,34 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
   html .topbar nav a:not([href$=".pdf"]) { display: none; }
   html .topbar .wordmark { white-space: nowrap; }
 }
+
+/* Editorial pass: thin rules between sections, one frame size for project pictures,
+   title before details, a date column in Experience, quieter skills table */
+.site-shell { max-width: 1200px; }
+.card-meta { margin: .35rem 0 .9rem; color: var(--muted); font-family: "Public Sans", sans-serif; font-size: .9rem; }
+html .home .project-card .card-meta + p { margin-top: 0; }
+html .home .topbar { border-bottom: 1px solid var(--line); }
+html .home .section, html .home .contact, html .home footer { border-top: 1px solid var(--line); }
+html .home .project-card[data-tone] .project-shot { aspect-ratio: 16 / 10; width: 100%; padding: .75rem; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+html .home .project-card[data-tone] .project-shot img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+html .home .project-card h3 { margin-top: 0; font-size: clamp(1.45rem, 2.2vw, 1.75rem); line-height: 1.2; }
+html .home .hero-proj img { border: 1px solid var(--line); border-radius: 4px; }
+html .home .cap-tool img { width: 22px; height: 22px; filter: grayscale(1); opacity: .7; }
+.demo { border-top-width: 1px; border-radius: 6px; }
+@media screen and (min-width: 861px) {
+  html .home .project-card[data-tone] { grid-template-columns: minmax(0, .92fr) minmax(0, 1fr); grid-template-areas: "shot body"; grid-template-rows: auto; align-items: start; padding: 2.75rem 0; }
+  html .home .project-card[data-tone] .project-body { padding-top: .25rem; }
+  html .home .exp-grid { grid-template-columns: 1fr; gap: 0; }
+  html .home .exp-grid .timeline-item { grid-template-columns: 190px minmax(0, 1fr); gap: 2rem; padding: 1.9rem 0; border-top: 1px solid var(--line) !important; }
+  html .home .exp-grid .timeline-item:first-child { border-top: 0 !important; padding-top: .4rem; }
+  html .home .exp-grid .timeline-date { margin: .15rem 0 0; }
+  html .home .exp-grid .exp-bullets { max-width: 68ch; }
+  html .home .capability-list { display: block; }
+  html .home .capability-list li { display: grid; grid-template-columns: 290px minmax(0, 1fr) auto; grid-template-rows: auto; align-items: center; column-gap: 2rem; padding: 1.05rem 0; border-top: 1px solid var(--line) !important; }
+  html .home .capability-list li:first-child { border-top: 0 !important; }
+  html .home .capability-list .cap-name { grid-column: 1; grid-row: 1; }
+  html .home .capability-list .cap-where { grid-column: 2; grid-row: 1; }
+  html .home .capability-list .cap-tool { grid-column: 3; grid-row: 1; justify-content: flex-end; }
+}
+html .home .project-card h3 { margin-bottom: .35rem; }
+html .home .project-card .card-meta { margin: 0 0 .85rem; color: var(--muted); font-size: .9rem; }
