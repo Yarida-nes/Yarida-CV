@@ -589,3 +589,34 @@ main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings 
 .glance .glance-result { box-shadow: inset 3px 0 0 var(--detail); }
 main .demo .sowhat { border-left-color: var(--detail); }
 @media print { .metric-number { background: none; } }
+
+/* Project pages: one shared layout for all six case studies */
+@media screen {
+  html :is(.study, .case-study, .esg-case, .ww-case) { max-width: 900px; margin-left: auto; margin-right: auto; }
+  html main :is(.study-block, .cs-block, .esg-block, .ww-block) { max-width: none; margin: 0; padding: 2.75rem 0; border-top: 1px solid var(--line); }
+  html main :is(.study-block, .cs-block, .esg-block, .ww-block) > h2 { margin: 0 0 1.3rem; padding-bottom: .55rem; font-size: clamp(1.6rem, 2.6vw, 2rem); line-height: 1.2; letter-spacing: 0; color: var(--accent); background: linear-gradient(var(--detail), var(--detail)) left bottom / 44px 3px no-repeat; border: 0; }
+  html main :is(.study-block, .cs-block, .esg-block, .ww-block) > :is(p, ul, ol) { max-width: 720px; color: var(--ink); font-size: 1.04rem; line-height: 1.7; }
+  html main :is(.study-block, .cs-block, .esg-block, .ww-block) li { color: var(--ink); }
+  html main .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+  html main .metrics div { border-radius: 6px; }
+  html main .metrics div:hover { transform: none; box-shadow: none; border-color: var(--line); }
+  html main .glance { border-radius: 0; margin-bottom: 1.5rem; }
+  html main .demo { max-width: none; margin: 0 0 2.75rem; }
+  html main :is(.study-block, .cs-block, .esg-block, .ww-block) :is(figure, .cs-figure) img { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+}
+@media screen and (min-width: 721px) { html :is(.study, .case-study, .esg-case, .ww-case) { padding: 4rem 0 3rem; } }
+@media screen and (max-width: 720px) { html main .metrics { grid-template-columns: 1fr; } }
+/* Next project link at the end of each case study */
+.next-project { max-width: 900px; margin: 0 auto 3.5rem; padding: 2rem 0 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 2rem; }
+.next-project span { color: var(--muted); font-size: .95rem; }
+.next-project a { font-family: "Newsreader", Georgia, serif; font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--accent); min-width: 0; max-width: 100%; white-space: normal; overflow-wrap: break-word; text-decoration: underline; text-decoration-color: var(--detail); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.next-project a:hover { color: var(--accent-strong); }
+@media print { .next-project { display: none; } }
+
+/* Very small phones: keep the header and long code on screen */
+@media (max-width: 360px) {
+  html .topbar { gap: .6rem; }
+  html .topbar .wordmark { font-size: 1.05rem; }
+  html .topbar :is(nav a, .github-link) { font-size: .82rem; }
+}
+main :is(p, li) code { overflow-wrap: anywhere; }
