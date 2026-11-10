@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A soccer competition database designed and built in Oracle SQL by Yarida Kaewthong: 18 business rules, a 16-table schema, a data dictionary and 13 queries that answer the organiser's questions."
+    />
+    <title>Soccer competition database | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/soccer-database.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/soccer-database.html" />
+    <meta property="og:title" content="Soccer competition database | Yarida Kaewthong" />
+    <meta
+      property="og:description"
+      content="18 business rules turned into a 16-table Oracle database, with 13 SQL queries for the season ladder, top scorers and most valuable player."
+    />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/soccer-erd.png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1819" />
+    <meta property="og:image:alt" content="Entity relationship diagram of the 16-table soccer competition database" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Soccer competition database | Yarida Kaewthong" />
+    <meta
+      name="twitter:description"
+      content="18 business rules turned into a 16-table Oracle database, with 13 SQL queries for the season ladder, top scorers and most valuable player."
+    />
+    <meta name="twitter:image" content="https://yarida-cv.vercel.app/images/soccer-erd.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="housing.css" />
+    <style>
+      .sql-block { margin: 1.25rem 0 0; padding: 1.1rem 1.25rem; background: var(--surface, #fff); border: 1px solid var(--line); border-left: 3px solid var(--detail, #e07b22); border-radius: 4px; overflow-x: auto; font-family: "DM Mono", ui-monospace, monospace; font-size: .86rem; line-height: 1.6; color: var(--ink); white-space: pre; }
+      .result-shot { margin: 1.5rem 0 0; }
+      .result-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+      .result-shot figcaption { margin-top: .6rem; color: var(--muted); font-size: .9rem; }
+      .table-list { margin: 1.25rem 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem; }
+      .table-list h3 { margin: 0 0 .35rem; font-family: "Public Sans", sans-serif; font-size: 1rem; font-weight: 600; color: var(--accent); }
+      .table-list p { margin: 0; }
+      @media (max-width: 640px) { .table-list { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">Yarida Kaewthong<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="Yarida-Kaewthong-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub</a>
+      </header>
+
+      <main id="main">
+        <article class="study">
+          <header class="study-head">
+            <p class="eyebrow">Oracle SQL · Database design</p>
+            <h1>Soccer competition database</h1>
+            <p class="lede">
+              How do you store a whole soccer season so that any question about it can be answered with one query? I designed and built a database for a six-club competition: the clubs, grounds, players, referees, games, goals, cards and best-on-ground awards. Then I wrote the queries an organiser would ask for, such as the season ladder and the most valuable player.
+            </p>
+            <div class="study-actions">
+              <a class="button primary" href="#findings">Jump to results</a>
+              <a class="button text-button" href="#design">See the design</a>
+            </div>
+          </header>
+
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>A local soccer competition needs one database that records every game, goal, card and award, and can produce the ladder and player awards at the end of the season.</dd></div>
+            <div><dt>What I did</dt><dd>Sole author: business rules, entity relationship diagram, schema, data dictionary, SQL to create and load the tables, and 13 queries with written explanations. Database unit (ISYS5000), Curtin University, 2026.</dd></div>
+            <div><dt>Tools</dt><dd>Oracle SQL · entity relationship diagram · data dictionary · normalisation</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>18 business rules became a 16-table schema. Loaded with a sample season, it answers 13 organiser questions, from the six-club ladder to every one of the season's 93 goals.</dd></div>
+          </dl>
+
+          <div class="metrics study-metrics" aria-label="Project at a glance">
+            <div><span class="metric-number">18 &rarr; 16</span><span>business rules<br />turned into 16 linked tables</span></div>
+            <div><span class="metric-number">13</span><span>SQL queries<br />each one answers an organiser's question</span></div>
+            <div><span class="metric-number">30 games</span><span>in the sample season<br />6 clubs, 10 weeks, 93 goals</span></div>
+          </div>
+
+          <figure class="study-hero" id="design">
+            <img
+              src="images/soccer-erd.png"
+              alt="Entity relationship diagram with 16 tables: Week, Game, Ground, Club, Coach, Player, Referee, Result, StartPosition, BestOnGround, ClubGame, GameReferee, GamePlayer, BogPlayer, ScoredGoal and AwardedCard, joined by one-to-many relationship lines."
+              width="2400"
+              height="1819"
+            />
+            <figcaption>
+              The entity relationship diagram. Each box is a table, each line is a rule about how two tables relate.
+            </figcaption>
+          </figure>
+
+          <section class="study-block" id="findings">
+            <h2>What I found</h2>
+            <ul class="findings">
+              <li>
+                <div>
+                  <p><strong>Writing the rules first made the tables obvious.</strong> I wrote 18 business rules in pairs, one for each direction, such as "A Club has one or more Players" and "A Player takes part in one and only one Club". Each pair became one relationship line in the diagram, so nothing in the schema is there without a rule behind it.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>Four linking tables do most of the work.</strong> A game has two clubs, several referees and many players, and a player appears in many games. ClubGame, GameReferee, GamePlayer and BogPlayer each record one of those pairings, which keeps every fact stored once.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>One query produces the full ladder.</strong> It adds up competition points and goals for each club and counts home and away wins, draws and losses. Dunsborough Dingos finished first on 27 points and Eagle Bay Eagles second on 25, so those two clubs play the post-season charity game.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>The same tables answer player questions.</strong> 23 players scored the season's 93 goals, and Joel Sutton and Ross Edwards led with 9 each. Douglas Sun topped the best-on-ground list with 15 points from 5 awards.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>Ties need a rule.</strong> Two players finished level on 15 best-on-ground points with the same number of awards. My query breaks the tie by name, which is enough to list them but not a fair way to pick a winner, so a real competition would need its own tie-break rule in the data.</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>The design</h2>
+            <p>
+              The 16 tables fall into four groups. Reference tables hold lists that rarely change. Linking tables record who took part in what.
+            </p>
+            <div class="table-list">
+              <div>
+                <h3>People and places</h3>
+                <p>Club, Coach, Player, Referee and Ground. Each club has one coach and trains at one ground.</p>
+              </div>
+              <div>
+                <h3>The calendar</h3>
+                <p>Week and Game. Every game belongs to one week and is played at one ground.</p>
+              </div>
+              <div>
+                <h3>Who took part</h3>
+                <p>ClubGame, GamePlayer and GameReferee link clubs, players and referees to each game.</p>
+              </div>
+              <div>
+                <h3>What happened</h3>
+                <p>ScoredGoal, AwardedCard and BogPlayer record goals, cards and awards, with Result, StartPosition and BestOnGround as lookup lists.</p>
+              </div>
+            </div>
+            <p>
+              Every column is described in a data dictionary: its meaning, data type, whether it is required, and the name of each primary key, foreign key and check constraint. That document is what the CREATE TABLE statements were written from.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>Asking the database questions</h2>
+            <p>
+              The 13 queries are grouped the way an organiser would ask them: season outcomes, goals and scorers, the most valuable player, and a few one-off questions such as the largest crowd and the highest-scoring game.
+            </p>
+            <p>
+              This one finds the two clubs for the charity game. It joins each club to its game records and results, adds up points and goals, and keeps the top two. Goals scored is the tie-breaker when points are level.
+            </p>
+            <div class="sql-block" role="region" aria-label="SQL query" tabindex="0">SELECT c.clubID, c.clubName,
+       SUM(r.resPoints)   AS totalPoints,
+       SUM(cg.goalScored) AS totalGoals
+FROM Club c
+JOIN ClubGame cg ON c.clubID = cg.clubID
+JOIN Result r    ON cg.resultID = r.resultID
+GROUP BY c.clubID, c.clubName
+ORDER BY totalPoints DESC, totalGoals DESC
+FETCH FIRST 2 ROWS ONLY;</div>
+
+            <figure class="result-shot">
+              <img src="images/soccer-ladder.png" width="1624" height="386" loading="lazy" alt="Query result: the season ladder. Dunsborough Dingos 27 points and 20 goals, Eagle Bay Eagles 25 and 13, Reinscourt Rabbits 20 and 19, Wonnerup Wombats 19 and 16, Mary-Brook Magpies 14 and 15, Broadwater Bandicoots 9 and 10, with home and away wins, draws and losses for each." />
+              <figcaption>The full ladder, from a longer query that also counts home and away wins, draws and losses for each club.</figcaption>
+            </figure>
+
+            <figure class="result-shot">
+              <img src="images/soccer-mvp.png" width="1601" height="326" loading="lazy" alt="Query result: best-on-ground points by player. Douglas Sun and Eugene Wallace on 15 points from 5 awards, then Adrian Watts, Darren Hudson and Paul Turner on 12 points from 4 awards." />
+              <figcaption>The most valuable player list, with how many 3-point, 2-point and 1-point awards each player earned.</figcaption>
+            </figure>
+          </section>
+
+          <section class="study-block">
+            <h2>Other answers from the season</h2>
+            <ul>
+              <li><strong>Best away record:</strong> Dunsborough Dingos, with 3 wins, 1 draw and 1 loss away from home.</li>
+              <li><strong>Largest crowd:</strong> 450 people, for Dunsborough Dingos against Broadwater Bandicoots on 29 June 2024.</li>
+              <li><strong>Highest-scoring game:</strong> 6 goals, Reinscourt Rabbits against Dunsborough Dingos at West Busselton Oval.</li>
+              <li><strong>Busiest ground for goals:</strong> Eagle Bay Centre, where 19 of the 93 goals were scored.</li>
+            </ul>
+          </section>
+
+          <section class="study-block">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li><strong>Rules before tables.</strong> Writing each relationship as a plain sentence in both directions caught mistakes before any SQL was written.</li>
+              <li><strong>Store each fact once.</strong> Linking tables look like extra work, but they are why one goal or one card is never recorded twice.</li>
+              <li><strong>Decide the tie-breaker in the query.</strong> The ladder sorts by points and then by goals, and the order of those two columns changes who plays the final.</li>
+              <li><strong>Explain every query.</strong> For each one I wrote which tables it reads, why it joins them and what the grouping does, so someone else can check it.</li>
+            </ul>
+          </section>
+
+          <section class="study-block ref-block" id="references">
+            <h2>About the data</h2>
+            <p class="ref-provided"><strong>Where the data comes from:</strong> The clubs, players and results are sample data for a made-up South West Soccer Competition, created for the Database unit (ISYS5000) at Curtin University. No real people or clubs are described.</p>
+          </section>
+
+          <div class="study-actions study-footer-actions">
+            <a class="back-link" href="index.html#projects">All projects</a>
+            <a class="back-link" href="index.html#projects">Back to home</a>
+          </div>
+        </article>
+        <a class="next-project" href="melbourne-crash.html">
+          <span class="np-text">
+            <span class="np-label">Next project</span>
+            <span class="np-title">Walking and cycling safety in Melbourne</span>
+            <span class="np-blurb">Where and when people walking and cycling are most at risk, from 142,875 Victorian crash records.</span>
+          </span>
+          <img class="np-shot" src="images/melbourne-card.jpg" alt="" loading="lazy" decoding="async" />
+        </a>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span class="footer-links"><a href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">GitHub: Yarida-nes</a></span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -72,7 +72,7 @@ const children = [
   // ---- Skills ----
   heading("Skills"),
   ...[
-    ["Programming and Data", "Python (APIs, Matplotlib), SQL, R (tidyverse, sf, ggplot2, R Markdown), Microsoft Excel, data cleaning and validation."],
+    ["Programming and Data", "Python (APIs, Matplotlib), SQL (Oracle), R (tidyverse, sf, ggplot2, R Markdown), Microsoft Excel, data cleaning and validation."],
     ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, time-series trend and seasonal analysis, model comparison (R squared, RMSE, MAE, ROC/AUC)."],
     ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters, forecasting), Power BI (dashboards, DAX)."],
     ["GIS and Spatial", "QGIS and ArcGIS, hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
@@ -101,7 +101,7 @@ const children = [
     page: "melbourne-crash.html", bullets: [
     "Mapped 142,875 Victorian crash records (2012 to 2025) with hot-spot analysis in R and QGIS, and found that half of the 2021 to 2025 pedestrian and cyclist crashes happened in just 6% of metro Melbourne.",
     "Showed with a chi-square trend test that pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), a rise too large to be chance.",
-    "Recommended three fixes for those areas (40 km/h zones, separated bike lanes and better street lighting), so councils can focus road safety money where most crashes happen.",
+    "Recommended 40 km/h zones, separated bike lanes and better street lighting for those hot-spot areas.",
   ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
     "Measured how ESG score relates to return on assets across 8 Asia-Pacific markets, and found ESG explains only about 2% of the difference in profit between firms, so a high ESG rating alone is a poor guide to profitability.",
@@ -111,6 +111,9 @@ const children = [
   ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
     "Developed a Python app that pulls live five-day forecasts from the OpenWeatherMap API and turns 40 raw three-hourly readings into simple daily highs, lows and rainfall totals.",
     "Added Matplotlib charts and plain-English questions such as \"Will it rain tomorrow in Perth?\", answered by an AI API, so people who don't read charts still get a clear answer.",
+  ] }),
+  ...entry({ title: "Soccer Competition Database", date: "2026", org: "Curtin University, individual project | Oracle SQL, ERD, data dictionary", page: "soccer-database.html", bullets: [
+    "Translated 18 business rules into a normalised 16-table Oracle schema with an entity relationship diagram and data dictionary, then wrote 13 SQL queries (joins, subqueries, aggregation) that produce the season ladder, top scorers and most valuable player.",
   ] }),
   ...entry({ title: "Credit Risk Analysis", date: "Oct 2025", org: "Curtin University, group of three | RStudio, R Markdown", page: "credit-risk.html", bullets: [
     "Cleaned a 32,581-row loan dataset in R and found about one in five loans had defaulted. My part: cleaning, charts, regression and write-up.",
@@ -138,8 +141,7 @@ const children = [
   heading("Work Experience"),
   ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
     "Track daily sales to spot best-selling dishes and suggest new menu items; these menu and service changes helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
-    "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, keeping orders, payments and service consistent during busy periods.",
-    "Trained around 8 new starters in service standards, ordering and payments.",
+    "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, and have trained around 8 new starters in service standards, ordering and payments.",
   ] }),
 
   // ---- Achievements ----
