@@ -58,6 +58,9 @@
       .steps li strong { display: block; margin-bottom: .25rem; color: var(--accent) !important; font-weight: 600; }
       .part-tag { display: inline-block; margin: 0 0 .6rem; padding: .15rem .6rem; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-soft, #e4e9ef); font-size: .82rem; color: var(--accent-strong, #062a43) !important; }
       @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+      .demo-video { margin: 1.75rem 0 0; }
+      .demo-video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #10202e; border: 1px solid var(--line); border-radius: 6px; }
+      .demo-video figcaption { margin-top: .6rem; color: var(--muted); font-size: .9rem; max-width: 720px; }
       .sub-h { margin: 2.5rem 0 .6rem; font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.45rem; color: var(--accent); }
     </style>
   </head>
@@ -83,12 +86,13 @@
             <p class="eyebrow">AI · Machine learning · Text analytics · Automation</p>
             <h1>AI-driven customer support: analysis and automation</h1>
             <p class="lede">
-              A software company wanted to know which customers were unhappy and which were about to leave. I used AI to analyse 360 support tickets and 240 reviews in Orange, then built a machine learning workflow that scores every customer and produces a short weekly list of who to call. When new data arrives, the same workflow runs again and the list updates itself. A person still makes every decision.
+              A software company, a made-up client for a university unit, wanted to know which customers were unhappy and which were about to leave. I used AI to analyse 360 support tickets and 240 reviews in Orange, then built a machine learning workflow that scores every customer and produces a short weekly list of who to call. When new data arrives, the same workflow runs again and the list updates itself. A person still makes every decision.
             </p>
             <div class="study-actions">
               <a class="button primary" href="#findings">Jump to results</a>
               <a class="button text-button" href="#sentiment">The sentiment test</a>
               <a class="button text-button" href="#automation">The automated weekly list</a>
+              <a class="button text-button" href="#demo">Watch the demo</a>
             </div>
           </header>
 
@@ -239,6 +243,14 @@
               The 71 customers who had left or were flagged at risk pay $302,520 a month, about $3.6 million a year. I built the workflow in Orange in three parts: prove the problem, test the models, and turn the chosen model into a list.
             </p>
 
+            <figure class="demo-video" id="demo">
+              <video controls preload="none" playsinline poster="images/cloudcore-demo-poster.jpg" width="1920" height="1080">
+                <source src="media/cloudcore-demo.mp4" type="video/mp4" />
+                <a href="media/cloudcore-demo.mp4">Download the demonstration video (MP4, 24 MB)</a>
+              </video>
+              <figcaption>The 10-minute demonstration of the team workflow, narrated by me, with captions. It walks through the problem, the model test, the weekly list and the region check.</figcaption>
+            </figure>
+
             <h3 class="sub-h">Choosing the model</h3>
             <p>
               Six models were tested on the same data with 10-fold cross-validation, and judged on one thing: of all the customers at risk, how many does the model catch? Missing a customer who leaves is the costly mistake.
@@ -306,7 +318,7 @@
 
           <section class="study-block ref-block" id="references">
             <h2>About the data</h2>
-            <p class="ref-provided"><strong>Where the data comes from:</strong> CloudCore Networks is the case-study client for the AI-Driven Knowledge Systems unit (ISYS6014) at Curtin University. The tickets, reviews and customer records are the unit's client data extracts, and company names are not shown.</p>
+            <p class="ref-provided"><strong>This is not a real company.</strong> CloudCore Networks is a made-up client created for the AI-Driven Knowledge Systems unit (ISYS6014) at Curtin University. The customers, tickets, reviews, revenue figures and the staff I interviewed are all simulated teaching material, so no real business or person is described.</p>
           </section>
 
           <div class="study-actions study-footer-actions">
