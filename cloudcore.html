@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A consultant report on customer feedback by Yarida Kaewthong: 360 support tickets and 240 reviews analysed in Orange Data Mining, with two sentiment tools tested against customers' own scores."
+      content="Yarida Kaewthong used AI to analyse 360 support tickets and 240 reviews in Orange Data Mining, then built a machine learning workflow that produces a weekly list of customers at risk of leaving."
     />
-    <title>Customer feedback text analytics | Yarida Kaewthong</title>
+    <title>AI-driven customer support analysis and automation | Yarida Kaewthong</title>
     <meta name="author" content="Yarida Kaewthong" />
     <meta name="theme-color" content="#f7f5f1" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -17,20 +17,20 @@
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Yarida Kaewthong" />
     <meta property="og:url" content="https://yarida-cv.vercel.app/cloudcore.html" />
-    <meta property="og:title" content="Customer feedback text analytics | Yarida Kaewthong" />
+    <meta property="og:title" content="AI-driven customer support analysis and automation | Yarida Kaewthong" />
     <meta
       property="og:description"
-      content="360 support tickets and 240 reviews analysed in Orange. One product is rated lowest everywhere, one region is losing customers, and the sentiment tool misses most unhappy customers."
+      content="AI text analytics on 360 support tickets and 240 reviews, and a machine learning workflow that turns new customer data into a weekly list of who is at risk of leaving."
     />
     <meta property="og:image" content="https://yarida-cv.vercel.app/images/cloudcore-workflow.png" />
     <meta property="og:image:width" content="1211" />
     <meta property="og:image:height" content="945" />
     <meta property="og:image:alt" content="Orange Data Mining workflow for the customer feedback analysis" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Customer feedback text analytics | Yarida Kaewthong" />
+    <meta name="twitter:title" content="AI-driven customer support analysis and automation | Yarida Kaewthong" />
     <meta
       name="twitter:description"
-      content="360 support tickets and 240 reviews analysed in Orange, with two sentiment tools tested against customers' own scores."
+      content="AI text analytics on customer feedback, and a machine learning workflow that produces a weekly list of customers at risk."
     />
     <meta name="twitter:image" content="https://yarida-cv.vercel.app/images/cloudcore-workflow.png" />
 
@@ -52,6 +52,12 @@
       .quote-ticket p { margin: 0; }
       .quote-ticket .q { font-family: "Newsreader", Georgia, serif; font-size: 1.25rem; line-height: 1.4; color: var(--accent); }
       .quote-ticket .n { margin-top: .5rem; color: var(--muted); font-size: .95rem; }
+      .steps { counter-reset: step; list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      .steps li { counter-increment: step; margin: 0; padding: 1.1rem 1.2rem 1.2rem; background: var(--surface, #fff); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 6px; font-size: .98rem; line-height: 1.5; color: var(--muted); }
+      .steps li::before { content: counter(step); display: block; margin-bottom: .35rem; font-family: "Newsreader", Georgia, serif; font-size: 1.5rem; line-height: 1; color: #bf5f12; }
+      .steps li strong { display: block; margin-bottom: .25rem; color: var(--accent) !important; font-weight: 600; }
+      .part-tag { display: inline-block; margin: 0 0 .6rem; padding: .15rem .6rem; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-soft, #e4e9ef); font-size: .82rem; color: var(--accent-strong, #062a43) !important; }
+      @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
       .sub-h { margin: 2.5rem 0 .6rem; font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.45rem; color: var(--accent); }
     </style>
   </head>
@@ -74,28 +80,29 @@
       <main id="main">
         <article class="study">
           <header class="study-head">
-            <p class="eyebrow">Text analytics · Orange Data Mining</p>
-            <h1>Customer feedback at scale</h1>
+            <p class="eyebrow">AI · Machine learning · Text analytics · Automation</p>
+            <h1>AI-driven customer support: analysis and automation</h1>
             <p class="lede">
-              A software company has hundreds of support tickets and reviews and wants to know where to spend next quarter's support effort. Acting as the consultant, I analysed the feedback in Orange, separated a product problem from a regional one, and tested whether a sentiment tool could be trusted to find unhappy customers. It could not, and the report says so.
+              A software company wanted to know which customers were unhappy and which were about to leave. I used AI to analyse 360 support tickets and 240 reviews in Orange, then built a machine learning workflow that scores every customer and produces a short weekly list of who to call. When new data arrives, the same workflow runs again and the list updates itself. A person still makes every decision.
             </p>
             <div class="study-actions">
               <a class="button primary" href="#findings">Jump to results</a>
               <a class="button text-button" href="#sentiment">The sentiment test</a>
+              <a class="button text-button" href="#automation">The automated weekly list</a>
             </div>
           </header>
 
           <dl class="glance" aria-label="Project at a glance">
-            <div><dt>Problem</dt><dd>Customer satisfaction is low for one product and one region. Are these the same problem, and which should the support team fix first?</dd></div>
-            <div><dt>What I did</dt><dd>Sole author of the consultant report: stakeholder interview, Orange workflow, analysis, evaluation and recommendation. AI-Driven Knowledge Systems unit (ISYS6014), Curtin University, 2026.</dd></div>
-            <div><dt>Tools</dt><dd>Orange Data Mining with the Text add-on · VADER and Liu Hu sentiment · hierarchical clustering · ANOVA</dd></div>
-            <div class="glance-result"><dt>Result</dt><dd>Two separate problems. One product is rated lowest in every region, and one region loses 49% of its customers. The sentiment tool found only 42% of unhappy customers, so I recommended staff keep reading negative tickets.</dd></div>
+            <div><dt>Problem</dt><dd>Customer satisfaction is low for one product and one region, and a quarter of customers have left or are at risk. Who is unhappy, who is leaving, and can AI find them early enough to act?</dd></div>
+            <div><dt>What I did</dt><dd>Part 1, on my own: the consultant report and its Orange text analytics workflow. Part 2, in a team of four: I built the Orange machine learning workflow, worked on the report and pitch, and narrated the demonstration. AI-Driven Knowledge Systems unit (ISYS6014), Curtin University, 2026.</dd></div>
+            <div><dt>Tools</dt><dd>Orange Data Mining with the Text add-on · VADER and Liu Hu sentiment · hierarchical clustering · logistic regression, random forest and neural network · 10-fold cross-validation</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>Sentiment AI found only 42% of unhappy customers, so it was not fit to use. A machine learning model on customer records found 77.5% of customers at risk, and the automated weekly list of 14 customers was right for 12 of them.</dd></div>
           </dl>
 
           <div class="metrics study-metrics" aria-label="Project at a glance">
             <div><span class="metric-number">360 + 240</span><span>support tickets and reviews<br />from 280 customers in 3 regions</span></div>
-            <div><span class="metric-number">49% vs 15%</span><span>customer churn<br />San Francisco against Singapore</span></div>
-            <div><span class="metric-number">42%</span><span>of unhappy customers found<br />by the sentiment tool, against a 70% target</span></div>
+            <div><span class="metric-number">77.5%</span><span>of at-risk customers found<br />by the model, against a 70% target</span></div>
+            <div><span class="metric-number">12 of 14</span><span>customers on the weekly list<br />were really at risk</span></div>
           </div>
 
           <figure class="study-hero">
@@ -106,12 +113,13 @@
               height="945"
             />
             <figcaption>
-              The Orange workflow I built. Tickets, customers and reviews come in on the left. The branches clean the text, score its sentiment, cluster it, and compare the results with what customers actually scored.
+              The Orange workflow for Part 1. Tickets, customers and reviews come in on the left. The branches clean the text, score its sentiment, cluster it, and compare the results with what customers actually scored.
             </figcaption>
           </figure>
 
           <section class="study-block" id="findings">
-            <h2>What I found</h2>
+            <p class="part-tag">Part 1 · Individual consultant report</p>
+            <h2>What the feedback showed</h2>
             <ul class="findings">
               <li>
                 <div>
@@ -221,13 +229,56 @@
             </p>
           </section>
 
+          <section class="study-block" id="automation">
+            <p class="part-tag">Part 2 · Team of four</p>
+            <h2>From analysis to an automated weekly list</h2>
+            <p>
+              Part 1 showed that scoring the text of a ticket was not reliable. So for the next stage our team asked a different question: instead of guessing how a customer feels, can a model learn from customer records who is likely to leave, and then show a manager that customer's own words?
+            </p>
+            <p>
+              The 71 customers who had left or were flagged at risk pay $302,520 a month, about $3.6 million a year. I built the workflow in Orange in three parts: prove the problem, test the models, and turn the chosen model into a list.
+            </p>
+
+            <h3 class="sub-h">Choosing the model</h3>
+            <p>
+              Six models were tested on the same data with 10-fold cross-validation, and judged on one thing: of all the customers at risk, how many does the model catch? Missing a customer who leaves is the costly mistake.
+            </p>
+            <ul>
+              <li><strong>Only one model passed.</strong> A balanced logistic regression caught 55 of the 71 at-risk customers (77.5%), above the 70% target.</li>
+              <li><strong>The most accurate model was not the best.</strong> The neural network had the highest accuracy (82.5%), but a model that simply says "everyone stays" scores 74.6% and finds no one.</li>
+              <li><strong>The chosen model can be explained.</strong> It shows what is linked to risk: short tenure, the Basic support tier, San Francisco, and having one product. That is a link, not a cause.</li>
+            </ul>
+
+            <h3 class="sub-h">How the list is produced</h3>
+            <p>
+              The model flags 106 customers, and 51 of those stayed, so sending every flag to the team would waste their time. The team can review 10 to 15 customers a week. The workflow therefore does the following each week, with no manual steps in between.
+            </p>
+            <ol class="steps">
+              <li><strong>Load the new data</strong>The latest customer and ticket files go into the same workflow.</li>
+              <li><strong>Score every customer</strong>The model gives each customer a risk score from 0 to 1.</li>
+              <li><strong>Keep the highest risk</strong>Only scores above 0.9 stay. On this data that is 14 customers.</li>
+              <li><strong>Attach their tickets</strong>Each customer is joined to their own support tickets, so the manager sees why.</li>
+              <li><strong>Remove company names</strong>The list is made safe to pass on before it leaves the workflow.</li>
+              <li><strong>Save the list</strong>Each week's list is kept as a record, and a person decides who to call.</li>
+            </ol>
+
+            <h3 class="sub-h">Does it work?</h3>
+            <ul>
+              <li><strong>12 of the 14 customers on the list were really at risk (86%).</strong></li>
+              <li><strong>A lower cut-off was worse.</strong> I tried 0.55 to reach more customers. The list grew to 101 names and only 53% were right, so the cut-off has to fit what the team can do in a week.</li>
+              <li><strong>It is weaker in one region.</strong> The model finds 87.1% of at-risk customers in San Francisco and 81.5% in Sydney, but only 6 of 13 in Singapore (46.2%). I added a region check to the workflow so this is visible.</li>
+              <li><strong>The 86% may be optimistic.</strong> We chose the cut-off after seeing the results, so we recommended a pilot with no customer contact first, to test the list on new customers.</li>
+            </ul>
+          </section>
+
           <section class="study-block">
-            <h2>What I recommended</h2>
+            <h2>What we recommended</h2>
             <ul>
               <li><strong>Fix CloudSync reliability first.</strong> The complaints are specific and the same in every region, so the fix is clear.</li>
               <li><strong>Find out why San Francisco customers leave.</strong> The data shows the size of the problem but not its cause. It needs resolution-time data and the customer success team.</li>
               <li><strong>Do not use the sentiment tool to sort customers.</strong> Staff should keep reading negative tickets, and any ticket that mentions a competitor should always be read by a person.</li>
-              <li><strong>Set a bar for any future model.</strong> It should find at least 70% of unhappy customers in every region before it is used.</li>
+              <li><strong>Pilot the weekly list in stages.</strong> First confirm what the churn flag means, then run the list with no customer contact, and only act on it if at least 70% of the list is right.</li>
+              <li><strong>Keep the list short.</strong> Cap it at 10 to 15 customers so reviewers read the tickets and do not just trust the score.</li>
             </ul>
           </section>
 
@@ -236,6 +287,7 @@
             <ul>
               <li><strong>The data is small and repetitive.</strong> 48 different ticket messages and 40 different review messages are not enough for text clustering.</li>
               <li><strong>Some customers leave without a word.</strong> 8 of the 71 churned customers (11%) wrote no ticket and no review, so feedback data cannot see them.</li>
+              <li><strong>The churn flag mixes two things.</strong> It covers customers who left and customers staff flagged as at risk, so the model may partly learn how staff label customers.</li>
               <li><strong>Product churn is approximate.</strong> Some customers raised more than one ticket, so product figures are only used to compare products with each other.</li>
             </ul>
           </section>
@@ -246,6 +298,8 @@
               <li><strong>Treat what stakeholders say as a hypothesis.</strong> The interview pointed at one product. The data showed the region mattered more for churn.</li>
               <li><strong>Measure the thing the decision depends on.</strong> A tool that is right about happy customers and wrong about unhappy ones is no use for finding unhappy ones.</li>
               <li><strong>Report the method that failed.</strong> Saying the clustering found nothing, and why, is more useful than forcing five themes out of it.</li>
+              <li><strong>A cut-off is not only a statistics choice.</strong> It has to fit how many customers the team can review in a week.</li>
+              <li><strong>An overall number can hide a weak region.</strong> 77.5% overall was 46.2% in Singapore.</li>
               <li><strong>Keep a person in the loop where a mistake costs a customer.</strong></li>
             </ul>
           </section>

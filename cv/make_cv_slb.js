@@ -73,7 +73,7 @@ const children = [
   heading("Skills"),
   ...[
     ["Programming and Data", "Python (APIs, Matplotlib), SQL (Oracle), R (tidyverse, sf, ggplot2, R Markdown), Microsoft Excel, data cleaning and validation."],
-    ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, time-series analysis, model comparison (R squared, RMSE, MAE, ROC/AUC), sentiment analysis (Orange)."],
+    ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, time-series analysis, model comparison (R squared, RMSE, MAE, ROC/AUC), machine learning and sentiment analysis (Orange)."],
     ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters, forecasting), Power BI (dashboards, DAX)."],
     ["GIS and Spatial", "QGIS and ArcGIS, hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
     ["Communication", "Analyst reports, conference presentations, explaining data to non-technical people."],
@@ -103,9 +103,9 @@ const children = [
     "Showed with a chi-square trend test that pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), a rise too large to be chance.",
     "Recommended 40 km/h zones, separated bike lanes and better street lighting for those hot-spot areas.",
   ] }),
-  ...entry({ title: "Customer Feedback Text Analytics", date: "2026", org: "Curtin University, individual consultant report | Orange Data Mining, sentiment analysis, clustering", page: "cloudcore.html", bullets: [
-    "Analysed 360 support tickets and 240 reviews in Orange and separated two problems: one product rated lowest in every region, and one region losing 49% of its customers.",
-    "Tested two sentiment tools against customers' own scores and showed the better one found only 58% of unhappy customers against a 70% target, so I recommended staff keep reading negative tickets.",
+  ...entry({ title: "AI-Driven Customer Support: Analysis and Automation", date: "2026", org: "Curtin University, individual report and team of four | Orange Data Mining, machine learning, sentiment analysis", page: "cloudcore.html", bullets: [
+    "Used AI text analytics in Orange on 360 support tickets and 240 reviews, and showed two sentiment tools found at most 58% of unhappy customers against a 70% target, so they were not fit to automate.",
+    "Built the team's machine learning workflow that scores 280 customers for churn risk (77.5% of at-risk customers found) and automatically produces a weekly list of 14 to call, 12 of them truly at risk.",
   ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
     "Built three linked Tableau dashboards on 15 years of ESG and financial data for 8 Asia-Pacific markets, and found ESG explains only about 2% of the difference in profit between firms, so a high ESG rating alone is a poor guide to profitability.",
