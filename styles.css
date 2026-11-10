@@ -584,7 +584,7 @@ html .home .contact .contact-link:hover { color: #ffffff; border-bottom-color: #
 html .home .contact a:focus-visible { outline-color: #f7f5f1; }
 @media print { html .home .contact { background: none; color: inherit; padding: 2rem 0; } html .home .contact h2, html .home .contact .contact-note, html .home .contact .contact-link { color: inherit; } .section .section-label h2 { background: none; padding-bottom: 0; } }
 /* Orange highlights on project pages: key numbers, finding bullets, the result box and the "So what" note */
-main .metric-number { display: block; width: fit-content; max-width: 100%; padding: 0 .12em; margin-left: -.12em; background: linear-gradient(transparent 60%, rgba(224, 123, 34, .32) 60%); }
+main .metric-number { display: block; width: fit-content; max-width: 100%; padding: 0 .12em; margin-left: -.12em; }
 main .findings > li::marker, main .cs-findings > li::marker, main .esg-findings > li::marker, main .ww-findings > li::marker, .ww-block > ul li::marker { color: var(--detail); }
 .glance .glance-result { box-shadow: inset 3px 0 0 var(--detail); }
 main .demo .sowhat { border-left-color: var(--detail); }
