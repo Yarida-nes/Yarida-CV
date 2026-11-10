@@ -625,3 +625,5 @@ main :is(p, li) code { overflow-wrap: anywhere; }
 @media screen { html .home .contact h2 { color: #f28c38; } }
 /* Availability line under the name, in a darker orange that stays readable on cream */
 @media screen { html .home .intro-copy .availability { color: #bf5f12; } }
+/* Company and institution subtitles in the readable orange */
+@media screen { html .home .timeline .company { color: #bf5f12; } }
