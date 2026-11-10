@@ -1,14 +1,14 @@
-/* Palette: deep navy #093B5D, slate #71869A and warm grey #DFD9D7 */
+/* Palette: deep navy #093B5D and slate #71869A on cream; warm grey #DFD9D7 for lines */
 :root {
-  --paper: #dfd9d7;
+  --paper: #f7f5f1;
   --surface: #ffffff;
   --ink: #10202e;
   --signal: #10202e;
   --muted: #45566a;
-  --line: #c9c2bf;
+  --line: #dfd9d7;
   --accent: #093b5d;
   --accent-strong: #062a43;
-  --accent-soft: #d2dae2;
+  --accent-soft: #e4e9ef;
   color-scheme: light;
 }
 
