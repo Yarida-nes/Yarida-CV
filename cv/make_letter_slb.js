@@ -3,7 +3,7 @@
 const fs = require("fs");
 const { Document, Packer, Paragraph, TextRun, ExternalHyperlink, AlignmentType, BorderStyle } = require("docx");
 
-const ACCENT = "7A2434", INK = "1A1A1A", FONT = "Calibri", SZ = 22;
+const ACCENT = "093B5D", INK = "1A1A1A", FONT = "Calibri", SZ = 22;
 const run = (text, o = {}) => new TextRun({ text, font: FONT, size: SZ, color: INK, ...o });
 const link = (text, url) => new ExternalHyperlink({ link: url, children: [run(text, { color: ACCENT })] });
 const p = (children, after = 200) => new Paragraph({ spacing: { after, line: 276 }, children: Array.isArray(children) ? children : [run(children)] });

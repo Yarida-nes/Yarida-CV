@@ -20,7 +20,7 @@ const ARGS = process.argv.slice(2).filter(a => !a.startsWith("--"));
 const PUBLIC = process.env.CV_PUBLIC === "1" || process.argv.includes("--public") || !PRIVATE;
 const OUT = ARGS[0] || path.join(__dirname, PUBLIC ? "Yarida_Kaewthong_CV_public.docx" : "Yarida_Kaewthong_CV_2026.docx");
 
-const ACCENT = "7A2434", INK = "1A1A1A", GREY = "555555";
+const ACCENT = "093B5D", INK = "1A1A1A", GREY = "555555";
 const FONT = "Calibri", SZ = 20;   // 10 pt
 
 const run = (text, o = {}) => new TextRun({ text, font: FONT, size: SZ, color: INK, ...o });
