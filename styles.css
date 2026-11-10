@@ -1,4 +1,4 @@
-/* Palette: deep navy #093B5D and slate #71869A on cream; warm grey #DFD9D7 for lines */
+/* Palette: deep navy #093B5D on cream, orange #E07B22 highlights, warm grey #DFD9D7 lines */
 :root {
   --paper: #f7f5f1;
   --surface: #ffffff;
@@ -568,8 +568,8 @@ html .home .cap-tool img { width: 22px; height: 22px; filter: grayscale(1); opac
 html .home .project-card h3 { margin-bottom: .35rem; }
 html .home .project-card .card-meta { margin: 0 0 .85rem; color: var(--muted); font-size: .9rem; }
 
-/* Slate details: navy is the main colour; slate marks links, headings and the contact block */
-:root { --detail: #71869a; }
+/* Orange highlights: navy is the main colour; orange marks links, headings and the contact block */
+:root { --detail: #e07b22; }
 .button, .card-btn, .card-btn.is-primary, .section-side-link, .footer-links a, .ref-list a { text-decoration-color: var(--detail); text-decoration-thickness: 2px; }
 .section-intro a, .projects-more a { border-bottom-color: var(--detail); }
 nav a::after { background: var(--detail); }
@@ -579,7 +579,7 @@ nav a.is-active { color: var(--ink); }
 /* Contact as one strong block */
 html .home .contact { margin: 1rem 0 3rem; padding: clamp(2rem, 5vw, 3.5rem); border: 0; border-radius: 6px; background: var(--accent); color: #f7f5f1; }
 html .home .contact h2, html .home .contact .contact-note { color: #f7f5f1; }
-html .home .contact .contact-link { color: #f7f5f1; border-bottom-color: #9fb0c0; }
+html .home .contact .contact-link { color: #f7f5f1; border-bottom-color: var(--detail); }
 html .home .contact .contact-link:hover { color: #ffffff; border-bottom-color: #ffffff; }
 html .home .contact a:focus-visible { outline-color: #f7f5f1; }
 @media print { html .home .contact { background: none; color: inherit; padding: 2rem 0; } html .home .contact h2, html .home .contact .contact-note, html .home .contact .contact-link { color: inherit; } .section .section-label h2 { background: none; padding-bottom: 0; } }
