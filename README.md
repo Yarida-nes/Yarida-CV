@@ -7,7 +7,7 @@ A dependency-free CV site built with plain HTML, CSS and JavaScript. No framewor
 | File | What it is |
 | --- | --- |
 | `index.html` | The landing page: hero, metrics strip, experience, four project cards, capabilities, "How I work", Q&A, education, contact. |
-| `projects.html` | The "All projects" index listing the four case studies. |
+| `projects.html` | Redirects to the Projects section on the home page (kept so old links still work). |
 | `esg.html`, `credit-risk.html`, `housing.html`, `weatherwise.html` | One case-study page per project. Card images for the landing page live at `images/<name>-card.svg`; if an image is missing the card falls back to a navy panel. |
 | `styles.css` | All styling, including the mobile layout (under 720px) and the print stylesheet used by the "Save as PDF" buttons. Colours are the variables at the top. |
 | `app.js` | Small, dependency-free script: footer year, Save-as-PDF buttons, nav highlighting as you scroll, opens the Q&A when printing, and hides missing card images. |
