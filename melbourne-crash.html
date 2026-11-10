@@ -41,6 +41,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="demos.css" />
     <link rel="stylesheet" href="housing.css" />
   </head>
   <body>
@@ -111,6 +112,40 @@
               </li>
             </ul>
           </section>
+
+          <section class="demo coral" id="speed" aria-labelledby="speed-title">
+          <div class="demo-head">
+            <div>
+              <p class="demo-kicker">Melbourne · R · 30,469 crashes</p>
+              <h2 id="speed-title">How much does the speed zone matter?</h2>
+            </div>
+          </div>
+          <p class="demo-intro">Pick a speed zone to see how many of every 100 pedestrian crashes killed or seriously injured someone.</p>
+          <fieldset class="pick" data-group="speed">
+            <legend>Speed zone</legend>
+            <button type="button" data-v="40">40 km/h</button>
+            <button type="button" data-v="60">60 km/h</button>
+            <button type="button" data-v="80">80+ km/h</button>
+          </fieldset>
+          <div class="trend" aria-label="Serious-injury share by speed zone">
+            <button type="button" data-group-link="speed" data-v="40">40 km/h<b>41 in 100</b><i><span style="width: 41%"></span></i></button>
+            <button type="button" data-group-link="speed" data-v="60">60 km/h<b>54 in 100</b><i><span style="width: 54%"></span></i></button>
+            <button type="button" data-group-link="speed" data-v="80">80+ km/h<b>65 in 100</b><i><span style="width: 65%"></span></i></button>
+          </div>
+          <div class="demo-body">
+            <div>
+              <div class="people" id="people" aria-hidden="true"></div>
+              <div class="legend"><span><i style="background: var(--tone)"></i>Killed or seriously injured</span><span><i style="background: var(--line)"></i>Other injury</span></div>
+            </div>
+            <div class="readout" aria-live="polite">
+              <div class="big"><span id="speed-n">41</span><small> in 100</small></div>
+              <p id="speed-text"></p>
+              <span class="delta" id="speed-delta"></span>
+              <p class="sowhat"><strong>So what:</strong> moving a road from 60 to 40 km/h is linked to about 13 fewer serious injuries in every 100 pedestrian crashes, which is why the case study recommends 40 km/h zones in the inner-city hot spots.</p>
+            </div>
+          </div>
+          <p class="note">Victorian police and hospital crash records, metro Melbourne 2012–2025. The rise across speed zones passes a chi-square test for trend (χ² = 274.9, p &lt; 0.001). This is an association, not a controlled experiment: faster roads also differ in design and traffic.</p>
+        </section>
 
           <section class="study-block">
             <h2>On the map</h2>
@@ -251,5 +286,6 @@
       </footer>
     </div>
     <script src="app.js"></script>
+    <script src="demos.js"></script>
   </body>
 </html>

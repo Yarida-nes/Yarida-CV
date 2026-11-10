@@ -41,6 +41,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="demos.css" />
     <link rel="stylesheet" href="credit-risk.css" />
   </head>
   <body>
@@ -67,7 +68,7 @@
             A business analytics assessment in R Markdown, done in a group of three. We cleaned, explored and modelled 32,581 loan and borrower records, and every step knits to a reproducible PDF report.
           </p>
           <div class="cs-actions">
-            <a class="button primary" href="try-it.html#credit">Try the demo</a>
+            <a class="button primary" href="#credit">Try the demo</a>
             <a class="button text-button" href="https://github.com/Yarida-nes/credit-risk-loan-data" target="_blank" rel="noreferrer">Code on GitHub</a>
             <a class="button text-button" href="projects.html">All projects</a>
             <a class="button text-button" href="index.html#projects">Back to home</a>
@@ -142,6 +143,40 @@
               </li>
             </ul>
           </section>
+
+          <section class="demo" id="credit" aria-labelledby="c-title">
+          <div class="demo-head">
+            <div>
+              <p class="demo-kicker">Credit risk · R · 28,578 loans</p>
+              <h2 id="c-title">Can a model score 78% and still be useless?</h2>
+            </div>
+          </div>
+          <p class="demo-intro">After cleaning, 22,395 loans were repaid and 6,183 defaulted. Pick a made-up model, or move the sliders, and see what its accuracy hides.</p>
+          <fieldset class="pick" data-group="credit">
+            <legend>A made-up model</legend>
+            <button type="button" data-v="none">Says &ldquo;repaid&rdquo; to everyone</button>
+            <button type="button" data-v="all">Says &ldquo;default&rdquo; to everyone</button>
+            <button type="button" data-v="half">Catches half, flags 1 in 10 good loans</button>
+          </fieldset>
+          <div class="demo-body">
+            <div class="sliders">
+              <label for="c-caught">Defaults it catches <output id="c-caught-v"></output></label>
+              <input type="range" id="c-caught" min="0" max="6183" step="1" />
+              <label for="c-false">Good loans it wrongly flags <output id="c-false-v"></output></label>
+              <input type="range" id="c-false" min="0" max="22395" step="1" />
+            </div>
+            <div class="readout" aria-live="polite">
+              <dl class="stats">
+                <div><dt>Accuracy</dt><dd id="c-acc"></dd></div>
+                <div><dt>Defaults caught</dt><dd id="c-sens"></dd></div>
+                <div><dt>Good loans cleared</dt><dd id="c-spec"></dd></div>
+                <div><dt>Missed defaults</dt><dd id="c-miss"></dd></div>
+              </dl>
+              <p id="c-text" style="margin-top: 1rem"></p>
+            </div>
+          </div>
+          <p class="note">What-if arithmetic on the cleaned loan counts, not results from our group&rsquo;s model. It shows why the case study judges a default model on how many defaults it catches, not on accuracy alone.</p>
+        </section>
 
           <section class="cs-block">
             <h2>The problem</h2>
@@ -249,5 +284,6 @@
       </footer>
     </div>
     <script src="app.js"></script>
+    <script src="demos.js"></script>
   </body>
 </html>

@@ -31,71 +31,14 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .demo { --tone: var(--accent); --tone-ink: var(--accent-strong); --tone-soft: var(--accent-soft); display: none; margin: 1.25rem 0 2rem; padding: clamp(1rem, 2.5vw, 1.6rem); background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--tone); border-radius: 12px; scroll-margin-top: 1.5rem; font-size: 1rem; max-width: 780px; }
-      .demo.is-active { display: block; }
       .case-intro { padding: 2.5rem 0 1.25rem; }
       .case-intro h1 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin-bottom: .8rem; }
       .case-intro .lede { font-size: 1rem; max-width: 560px; }
-      .demo-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; align-items: baseline; }
-      .demo-kicker { margin: 0 0 .4rem; font-family: "Public Sans", sans-serif; font-size: .9rem; color: var(--muted); }
-      .demo h2 { margin: 0 0 .4rem; font-size: clamp(1.4rem, 2.3vw, 1.8rem); line-height: 1.2; }
-      .demo-intro { max-width: 600px; color: var(--muted); margin-bottom: 1.1rem; }
-      .demo-back { font-weight: 600; color: var(--tone-ink); white-space: nowrap; }
-      .pick { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.5rem; padding: 0; border: 0; }
-      .pick legend { width: 100%; margin-bottom: .55rem; font-family: "Public Sans", sans-serif; font-size: .9rem; color: var(--muted); }
-      .pick button { font: inherit; font-weight: 600; padding: .45rem .9rem; border-radius: 999px; border: 1.5px solid var(--tone); background: var(--surface); color: var(--tone-ink); cursor: pointer; transition: background-color .2s ease, color .2s ease; }
-      .pick button:hover { background: var(--tone-soft); }
-      .pick button[aria-pressed="true"] { background: var(--tone-ink); border-color: var(--tone-ink); color: #fff; }
-      .demo-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; align-items: center; }
-      .big { font-size: clamp(2rem, 3.8vw, 2.7rem); font-weight: 700; line-height: 1; color: var(--tone-ink); }
-      .big small { font-size: .35em; font-weight: 500; color: var(--muted); }
-      .readout p { color: var(--muted); max-width: 400px; margin-bottom: .5rem; }
-      .readout p strong { color: var(--ink); }
-      .delta { display: inline-block; margin-top: .4rem; padding: .3rem .7rem; border-radius: 999px; background: var(--tone-soft); color: var(--tone-ink); font-family: "Public Sans", sans-serif; font-size: .85rem; }
-      .note { margin: 1.2rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
-      /* 100-person grid */
-      .people { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; max-width: 250px; }
-      .people span { aspect-ratio: 1; border-radius: 50%; background: var(--line); transition: background-color .35s ease, transform .35s ease; }
-      .people span.on { background: var(--tone); transform: scale(1.06); }
-      .legend { display: flex; gap: 1.2rem; margin-top: .8rem; font-size: .85rem; color: var(--muted); }
-      .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: .4rem; vertical-align: -1px; }
-      /* village bar */
-      .villages { width: 100%; max-width: 480px; }
-      .vbar { position: relative; height: 28px; border-radius: 8px; background: var(--line); overflow: hidden; }
-      .vbar .fill { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, var(--tone-ink), var(--tone)); border-radius: 8px; transition: width .6s cubic-bezier(.2, .7, .3, 1); }
-      .vscale { display: flex; justify-content: space-between; margin-top: .4rem; font-family: "DM Mono", monospace; font-size: .78rem; color: var(--muted); }
-      /* model bars */
-      .models { display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem; align-items: end; height: 140px; padding-bottom: 1.6rem; position: relative; }
-      .models div { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
-      .models b { display: block; border-radius: 6px 6px 0 0; background: #e6cfd3; transition: background-color .3s ease, height .5s ease; }
-      .models div.sel b { background: var(--tone); }
-      .models em { font-style: normal; font-family: "DM Mono", monospace; font-size: .78rem; text-align: center; margin-bottom: .3rem; color: var(--muted); }
-      .models div.sel em { color: var(--tone-ink); font-weight: 600; }
-      .models span { position: absolute; bottom: -1.5rem; left: 0; right: 0; text-align: center; font-family: "DM Mono", monospace; font-size: .75rem; color: var(--muted); }
-      .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; margin: 1rem 0 0; }
-      .stats div { padding: .7rem .9rem; border-radius: 8px; background: var(--tone-soft); }
-      .stats dt { font-family: "Public Sans", sans-serif; font-size: .85rem; color: var(--muted); }
-      .stats dd { margin: 0; font-size: 1.2rem; font-weight: 600; }
-      .jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; }
-      .jump a { padding: .4rem .85rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: .9rem; }
-      .jump a:hover { border-color: var(--accent); color: var(--accent); }
-      .jump a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
-      /* credit sliders */
-      .sliders { display: grid; gap: .5rem; }
-      .sliders label { display: flex; justify-content: space-between; gap: 1rem; font-weight: 600; }
-      .sliders output { font-family: "Public Sans", sans-serif; color: var(--tone-ink); }
-      .sliders input { width: 100%; margin-bottom: 1rem; accent-color: var(--tone); }
-      .trend { display: flex; gap: .6rem; margin: 0 0 1.1rem; max-width: 460px; }
-      .trend button { white-space: nowrap; }
-      .trend button { flex: 1; min-width: 0; font: inherit; text-align: left; padding: .5rem .6rem .45rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--muted); }
-      .trend button b { display: block; font-size: 1.3rem; color: var(--ink); line-height: 1.1; }
-      .trend button i { display: block; height: 6px; margin-top: .4rem; border-radius: 3px; background: var(--line); }
-      .trend button i span { display: block; height: 100%; border-radius: 3px; background: var(--tone); }
-      .trend button[aria-pressed="true"] { border-color: var(--tone); background: var(--tone-soft); color: var(--tone-ink); }
-      .trend button[aria-pressed="true"] b { color: var(--tone-ink); }
-      @media (max-width: 420px) { .trend { gap: .4rem; } .trend button { padding: .45rem .45rem .4rem; } .trend button b { font-size: 1.1rem; } }
-      .sowhat { margin: .9rem 0 0; padding: .6rem .8rem; border-left: 3px solid var(--tone); background: var(--paper); color: var(--ink); font-size: .97rem; }
-      @media (max-width: 760px) { .demo-body { grid-template-columns: 1fr; } }
+      .demo-list { list-style: none; margin: 1.5rem 0 3rem; padding: 0; display: grid; gap: .9rem; max-width: 640px; }
+      .demo-list a { display: block; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); text-decoration: none; color: var(--ink); }
+      .demo-list a:hover, .demo-list a:focus-visible { border-color: var(--accent); }
+      .demo-list strong { display: block; color: var(--accent); font-size: 1.05rem; margin-bottom: .2rem; }
+      .demo-list span { color: var(--muted); font-size: .95rem; }
     </style>
   </head>
   <body>
@@ -117,155 +60,14 @@
       <main id="main">
         <section class="case-intro">
           <p class="eyebrow">Try it</p>
-          <h1>Click through the results yourself.</h1>
-          <p class="lede">
-            Small interactive demos of my projects, one at a time. Pick one below. The numbers come from the finished analyses, except the made-up models in the credit-risk demo.
-          </p>
-          <div class="jump" aria-label="Choose a demo">
-            <a href="#speed">Speed and injury</a>
-            <a href="#pharmacies">Pharmacy coverage</a>
-            <a href="#housing">Housing models</a>
-            <a href="#credit">Credit risk</a>
-          </div>
-        </section>
-
-        <!-- 1. Melbourne speed zones -->
-        <section class="demo coral" id="speed" aria-labelledby="speed-title">
-          <div class="demo-head">
-            <div>
-              <p class="demo-kicker">Melbourne · R · 30,469 crashes</p>
-              <h2 id="speed-title">How much does the speed zone matter?</h2>
-            </div>
-            <a class="demo-back" href="melbourne-crash.html">Read the case study</a>
-          </div>
-          <p class="demo-intro">Pick a speed zone to see how many of every 100 pedestrian crashes killed or seriously injured someone.</p>
-          <fieldset class="pick" data-group="speed">
-            <legend>Speed zone</legend>
-            <button type="button" data-v="40">40 km/h</button>
-            <button type="button" data-v="60">60 km/h</button>
-            <button type="button" data-v="80">80+ km/h</button>
-          </fieldset>
-          <div class="trend" aria-label="Serious-injury share by speed zone">
-            <button type="button" data-group-link="speed" data-v="40">40 km/h<b>41 in 100</b><i><span style="width: 41%"></span></i></button>
-            <button type="button" data-group-link="speed" data-v="60">60 km/h<b>54 in 100</b><i><span style="width: 54%"></span></i></button>
-            <button type="button" data-group-link="speed" data-v="80">80+ km/h<b>65 in 100</b><i><span style="width: 65%"></span></i></button>
-          </div>
-          <div class="demo-body">
-            <div>
-              <div class="people" id="people" aria-hidden="true"></div>
-              <div class="legend"><span><i style="background: var(--tone)"></i>Killed or seriously injured</span><span><i style="background: var(--line)"></i>Other injury</span></div>
-            </div>
-            <div class="readout" aria-live="polite">
-              <div class="big"><span id="speed-n">41</span><small> in 100</small></div>
-              <p id="speed-text"></p>
-              <span class="delta" id="speed-delta"></span>
-              <p class="sowhat"><strong>So what:</strong> moving a road from 60 to 40 km/h is linked to about 13 fewer serious injuries in every 100 pedestrian crashes, which is why the case study recommends 40 km/h zones in the inner-city hot spots.</p>
-            </div>
-          </div>
-          <p class="note">Victorian police and hospital crash records, metro Melbourne 2012–2025. The rise across speed zones passes a chi-square test for trend (χ² = 274.9, p &lt; 0.001). This is an association, not a controlled experiment: faster roads also differ in design and traffic.</p>
-        </section>
-
-        <!-- 2. Pharmacy coverage -->
-        <section class="demo green" id="pharmacies" aria-labelledby="ph-title">
-          <div class="demo-head">
-            <div>
-              <p class="demo-kicker">Nonthaburi, Thailand · GIS · co-authored paper</p>
-              <h2 id="ph-title">Where would new pharmacies help most?</h2>
-            </div>
-            <a class="demo-back" href="drugstores.html">Read the case study</a>
-          </div>
-          <p class="demo-intro">Add pharmacies chosen by location-allocation modelling and watch how many of the province's 511 villages fall within a 5 km service radius.</p>
-          <fieldset class="pick" data-group="ph">
-            <legend>Pharmacies added</legend>
-            <button type="button" data-v="0">Today (27)</button>
-            <button type="button" data-v="5">+5</button>
-            <button type="button" data-v="22">+22</button>
-          </fieldset>
-          <div class="trend" aria-label="Villages within reach by number of pharmacies added">
-            <button type="button" data-group-link="ph" data-v="0">Today (27)<b>199 of 511</b><i><span style="width: 39%"></span></i></button>
-            <button type="button" data-group-link="ph" data-v="5">+5 added<b>325 of 511</b><i><span style="width: 64%"></span></i></button>
-            <button type="button" data-group-link="ph" data-v="22">+22 added<b>417 of 511</b><i><span style="width: 82%"></span></i></button>
-          </div>
-          <div class="villages">
-            <div class="big"><span id="ph-n">199</span><small> of 511 villages</small></div>
-            <div class="vbar" role="img" id="ph-bar" aria-label="Villages within reach"><div class="fill" id="ph-fill"></div></div>
-            <div class="vscale"><span>0</span><span>511 villages</span></div>
-            <p class="readout" aria-live="polite"><span id="ph-text" style="color: var(--muted)"></span></p>
-            <p class="sowhat"><strong>So what:</strong> five well-placed pharmacies add 126 villages, so placement matters more than count. Today each participating pharmacist serves about 13,451 people, well above the NHSO guideline of 10,000, which is the case for adding them.</p>
-          </div>
-          <p class="note">From the 2023 Asian Conference on Remote Sensing paper I co-authored. The paper also reports coverage as 82.74% (+5) and over 95% (+22); those percentages use a different coverage measure from the village counts shown here.</p>
-        </section>
-
-        <!-- 3. Housing models -->
-        <section class="demo" id="housing" aria-labelledby="h-title">
-          <div class="demo-head">
-            <div>
-              <p class="demo-kicker">Australian housing · R · 5 regression models</p>
-              <h2 id="h-title">Does adding variables always make a better model?</h2>
-            </div>
-            <a class="demo-back" href="housing.html">Read the case study</a>
-          </div>
-          <p class="demo-intro">Step through the five nested models of quarterly house price growth. Watch adjusted R² (explanatory power) and the error measures as each group of variables is added.</p>
-          <fieldset class="pick" data-group="model">
-            <legend>Model</legend>
-            <button type="button" data-v="0">Model 1</button>
-            <button type="button" data-v="1">Model 2</button>
-            <button type="button" data-v="2">Model 3</button>
-            <button type="button" data-v="3">Model 4</button>
-            <button type="button" data-v="4">Model 5</button>
-          </fieldset>
-          <div class="demo-body">
-            <div>
-              <div class="models" id="models" role="img" aria-label="Adjusted R-squared for models 1 to 5: 0.049, 0.102, 0.197, 0.238, 0.235"></div>
-            </div>
-            <div class="readout" aria-live="polite">
-              <p style="margin-bottom: .3rem"><strong id="h-adds"></strong></p>
-              <dl class="stats">
-                <div><dt>Adjusted R²</dt><dd id="h-adj"></dd></div>
-                <div><dt>R²</dt><dd id="h-r2"></dd></div>
-                <div><dt>RMSE</dt><dd id="h-rmse"></dd></div>
-                <div><dt>MAE</dt><dd id="h-mae"></dd></div>
-              </dl>
-              <p id="h-text" style="margin-top: 1rem"></p>
-            </div>
-          </div>
-          <p class="note">RMSE and MAE are in percentage points of quarterly growth. All five models are significant overall (F-test p &lt; 0.05). I chose Model 4: highest adjusted R² and lowest MAE.</p>
-        </section>
-
-        <!-- 4. Credit risk: the accuracy trap -->
-        <section class="demo" id="credit" aria-labelledby="c-title">
-          <div class="demo-head">
-            <div>
-              <p class="demo-kicker">Credit risk · R · 28,578 loans</p>
-              <h2 id="c-title">Can a model score 78% and still be useless?</h2>
-            </div>
-            <a class="demo-back" href="credit-risk.html">Read the case study</a>
-          </div>
-          <p class="demo-intro">After cleaning, 22,395 loans were repaid and 6,183 defaulted. Pick a made-up model, or move the sliders, and see what its accuracy hides.</p>
-          <fieldset class="pick" data-group="credit">
-            <legend>A made-up model</legend>
-            <button type="button" data-v="none">Says &ldquo;repaid&rdquo; to everyone</button>
-            <button type="button" data-v="all">Says &ldquo;default&rdquo; to everyone</button>
-            <button type="button" data-v="half">Catches half, flags 1 in 10 good loans</button>
-          </fieldset>
-          <div class="demo-body">
-            <div class="sliders">
-              <label for="c-caught">Defaults it catches <output id="c-caught-v"></output></label>
-              <input type="range" id="c-caught" min="0" max="6183" step="1" />
-              <label for="c-false">Good loans it wrongly flags <output id="c-false-v"></output></label>
-              <input type="range" id="c-false" min="0" max="22395" step="1" />
-            </div>
-            <div class="readout" aria-live="polite">
-              <dl class="stats">
-                <div><dt>Accuracy</dt><dd id="c-acc"></dd></div>
-                <div><dt>Defaults caught</dt><dd id="c-sens"></dd></div>
-                <div><dt>Good loans cleared</dt><dd id="c-spec"></dd></div>
-                <div><dt>Missed defaults</dt><dd id="c-miss"></dd></div>
-              </dl>
-              <p id="c-text" style="margin-top: 1rem"></p>
-            </div>
-          </div>
-          <p class="note">What-if arithmetic on the cleaned loan counts, not results from our group&rsquo;s model. It shows why the case study judges a default model on how many defaults it catches, not on accuracy alone.</p>
+          <h1>Each demo now sits inside its case study.</h1>
+          <p class="lede">Pick one to open the project page at its interactive demo.</p>
+          <ul class="demo-list">
+            <li><a href="melbourne-crash.html#speed"><strong>Speed and injury</strong><span>Walking and cycling safety in Melbourne</span></a></li>
+            <li><a href="drugstores.html#pharmacies"><strong>Pharmacy coverage</strong><span>Drugstore access in Thailand</span></a></li>
+            <li><a href="housing.html#housing"><strong>Housing models</strong><span>Australian housing price regression</span></a></li>
+            <li><a href="credit-risk.html#credit"><strong>Credit risk</strong><span>Credit risk: what the loan data shows</span></a></li>
+          </ul>
         </section>
       </main>
 
@@ -276,131 +78,11 @@
     </div>
     <script src="app.js"></script>
     <script>
+      // Old links such as try-it.html#housing go straight to that demo on its project page
       (function () {
-        function group(name, onPick, start) {
-          var buttons = document.querySelectorAll('[data-group="' + name + '"] button');
-          function pick(btn) {
-            buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
-            onPick(btn.getAttribute("data-v"));
-          }
-          buttons.forEach(function (b) { b.addEventListener("click", function () { pick(b); }); });
-          pick(buttons[start || 0]);
-        }
-
-        // 1. Speed zones (share of pedestrian crashes that were fatal or serious)
-        var people = document.getElementById("people");
-        for (var i = 0; i < 100; i++) people.appendChild(document.createElement("span"));
-        var dots = people.children;
-        var speed = { 40: 41, 60: 54, 80: 65 };
-        var trend = document.querySelectorAll(".trend button");
-        trend.forEach(function (t) { t.addEventListener("click", function () {
-          var target = document.querySelector('[data-group="' + t.getAttribute("data-group-link") + '"] button[data-v="' + t.getAttribute("data-v") + '"]');
-          if (target) target.click();
-        }); });
-        function markTiles(groupName, v) {
-          trend.forEach(function (t) {
-            if (t.getAttribute("data-group-link") === groupName) t.setAttribute("aria-pressed", t.getAttribute("data-v") === v ? "true" : "false");
-          });
-        }
-        group("speed", function (v) {
-          var n = speed[v];
-          markTiles("speed", v);
-          for (var i = 0; i < 100; i++) dots[i].classList.toggle("on", i < n);
-          document.getElementById("speed-n").textContent = n;
-          document.getElementById("speed-text").innerHTML =
-            "In <strong>" + (v === "80" ? "80+" : v) + " km/h</strong> zones, about <strong>" + n + " of every 100</strong> pedestrian crashes killed or seriously injured someone.";
-          document.getElementById("speed-delta").textContent =
-            v === "40" ? "Lowest of the three zones" : "+" + (n - 41) + " more than in 40 km/h zones";
-        });
-
-        // 2. Pharmacy coverage (villages within 5 km, of 511)
-        var ph = {
-          0: [199, "The 27 participating pharmacies reach fewer than 4 in 10 villages. Mueang Nonthaburi is best served (72 villages); Sai Noi worst (8)."],
-          5: [325, "Five new pharmacies in Bang Yai, Bang Bua Thong and Bang Kruai add 126 villages. Placement matters more than count."],
-          22: [417, "Twenty-two additions spread across all six districts reach 417 villages, more than double today's coverage."]
-        };
-        group("ph", function (v) {
-          var d = ph[v];
-          markTiles("ph", v);
-          document.getElementById("ph-n").textContent = d[0];
-          document.getElementById("ph-fill").style.width = (d[0] / 511 * 100) + "%";
-          document.getElementById("ph-bar").setAttribute("aria-label", d[0] + " of 511 villages within reach");
-          document.getElementById("ph-text").textContent = d[1];
-        });
-
-        // 3. Housing models
-        var models = [
-          { adds: "Trend, quarter and state", r2: 0.0823, adj: 0.0491, rmse: 2.633, mae: 2.031, text: "The baseline: time and place alone explain about 5% of the variation." },
-          { adds: "+ Interest rate, inflation", r2: 0.1412, adj: 0.1019, rmse: 2.547, mae: 1.986, text: "Interest rates and inflation roughly double the explained share, and both error measures fall." },
-          { adds: "+ Migration, household income", r2: 0.2387, adj: 0.1967, rmse: 2.398, mae: 1.862, text: "The biggest single jump in adjusted R²." },
-          { adds: "+ COVID-19 period", r2: 0.2811, adj: 0.2378, rmse: 2.331, mae: 1.787, text: "The preferred model. The 2020–21 period adds 2.63 points of quarterly growth (p < 0.001), the largest single effect." },
-          { adds: "+ Election period", r2: 0.2822, adj: 0.2354, rmse: 2.329, mae: 1.791, text: "Plain R² still rises, but adjusted R² falls and MAE gets worse. The election term is not significant (p = 0.568), so this model is rejected." }
-        ];
-        var wrap = document.getElementById("models");
-        models.forEach(function (m, i) {
-          var col = document.createElement("div");
-          col.innerHTML = "<em>" + m.adj.toFixed(3) + "</em><b style=\"height:" + (m.adj / 0.26 * 100) + "%\"></b><span>M" + (i + 1) + "</span>";
-          wrap.appendChild(col);
-        });
-        group("model", function (v) {
-          var m = models[+v];
-          Array.prototype.forEach.call(wrap.children, function (c, i) { c.classList.toggle("sel", i === +v); });
-          document.getElementById("h-adds").textContent = m.adds;
-          document.getElementById("h-adj").textContent = m.adj.toFixed(3);
-          document.getElementById("h-r2").textContent = m.r2.toFixed(3);
-          document.getElementById("h-rmse").textContent = m.rmse.toFixed(3);
-          document.getElementById("h-mae").textContent = m.mae.toFixed(3);
-          document.getElementById("h-text").textContent = m.text;
-        }, 3);
-
-        // 4. Credit risk: accuracy against defaults caught (22,395 repaid, 6,183 defaulted)
-        var GOOD = 22395, BAD = 6183;
-        var caught = document.getElementById("c-caught");
-        var flagged = document.getElementById("c-false");
-        function pct(x) { return (x * 100).toFixed(1) + "%"; }
-        function fmt(n) { return n.toLocaleString("en-AU"); }
-        function credit() {
-          var c = +caught.value, f = +flagged.value;
-          var acc = (c + GOOD - f) / (GOOD + BAD);
-          document.getElementById("c-caught-v").textContent = fmt(c);
-          document.getElementById("c-false-v").textContent = fmt(f);
-          document.getElementById("c-acc").textContent = pct(acc);
-          document.getElementById("c-sens").textContent = pct(c / BAD);
-          document.getElementById("c-spec").textContent = pct((GOOD - f) / GOOD);
-          document.getElementById("c-miss").textContent = fmt(BAD - c);
-          document.getElementById("c-text").textContent =
-            c === 0 ? "High accuracy, yet every single default slips through. This is the trap."
-            : f === GOOD ? "Every default is caught, but every good customer is turned away too."
-            : acc < (GOOD / (GOOD + BAD)) ? "Lower accuracy than saying “repaid” to everyone, yet this model actually finds defaults."
-            : "Better than the do-nothing model on both counts.";
-        }
-        caught.addEventListener("input", function () { clearPick(); credit(); });
-        flagged.addEventListener("input", function () { clearPick(); credit(); });
-        var presets = { none: [0, 0], all: [BAD, GOOD], half: [Math.round(BAD / 2), Math.round(GOOD / 10)] };
-        function clearPick() {
-          document.querySelectorAll('[data-group="credit"] button').forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
-        }
-        group("credit", function (v) {
-          caught.value = presets[v][0];
-          flagged.value = presets[v][1];
-          credit();
-        });
-
-        // Show one demo at a time: the one named in the link (#housing etc.), or the first.
-        var ids = ["speed", "pharmacies", "housing", "credit"];
-        var tabs = document.querySelectorAll(".jump a");
-        function show(id) {
-          if (ids.indexOf(id) < 0) id = ids[0];
-          ids.forEach(function (k) { document.getElementById(k).classList.toggle("is-active", k === id); });
-          tabs.forEach(function (a) { a.setAttribute("aria-current", a.getAttribute("href") === "#" + id ? "true" : "false"); });
-        }
-        function fromHash() {
-          show(location.hash.replace("#", ""));
-          var jump = document.querySelector(".jump");
-          if (jump && location.hash) jump.scrollIntoView({ block: "start" });
-        }
-        window.addEventListener("hashchange", fromHash);
-        fromHash();
+        var go = { speed: "melbourne-crash.html#speed", pharmacies: "drugstores.html#pharmacies", housing: "housing.html#housing", credit: "credit-risk.html#credit" };
+        var h = location.hash.replace("#", "");
+        if (go[h]) location.replace(go[h]);
       })();
     </script>
   </body>

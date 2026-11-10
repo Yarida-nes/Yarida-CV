@@ -41,6 +41,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="demos.css" />
     <link rel="stylesheet" href="housing.css" />
   </head>
   <body>
@@ -69,7 +70,7 @@
             </p>
             <div class="study-actions">
               <a class="button primary" href="#findings">Jump to results</a>
-              <a class="button text-button" href="try-it.html#housing">Try the demo</a>
+              <a class="button text-button" href="#housing">Try the demo</a>
               <a class="button text-button" href="https://github.com/Yarida-nes/housing-price-regression-au" target="_blank" rel="noreferrer">Code and report on GitHub</a>
             </div>
           </header>
@@ -129,6 +130,40 @@
               </li>
             </ul>
           </section>
+
+          <section class="demo" id="housing" aria-labelledby="h-title">
+          <div class="demo-head">
+            <div>
+              <p class="demo-kicker">Australian housing · R · 5 regression models</p>
+              <h2 id="h-title">Does adding variables always make a better model?</h2>
+            </div>
+          </div>
+          <p class="demo-intro">Step through the five nested models of quarterly house price growth. Watch adjusted R² (explanatory power) and the error measures as each group of variables is added.</p>
+          <fieldset class="pick" data-group="model">
+            <legend>Model</legend>
+            <button type="button" data-v="0">Model 1</button>
+            <button type="button" data-v="1">Model 2</button>
+            <button type="button" data-v="2">Model 3</button>
+            <button type="button" data-v="3">Model 4</button>
+            <button type="button" data-v="4">Model 5</button>
+          </fieldset>
+          <div class="demo-body">
+            <div>
+              <div class="models" id="models" role="img" aria-label="Adjusted R-squared for models 1 to 5: 0.049, 0.102, 0.197, 0.238, 0.235"></div>
+            </div>
+            <div class="readout" aria-live="polite">
+              <p style="margin-bottom: .3rem"><strong id="h-adds"></strong></p>
+              <dl class="stats">
+                <div><dt>Adjusted R²</dt><dd id="h-adj"></dd></div>
+                <div><dt>R²</dt><dd id="h-r2"></dd></div>
+                <div><dt>RMSE</dt><dd id="h-rmse"></dd></div>
+                <div><dt>MAE</dt><dd id="h-mae"></dd></div>
+              </dl>
+              <p id="h-text" style="margin-top: 1rem"></p>
+            </div>
+          </div>
+          <p class="note">RMSE and MAE are in percentage points of quarterly growth. All five models are significant overall (F-test p &lt; 0.05). I chose Model 4: highest adjusted R² and lowest MAE.</p>
+        </section>
 
           <section class="study-block">
             <h2>Model comparison</h2>
@@ -294,5 +329,6 @@
       </footer>
     </div>
     <script src="app.js"></script>
+    <script src="demos.js"></script>
   </body>
 </html>
