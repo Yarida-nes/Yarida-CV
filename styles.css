@@ -645,3 +645,8 @@ main :is(p, li) code { overflow-wrap: anywhere; }
   html body main :is(.study-block, .cs-block, .esg-block, .ww-block) :is(p, li) strong { color: #bf5f12; }
   html body main .demo strong, html body main table strong { color: inherit; }
 }
+/* Demos: big headline number and intro line in orange */
+@media screen {
+  html body main .demo .big > span { color: #bf5f12; }
+  html body main .demo p.demo-intro { color: #bf5f12; }
+}
