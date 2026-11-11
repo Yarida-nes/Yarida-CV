@@ -95,6 +95,13 @@ const children = [
     "Checked every record against its source before committing it, because one wrong point can send a driver the wrong way.",
   ] }),
 
+  // ---- Additional Work Experience ----
+  heading("Additional Work Experience"),
+  ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
+    "Track daily sales to spot best-selling dishes and suggest new menu items; these menu and service changes helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
+    "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, and have trained around 8 new starters in service standards, ordering and payments.",
+  ] }),
+
   // ---- Projects ----
   heading("Projects"),
   ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), QGIS, hot-spot analysis",
@@ -126,13 +133,6 @@ const children = [
   ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | ArcGIS, network analysis, location-allocation",
     page: "drugstores.html", bullets: [
     "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and ArcGIS network analysis of 433 drugstores: only 199 villages could reach a pharmacy, and 22 new sites found with location-allocation would bring that to 417.",
-  ] }),
-
-  // ---- Work Experience ----
-  heading("Additional Work Experience"),
-  ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
-    "Track daily sales to spot best-selling dishes and suggest new menu items; these menu and service changes helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
-    "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, and have trained around 8 new starters in service standards, ordering and payments.",
   ] }),
 
   // ---- Education ----

@@ -68,7 +68,7 @@ const children = [
 
   // ---- Professional Summary ----
   heading("Professional Summary"),
-  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography. I have tested AI tools against a business target, built a machine learning workflow that produces a weekly list automatically, and written analyst reports for non-technical readers. Before I report a pattern, I test whether it is real. Seeking an AI and automation internship in Perth."),
+  para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography. I have tested AI tools against a business target, built a machine learning workflow that produces a weekly list automatically while a person still makes every decision, and written analyst reports for non-technical readers. Before I report a pattern, I test whether it is real. Seeking an AI and automation internship in Perth."),
 
   // ---- Skills ----
   heading("Skills"),

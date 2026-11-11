@@ -461,7 +461,9 @@ sup, sub { font-size: max(.75em, 12px); line-height: 0; }
 .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
 .exp-grid .timeline-item { grid-template-columns: 1fr; gap: .2rem; align-content: start; }
 .exp-grid .timeline-date { margin-bottom: .3rem; }
-.exp-grid .timeline-item:nth-last-child(-n+2) { border-bottom: 0; }
+.exp-grid .timeline-item:nth-child(odd):nth-last-child(-n+2), .exp-grid .timeline-item:last-child { border-bottom: 0; }
+.exp-sub { margin: 2.2rem 0 .8rem; font-family: "Public Sans", sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.section-label + .exp-sub { margin-top: .4rem; }
 
 .edu-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; align-items: start; }
 .edu-split .timeline-item { grid-template-columns: 1fr; gap: .2rem; }

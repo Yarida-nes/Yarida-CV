@@ -64,7 +64,7 @@ const children = [
   center([run("Portfolio: "), link("yarida-cv.vercel.app", "https://yarida-cv.vercel.app"), run(" | LinkedIn: "),
     link("linkedin.com/in/yarida-kaewthong", "https://www.linkedin.com/in/yarida-kaewthong"), run(" | GitHub: "),
     link("github.com/Yarida-nes", "https://github.com/Yarida-nes")]),
-  center([run("Student visa (subclass 500) | "), run("[confirm: availability, e.g. two days a week across preseason]", { highlight: "yellow" })], 40),
+  center([run("Student visa (subclass 500) | Available full-time 16 Nov 2026 to 5 Feb 2027")], 40),
 
   // ---- Professional Summary ----
   heading("Professional Summary"),
@@ -83,24 +83,29 @@ const children = [
   heading("Projects"),
   ...entry({ title: "AI-Driven Customer Support: Analysis and Automation", date: "2026", org: "Curtin University, individual report and team of four | Orange Data Mining, machine learning, sentiment analysis", page: "cloudcore.html", bullets: [
     "Built the team's machine learning workflow that scores 280 customers for churn risk (77.5% of at-risk customers found) and automatically produces a weekly list of 14 to call, 12 of them truly at risk.",
+    "Tested a lower cut-off (0.55): the list grew to 101 names and only 53% were right, so the cut-off was set to fit the 10 to 15 reviews the team can do each week.",
     "Used AI text analytics in Orange on 360 support tickets and 240 reviews, and showed two sentiment tools found at most 58% of unhappy customers against a 70% target, so they were not fit to automate.",
   ] }),
   ...entry({ title: "Walking and Cycling Safety in Melbourne", date: "Oct 2026", org: "Independent project | R (sf, dplyr, ggplot2), QGIS, hot-spot analysis",
     page: "melbourne-crash.html", bullets: [
     "Mapped 142,875 Victorian crash records (2012 to 2025) with hot-spot analysis in R and QGIS, and found that half of the 2021 to 2025 pedestrian and cyclist crashes happened in just 6% of metro Melbourne.",
     "Showed with a chi-square trend test that pedestrians hit on 80+ km/h roads are far more likely to be killed or seriously hurt than on 40 km/h roads (65% against 41%), a rise too large to be chance.",
+    "Found cyclist crashes peak at 8 am on weekdays and pedestrian crashes at 3 pm, and that being hit in the dark without street lights raised the chance of serious injury or death to 63%, against 46% in daylight. Sole author: cleaning, analysis, maps and write-up.",
+    "Recommended 40 km/h zones, separated bike lanes and better street lighting for those hot-spot areas.",
   ] }),
   ...entry({ title: "Credit Risk Analysis", date: "Oct 2025", org: "Curtin University, group of three | RStudio, R Markdown", page: "credit-risk.html", bullets: [
     "Cleaned a 32,581-row loan dataset in R, found about one in five loans had defaulted, and trained a logistic regression model that predicts default with an AUC of 0.85 on unseen test data. My part: cleaning, charts, regression and write-up.",
+    "Showed why accuracy alone misleads on this data: 78% of loans were repaid, so a model that predicts \"no default\" for everyone would score 78% accuracy yet catch no defaults.",
   ] }),
   ...entry({ title: "Soccer Competition Database", date: "2026", org: "Curtin University, individual project | Oracle SQL, ERD, data dictionary", page: "soccer-database.html", bullets: [
-    "Wrote 13 SQL queries (joins, subqueries, aggregation) that produce the season ladder, top scorers and most valuable player, on a normalised 16-table Oracle schema built from 18 business rules.",
+    "Designed a database for a six-club competition that records every game, goal, card and best-on-ground award, turning 18 business rules into a normalised 16-table Oracle schema with an entity relationship diagram and data dictionary.",
+    "Wrote 13 SQL queries (joins, subqueries, aggregation) that answer an organiser's questions, from the season ladder, top scorers and most valuable player to every one of the season's 93 goals.",
   ] }),
   ...entry({ title: "Australian Housing Price Regression", date: "May 2026", org: "Curtin University, individual project | RStudio, R Markdown", page: "housing.html", bullets: [
     "Compared five nested regression models of quarterly house price growth in five Australian states (2014 to 2025) in R, and found the COVID-19 period added about 2.6 percentage points to quarterly growth, while election years made no difference.",
   ] }),
   ...entry({ title: "ESG and Financial Analytics, Asia-Pacific", date: "May 2026", org: "Curtin University, individual project | Tableau", page: "esg.html", bullets: [
-    "Built three linked Tableau dashboards on 15 years of ESG and financial data for 8 Asia-Pacific markets, and wrote a business analyst report on the findings.",
+    "Built three linked Tableau dashboards on 15 years of ESG and financial data for 8 Asia-Pacific markets, found ESG explains only about 2% of the difference in profit between firms, and wrote a business analyst report on the findings.",
   ] }),
   ...entry({ title: "WeatherWise: Python Weather Advisor", date: "Oct 2025", org: "Curtin University, individual project | Python, OpenWeatherMap API, Matplotlib", page: "weatherwise.html", bullets: [
     "Developed a Python app that pulls live five-day forecasts from an API, turns 40 three-hourly readings into daily highs, lows and rainfall with Matplotlib charts.",
@@ -113,7 +118,8 @@ const children = [
     "Compared sales of 23 products and found one was especially popular with a specific age group, then recommended a campaign aimed at that group, which lifted the product's sales by about 38% within 3 months.",
   ] }),
   ...entry({ title: "Data-Driven Marketing Intern", date: "Nov 2022 – Feb 2023", org: "Like Me X Co., Ltd. / Futureskill, Thailand", bullets: [
-    "Ran A/B tests on different marketing posts and reported which content suited each type of customer.",
+    "Analysed audience data in Facebook Ads and tracked campaign results in Excel.",
+    "Ran A/B tests on different marketing posts and reported which content suited each type of customer, so the team could match each post to the right audience.",
   ] }),
   ...entry({ title: "Mapping and GIS Solution Intern", date: "Apr 2022 – Jun 2022", org: "THIKNET Co., Ltd., Thailand", bullets: [
     "Mapped EV charging stations on main roads in all 77 provinces of Thailand in ArcGIS and SQL for a navigation product.",
