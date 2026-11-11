@@ -672,3 +672,13 @@ html body main a.next-project .np-blurb { color: var(--muted); font-size: 1rem; 
 html body main a.next-project img.np-shot { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 4px; overflow: visible; }
 @media (prefers-reduced-motion: reduce) { html body main a.next-project .np-title::after { transition: none; } }
 @media (max-width: 640px) { html body main a.next-project { grid-template-columns: 1fr; } }
+
+/* Certificates under Education and recognition (home page) */
+.cert-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 4rem; align-items: start; margin-top: 1rem; }
+.cert { margin: 0; }
+.cert a { display: block; }
+.cert img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: var(--surface); }
+.cert a:hover img, .cert a:focus-visible img { border-color: var(--accent); }
+.cert figcaption { margin-top: .6rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+@media (max-width: 720px) { .cert-row { grid-template-columns: 1fr; gap: 1.75rem; } }
+@media print { .cert-row { display: none; } }
