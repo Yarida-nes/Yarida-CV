@@ -73,7 +73,7 @@ const children = [
   // ---- Skills ----
   heading("Skills"),
   ...[
-    ["Office and Data", [run("Microsoft Excel, data cleaning and validation, Power BI (dashboards), "), run("[confirm: Microsoft Word, Outlook]", { highlight: "yellow" }), run(", SQL (Oracle), Python, R.")]],
+    ["Office and Data", [run("Microsoft Excel, data cleaning and validation, Power BI (dashboards), SQL (Oracle), Python, R.")]],
     ["Communication and Teamwork", "Leading and training staff, analyst reports, conference presentations, explaining data to non-technical people."],
     ["Sustainability and Environment", "ESG analysis (Tableau), road-safety analysis, GIS field survey, QGIS and ArcGIS."],
   ].map(([n, d], i, all) => para([run(n + ": ", { bold: true }), ...(Array.isArray(d) ? d : [run(d)])], i === all.length - 1 ? 60 : 40)),

@@ -34,9 +34,7 @@ const children = [
   p("I am writing to apply for the Administration and Site Manager Assistant internship with Sycamore Civil Group, as advertised through UniHub at Curtin University."),
 
   // Paragraph 2: why this job
-  p([run("Sycamore Civil Group focuses on sustainable waste management, material recovery and recycling. "),
-    todo("[your reason: one sentence on why you want to work for Sycamore]"),
-    run(" In May 2026, I presented a Curtin sustainability student project at an international conference, and in an individual Curtin project I analysed 15 years of ESG data for 8 Asia-Pacific markets and wrote a business analyst report on the findings.")]),
+  p([run("Sycamore Civil Group focuses on sustainable waste management, material recovery and recycling. Sustainability is also part of my studies: in May 2026, I presented a Curtin sustainability student project at an international conference, and in an individual Curtin project I analysed 15 years of ESG data for 8 Asia-Pacific markets and wrote a business analyst report on the findings.")]),
 
   // Paragraph 3: specialist skills
   p("I am studying a Master of Commerce (Artificial Intelligence and Business Analytics) at Curtin University. The role involves keeping accurate records and updating Excel spreadsheets and reports. As a Marketing Data Analyst at Divana, I tracked revenue and sales for all 18 branches in Excel and Power BI, cleaning the data so every branch could be compared on the same basis. As a GIS intern at THIKNET, I mapped EV charging stations on main roads in all 77 provinces of Thailand and checked every record against its source before committing it. For a co-authored research paper, I worked with GPS field survey data. I have not used Xero so far."),

@@ -144,9 +144,9 @@ const children = [
   ] }),
 
   // ---- Achievements ----
-  heading("Achievements and Certifications"),
+  heading("Recognition and Certification"),
   bullet("Google Data Analytics Professional Certificate, Google / Coursera, 2026."),
-  bullet("Conference presenter, 8th Annual International Academic Conference on Education and Technology, May 2026: presented a Curtin sustainability student project, recognised in the Curtin Vice-Chancellor's communications.", true),
+  bullet("Co-author, 2023 Asian Conference on Remote Sensing (ACRS 2023) paper: Service Area and Spatial Distribution Pattern of Drugstores in Nonthaburi Province.", true),
 
   // ---- References ----
   heading("References"),
