@@ -31,7 +31,7 @@ const SITE = "https://yarida-cv.vercel.app/";
 const center = (children, after = 0) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after }, children });
 const heading = (text) => new Paragraph({
   keepNext: true,
-  spacing: { before: 110, after: 70 },
+  spacing: { before: 80, after: 50 },
   border: { bottom: { style: BorderStyle.SINGLE, size: 10, color: INK, space: 1 } },
   children: [run(text.toUpperCase(), { size: 24, bold: true, color: ACCENT, characterSpacing: 10 })],
 });
@@ -128,19 +128,19 @@ const children = [
     "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and ArcGIS network analysis of 433 drugstores: only 199 villages could reach a pharmacy, and 22 new sites found with location-allocation would bring that to 417.",
   ] }),
 
+  // ---- Work Experience ----
+  heading("Additional Work Experience"),
+  ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
+    "Track daily sales to spot best-selling dishes and suggest new menu items; these menu and service changes helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
+    "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, and have trained around 8 new starters in service standards, ordering and payments.",
+  ] }),
+
   // ---- Education ----
   heading("Education"),
   ...entry({ title: "Master of Commerce (Artificial Intelligence and Business Analytics)", date: "2025 – Present",
     org: "Curtin University, Perth, Australia", notes: ["Expected graduation: June 2027"] }),
   ...entry({ title: "Bachelor of Social Science", date: "2019 – 2022", org: "Kasetsart University, Thailand", notes: [
     "Major: Geography | First Class Honours",
-  ] }),
-
-  // ---- Work Experience ----
-  heading("Work Experience"),
-  ...entry({ title: "Restaurant Manager", date: "Sep 2023 – Present", org: "Six Senses Gourmet Thai, Leederville, Perth WA | Part-time", bullets: [
-    "Track daily sales to spot best-selling dishes and suggest new menu items; these menu and service changes helped lift the restaurant's Google rating from 3.6 to 4.0 stars.",
-    "Lead and train the restaurant team, including shift supervisors and around 5 staff per shift, and have trained around 8 new starters in service standards, ordering and payments.",
   ] }),
 
   // ---- Achievements ----
