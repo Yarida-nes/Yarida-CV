@@ -673,12 +673,10 @@ html body main a.next-project img.np-shot { display: block; width: 100%; height:
 @media (prefers-reduced-motion: reduce) { html body main a.next-project .np-title::after { transition: none; } }
 @media (max-width: 640px) { html body main a.next-project { grid-template-columns: 1fr; } }
 
-/* Certificates under Education and recognition (home page) */
-.cert-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 4rem; align-items: start; margin-top: 1rem; }
-.cert { margin: 0; }
-.cert a { display: block; }
-.cert img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: var(--surface); }
-.cert a:hover img, .cert a:focus-visible img { border-color: var(--accent); }
-.cert figcaption { margin-top: .6rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
-@media (max-width: 720px) { .cert-row { grid-template-columns: 1fr; gap: 1.75rem; } }
-@media print { .cert-row { display: none; } }
+/* Certificate pictures: small, under their own line in Recognition */
+.cert-thumb { display: block; width: min(100%, 240px); margin-top: .6rem; }
+.cert-thumb img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: var(--surface); }
+.cert-thumb:hover img, .cert-thumb:focus-visible img { border-color: var(--accent); }
+.award-list .cert-note { display: block; margin-top: .35rem; padding: 0; color: var(--muted); font-family: "Public Sans", sans-serif; font-size: .85rem; line-height: 1.4; }
+.award-list li { padding: .6rem 0; }
+@media print { .cert-thumb, .award-list .cert-note { display: none; } }
