@@ -63,11 +63,18 @@ const children = [
   center([run("Portfolio: "), link("yarida-cv.vercel.app", "https://yarida-cv.vercel.app"), run(" | LinkedIn: "),
     link("linkedin.com/in/yarida-kaewthong", "https://www.linkedin.com/in/yarida-kaewthong"), run(" | GitHub: "),
     link("github.com/Yarida-nes", "https://github.com/Yarida-nes")]),
-  center([run("Student visa (subclass 500) | Available full-time 16 Nov 2026 to 5 Feb 2027")], 40),
 
   // ---- Professional Summary ----
   heading("Professional Summary"),
   para("Master of Commerce (Artificial Intelligence and Business Analytics) student at Curtin University, with First Class Honours in Geography and a co-authored GIS research paper (ACRS 2023). I analyse data in R, Python and SQL, map it in QGIS and ArcGIS, and present it in Tableau and Power BI. Before I report a pattern, I test whether it is real. Most recently I analysed 142,875 Victorian crash records to show where people walking and cycling in Melbourne are most at risk. Seeking a data analytics, business intelligence or GIS internship in Perth, and graduate roles from July 2027."),
+
+  // ---- Education ----
+  heading("Education"),
+  ...entry({ title: "Master of Commerce (Artificial Intelligence and Business Analytics)", date: "2025 – Present",
+    org: "Curtin University, Perth, Australia", notes: ["Expected graduation: June 2027"] }),
+  ...entry({ title: "Bachelor of Social Science", date: "2019 – 2022", org: "Kasetsart University, Thailand", notes: [
+    "Major: Geography | First Class Honours",
+  ] }),
 
   // ---- Skills ----
   heading("Skills"),
@@ -133,14 +140,6 @@ const children = [
   ...entry({ title: "Published Research: Drugstore Access in Thailand", date: "2023", org: "Co-author (field survey, network analysis, maps), ACRS 2023 | ArcGIS, network analysis, location-allocation",
     page: "drugstores.html", bullets: [
     "Assessed pharmacy access for 511 villages near Bangkok using GPS field survey data and ArcGIS network analysis of 433 drugstores: only 199 villages could reach a pharmacy, and 22 new sites found with location-allocation would bring that to 417.",
-  ] }),
-
-  // ---- Education ----
-  heading("Education"),
-  ...entry({ title: "Master of Commerce (Artificial Intelligence and Business Analytics)", date: "2025 – Present",
-    org: "Curtin University, Perth, Australia", notes: ["Expected graduation: June 2027"] }),
-  ...entry({ title: "Bachelor of Social Science", date: "2019 – 2022", org: "Kasetsart University, Thailand", notes: [
-    "Major: Geography | First Class Honours",
   ] }),
 
   // ---- Achievements ----
