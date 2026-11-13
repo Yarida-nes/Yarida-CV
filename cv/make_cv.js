@@ -83,7 +83,7 @@ const children = [
     ["Statistics", "Linear and logistic regression, hypothesis testing, chi-square trend tests, time-series analysis, model comparison (R squared, RMSE, MAE, ROC/AUC), machine learning and sentiment analysis (Orange)."],
     ["Visualisation and BI", "Tableau (stories, dashboard actions, parameters, forecasting), Power BI (dashboards, DAX)."],
     ["GIS and Spatial", "QGIS and ArcGIS, hot-spot analysis (Getis-Ord Gi*), network analysis, location-allocation, spatial joins, map layout."],
-    ["Communication", "Analyst reports, conference presentations, explaining data to non-technical people."],
+    ["Communication and Teamwork", "Analyst reports, presentations, team projects of three and four."],
   ].map(([n, d], i, all) => para([run(n + ": ", { bold: true }), run(d)], i === all.length - 1 ? 60 : 40)),
 
   // ---- Relevant Experience ----
