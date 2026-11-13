@@ -59,7 +59,7 @@ const children = [
   // ---- Header ----
   center([run("Yarida Kaewthong", { size: 44, bold: true, color: "111111" })], 60),
   center([run("Perth, WA | "), ...(PUBLIC ? [] : [run(PRIVATE.phone + " | ")]),
-    link("nestyarida@gmail.com", "mailto:nestyarida@gmail.com"), run("")]),
+    link("nestyarida@gmail.com", "mailto:nestyarida@gmail.com"), run(" | Available full-time 16 Nov 2026 to 5 Feb 2027")]),
   center([run("Portfolio: "), link("yarida-cv.vercel.app", "https://yarida-cv.vercel.app"), run(" | LinkedIn: "),
     link("linkedin.com/in/yarida-kaewthong", "https://www.linkedin.com/in/yarida-kaewthong"), run(" | GitHub: "),
     link("github.com/Yarida-nes", "https://github.com/Yarida-nes")]),
