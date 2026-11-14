@@ -16,6 +16,17 @@ Changes made in Yarida's own signed-in Chrome. "Notify network" was Off on every
 
 A post "What an inspiring five days!" appears on the profile, 11 minutes old when checked. It was not made in these edits; it was posted from Yarida's own account.
 
+## Added on 2026-11-14 (project covers and website links)
+
+Same rules: Yarida's own Chrome, no post, comment, connection or message.
+
+1. Cover images: designed from the project pictures on the website (map, chart or dashboard, with the title and one real number), in the website colours. Files are in `linkedin/covers/`. Live on Melbourne, Drugstore, Housing and ESG. The Credit Risk project still shows the plain chart picture.
+2. Website link on every project: a link with preview added to Melbourne, Drugstore, Housing, ESG, Credit Risk and WeatherWise, and the same address written at the end of each project text.
+3. Housing: the GitHub link (blank preview) was deleted and the address moved into the project text. ESG: the Tableau link (blank preview) was deleted and the address moved into the project text.
+4. Two projects added from the website: "Soccer Competition Database (Oracle SQL)" and "AI-Driven Customer Support: Churn Analysis and Automation (Orange)", worded from their website pages. Projects now shows 9.
+5. Known issue: on Housing and ESG the website link sits in front of the cover, so the card shows two pictures side by side. Reordering in the form did not save.
+6. Known issue: the ESG website link preview shows the home-page card picture, not the Tableau dashboard.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
