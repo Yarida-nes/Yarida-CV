@@ -2,7 +2,26 @@
 
 Draft only. Nothing has been posted. Every fact is from your case study page https://yarida-cv.vercel.app/melbourne-crash.html.
 
-## Post (rewritten 15 Nov, use this one)
+## Post (FINAL, ready to paste, no brackets)
+
+This project was not part of any course. I built it on my own and taught myself the method, using real Victorian road crash records.
+
+The question I asked: where in metro Melbourne are people walking and cycling most at risk, when does it happen, and what makes a crash more serious?
+
+I cleaned 14 years of records (2012 to 2025), ran a Getis-Ord Gi* hot-spot test on 1 km hexagons, and made the maps in R and QGIS.
+
+What came out:
+- 49% of pedestrian and cyclist crashes in 2021 to 2025 fall in hot spots that cover just 6% of the area.
+- The share of pedestrian crashes that end in death or serious injury rises from 41% in 40 km/h zones to 65% in 80+ km/h zones.
+- Cyclist crashes peak at 8 am on weekdays. Pedestrian crashes peak at 3 pm.
+
+Two limits: this shows an association, not a cause, and the data has no count of how many people walk or ride in each area, so the hot spots partly show where people travel most.
+
+Maps, method and code: https://yarida-cv.vercel.app/melbourne-crash.html
+
+#GIS #RStats #DataAnalytics #RoadSafety #Melbourne
+
+## Post (rewritten 15 Nov, with a line for your own words)
 
 This project was not part of any course. I built it on my own and taught myself the method, using real Victorian road crash records.
 
