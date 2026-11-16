@@ -33,6 +33,10 @@ Same rules: Yarida's own Chrome, no post, comment, connection or message.
 2. LinkedIn's suggested "share with your network" post was skipped. Nothing was posted. A post draft is in `2026-11-16-post-pl300.md`.
 3. CV (`cv/make_cv.js`) and website (`index.html`, with the certificate picture) now list it under Recognition and Certification. CV PDFs rebuilt, still 2 pages.
 
+## Added on 2026-11-16 (Faculty letter)
+
+1. Honors and awards: the Faculty of Business and Law letter picture was added, with the student ID covered on a copy (`faculty-letter-semester2-2025-id-hidden.png`). Issue date set to Mar 2026 from the date on the letter (24 March 2026). Nothing was posted.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
