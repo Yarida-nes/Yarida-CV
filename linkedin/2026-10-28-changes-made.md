@@ -27,6 +27,12 @@ Same rules: Yarida's own Chrome, no post, comment, connection or message.
 5. Known issue: on Housing and ESG the website link sits in front of the cover, so the card shows two pictures side by side. Reordering in the form did not save.
 6. Known issue: the ESG website link preview shows the home-page card picture, not the Tableau dashboard.
 
+## Added on 2026-11-16 (PL-300 prep certificate)
+
+1. LinkedIn Licenses and certifications: added "PL-300 certification prep: Microsoft Power BI Data Analyst (course certificate)", Udemy, issued Nov 2026, credential ID and link from the certificate, skill Microsoft Power BI. It is a Udemy course certificate, not the Microsoft exam, so the name says so.
+2. LinkedIn's suggested "share with your network" post was skipped. Nothing was posted. A post draft is in `2026-11-16-post-pl300.md`.
+3. CV (`cv/make_cv.js`) and website (`index.html`, with the certificate picture) now list it under Recognition and Certification. CV PDFs rebuilt, still 2 pages.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".

@@ -144,6 +144,7 @@ const children = [
 
   // ---- Achievements ----
   heading("Recognition and Certification"),
+  bullet("PL-300 certification prep: Microsoft Power BI Data Analyst, Udemy course certificate (30.5 hours), 2026."),
   bullet("Google Data Analytics Professional Certificate, Google / Coursera, 2026."),
   bullet("Co-author, 2023 Asian Conference on Remote Sensing (ACRS 2023) paper: Service Area and Spatial Distribution Pattern of Drugstores in Nonthaburi Province.", true),
 
