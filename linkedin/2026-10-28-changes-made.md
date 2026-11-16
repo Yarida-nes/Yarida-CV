@@ -51,6 +51,12 @@ Same rules: Yarida's own Chrome, no post, comment, connection or message.
 
 Sent to: Syed Mashood, Adiba Faruque, Subhash Batra, Mina Yoon, Vishnu Murthy, Haroon Shahzad, Tanisha K., Jignasa Dhokiya, Angela Mena, Rabina Gaya, Gemma Gerelt-od, Kevin Nathanael Pangestu, Jaish Dawani, Benyapa Insawang, Matthew Lim.
 
+### Second batch, 2026-11-16 (she asked for 15 more, in data analyst, business analyst and AI roles)
+
+15 more requests, no notes, 2nd-degree people working in Perth (one in Melbourne) found with "Data Analyst Perth", "Business Analyst Perth" and "AI data scientist Perth". Total today: 30. Sent to: Paris Zampogna, Luke Heneghan, Nurcan C., Jyothika Kottuvalil Sunil, Krishna kumar, Minh N., Sofia Kirsten P., Jith James Fernandez, Manish, Xinge Lian, Carissa M., Harinishree Ganesan, Liam Anderson, Koi Ho, Matthew Heerey.
+
+One stray click during this batch opened Paris Zampogna's profile and an old post photo. The viewer showed no like or comment from her account and I closed it. Worth a quick look at that old post if she wants to be sure.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
