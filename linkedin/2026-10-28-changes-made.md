@@ -41,6 +41,10 @@ Same rules: Yarida's own Chrome, no post, comment, connection or message.
 
 1. LinkedIn post about the PL-300 prep course certificate, with the certificate picture shown large (text from `2026-11-16-post-pl300.md`, Version A). Paid promotion declined. The Melbourne post is still to be posted by Yarida.
 
+## Edited on 2026-11-16 (at her request)
+
+1. The PL-300 post: removed the line "I am looking for a data analytics internship in Perth." so the post shows only the achievement. LinkedIn marks the post "Edited".
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
