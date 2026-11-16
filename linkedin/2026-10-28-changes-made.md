@@ -37,6 +37,10 @@ Same rules: Yarida's own Chrome, no post, comment, connection or message.
 
 1. Honors and awards: the Faculty of Business and Law letter picture was added, with the student ID covered on a copy (`faculty-letter-semester2-2025-id-hidden.png`). Issue date set to Mar 2026 from the date on the letter (24 March 2026). Nothing was posted.
 
+## Posted on 2026-11-16 (at her request)
+
+1. LinkedIn post about the PL-300 prep course certificate, with the certificate picture shown large (text from `2026-11-16-post-pl300.md`, Version A). Paid promotion declined. The Melbourne post is still to be posted by Yarida.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
