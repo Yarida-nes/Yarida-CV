@@ -45,6 +45,12 @@ Same rules: Yarida's own Chrome, no post, comment, connection or message.
 
 1. The PL-300 post: removed the line "I am looking for a data analytics internship in Perth." so the post shows only the achievement. LinkedIn marks the post "Edited".
 
+## Connection requests sent on 2026-11-16 (at her request)
+
+15 requests, all without a note, to 2nd-degree people found by searching "Curtin University data analytics student". Chosen for relevance (data, analytics, information systems, commerce, actuarial); unrelated Curtin students were skipped. LinkedIn showed no warning. Stopped at 15 on purpose to keep the account safe. They show as "Pending" until accepted.
+
+Sent to: Syed Mashood, Adiba Faruque, Subhash Batra, Mina Yoon, Vishnu Murthy, Haroon Shahzad, Tanisha K., Jignasa Dhokiya, Angela Mena, Rabina Gaya, Gemma Gerelt-od, Kevin Nathanael Pangestu, Jaish Dawani, Benyapa Insawang, Matthew Lim.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
