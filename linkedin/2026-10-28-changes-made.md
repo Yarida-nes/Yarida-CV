@@ -66,6 +66,8 @@ One stray click during this batch opened Paris Zampogna's profile and an old pos
 
 4. Featured (2026-11-18, at her request): the Melbourne case study link was removed from Featured, so only the portfolio link remains. The Melbourne project is still under Projects, and the link can be added back to Featured any time.
 
+5. 14 more connection requests (at her request), no notes, 2nd-degree people found with "Data Analyst Perth Curtin" and "Business Analyst Curtin University". Sent to: Mia Pham, Amy Dutton, Lijala Shrestha, Adam Rosato, Hasnain Ahmed M., Blake Regan, Joanne Le, Mona Bojamma Mukkatira Raja, Dip Lalseta, Syed Mohammad Sadman, Samanta Maheen, Hrudaya Gaiky, Asad Iqbal, Simona Mürk. All 14 checked in Sent invitations. Total over the days: 59. The Sent list shows 125 pending in all. Three invitations (jessica yoris, Tasnia Iqbal, Mya Hmuu Khin) show "sent 1 hour ago" and are not on my lists, so they were not sent by me. During this batch the page froze once; I stopped clicking and checked that nothing extra was sent.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
