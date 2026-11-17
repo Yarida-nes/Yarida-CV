@@ -64,6 +64,8 @@ One stray click during this batch opened Paris Zampogna's profile and an old pos
 
 3. Profile banner uploaded (2026-11-17, at her request): option D, `covers/cover-profile-banner-d.png` ("Data analyst", Perth, skills line, yarida-cv.vercel.app). Checked after reload: it shows in full next to her photo. Options A, B and C are kept in `covers/` if she wants to switch.
 
+4. Featured (2026-11-18, at her request): the Melbourne case study link was removed from Featured, so only the portfolio link remains. The Melbourne project is still under Projects, and the link can be added back to Featured any time.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
