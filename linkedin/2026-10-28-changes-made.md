@@ -57,6 +57,11 @@ Sent to: Syed Mashood, Adiba Faruque, Subhash Batra, Mina Yoon, Vishnu Murthy, H
 
 One stray click during this batch opened Paris Zampogna's profile and an old post photo. The viewer showed no like or comment from her account and I closed it. Worth a quick look at that old post if she wants to be sure.
 
+## 2026-11-17 (at her request)
+
+1. Profile banner designed: `covers/cover-profile-banner.png` (1584 x 396, website colours, "Data analytics student", Curtin University | Perth, skills line, hexagon hot-spot motif on the right). The left side is kept clear because her profile photo covers it. NOT uploaded to LinkedIn yet; waiting for her yes.
+2. 15 more connection requests, no notes, 2nd-degree people found with "GIS Analyst Perth", "Curtin Master of Commerce business analytics" and "Business Intelligence Analyst Perth". Sent to: Nehru Khandrika, Chenxin Hu, Waqar Ahmed, James Spath, Kate Rollinson, Aayushma Shrestha, Panarat Srirattanasak, Louie Sugiyanto, Shirley T., Abin James, Tamanna, Keerthi Ara, Benjamin Oliver, Sahithya P., Stanislava Petrikovic. Total so far: 45 over two days (30 on 2026-11-16, 15 on 2026-11-17).
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
