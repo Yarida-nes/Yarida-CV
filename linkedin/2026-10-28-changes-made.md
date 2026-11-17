@@ -62,6 +62,8 @@ One stray click during this batch opened Paris Zampogna's profile and an old pos
 1. Profile banner designed: `covers/cover-profile-banner.png` (1584 x 396, website colours, "Data analytics student", Curtin University | Perth, skills line, hexagon hot-spot motif on the right). The left side is kept clear because her profile photo covers it. NOT uploaded to LinkedIn yet; waiting for her yes.
 2. 15 more connection requests, no notes, 2nd-degree people found with "GIS Analyst Perth", "Curtin Master of Commerce business analytics" and "Business Intelligence Analyst Perth". Sent to: Nehru Khandrika, Chenxin Hu, Waqar Ahmed, James Spath, Kate Rollinson, Aayushma Shrestha, Panarat Srirattanasak, Louie Sugiyanto, Shirley T., Abin James, Tamanna, Keerthi Ara, Benjamin Oliver, Sahithya P., Stanislava Petrikovic. Total so far: 45 over two days (30 on 2026-11-16, 15 on 2026-11-17).
 
+3. Profile banner uploaded (2026-11-17, at her request): option D, `covers/cover-profile-banner-d.png` ("Data analyst", Perth, skills line, yarida-cv.vercel.app). Checked after reload: it shows in full next to her photo. Options A, B and C are kept in `covers/` if she wants to switch.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
