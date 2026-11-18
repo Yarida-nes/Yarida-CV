@@ -70,6 +70,8 @@ One stray click during this batch opened Paris Zampogna's profile and an old pos
 
 6. 15 more connection requests (2026-11-18, at her request), no notes, 2nd-degree people found with "Data Scientist Perth" and "AI Engineer Perth". Sent to: Kai Niu, Raj Flint, Tristan Chaplin, Jia Min Ho, Jacob Van Den Broek, Dr.SABNA HASSAN, Dhruv Sehgal, Shahzad Tariq, Ashwani Sharma, Mark Sim, Kevin Chai, Naneeta T., Ryan Walker, Jonas Skoogh, Ethan Wang. Each name was read from the dialog before sending, and the first 10 were checked in Sent invitations. Total so far: 74 over three days. The Sent list shows 121 pending.
 
+7. PL-300 post text replaced (2026-11-18, on her "yes"): now a short two-paragraph version (30.5-hour Udemy course, done on her own, certificate is for completing the course and not the Microsoft exam; Divana 18 branches in Excel and Power BI with DAX; R, SQL and Tableau; Master of Commerce), then the certificate link and the four hashtags. The picture stayed. I left out the guessed reason for taking the course ("go through the whole workflow in order"), because only she knows it. Checked after reload; the post still shows "Edited".
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
