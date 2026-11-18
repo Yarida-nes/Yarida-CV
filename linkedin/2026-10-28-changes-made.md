@@ -68,6 +68,8 @@ One stray click during this batch opened Paris Zampogna's profile and an old pos
 
 5. 14 more connection requests (at her request), no notes, 2nd-degree people found with "Data Analyst Perth Curtin" and "Business Analyst Curtin University". Sent to: Mia Pham, Amy Dutton, Lijala Shrestha, Adam Rosato, Hasnain Ahmed M., Blake Regan, Joanne Le, Mona Bojamma Mukkatira Raja, Dip Lalseta, Syed Mohammad Sadman, Samanta Maheen, Hrudaya Gaiky, Asad Iqbal, Simona Mürk. All 14 checked in Sent invitations. Total over the days: 59. The Sent list shows 125 pending in all. Three invitations (jessica yoris, Tasnia Iqbal, Mya Hmuu Khin) show "sent 1 hour ago" and are not on my lists, so they were not sent by me. During this batch the page froze once; I stopped clicking and checked that nothing extra was sent.
 
+6. 15 more connection requests (2026-11-18, at her request), no notes, 2nd-degree people found with "Data Scientist Perth" and "AI Engineer Perth". Sent to: Kai Niu, Raj Flint, Tristan Chaplin, Jia Min Ho, Jacob Van Den Broek, Dr.SABNA HASSAN, Dhruv Sehgal, Shahzad Tariq, Ashwani Sharma, Mark Sim, Kevin Chai, Naneeta T., Ryan Walker, Jonas Skoogh, Ethan Wang. Each name was read from the dialog before sending, and the first 10 were checked in Sent invitations. Total so far: 74 over three days. The Sent list shows 121 pending.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
