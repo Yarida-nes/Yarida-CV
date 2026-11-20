@@ -72,6 +72,8 @@ One stray click during this batch opened Paris Zampogna's profile and an old pos
 
 7. PL-300 post text replaced (2026-11-18, on her "yes"): now a short two-paragraph version (30.5-hour Udemy course, done on her own, certificate is for completing the course and not the Microsoft exam; Divana 18 branches in Excel and Power BI with DAX; R, SQL and Tableau; Master of Commerce), then the certificate link and the four hashtags. The picture stayed. I left out the guessed reason for taking the course ("go through the whole workflow in order"), because only she knows it. Checked after reload; the post still shows "Edited".
 
+8. 10 more connection requests (2026-11-20, at her request), no notes, 2nd-degree people found with "Power BI Analyst Perth" and "GIS Analyst Perth". Sent to: Ketan Sadheora, Urvee Hemani, Ashil Karayi, Luqman Ijaz, Adheshwar A., Javier Tejeda, Anagha Sreekala, Nickson Omweno, peter twiby, Carla F. Each name was read from the dialog before sending. The page froze once after the first request; I closed the tab, reopened it and checked Sent invitations that nothing extra went out. The Sent list then showed 126 pending. Stopped at 10 on purpose to keep the account safe.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
