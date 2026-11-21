@@ -74,6 +74,8 @@ One stray click during this batch opened Paris Zampogna's profile and an old pos
 
 8. 10 more connection requests (2026-11-20, at her request), no notes, 2nd-degree people found with "Power BI Analyst Perth" and "GIS Analyst Perth". Sent to: Ketan Sadheora, Urvee Hemani, Ashil Karayi, Luqman Ijaz, Adheshwar A., Javier Tejeda, Anagha Sreekala, Nickson Omweno, peter twiby, Carla F. Each name was read from the dialog before sending. The page froze once after the first request; I closed the tab, reopened it and checked Sent invitations that nothing extra went out. The Sent list then showed 126 pending. Stopped at 10 on purpose to keep the account safe.
 
+9. 10 more connection requests (2026-11-21, daily scheduled run), no notes, 2nd-degree people found with "Business Analyst Perth" and "Data Analyst Curtin". Sent to: Abdul Bharry, Gazali Gale, Dean B., Navneet Kaur, Mohammad Nishad, Jakeb Holland, Veronica Biona, Bernard Sharpe, Jeevanjot Kaur, Semir Shukuri. Each name was read from the dialog before sending, and each showed the "Invitation sent" message. Navneet Kaur had already accepted a few minutes later (she now shows as 1st), so the Sent list rose from 122 to 131 pending (9 new). The page froze once, while an invite dialog for Midula Manickam (found with "Analytics Curtin University Perth") was open; nothing was clicked, I closed the tab, reopened it and Sent invitations showed no invitation to her and nothing extra. Stopped at 10 after the freeze. No LinkedIn warning was shown.
+
 ## Not done yet (check tomorrow)
 
 - Housing project says "five Australian states"; the website says "five capital cities".
