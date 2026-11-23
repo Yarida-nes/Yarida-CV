@@ -23,8 +23,8 @@
       content="A four-page Power BI report on Microsoft's fictional AdventureWorks sales data: $110M of sales, 11.43% margin, and online against reseller sales."
     />
     <meta property="og:image" content="https://yarida-cv.vercel.app/images/adventureworks-overview.png" />
-    <meta property="og:image:width" content="1315" />
-    <meta property="og:image:height" content="746" />
+    <meta property="og:image:width" content="1537" />
+    <meta property="og:image:height" content="865" />
     <meta property="og:image:alt" content="The Sales overview page of the Power BI report, with total sales, profit, margin, orders, online against reseller sales and sales by month" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Power BI sales report | Yarida Kaewthong" />
@@ -44,6 +44,23 @@
     <link rel="stylesheet" href="housing.css" />
     <style>
       .result-shot { margin: 1.5rem 0 0; }
+      .aw-viewer { margin: 3rem 0 2.5rem; border: 1px solid var(--line); background: var(--surface); }
+      .aw-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.25rem; padding: .85rem 1rem; border-bottom: 1px solid var(--line); }
+      .aw-title { margin: 0; font-family: "Public Sans", sans-serif; font-weight: 700; font-size: 1rem; color: var(--ink); }
+      .aw-title span { margin-left: .5rem; font-weight: 500; font-size: .85rem; color: var(--muted); }
+      .aw-tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin-left: auto; }
+      .aw-tabs button { font: inherit; font-size: .92rem; font-weight: 600; padding: .45rem .9rem; min-height: 44px; border: 1px solid var(--line); background: var(--paper); color: var(--muted); cursor: pointer; }
+      .aw-tabs button:hover { color: var(--ink); border-color: var(--ink); }
+      .aw-tabs button[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+      .aw-tabs button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+      .aw-stage { padding: 1rem; }
+      .aw-panel { margin: 0; }
+      .aw-open { display: block; cursor: zoom-in; }
+      .aw-panel img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+      .aw-panel figcaption { margin-top: .75rem; color: var(--muted); font-size: .95rem; }
+      .aw-foot { margin: 0; padding: .6rem 1rem .8rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+      @media (max-width: 640px) { .aw-tabs { margin-left: 0; width: 100%; } .aw-tabs button { flex: 1 1 calc(50% - .4rem); } }
+      @media print { .aw-panel[hidden] { display: block; } .aw-tabs, .aw-foot { display: none; } }
     </style>
   </head>
   <body>
@@ -89,17 +106,36 @@
             <div><span class="metric-number">73%</span><span>of sales came from resellers<br />the online shop sold 27%</span></div>
           </div>
 
-          <figure class="study-hero" id="overview">
-            <img
-              src="images/adventureworks-overview.png"
-              alt="The Sales overview page of the Power BI report: total sales of $110 million, an online against reseller donut chart (26.74% and 73.26%), cards for sales, profit, margin and orders, a monthly sales line chart compared with the year before, and a table of top resellers"
-              width="1315"
-              height="746"
-            />
-            <figcaption>
-              The Overview page. The four cards show sales, profit, margin and orders, and the line chart compares each month with the same month a year earlier.
-            </figcaption>
-          </figure>
+          <section class="aw-viewer" id="overview" aria-label="The four pages of the Power BI report">
+            <div class="aw-bar">
+              <p class="aw-title">AdventureWorks sales report <span>4 pages</span></p>
+              <div class="aw-tabs" role="tablist" aria-label="Report pages">
+                <button type="button" role="tab" id="aw-tab-overview" aria-controls="aw-panel-overview" aria-selected="true">Overview</button>
+                <button type="button" role="tab" id="aw-tab-products" aria-controls="aw-panel-products" aria-selected="false" tabindex="-1">Products</button>
+                <button type="button" role="tab" id="aw-tab-territories" aria-controls="aw-panel-territories" aria-selected="false" tabindex="-1">Territories</button>
+                <button type="button" role="tab" id="aw-tab-reseller-detail" aria-controls="aw-panel-reseller-detail" aria-selected="false" tabindex="-1">Reseller detail</button>
+              </div>
+            </div>
+            <div class="aw-stage">
+              <figure class="aw-panel" role="tabpanel" id="aw-panel-overview" aria-labelledby="aw-tab-overview">
+                <a class="aw-open" href="images/adventureworks-overview.png" target="_blank" rel="noopener"><img src="images/adventureworks-overview.png" alt="The Sales overview page: total sales, an online against reseller donut chart, cards for sales, profit, margin and orders, a monthly sales line compared with the year before, and the top resellers." width="1537" height="865" /></a>
+                <figcaption>The Overview page. The four cards show sales, profit, margin and orders, and the line chart compares each month with the same month a year earlier.</figcaption>
+              </figure>
+              <figure class="aw-panel" role="tabpanel" id="aw-panel-products" aria-labelledby="aw-tab-products" hidden>
+                <a class="aw-open" href="images/adventureworks-products.png" target="_blank" rel="noopener"><img src="images/adventureworks-products.png" alt="The Products page: sales and margin by product category, sales by subcategory, margin by subcategory and a product ranking." width="1537" height="865" loading="lazy" /></a>
+                <figcaption>The Products page. Bikes are 86% of sales, and accessories have the highest margin at about 50%.</figcaption>
+              </figure>
+              <figure class="aw-panel" role="tabpanel" id="aw-panel-territories" aria-labelledby="aw-tab-territories" hidden>
+                <a class="aw-open" href="images/adventureworks-territories.png" target="_blank" rel="noopener"><img src="images/adventureworks-territories.png" alt="The Territories page: sales by country this year and last, year-on-year growth by region, reseller sales by business type and a table of online, reseller and shipped sales by country." width="1537" height="865" loading="lazy" /></a>
+                <figcaption>The Territories page. Pick a year to compare each country with the year before. The table shows shipped sales using the ship-date relationship.</figcaption>
+              </figure>
+              <figure class="aw-panel" role="tabpanel" id="aw-panel-reseller-detail" aria-labelledby="aw-tab-reseller-detail" hidden>
+                <a class="aw-open" href="images/adventureworks-reseller-detail.png" target="_blank" rel="noopener"><img src="images/adventureworks-reseller-detail.png" alt="The Reseller detail page: sales, orders and margin for one reseller, sales by month against the same month last year, the products they bought and their top subcategories." width="1537" height="865" loading="lazy" /></a>
+                <figcaption>The Reseller detail page. Right-click a reseller on the Overview page and choose Drill through to open it for that reseller. It is showing all resellers here.</figcaption>
+              </figure>
+            </div>
+            <p class="aw-foot">Pictures of the report from Power BI Desktop. Click a page name above to look at each one, or click a picture to open it full size.</p>
+          </section>
 
           <section class="study-block" id="findings">
             <h2>What the report shows</h2>
@@ -151,7 +187,7 @@
 
           <section class="study-block ref-block" id="references">
             <h2>About the data</h2>
-            <p class="ref-provided"><strong>Where the data comes from:</strong> Microsoft's AdventureWorks Sales sample (MIT licence), a fictional bicycle company. The company and every figure are made up, and nothing here describes a real business. The report is a Power BI project on my laptop and is not published online, so the screenshot above shows it.</p>
+            <p class="ref-provided"><strong>Where the data comes from:</strong> Microsoft's AdventureWorks Sales sample (MIT licence), a fictional bicycle company. The company and every figure are made up, and nothing here describes a real business. The report is a Power BI project on my laptop and is not published online, so the pictures above show each page.</p>
           </section>
 
           <div class="study-actions study-footer-actions">
@@ -175,5 +211,30 @@
       </footer>
     </div>
     <script src="app.js"></script>
+    <script>
+      (function () {
+        var tabs = document.querySelectorAll(".aw-tabs [role=tab]");
+        function show(tab, focus) {
+          tabs.forEach(function (t) {
+            var on = t === tab;
+            t.setAttribute("aria-selected", on ? "true" : "false");
+            t.tabIndex = on ? 0 : -1;
+            document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+          });
+          if (focus) tab.focus();
+        }
+        tabs.forEach(function (t, i) {
+          t.addEventListener("click", function () { show(t, false); });
+          t.addEventListener("keydown", function (e) {
+            var n = null;
+            if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+            if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+            if (e.key === "Home") n = tabs[0];
+            if (e.key === "End") n = tabs[tabs.length - 1];
+            if (n) { e.preventDefault(); show(n, true); }
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
