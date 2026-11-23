@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A four-page Power BI sales report on Microsoft's AdventureWorks sample data, with a star schema, 34 DAX measures and row-level security by sales region. Built with AI assistance by Yarida Kaewthong."
+    />
+    <title>Power BI sales report | Yarida Kaewthong</title>
+    <meta name="author" content="Yarida Kaewthong" />
+    <meta name="theme-color" content="#f7f5f1" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="canonical" href="https://yarida-cv.vercel.app/adventureworks.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Yarida Kaewthong" />
+    <meta property="og:url" content="https://yarida-cv.vercel.app/adventureworks.html" />
+    <meta property="og:title" content="Power BI sales report | Yarida Kaewthong" />
+    <meta
+      property="og:description"
+      content="A four-page Power BI report on Microsoft's fictional AdventureWorks sales data: $110M of sales, 11.43% margin, and online against reseller sales."
+    />
+    <meta property="og:image" content="https://yarida-cv.vercel.app/images/adventureworks-overview.png" />
+    <meta property="og:image:width" content="1315" />
+    <meta property="og:image:height" content="746" />
+    <meta property="og:image:alt" content="The Sales overview page of the Power BI report, with total sales, profit, margin, orders, online against reseller sales and sales by month" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Power BI sales report | Yarida Kaewthong" />
+    <meta
+      name="twitter:description"
+      content="A four-page Power BI report on Microsoft's fictional AdventureWorks sales data: $110M of sales, 11.43% margin, and online against reseller sales."
+    />
+    <meta name="twitter:image" content="https://yarida-cv.vercel.app/images/adventureworks-overview.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="housing.css" />
+    <style>
+      .result-shot { margin: 1.5rem 0 0; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="index.html" aria-label="Yarida Kaewthong home">Yarida Kaewthong<span>.</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="Yarida-Kaewthong-CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">
+          GitHub</a>
+      </header>
+
+      <main id="main">
+        <article class="study">
+          <header class="study-head">
+            <p class="eyebrow">Power BI · DAX · Data modelling</p>
+            <h1>Power BI sales report</h1>
+            <p class="lede">
+              Where does a bicycle company's money come from, and how do sales, profit and margin change from month to month? I built a four-page Power BI report on Microsoft's AdventureWorks sample data to find out, with a star schema, DAX measures and a separate view for each sales region.
+            </p>
+            <div class="study-actions">
+              <a class="button primary" href="#findings">Jump to results</a>
+              <a class="button text-button" href="#how">See how it is built</a>
+            </div>
+          </header>
+
+          <dl class="glance" aria-label="Project at a glance">
+            <div><dt>Problem</dt><dd>A sales team needs one place to see sales, profit and growth by product, region and channel, and each regional manager should see only their own region.</dd></div>
+            <div><dt>What I did</dt><dd>Built with AI assistance: I used Claude to build the data model, the DAX measures and the page layout, tested the report in Power BI Desktop and directed the changes. Independent project, November 2026.</dd></div>
+            <div><dt>Tools</dt><dd>Power BI Desktop · Power Query · DAX · row-level security</dd></div>
+            <div class="glance-result"><dt>Result</dt><dd>A four-page report: Overview, Products, Territories and a Reseller detail page. Over three financial years it shows $110M of sales, $13M of profit and an 11.43% margin, and that resellers sold 73% of everything.</dd></div>
+          </dl>
+
+          <div class="metrics study-metrics" aria-label="Key figures from the report">
+            <div><span class="metric-number">$110M</span><span>total sales<br />July 2017 to June 2020</span></div>
+            <div><span class="metric-number">11.43%</span><span>profit margin<br />$13M of profit</span></div>
+            <div><span class="metric-number">73%</span><span>of sales came from resellers<br />the online shop sold 27%</span></div>
+          </div>
+
+          <figure class="study-hero" id="overview">
+            <img
+              src="images/adventureworks-overview.png"
+              alt="The Sales overview page of the Power BI report: total sales of $110 million, an online against reseller donut chart (26.74% and 73.26%), cards for sales, profit, margin and orders, a monthly sales line chart compared with the year before, and a table of top resellers"
+              width="1315"
+              height="746"
+            />
+            <figcaption>
+              The Overview page. The four cards show sales, profit, margin and orders, and the line chart compares each month with the same month a year earlier.
+            </figcaption>
+          </figure>
+
+          <section class="study-block" id="findings">
+            <h2>What the report shows</h2>
+            <ul class="findings">
+              <li>
+                <div>
+                  <p><strong>Resellers sell most of the product.</strong> Of the $110M in total sales, 73.26% came through resellers and 26.74% through the online shop.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>The margin is thin.</strong> Profit was about $13M on $110M of sales, an 11.43% margin. The Overview cards show it next to a small trend line for each measure.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>Sales are compared with last year.</strong> The Sales by month chart draws each month beside the same month a year earlier, so growth and seasonal dips are easy to see.</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p><strong>One reseller can be opened in detail.</strong> The Top resellers table lists the biggest names, led by Brakes and Gears at $877,107. Right-click a name and choose Drill through to open the Reseller detail page.</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="study-block" id="how">
+            <h2>How the report is built</h2>
+            <p>
+              The model is a star schema: one Sales table in the middle, joined to five lookup tables for dates, products, customers, resellers and sales territories. Sales has two dates, so the order date relationship is active and the ship date relationship is kept inactive, and a measure switches to it when needed.
+            </p>
+            <p>
+              A separate measures table holds 34 DAX measures. They cover the basics (total sales, cost, profit, margin, orders), the split between online and reseller sales, and comparisons with the same period last year.
+            </p>
+            <p>
+              Row-level security has three roles, Europe, North America and Pacific. Each one filters the sales territory table to its own group, so a regional manager sees only their own region. The report has four pages: Overview, Products, Territories and Reseller detail.
+            </p>
+          </section>
+
+          <section class="study-block">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li><strong>Model first.</strong> A clean star schema keeps the DAX measures short and the numbers the same on every page.</li>
+              <li><strong>Compare with last year.</strong> A single figure means little. The same month a year earlier shows whether it is good news.</li>
+              <li><strong>Security belongs in the model.</strong> Roles on the territory table mean every page respects them without extra work on each chart.</li>
+              <li><strong>Be clear about the tools.</strong> I used AI to build the first version, so the skill I practised is directing it: asking for the right model, testing it in Power BI and checking the numbers.</li>
+            </ul>
+          </section>
+
+          <section class="study-block ref-block" id="references">
+            <h2>About the data</h2>
+            <p class="ref-provided"><strong>Where the data comes from:</strong> Microsoft's AdventureWorks Sales sample (MIT licence), a fictional bicycle company. The company and every figure are made up, and nothing here describes a real business. The report is a Power BI project on my laptop and is not published online, so the screenshot above shows it.</p>
+          </section>
+
+          <div class="study-actions study-footer-actions">
+            <a class="back-link" href="index.html#projects">All projects</a>
+            <a class="back-link" href="index.html#projects">Back to home</a>
+          </div>
+        </article>
+        <a class="next-project" href="melbourne-crash.html">
+          <span class="np-text">
+            <span class="np-label">Next project</span>
+            <span class="np-title">Walking and cycling safety in Melbourne</span>
+            <span class="np-blurb">Where and when people walking and cycling are most at risk, from 142,875 Victorian crash records.</span>
+          </span>
+          <img class="np-shot" src="images/melbourne-card.jpg" alt="" loading="lazy" decoding="async" />
+        </a>
+      </main>
+
+      <footer>
+        <span>&copy; <span id="year"></span> Yarida Kaewthong</span>
+        <span class="footer-links"><a href="https://github.com/Yarida-nes" target="_blank" rel="noreferrer">GitHub: Yarida-nes</a></span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
